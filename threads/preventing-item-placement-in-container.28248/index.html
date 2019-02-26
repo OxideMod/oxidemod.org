@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar RunDeferred Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Preventing item placement in container? | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/preventing-item-placement-in-container.28248/" />
+	<meta name="description" content="What line of code will prevent any item from being placed into a container in the hook CanAcceptItem?
+
+Despite not knowing how to code in C#, I've been..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/preventing-item-placement-in-container.28248/" />
+	<meta property="og:title" content="Preventing item placement in container?" />
+	<meta property="og:description" content="What line of code will prevent any item from being placed into a container in the hook CanAcceptItem?
+
+Despite not knowing how to code in C#, I've been..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/preventing-item-placement-in-container.28248/">Preventing item placement in container?</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Abnormal Zombie</a>, <a href="threads/preventing-item-placement-in-container.28248/"><span class="DateTime" title="Nov 20, 2017 at 8:51 PM">Nov 20, 2017</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-368144" class="message   " data-author="Abnormal Zombie">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Abnormal Zombie" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Abnormal Zombie</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					What line of code will prevent any item from being placed into a container in the hook CanAcceptItem?<br />
+<br />
+Despite not knowing how to code in C#, I&#039;ve been trying to figure this out on my own for a couple hours with zero previous plugin coding experience. Please help me out here.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Abnormal Zombie</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 8:51 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368144/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368145" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					From the docs: &quot;Returning a CanAcceptResult enum value overrides default behavior&quot;<br />
+<br />
+So you&#039;d need to return CanAcceptResult.X (where X is the enum you want to return) from Rust.<br />
+<br />
+        CanAccept,<br />
+        CannotAccept,<br />
+        CannotAcceptRightNow
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368145" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 8:52 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368145" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368145/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368147" class="message   " data-author="Abnormal Zombie">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Abnormal Zombie" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Abnormal Zombie</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					First of all, thank you Wulf.<br />
+<br />
+Here&#039;s my code. I&#039;m getting the error: error CS0103: The name `CanAcceptResult&#039; does not exist in the current context<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>ItemContainer.CanAcceptResult CanAcceptItem(ItemContainer container, Item item)
+        {
+            if (container != null &amp;&amp; item != null){
+          
+                if (container.ShortPrefabName == &quot;hopperoutput&quot;)
+                {
+                     return CanAcceptResult.CannotAccept;
+                }
+            }
+            return CanAcceptResult.CanAccept;
+        }</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Abnormal Zombie</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368147" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 9:05 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368147" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368147/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368148" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Abnormal Zombie">
+	<aside>
+		
+			<div class="attribution type">Abnormal Zombie said:
+				
+					<a href="goto/post?id=368147#post-368147" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">First of all, thank you Wulf.<br />
+<br />
+Here&#039;s my code. I&#039;m getting the error: error CS0103: The name `CanAcceptResult&#039; does not exist in the current context<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>ItemContainer.CanAcceptResult CanAcceptItem(ItemContainer container, Item item)
+        {
+            if (container != null &amp;&amp; item != null){
+         
+                if (container.ShortPrefabName == &quot;hopperoutput&quot;)
+                {return CanAcceptResult.CannotAccept;
+                }
+            }
+            return CanAcceptResult.CanAccept;
+        }</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You&#039;d need to add the appropriate using statement, else you may need to specify ItemContainer. in front of it as well.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368148" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 9:06 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368148" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368148/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368149" class="message   " data-author="Abnormal Zombie">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Abnormal Zombie" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Abnormal Zombie</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Is there a way I can find what using statement I need by using JustDecompile on Assembly-CSharp.dll?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Abnormal Zombie</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368149" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 9:23 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368149" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368149/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368150" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Abnormal Zombie">
+	<aside>
+		
+			<div class="attribution type">Abnormal Zombie said:
+				
+					<a href="goto/post?id=368149#post-368149" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Is there a way I can find what using statement I need by using JustDecompile on Assembly-CSharp.dll?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Sure, open it and search.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368150" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 9:28 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368150" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368150/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368151" class="message   " data-author="Abnormal Zombie">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Abnormal Zombie" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Abnormal Zombie</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					This might be easy for you, but for me I don&#039;t know what I&#039;m looking for when the results come up.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Abnormal Zombie</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368151" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 9:34 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368151" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368151/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368152" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Abnormal Zombie">
+	<aside>
+		
+			<div class="attribution type">Abnormal Zombie said:
+				
+					<a href="goto/post?id=368151#post-368151" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">This might be easy for you, but for me I don&#039;t know what I&#039;m looking for when the results come up.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Searching for CanAcceptResult would be where I&#039;d start.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368152" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 9:35 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368152" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368152/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368168" class="message   " data-author="Abnormal Zombie">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Abnormal Zombie" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Abnormal Zombie</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					As silly as it may sound, I didn&#039;t know that the containing class is what&#039;s used. But I figured it out:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>using static ItemContainer;
+ItemContainer.CanAcceptResult CanAcceptItem(ItemContainer container, Item item)
+        {
+            if (container.entityOwner.ShortPrefabName == &quot;hopperoutput&quot;){
+           
+               
+                return CanAcceptResult.CannotAccept;
+               
+            }
+            return CanAcceptResult.CanAccept;
+        }</pre>
+</div>I appreciate your help!
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Abnormal Zombie</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368168" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 11:21 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368168" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368168/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368169" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>ItemContainer.CanAcceptResult CanAcceptItem(ItemContainer container, Item item)
+{
+    return container.entityOwner.ShortPrefabName == &quot;hopperoutput&quot;
+    ? ItemContainer.CanAcceptResult.CannotAccept
+    : ItemContainer.CanAcceptResult.CanAccept;
+}</pre>
+</div>That should work ^.<br />
+<br />
+Alternative in the way you had it formatted:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>ItemContainer.CanAcceptResult CanAcceptItem(ItemContainer container, Item item)
+{
+    if (container.entityOwner.ShortPrefabName == &quot;hopperoutput&quot;)
+        return ItemContainer.CanAcceptResult.CannotAccept
+    else
+        return ItemContainer.CanAcceptResult.CanAccept;
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368169" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 20, 2017 at 11:23 PM">Nov 20, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368169" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368169/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-368176" class="message   " data-author="Abnormal Zombie">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Abnormal Zombie" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Abnormal Zombie</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I just did a try/catch to get rid of all the <span style="text-decoration: underline">NullReferenceException: Object reference not set to an instance of an object</span> errors. Is there a better way?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Abnormal Zombie</a>,</span>
+					<a href="threads/preventing-item-placement-in-container.28248/#post-368176" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 21, 2017 at 12:20 AM">Nov 21, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/preventing-item-placement-in-container.28248/#post-368176" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/368176/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548762826,
+		today: 1548720000,
+		todayDow: 2
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

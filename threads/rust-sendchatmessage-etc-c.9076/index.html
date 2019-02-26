@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar RunDeferred Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Solved - Rust.SendChatMessage etc. [C#] | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/rust-sendchatmessage-etc-c.9076/" />
+	<meta name="description" content="Well, I just started with C# and tried something easy, rewriting my Easy Broadcast plugin.
+But, when I tried to use BroadcastChat or SendChatMessage..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/rust-sendchatmessage-etc-c.9076/" />
+	<meta property="og:title" content="Solved - Rust.SendChatMessage etc. [C#]" />
+	<meta property="og:description" content="Well, I just started with C# and tried something easy, rewriting my Easy Broadcast plugin.
+But, when I tried to use BroadcastChat or SendChatMessage..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/rust-sendchatmessage-etc-c.9076/">Rust.SendChatMessage etc. [C#]</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">LaserHydra</a>, <a href="threads/rust-sendchatmessage-etc-c.9076/"><span class="DateTime" title="Jun 2, 2015 at 10:55 PM">Jun 2, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-95351" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Well, I just started with C# and tried something easy, rewriting my Easy Broadcast plugin.<br />
+But, when I tried to use BroadcastChat or SendChatMessage and so on, it gave me an error, that it wasnt able to find that. (tried it with and without &quot;rust.&quot;) For now I used the method Reneb used in AirdropControl:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+using System.Collections.Generic;
+using System.Reflection;
+using System;
+using System.Data;
+using Oxide.Core;
+
+namespace Oxide.Plugins
+{
+    [Info(&quot;Easy Broadcast&quot;, &quot;LaserHydra&quot;, 2.0)]
+    class EasyBroadcast : RustPlugin
+    {
+        [ChatCommand(&quot;bcast&quot;)]
+        void cmdBroadcast(BasePlayer player, string cmd, string[] args)
+        {
+            string allArgs, message;
+            allArgs = &quot;&quot;;
+            foreach(string arg in args)
+                allArgs = allArgs + &quot; &quot; + arg;
+            message = &quot;&lt;color=orange&gt;BROADCAST&lt;/color&gt;:&quot; + allArgs;
+            BroadcastToChat(message);
+        }
+      
+        void BroadcastToChat(string msg)
+        {
+            ConsoleSystem.Broadcast(&quot;chat.add \&quot;SERVER\&quot; &quot; + msg.QuoteSafe() + &quot; 1.0&quot;, new object[0]);
+        }
+    }
+}
+</pre>
+</div>Also I may be &quot;using&quot; stuff I don&#039;t really need. How do I know what I need for the stuff I want to do?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 10:55 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95351/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95352" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Use PrintToChat and such instead. <a href="https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.Rust/RustPlugin.cs#L140" target="_blank" class="externalLink">https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.Rust/RustPlugin.cs#L140</a><br />
+<br />
+The library functions are meant for the non-C# languages.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95352" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 10:56 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95352" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95352/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95354" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=95352#post-95352" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Use PrintToChat and such instead.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Okay, so that is the alternative for BroadcastChat, whats the alternative for the other stuff like SendChatMessage, UserIDFromPlayer and so on? Are there alternatives?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95354" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:00 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95354" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95354/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95355" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=95354#post-95354" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Okay, so that is the alternative for BroadcastChat, whats the alternative for the other stuff like SendChatMessage, UserIDFromPlayer and so on? Are there alternatives?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Take a look at the link, it shows them all. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /><br />
+<br />
+You don&#039;t need UserIDFromPlayer, that&#039;s only needed for languages that can&#039;t handle int64. Just grab the SteamID directly from the player or connection.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95355" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:01 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95355" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95355/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95356" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I see some of them are rewritten as CSharp code in the docs but only a few<br />
+<br />
+Thanks
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95356" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:01 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95356" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95356/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95358" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=95356#post-95356" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I see some of them are rewritten as CSharp code in the docs but only a few<br />
+<br />
+Thanks</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>The link I provided above shows both PrintToChat methods for sending chat messages.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95358" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:05 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95358" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95358/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95359" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Another quick question. In the docs, its shown like that:<br />
+[Info(&quot;Easy Broadcast&quot;, &quot;Broadcast a message around the server&quot;, &quot;LaserHydra&quot;, &quot;2.0.0&quot;, ResourceID = 863)]<br />
+But when I am using it like this, it tells me that it does not accept 4 args or more
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95359" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:07 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95359" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95359/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95361" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=95359#post-95359" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Another quick question. In the docs, its shown like that:<br />
+[Info(&quot;Easy Broadcast&quot;, &quot;Broadcast a message around the server&quot;, &quot;LaserHydra&quot;, &quot;2.0.0&quot;, ResourceID = 863)]<br />
+But when I am using it like this, it tells me that it does not accept 4 args or more</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I added it to the Docs wrong. Clarification from Mughisi:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>[Info(&quot;Plugin&quot;, &quot;Author&quot;, 1.0, ResourceId = 9999)]
+[Description(&quot;This is what my plugin does&quot;)]</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95361" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:15 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95361" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95361/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95362" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=95361#post-95361" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I added it to the Docs wrong. Clarification from Mughisi:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>[Info(&quot;Plugin&quot;, &quot;Author&quot;, 1.0, ResourceId = 9999)]
+[Description(&quot;This is what my plugin does&quot;)]</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>okay thanks. So you can only specify 1.0 and not 1.0.0 for example.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95362" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:17 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95362" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95362/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95363" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=95362#post-95362" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">okay thanks. So you can only specify 1.0 and not 1.0.0 for example.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>It can be int or string. 1.0 would be the same as using &quot;1.0.0&quot;, and 0.1 would be the same as using &quot;0.1.0&quot;, but you can&#039;t use 1.0.0 without quotes.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95363" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:18 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95363" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95363/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-95364" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=95363#post-95363" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">It can be int or string. 1.0 would be the same as using &quot;1.0.0&quot;, and 0.1 would be the same as using &quot;0.1.0&quot;, but you can&#039;t use 1.0.0 without quotes.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Okay thanks!<br />
+[DOUBLEPOST=1433285705][/DOUBLEPOST]... Im always getting this message:<br />
+[Oxide] 12:59 AM [Debug] Plugin is already being loaded: EasyBroadcast<br />
+Reloading or unloading the plugin doesn&#039;t help. Even deleteing it doesn&#039;t help<br />
+[DOUBLEPOST=1433286732][/DOUBLEPOST]Also Im not getting the permissions to work....<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+using System.Collections.Generic;
+using System.Reflection;
+using System;
+using System.Data;
+using UnityEngine;
+using Oxide.Core;
+
+namespace Oxide.Plugins
+{
+    [Info(&quot;Easy Broadcast&quot;, &quot;LaserHydra&quot;, &quot;2.0.0&quot;, ResourceId = 863)]
+    [Description(&quot;Broadcast a message around the server&quot;)]
+    class EasyBroadcast : RustPlugin
+    {
+        [ChatCommand(&quot;bcast&quot;)]
+        void cmdBroadcast(BasePlayer player, string cmd, string[] args)
+        {
+            string uid;
+            uid = Convert.ToString(player.userID);
+            if (!permission.UserHasPermission(uid, &quot;canBroadcast&quot;))
+            {
+                SendReply(player, &quot;&lt;color=orange&gt;BROADCAST&lt;/color&gt;: You have no permission to use this command!&quot;);
+                return;
+            }
+            if (args == null || args.Length &lt; 1)
+            {
+                SendReply(player, &quot;&lt;color=orange&gt;BROADCAST&lt;/color&gt;: Syntax: /bcast [message]&quot;);
+            }
+            string allArgs, message;
+            allArgs = &quot;&quot;;
+            foreach (string arg in args)
+                allArgs = allArgs + &quot; &quot; + arg;
+            PrintToChat(&quot;&lt;color=orange&gt;BROADCAST&lt;/color&gt;:&quot; + allArgs);
+        }
+
+    }
+}
+</pre>
+</div>I gave myself the permission &quot;canBroadcast&quot; also reconnected but it still says I got no permission
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jun 3, 2015 at 12:19 AM">Jun 3, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95364" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 2, 2015 at 11:19 PM">Jun 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/rust-sendchatmessage-etc-c.9076/#post-95364" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/95364/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548554588,
+		today: 1548547200,
+		todayDow: 0
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

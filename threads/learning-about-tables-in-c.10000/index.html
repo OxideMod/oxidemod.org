@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Learning about tables in C# | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/learning-about-tables-in-c.10000/" />
+	<meta name="description" content="I have some problems in making the tables.. or sth like that.
+
+My working code looks like:
+
+using System.Collections.Generic;
+using System.Reflection;..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/learning-about-tables-in-c.10000/" />
+	<meta property="og:title" content="Learning about tables in C#" />
+	<meta property="og:description" content="I have some problems in making the tables.. or sth like that.
+
+My working code looks like:
+
+using System.Collections.Generic;
+using System.Reflection;..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/learning-about-tables-in-c.10000/">Learning about tables in C#</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">PaiN</a>, <a href="threads/learning-about-tables-in-c.10000/"><span class="DateTime" title="Jul 4, 2015 at 12:39 PM">Jul 4, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-105627" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I have some problems in making the tables.. or sth like that.<br />
+<br />
+My working code looks like:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+using System.Collections.Generic;
+using System.Reflection;
+using System;
+using System.Data;
+using UnityEngine;
+using Oxide.Core;
+
+namespace Oxide.Plugins
+{
+    [Info(&quot;Mind Freeze&quot;, &quot;PaiN&quot;, &quot;1.2.0&quot;, ResourceId = 1198)]
+    [Description(&quot;Allows you to freeze players with a legit way.&quot;)]
+    public class MindFreeze : RustPlugin
+    {
+        void Loaded()
+        {
+        if (!permission.PermissionExists(&quot;canmindfreeze&quot;)) permission.RegisterPermission(&quot;canmindfreeze&quot;, this);
+            //LoadDefaultConfig(); Maybe gonna add this later.
+        }
+           
+           
+        private Timer timerrepeat;
+       
+        [ChatCommand(&quot;freeze&quot;)]
+        void cmdFreeze(BasePlayer player, string cmd, string[] args)
+        {
+            string steamId = player.userID.ToString();
+            if (permission.UserHasPermission(steamId, &quot;canmindfreeze&quot;))
+            {
+                var target = BasePlayer.Find(args[0]);
+                var position = target.transform.position;
+                var configPos = new Vector3(position.x, position.y , position.z);
+
+                if(Vector3.Distance(target.transform.position, configPos) &lt; 1)
+                {
+                var timerrepeat = timer.Repeat(1, 0, () =&gt; target.ClientRPCPlayer(null, target, &quot;ForcePositionTo&quot;, new object[] { configPos }));
+                player.TransformChanged();
+
+                }
+            }
+            else
+                SendReply(player, &quot;You do not have permission to use this command!&quot;);
+       
+        }
+        [ChatCommand(&quot;unfreeze&quot;)]//I will find another way to unfreeze but for now i cant think another way to do it.
+        void cmdUnFreeze(BasePlayer player, string command, string[] args)
+        {
+        timerrepeat.Destroy();   
+        }
+       
+       
+        public void Unloaded()
+        {
+            timerrepeat.Destroy();           
+        }
+    }
+
+}</pre>
+</div>I wanna do the thing that <a href="https://oxidemod.org/members/28556/" class="username" data-user="28556, @Deicide666ra">@Deicide666ra</a> said:<br />
+If it&#039;s the same message you send to everyone, simply have a of targets (List&lt;BasePlayer&gt;()) (global) that you add/remove players to/from. In the timer function loop through them and send the msg.<br />
+<br />
+As its my first time making this thing i do not fully understand his reply.<br />
+<br />
+What i tried:<br />
+In void Loaded i added:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+List&lt;BasePlayer&gt; isFreezed = new List&lt;BasePlayer&gt;;
+</pre>
+</div>but then ?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/learning-about-tables-in-c.10000/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 12:39 PM">Jul 4, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/learning-about-tables-in-c.10000/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105627/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-105668" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Make that list global (outside a function)... I would rename the list to frozenPlayers for clarity.<br />
+<br />
+Then you can do:<br />
+<br />
+frozenPlayers.Add(playerIwannaFreeze);<br />
+<br />
+if (frozenPlayers.Contains(playerImLookingFor)) <br />
+{<br />
+// here you know your player is in the list<br />
+}<br />
+<br />
+frozenPlayers.Remove(playerIwannaUnfreeze);<br />
+<br />
+If you want to send a message or do an action on all frozen players:<br />
+<br />
+foreach(var player in frozenPlayers)<br />
+{<br />
+player.ChatMessage(&quot;Sup popsicle!&quot;);<br />
+}<br />
+<br />
+If you want to clear the list:<br />
+<br />
+frozenPlayers.Clear();<br />
+<br />
+Read documentation on List for more info on what you can do. Some of these functions are LINQ (Contains) and there are a ton of other things you can do with LINQ (sort, exclude a list of players, merge lists, etc).
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/learning-about-tables-in-c.10000/#post-105668" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 5:45 PM">Jul 4, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/learning-about-tables-in-c.10000/#post-105668" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105668/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-105675" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I just realised that C# is giving some non-sense errors..<br />
+So i&#039;m getting errors like &quot;Unexpected symbol &quot;void&quot; &quot; xD after the chatcommand but i get this because of :<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>List&lt;BasePlayer&gt; frozenPlayers = new List&lt;BasePlayer&gt; 
+</pre>
+</div>Everytime that i move it then it *makes* other lines to give me an error ? Dunno how to explain it..<br />
+<br />
+My code:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+using System.Collections.Generic;
+using System.Reflection;
+using System;
+using System.Data;
+using UnityEngine;
+using Oxide.Core;
+
+namespace Oxide.Plugins
+{
+    [Info(&quot;Mind Freeze&quot;, &quot;PaiN&quot;, &quot;1.2.0&quot;, ResourceId = 1198)]
+    [Description(&quot;Allows you to freeze players with a legit way.&quot;)]
+    class MindFreeze : RustPlugin
+    {
+       
+        void Loaded()
+        {
+        if (!permission.PermissionExists(&quot;canmindfreeze&quot;)) permission.RegisterPermission(&quot;canmindfreeze&quot;, this);
+            //LoadDefaultConfig(); Maybe gonna add this later.
+        }
+           
+        List&lt;BasePlayer&gt; frozenPlayers = new List&lt;BasePlayer&gt;  
+         
+        private Timer timerrepeat;
+       
+        [ChatCommand(&quot;freeze&quot;)]
+        void cmdFreeze(BasePlayer player, string cmd, string[] args)
+        {
+            var target = BasePlayer.Find(args[0]);
+            frozenPlayers.Add(target);
+            if (frozenPlayers.Contains(target)) 
+            {
+                var position = target.transform.position;
+                var configPos = new Vector3(position.x, position.y , position.z);
+
+                if(Vector3.Distance(target.transform.position, configPos) &lt; 1)
+                {
+                var timerrepeat = timer.Repeat(1, 0, () =&gt; target.ClientRPCPlayer(null, target, &quot;ForcePositionTo&quot;, new object[] { configPos }));
+                target.TransformChanged();
+
+                }
+            }
+        }
+       
+        [ChatCommand(&quot;unfreeze&quot;)]
+        void cmdUnFreeze(BasePlayer player, string command, string[] args)
+        {
+            var target = BasePlayer.Find(args[0]);
+            if (frozenPlayers.Contains(target)) 
+            {
+                frozenPlayers.Remove(target);
+            }
+                   
+        }
+       
+        [ChatCommand(&quot;unfreezeall&quot;)]
+        void cmdUnFreezeAll(BasePlayer player, string command, string[] args)
+        {
+            frozenPlayers.Clear();       
+        }
+       
+       
+        void Unloaded()
+        {
+            timerrepeat.Destroy(); 
+            frozenPlayers.Clear();
+        }
+    }
+
+}
+</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/learning-about-tables-in-c.10000/#post-105675" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 6:19 PM">Jul 4, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/learning-about-tables-in-c.10000/#post-105675" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105675/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-105678" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Your line wasn&#039;t complete, try this:<br />
+List&lt;BasePlayer&gt; frozenPlayers =<a href="http://www.google.com/search?q=new+msdn.microsoft.com" target="_blank" class="externalLink  rel="nofollow">new</a> List&lt;BasePlayer&gt;();
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/learning-about-tables-in-c.10000/#post-105678" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 6:29 PM">Jul 4, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/learning-about-tables-in-c.10000/#post-105678" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105678/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-105683" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Everything works except of <a href="http://oxidemod.org/threads/multiline-timers-c.10007/" class="internalLink">http://oxidemod.org/threads/multiline-timers-c.10007/</a>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jul 4, 2015 at 7:44 PM">Jul 4, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/learning-about-tables-in-c.10000/#post-105683" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 6:53 PM">Jul 4, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/learning-about-tables-in-c.10000/#post-105683" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105683/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548832919,
+		today: 1548806400,
+		todayDow: 3
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

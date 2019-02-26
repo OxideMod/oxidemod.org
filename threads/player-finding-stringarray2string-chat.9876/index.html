@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Player finding, stringArray2string &amp; chat | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/player-finding-stringarray2string-chat.9876/" />
+	<meta name="description" content="Hello, I just wanted to share some useful functions with you that I made.
+I hope they are useful :)
+If you use those in your plugin, credit me please..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/player-finding-stringarray2string-chat.9876/" />
+	<meta property="og:title" content="Player finding, stringArray2string &amp; chat" />
+	<meta property="og:description" content="Hello, I just wanted to share some useful functions with you that I made.
+I hope they are useful :)
+If you use those in your plugin, credit me please..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/player-finding-stringarray2string-chat.9876/">Player finding, stringArray2string &amp; chat</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">LaserHydra</a>, <a href="threads/player-finding-stringarray2string-chat.9876/"><span class="DateTime" title="Jun 30, 2015 at 1:37 PM">Jun 30, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-104273" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hello, I just wanted to share some useful functions with you that I made.<br />
+I hope they are useful <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+If you use those in your plugin, credit me please (Comment in plugin, in plugin overview)<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+        //---------------------------&gt;   Player finding   &lt;---------------------------//
+
+        BasePlayer GetPlayer(string searchedPlayer, BasePlayer executer, string prefix)
+        {
+            BasePlayer targetPlayer = null;
+            List&lt;string&gt; foundPlayers = new List&lt;string&gt;();
+            string searchedLower = searchedPlayer.ToLower();
+            foreach (BasePlayer player in BasePlayer.activePlayerList)
+            {
+                string display = player.displayName;
+                string displayLower = display.ToLower();
+
+                if (!displayLower.Contains(searchedLower))
+                {
+                    continue;
+                }
+                if (displayLower.Contains(searchedLower))
+                {
+                    foundPlayers.Add(display);
+                }
+            }
+            var matchingPlayers = foundPlayers.ToArray();
+
+            if (matchingPlayers.Length == 0)
+            {
+                SendChatMessage(executer, prefix, &quot;No matching players found!&quot;);
+            }
+
+            if (matchingPlayers.Length &gt; 1)
+            {
+                SendChatMessage(executer, prefix, &quot;Multiple players found:&quot;);
+                string multipleUsers = &quot;&quot;;
+                foreach (string matchingplayer in matchingPlayers)
+                {
+                    if (multipleUsers == &quot;&quot;)
+                    {
+                        multipleUsers = &quot;&lt;color=yellow&gt;&quot; + matchingplayer + &quot;&lt;/color&gt;&quot;;
+                        continue;
+                    }
+
+                    if (multipleUsers != &quot;&quot;)
+                    {
+                        multipleUsers = multipleUsers + &quot;, &quot; + &quot;&lt;color=yellow&gt;&quot; + matchingplayer + &quot;&lt;/color&gt;&quot;;
+                    }
+
+                }
+                SendChatMessage(executer, prefix, multipleUsers);
+            }
+
+            if (matchingPlayers.Length == 1)
+            {
+                targetPlayer = BasePlayer.Find(matchingPlayers[0]);
+            }
+            return targetPlayer;
+        }
+
+        //----------------------------&gt;   Converting   &lt;----------------------------//
+
+        string ArrayToString(string[] array, int first)
+        {
+            int count = 0;
+            string output = array[first];
+            foreach (string current in array)
+            {
+                if (count &lt;= first)
+                {
+                    count++;
+                    continue;
+                }
+
+                output = output + &quot; &quot; + current;
+                count++;
+            }
+            return output;
+        }
+
+        //----------------------------&gt;   Chat Sending   &lt;----------------------------//
+
+        void BroadcastChat(string prefix, string msg)
+        {
+            PrintToChat(&quot;&lt;color=orange&gt;&quot; + prefix + &quot;&lt;/color&gt;: &quot; + msg);
+        }
+
+        void SendChatMessage(BasePlayer player, string prefix, string msg)
+        {
+            SendReply(player, &quot;&lt;color=orange&gt;&quot; + prefix + &quot;&lt;/color&gt;: &quot; + msg);
+        }
+
+        //------------------------------  by LaserHydra  -------------------------//
+</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jun 30, 2015 at 1:51 PM">Jun 30, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 1:37 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104273/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104292" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					You could probably just use .ToString() on your array to get the same result..
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104292" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 2:47 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104292" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104292/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104294" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=104292#post-104292" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You could probably just use .ToString() on your array to get the same result..</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>didnt test that, also with my function you should also be able to say it should start at a specific member. for example mainly for getting a message. If you want to do /say &lt;player&gt; &lt;message&gt;, then you gotta use 1 as the 2. argument of the function as that is the arg where the message begins.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104294" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 2:50 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104294" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104294/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104310" class="message   " data-author="Bombardir">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Bombardir" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Bombardir</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Don&#039;t loop player list 2 times. Just how it&#039;s can be done (maybe not the best, but...):<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        List&lt;BasePlayer&gt; FindPlayer(string find)
+        {
+            find = find.ToUpper();
+            var NamesList = new List&lt;BasePlayer&gt;();
+
+            foreach(var ply in BasePlayer.activePlayerList)
+                if (ply.displayName.ToUpper().Contains(find))
+                    NamesList.Add(ply);
+
+            return NamesList;
+        }
+
+        void SomeFunction()
+        {
+
+            var list = FindPlayer(&quot;Name&quot;);
+            if (target.Count == 1)
+                //list target[0] is your player
+                list[0].ChatMessage(&quot;Hello!&quot;);
+            else if (list.Count == 0)
+                player.ChatMessage(&quot;Can't find player with this name!&quot;);
+            else
+                player.ChatMessage(&quot;Found multiple players: &quot; + list.Select(ply =&gt; ply.displayName).Aggregate((name1, name2) =&gt; name1 + &quot;, &quot; + name2)); // Also you can use -&gt; String.Join(&quot;, &quot;, list.Select(ply =&gt; ply.displayName));
+          
+        }</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Bombardir</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104310" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 3:20 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104310" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104310/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104314" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					or better yet:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>List&lt;BasePlayer&gt; FindPlayer(string find)
+{
+    return BasePlayer.activePlayerList.Where(p =&gt; p.displayName.IndexOf(find, StringComparison.OrdinalIgnoreCase) &gt;= 0);
+}
+</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104314" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 3:34 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104314" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104314/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104357" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=104314#post-104314" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">or better yet:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>List&lt;BasePlayer&gt; FindPlayer(string find)
+{
+    return BasePlayer.activePlayerList.Where(p =&gt; p.displayName.IndexOf(find, StringComparison.OrdinalIgnoreCase) &gt;= 0);
+}
+</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I just advanced it as much as I could, so you don&#039;t need to set all the messages extra. As you see my function also send messages and stuff
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104357" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 5:14 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104357" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104357/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104369" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=104357#post-104357" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I just advanced it as much as I could, so you don&#039;t need to set all the messages extra. As you see my function also send messages and stuff</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Oh I was just talking about the first function, the one that gets the player matches.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104369" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 5:32 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104369" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104369/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104371" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=104369#post-104369" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Oh I was just talking about the first function, the one that gets the player matches.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>you mean the PART of the function
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104371" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 5:35 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104371" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104371/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104374" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=104371#post-104371" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">you mean the PART of the function</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Sorry I was quoting Bombardir&#039;s version of the code, hence the confusion <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+<br />
+So yes, if referring to your code it would be part of the function.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104374" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 5:45 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104374" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104374/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-104390" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=104374#post-104374" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Sorry I was quoting Bombardir&#039;s version of the code, hence the confusion <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+<br />
+So yes, if referring to your code it would be part of the function.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>yeah I was a bit confused ^^
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/player-finding-stringarray2string-chat.9876/#post-104390" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2015 at 6:19 PM">Jun 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/player-finding-stringarray2string-chat.9876/#post-104390" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/104390/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548832929,
+		today: 1548806400,
+		todayDow: 3
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2770 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Storing wrong data in my plugin | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/storing-wrong-data-in-my-plugin.23561/" />
+	<meta name="description" content="hello can anyone help me i dont know what am doing wrong but my plugin is storing the wrong data into my .jason file any help is really appreciated..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/storing-wrong-data-in-my-plugin.23561/" />
+	<meta property="og:title" content="Storing wrong data in my plugin" />
+	<meta property="og:description" content="hello can anyone help me i dont know what am doing wrong but my plugin is storing the wrong data into my .jason file any help is really appreciated..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/storing-wrong-data-in-my-plugin.23561/">Storing wrong data in my plugin</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Juan David</a>, <a href="threads/storing-wrong-data-in-my-plugin.23561/"><span class="DateTime" title="Feb 6, 2017 at 9:55 AM">Feb 6, 2017</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-294161" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					hello can anyone help me i dont know what am doing wrong but my plugin is storing the wrong data into my .jason file any help is really appreciated thank you
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="GiveItems.cs">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/giveitems-cs.33234/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/giveitems-cs.33234/" target="_blank">GiveItems.cs</a></h6>
+						<dl><dt>File size:</dt> <dd>5 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>18</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Feb 6, 2017 at 3:28 PM">Feb 6, 2017</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 9:55 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294161/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294174" class="message   " data-author="Vlad-00003">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Vlad-00003</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hi there.<br />
+As far as I can tell you are reading file called &quot;MyDataFile&quot; and writing file called &quot;playersWithKit&quot;<br />
+Try to change in Loaded() this:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>            try
+            {
+                _flies = Interface.Oxide.DataFileSystem.ReadObject&lt;dataFiles&gt;(&quot;MyDataFile&quot;);
+            }</pre>
+</div>to this:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>            try
+            {
+                _flies = Interface.Oxide.DataFileSystem.ReadObject&lt;dataFiles&gt;(&quot;playersWithKit&quot;);
+            }</pre>
+</div>Also - in your case you don&#039;t have to create your own class<br />
+You could use this:<br />
+Read:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>Dictionary&lt;string, ulong&gt; _playerIdRegistered;
+try
+{
+      _playerIdRegistered = Interface.Oxide.DataFileSystem.ReadObject&lt;Dictionary&lt;string, ulong&gt;&gt;(&quot;playersWithKit&quot;);
+}catch
+{
+       _flies = new Dictionary&lt;string, ulong&gt;();
+}</pre>
+</div>Write:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>Interface.Oxide.DataFileSystem.WriteObject(&quot;playersWithKit&quot;, _playerIdRegistered);</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294174" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 10:58 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294174" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294174/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294175" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					OMG how could i not see this, ill give this a try hope this solves the issue, thanks a lot
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294175" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 11:01 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294175" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294175/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294181" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					ok i apply the changes and still storing incorrect data this is the output <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
+<br />
+{<br />
+  &quot;assets/prefabs/player/player.prefab&quot;: 0<br />
+}<br />
+[DOUBLEPOST=1486381107][/DOUBLEPOST]this is the edited file<br />
+[DOUBLEPOST=1486381215][/DOUBLEPOST]i dont know why is storing this shit &quot;assets/prefabs/player/player.prefab&quot;  instead of the player name<br />
+[DOUBLEPOST=1486381475][/DOUBLEPOST]also the player iD is showing 0 <br />
+doesnt make any sense
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="GiveItems.cs">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/giveitems-cs.33238/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/giveitems-cs.33238/" target="_blank">GiveItems.cs</a></h6>
+						<dl><dt>File size:</dt> <dd>5.1 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>13</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294181" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 11:37 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294181" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294181/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294182" class="message   " data-author="Vlad-00003">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Vlad-00003</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=294181#post-294181" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">ok i apply the changes and still storing incorrect data this is the output <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
+<br />
+{<br />
+  &quot;assets/prefabs/player/player.prefab&quot;: 0<br />
+}<br />
+[DOUBLEPOST=1486381107][/DOUBLEPOST]this is the edited file<br />
+[DOUBLEPOST=1486381215][/DOUBLEPOST]i dont know why is storing this shit &quot;assets/prefabs/player/player.prefab&quot;  instead of the player name</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Why don&#039;t you just use <a href="http://oxidemod.org/plugins/kits.668/" class="internalLink"><b>Kits for rust</b></a>? It has autokit and allow you to set some kits to 1 use only...<br />
+Insted of player.name.ToString() try to use player.displayName
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294182" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 11:48 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294182" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294182/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294183" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					because kits you have to type a command to actually get the kit, i want the player to get it as soon as he enters the game. <br />
+ill give it a try with player.displayname<br />
+thanks by the way i have a friend named  vlad he is from bulgaria <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294183" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 11:51 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294183" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294183/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294184" class="message   " data-author="Vlad-00003">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Vlad-00003</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=294183#post-294183" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">because kits you have to type a command to actually get the kit, i want the player to get it as soon as he enters the game.<br />
+ill give it a try with player.displayname<br />
+thanks by the way i have a friend named  vlad he is from bulgaria <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>As I mention above - kits got autokit, that will be automaticly given to a player as soon as he respawn....
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294184" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 11:53 AM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294184" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294184/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294203" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					fixed looks like the player.displayname does seem to display the correct name <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> thank you <br />
+used ID still broken is returning 0 for all players
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294203" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 1:27 PM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294203" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294203/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294220" class="message   " data-author="jcgm1990">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="jcgm1990" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">jcgm1990</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					pirobo
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">jcgm1990</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294220" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 2:09 PM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294220" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294220/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294223" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					callese<br />
+
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="jcgm1990">
+	<aside>
+		
+			<div class="attribution type">jcgm1990 said:
+				
+					<a href="goto/post?id=294220#post-294220" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">pirobo</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>fokiu men gonorrea
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294223" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 2:12 PM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294223" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294223/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294230" class="message   " data-author="Vlad-00003">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Vlad-00003</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=294203#post-294203" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">fixed looks like the player.displayname does seem to display the correct name <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> thank you<br />
+used ID still broken is returning 0 for all players</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>try UserIDString<br />
+[DOUBLEPOST=1486391605][/DOUBLEPOST]Why the hell you are using player.OwnerID? OWNER ID?!<br />
+player.UserID or player.UserIDString
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294230" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 2:31 PM">Feb 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294230" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294230/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294615" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					hey man sorry to bother again, i manage to fix the issue, the .jason file is now storing the correct data <br />
+{<br />
+  &quot;LeBelge&quot;: 76561198017318961,<br />
+  &quot;Juan David&quot;: 76561198050400801<br />
+}<br />
+<br />
+now i have another issue but it seems like its an oxide issue correct me if am wrong...<br />
+basically the very first time a player comes into the server the player data is stored and saved in the jason file and the void that gives the kit is called but for some reason the player doest get the kit <br />
+<br />
+but if i go into the jason file and remove the player, re start the server when he comes in he does get the kit @_@ <br />
+<br />
+just to make it clear <br />
+ the very first time a player joins the server he doest get the kit but is storing the data  like he actually got the kit.<br />
+but if i remove his name from the .jason file when he comes in the next time he will get it.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="GiveItems.cs">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/giveitems-cs.33278/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/giveitems-cs.33278/" target="_blank">GiveItems.cs</a></h6>
+						<dl><dt>File size:</dt> <dd>3.1 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>12</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294615" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 7, 2017 at 8:03 AM">Feb 7, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294615" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294615/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294676" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=294615#post-294615" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">hey man sorry to bother again, i manage to fix the issue, the .jason file is now storing the correct data<br />
+{<br />
+  &quot;LeBelge&quot;: 76561198017318961,<br />
+  &quot;Juan David&quot;: 76561198050400801<br />
+}<br />
+<br />
+now i have another issue but it seems like its an oxide issue correct me if am wrong...<br />
+basically the very first time a player comes into the server the player data is stored and saved in the jason file and the void that gives the kit is called but for some reason the player doest get the kit<br />
+<br />
+but if i go into the jason file and remove the player, re start the server when he comes in he does get the kit @_@<br />
+<br />
+just to make it clear<br />
+the very first time a player joins the server he doest get the kit but is storing the data  like he actually got the kit.<br />
+but if i remove his name from the .jason file when he comes in the next time he will get it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You should be using a hook such as OnPlayerSpawn.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294676" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 7, 2017 at 4:18 PM">Feb 7, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294676" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294676/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-294921" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					i tried that before and was the same thing, but i cant really test it because i just started the server and i dont have new players coming in to test it, is there any way to delete myself from the server??<br />
+so when i go in it takes me as a complete new player?<br />
+ive been looking for a way to do this but there isnt much info on how to do this if its even possible <br />
+thanks wolf..
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294921" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 8, 2017 at 7:58 AM">Feb 8, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-294921" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294921/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-295563" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=294921#post-294921" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">i tried that before and was the same thing, but i cant really test it because i just started the server and i dont have new players coming in to test it, is there any way to delete myself from the server??<br />
+so when i go in it takes me as a complete new player?<br />
+ive been looking for a way to do this but there isnt much info on how to do this if its even possible<br />
+thanks wolf..</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Actually OnPlayerInit or OnPlayerSpawn should work, both are there and get triggered. Why can&#039;t you test the hook? Just comment out any portion that identifies you as a returning player and test.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-295563" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 9, 2017 at 8:32 PM">Feb 9, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-295563" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/295563/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-296047" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					am not saying they dont work, in fact if you check my previous post it says onplayer init is being called and is registering the player name and user ID as if the player got the kit, but for some reason for first time players that come to the server is not giving it, its only giving the kit to the player that are inside the server already, thats why i said this looks more of an oxide bug.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296047" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 10, 2017 at 9:05 AM">Feb 10, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296047" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/296047/permalink">#16</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-296197" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=296047#post-296047" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">am not saying they dont work, in fact if you check my previous post it says onplayer init is being called and is registering the player name and user ID as if the player got the kit, but for some reason for first time players that come to the server is not giving it, its only giving the kit to the player that are inside the server already, thats why i said this looks more of an oxide bug.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>The player isn&#039;t fully spawned in OnPlayerInit only initialized as a BasePlayer; that&#039;s not a bug, that&#039;s where the hook is in Rust. That&#039;s why I said OnPlayerSpawn would probably be better, as they&#039;d actually have their inventory setup there.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296197" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 10, 2017 at 6:27 PM">Feb 10, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296197" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/296197/permalink">#17</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-296632" class="message   " data-author="Juan David">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Juan David" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Juan David</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Same thing <br />
+It is being called but doesn&#039;t give the kit to  new players <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Juan David</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296632" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 11, 2017 at 9:15 PM">Feb 11, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296632" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/296632/permalink">#18</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-296672" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Juan David">
+	<aside>
+		
+			<div class="attribution type">Juan David said:
+				
+					<a href="goto/post?id=296632#post-296632" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Same thing<br />
+It is being called but doesn&#039;t give the kit to  new players <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>That would be with your code, not the hook. Like I said, the player&#039;s inventory may not be setup at that point, so do some checking and print out some checks to debug what the issue may be with giving it.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296672" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 11, 2017 at 11:45 PM">Feb 11, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296672" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/296672/permalink">#19</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-296795" class="message   " data-author="k1lly0u">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="k1lly0u" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">k1lly0u</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					You need to wait until the player has finished loading in and stopped sleeping before giving them anything. Something like this;<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+void MethodName(BasePlayer player)
+{
+   if (player.IsSleeping() || player.HasPlayerFlag(BasePlayer.PlayerFlags.ReceivingSnapshot))
+   {
+      timer.In(1, () =&gt; MethodName(player));
+         return;
+   }
+   // Do Stuff
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">k1lly0u</a>,</span>
+					<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296795" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 12, 2017 at 8:49 AM">Feb 12, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/storing-wrong-data-in-my-plugin.23561/#post-296795" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/296795/permalink">#20</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548538221,
+		today: 1548460800,
+		todayDow: 6
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"attached_files":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

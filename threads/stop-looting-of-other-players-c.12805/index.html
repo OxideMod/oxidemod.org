@@ -1,0 +1,2781 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Solved - Stop looting of other players? (C#) | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	<link rel="next" href="threads/stop-looting-of-other-players-c.12805/page-2" />
+	<link rel="canonical" href="https://oxidemod.org/threads/stop-looting-of-other-players-c.12805/" />
+	<meta name="description" content="Hey.
+
+I'm trying to stop players from being able to loot other dead players' bodies. 
+Could someone help me with this?
+
+I also need to be able to send..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/stop-looting-of-other-players-c.12805/" />
+	<meta property="og:title" content="Solved - Stop looting of other players? (C#)" />
+	<meta property="og:description" content="Hey.
+
+I'm trying to stop players from being able to loot other dead players' bodies. 
+Could someone help me with this?
+
+I also need to be able to send..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/stop-looting-of-other-players-c.12805/">Stop looting of other players? (C#)</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">PsychoTea</a>, <a href="threads/stop-looting-of-other-players-c.12805/"><span class="DateTime" title="Nov 15, 2015 at 2:09 PM">Nov 15, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+
+
+<div class="PageNav"
+	data-page="1"
+	data-range="2"
+	data-start="2"
+	data-end="2"
+	data-last="2"
+	data-sentinel="{{sentinel}}"
+	data-baseurl="threads/stop-looting-of-other-players-c.12805/page-{{sentinel}}">
+	
+	
+	<nav>
+		
+		
+		<a href="threads/stop-looting-of-other-players-c.12805/" class="currentPage " rel="start">1</a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="threads/stop-looting-of-other-players-c.12805/page-2" class="">2</a>
+		
+		
+			<a href="threads/stop-looting-of-other-players-c.12805/page-2" class="text">Next &gt;</a>
+			
+		
+	</nav>	
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-143971" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey.<br />
+<br />
+I&#039;m trying to stop players from being able to loot other dead players&#039; bodies. <br />
+Could someone help me with this?<br />
+<br />
+I also need to be able to send a message to the looter saying that they can&#039;t loot that person or whatever.<br />
+<br />
+I&#039;m using C# btw.<br />
+<br />
+Thanks,<br />
+PsychoTea
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 15, 2015 at 2:09 PM">Nov 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/143971/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-143986" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<a href="http://docs.oxidemod.org/rust/#canlootplayer" target="_blank" class="externalLink  rel="nofollow">Oxide API for Rust</a> (click it)
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-143986" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 15, 2015 at 3:34 PM">Nov 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-143986" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/143986/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-144001" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Or look at my NoSleepers or LootProtection plugins.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-144001" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 15, 2015 at 5:13 PM">Nov 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-144001" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/144001/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-144040" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Thanks!<br />
+[DOUBLEPOST=1447618045][/DOUBLEPOST]Ah. I have a problem. CanLootPlayer is for sleeping players, I need it for dead players&#039; bodies. If there is a way to remove certain players&#039; bodies when they die that would be even better.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-144040" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 15, 2015 at 7:51 PM">Nov 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-144040" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/144040/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-144051" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=144040#post-144040" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Thanks!<br />
+[DOUBLEPOST=1447618045][/DOUBLEPOST]Ah. I have a problem. CanLootPlayer is for sleeping players, I need it for dead players&#039; bodies. If there is a way to remove certain players&#039; bodies when they die that would be even better.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+void OnPlayerLoot(PlayerLoot inventory, BaseEntity target)
+{
+Puts(&quot;OnPlayerLoot works!&quot;);
+}</pre>
+</div>There are 3OnPlayerLoot hooks you can check the others too if you want.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-144051" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 15, 2015 at 8:41 PM">Nov 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-144051" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/144051/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-144199" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PaiN">
+	<aside>
+		
+			<div class="attribution type">PaiN said:
+				
+					<a href="goto/post?id=144051#post-144051" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+void OnPlayerLoot(PlayerLoot inventory, BaseEntity target)
+{
+Puts(&quot;OnPlayerLoot works!&quot;);
+}</pre>
+</div>There are 3OnPlayerLoot hooks you can check the others too if you want.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Thanks; how would I get the looter?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-144199" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 16, 2015 at 5:04 PM">Nov 16, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-144199" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/144199/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-144395" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=144199#post-144199" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Thanks; how would I get the looter?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Using PlayerLoot. Search around in that class using a decompiler and you&#039;ll find it.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-144395" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 17, 2015 at 5:02 PM">Nov 17, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-144395" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/144395/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-144416" class="message  staff " data-author="Calytic">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+<em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>(BasePlayer)inventory.entitySource</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-144416" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 17, 2015 at 8:36 PM">Nov 17, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-144416" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/144416/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146396" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Calytic">
+	<aside>
+		
+			<div class="attribution type">Calytic said:
+				
+					<a href="goto/post?id=144416#post-144416" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>(BasePlayer)inventory.entitySource</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Hmm. I&#039;m having a problem where it&#039;s saying &quot;Failed to call hook &#039;OnPlayerLoot&#039;...(InvalidCastException: Cannot cast from source type to destination type.)&quot;<br />
+Here&#039;s my code<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+void OnPlayerLoot(PlayerLoot inventory, BaseEntity target)
+        {
+            BasePlayer looter = (BasePlayer)inventory.entitySource;
+            if (storedData.playerClass[target.ToPlayer().userID] == &quot;god&quot;)
+            {
+                SendReply(looter, RAPrefix + &quot;You're not allowed to loot god class players!&quot; + RASuffix);
+                inventory.Clear();
+            }
+        }
+</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146396" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 3:26 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146396" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146396/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146401" class="message  staff " data-author="Calytic">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+<em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Try this instead<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>inventory.GetComponent&lt;BasePlayer&gt;()</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146401" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 4:09 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146401" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146401/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146444" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Calytic">
+	<aside>
+		
+			<div class="attribution type">Calytic said:
+				
+					<a href="goto/post?id=146401#post-146401" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Try this instead<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>inventory.GetComponent&lt;BasePlayer&gt;()</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Thanks! That works <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> Another problem tho, how would I get BasePlayer from BaseEntity?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146444" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 6:03 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146444" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146444/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146445" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=146444#post-146444" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Thanks! That works <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> Another problem tho, how would I get BasePlayer from BaseEntity?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>var player = BaseEntity as BasePlayer;
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146445" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 6:07 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146445" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146445/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146450" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=146445#post-146445" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">var player = BaseEntity as BasePlayer;</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I already tried that but it gives me an NRE :/
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146450" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 6:47 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146450" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146450/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146451" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=146450#post-146450" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I already tried that but it gives me an NRE :/</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>then that entity is not a player.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146451" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 6:50 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146451" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146451/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146453" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=146451#post-146451" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">then that entity is not a player.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>But it&#039;s happening right when I open a (dead) players body, could that be why? I just need the userID of the body being looted.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146453" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 6:56 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146453" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146453/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146454" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=146453#post-146453" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">But it&#039;s happening right when I open a (dead) players body, could that be why? I just need the userID of the body being looted.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+if (entity.GetComponent&lt;PlayerCorpse&gt;() != null)
+    Puts(entity.GetComponent&lt;PlayerCorpse&gt;().playerSteamID.ToString());</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146454" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 7:01 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146454" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146454/permalink">#16</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146472" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=146454#post-146454" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+if (entity.GetComponent&lt;PlayerCorpse&gt;() != null)
+    Puts(entity.GetComponent&lt;PlayerCorpse&gt;().playerSteamID.ToString());</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Awesome thanks. That&#039;s working. But I&#039;m confused as to how to close the inventory. I thought you&#039;d use inventory.Clear() but that&#039;s not working.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146472" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 9:37 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146472" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146472/permalink">#17</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146478" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=146472#post-146472" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Awesome thanks. That&#039;s working. But I&#039;m confused as to how to close the inventory. I thought you&#039;d use inventory.Clear() but that&#039;s not working.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>player.EndLooting()<br />
+Maybe you should take a look at the assembly before asking <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146478" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 9:50 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146478" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146478/permalink">#18</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146479" class="message   " data-author="PsychoTea">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PsychoTea</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=146478#post-146478" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">player.EndLooting()<br />
+Maybe you should take a look at the assembly before asking <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I had a look under PlayerLoot and Inventory but couldn&#039;t find anything <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> Must&#039;ve been looking in the wrong place. Thanks!
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146479" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 9:52 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146479" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146479/permalink">#19</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-146481" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+	<aside>
+		
+			<div class="attribution type">PsychoTea said:
+				
+					<a href="goto/post?id=146479#post-146479" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I had a look under PlayerLoot and Inventory but couldn&#039;t find anything <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> Must&#039;ve been looking in the wrong place. Thanks!</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>yes. BasePlayer.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="threads/stop-looting-of-other-players-c.12805/#post-146481" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 28, 2015 at 9:53 PM">Nov 28, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/stop-looting-of-other-players-c.12805/#post-146481" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/146481/permalink">#20</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+
+
+<div class="PageNav"
+	data-page="1"
+	data-range="2"
+	data-start="2"
+	data-end="2"
+	data-last="2"
+	data-sentinel="{{sentinel}}"
+	data-baseurl="threads/stop-looting-of-other-players-c.12805/page-{{sentinel}}">
+	
+	
+	<nav>
+		
+		
+		<a href="threads/stop-looting-of-other-players-c.12805/" class="currentPage " rel="start">1</a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="threads/stop-looting-of-other-players-c.12805/page-2" class="">2</a>
+		
+		
+			<a href="threads/stop-looting-of-other-players-c.12805/page-2" class="text">Next &gt;</a>
+			
+		
+	</nav>	
+	
+	
+</div>
+
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548538078,
+		today: 1548460800,
+		todayDow: 6
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2551 @@
+﻿<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+		<!--<base href="https://oxidemod.org/">-->
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Solved - Server wiping every restart (Rust bug) | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="..\..\css-77.css?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830">
+	<link rel="stylesheet" href="..\..\css-80.css?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830">
+	
+	
+
+	
+		<script src="..\..\js\jquery\jquery-1.11.0.min-2.js"></script>	
+		
+	<script src="..\..\js\xenforo\xenforo-2.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="196x196" href="..\..\styles\oxide\logo.og-2.png">
+<link rel="apple-touch-icon" href="..\..\styles\oxide\logo.og-2.png">
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="..\..\forums\-\index.xml">
+		
+	<link rel="next" href="page-2-2.html">
+	<link rel="canonical" href="index-3.html">
+	<meta name="description" content="Every server restart wipe map!">	<meta property="og:site_name" content="Oxide">
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png">
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://oxidemod.org/threads/server-wiping-every-restart-rust-bug.12034/">
+	<meta property="og:title" content="Solved - Server wiping every restart (Rust bug)">
+	<meta property="og:description" content="Every server restart wipe map!">
+	
+	
+	
+
+</head>
+
+<body class="node23 node1 node104 node106 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="..\..\index-4.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\index-4.html#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\categories\archive.104\index-2.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\categories\game-discussion.106\index-2.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\forums\rust-discussion.23\index-211.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<span class="prefix prefixGreen">Solved</span> <a href="index-3.html">Server wiping every restart (Rust bug)</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="..\..\forums\rust-discussion.23\index-211.html">Rust Discussion</a>' started by <a class="username" dir="auto">maksiyshuk</a>, <a href="index-3.html"><span class="DateTime" title="Oct 2, 2015 at 3:53 AM">Oct 2, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+
+
+<div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="4" data-last="5" data-sentinel="{{sentinel}}" data-baseurl="threads/server-wiping-every-restart-rust-bug.12034/page-{{sentinel}}">
+	
+	
+	<nav>
+		
+		
+		<a href="index-3.html" class="currentPage " rel="start">1</a>
+		
+		
+		
+		
+			<a href="page-2-2.html" class="">2</a>
+		
+			<a href="page-3-3.html" class="">3</a>
+		
+			<a href="page-4-2.html" class="">4</a>
+		
+		
+		
+		
+		<a href="page-5-2.html" class="">5</a>
+		
+		
+			<a href="page-2-2.html" class="text">Next &gt;</a>
+			
+		
+	</nav>	
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookiename="posts" data-controls="#InlineModControls" data-imodoptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-132916" class="message   " data-author="maksiyshuk">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="maksiyshuk"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">maksiyshuk</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Every server restart wipe map!
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">maksiyshuk</a>,</span>
+					<a href="index-3.html" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 3:53 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132916/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132917" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="..\..\members\wulf.1115\index.html" class="avatar Avm" data-avatarhtml="true"><img src="..\..\data\avatars\m\1\1115-2.jpeg?1523727962" width="96" height="96" alt="Wulf"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="..\..\members\wulf.1115\index.html" class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Rust&#039;s saving is broken right now, you&#039;ll need to wait for an update to fix it. In the mean time, don&#039;t restart.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="..\..\members\wulf.1115\index.html" class="username author" dir="auto">Wulf</a>,</span>
+					<a href="index-3.html#post-132917" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 4:09 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132917" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132917/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132923" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Deicide666ra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					if it&#039;s the saving thats the issue... might as well wait for the fix and not play... unless it&#039;s the load, your stuff will be lost anyway
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="index-3.html#post-132923" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 4:45 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132923" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132923/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132931" class="message   " data-author="Peeble">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Peeble"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Peeble</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=132917#post-132917" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Rust&#039;s saving is broken right now, you&#039;ll need to wait for an update to fix it. In the mean time, don&#039;t restart.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Is it confirmed that this is a saving issue, and not a loading issue?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Peeble</a>,</span>
+					<a href="index-3.html#post-132931" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 4:59 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132931" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132931/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132938" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="..\..\members\wulf.1115\index.html" class="avatar Avm" data-avatarhtml="true"><img src="..\..\data\avatars\m\1\1115-2.jpeg?1523727962" width="96" height="96" alt="Wulf"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="..\..\members\wulf.1115\index.html" class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Peeble">
+	<aside>
+		
+			<div class="attribution type">Peeble said:
+				
+					<a href="goto/post?id=132931#post-132931" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Is it confirmed that this is a saving issue, and not a loading issue?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Rust isn&#039;t saving the majority of the player data, etc, so it&#039;s a saving issue.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="..\..\members\wulf.1115\index.html" class="username author" dir="auto">Wulf</a>,</span>
+					<a href="index-3.html#post-132938" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 5:04 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132938" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132938/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132967" class="message   " data-author="redone">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="redone"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">redone</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Has this been fixed yet? Just had a server restart and lost all buildings. haha
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">redone</a>,</span>
+					<a href="index-3.html#post-132967" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 6:39 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132967" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132967/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132969" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Deicide666ra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Negative :|
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="index-3.html#post-132969" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 6:40 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132969" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132969/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132970" class="message   " data-author="redone">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="redone"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">redone</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					ah well. we sit and we wait.... <img src="..\..\styles\default\xenforo\clear-2.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D">
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">redone</a>,</span>
+					<a href="index-3.html#post-132970" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 6:50 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132970" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132970/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132973" class="message   " data-author="TheDoc">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="TheDoc"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">TheDoc</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					This blows, so even we get a patch, we will loose all of it as we try to update... F@@@@K!
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">TheDoc</a>,</span>
+					<a href="index-3.html#post-132973" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 7:13 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132973" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132973/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132974" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Deicide666ra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					they really need to get their shit together and test each patch for a week before going live... dev.. integration.. live.. they missing a layer...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="index-3.html#post-132974" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 7:14 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132974" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132974/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132979" class="message   " data-author="redone">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="redone"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">redone</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					haha yep. I&#039;ve taken both my servers down. No point.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">redone</a>,</span>
+					<a href="index-3.html#post-132979" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 7:29 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132979" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132979/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132980" class="message   " data-author="Xtadeus">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Xtadeus"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Xtadeus</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Rust saving is broken ?<br>
+<br>
+I understand it is for savegames then ( map wiping each time restart ) but what about the userpersistence.db ? Is it broken too or players kept their learned blueprints ?<br>
+<br>
+I would like to test but my server does not start lol ;-)
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Xtadeus</a>,</span>
+					<a href="index-3.html#post-132980" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 7:31 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132980" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132980/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132981" class="message   " data-author="ProfesorKush">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="ProfesorKush"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">ProfesorKush</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey would i need 2 update 2 fix this (of cource right xD)
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">ProfesorKush</a>,</span>
+					<a href="index-3.html#post-132981" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 7:32 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132981" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132981/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132984" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Deicide666ra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					i think its just the map itself.. but im not sure...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="index-3.html#post-132984" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 7:37 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132984" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132984/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132995" class="message   " data-author="Resistance">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Resistance"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Resistance</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Has anyone tried the Inventory-Guardian to save players?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+					<a href="index-3.html#post-132995" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 8:21 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132995" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132995/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-132998" class="message   " data-author="w4ssup">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="w4ssup"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">w4ssup</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I dont know what&#039;s going on, but my server is wiping everytime I restart the server... I have the server on auto save, but it&#039;s my server is still being wipe. What is going on?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">w4ssup</a>,</span>
+					<a href="index-3.html#post-132998" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 8:22 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-132998" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/132998/permalink">#16</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-133001" class="message   " data-author="Resistance">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Resistance"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Resistance</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Dont restart this problem has already been reported
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+					<a href="index-3.html#post-133001" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 8:23 AM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-133001" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/133001/permalink">#17</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-133061" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Deicide666ra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					The hell they didn&#039;t fix that yet?! Went to bed last night expecting a fix this morning.... Man............
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="index-3.html#post-133061" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 12:56 PM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-133061" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/133061/permalink">#18</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-133068" class="message   " data-author="Beefy">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Beefy"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Beefy</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I haven&#039;t tried out my server since the disaster last night. lol. Did the new patch fix any of these issues yet?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Beefy</a>,</span>
+					<a href="index-3.html#post-133068" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 1:07 PM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-133068" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/133068/permalink">#19</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-133069" class="message   " data-author="[Vie]Krozan">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="[Vie]Krozan"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">[Vie]Krozan</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					doenst look likes, it was only client side
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">[Vie]Krozan</a>,</span>
+					<a href="index-3.html#post-133069" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 2, 2015 at 1:18 PM">Oct 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-133069" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/133069/permalink">#20</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	<input type="hidden" name="_xfToken" value="">
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+
+
+<div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="4" data-last="5" data-sentinel="{{sentinel}}" data-baseurl="threads/server-wiping-every-restart-rust-bug.12034/page-{{sentinel}}">
+	
+	
+	<nav>
+		
+		
+		<a href="index-3.html" class="currentPage " rel="start">1</a>
+		
+		
+		
+		
+			<a href="page-2-2.html" class="">2</a>
+		
+			<a href="page-3-3.html" class="">3</a>
+		
+			<a href="page-4-2.html" class="">4</a>
+		
+		
+		
+		
+		<a href="page-5-2.html" class="">5</a>
+		
+		
+			<a href="page-2-2.html" class="text">Next &gt;</a>
+			
+		
+	</nav>	
+	
+	
+</div>
+
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="..\..\terms\index-2.html">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="..\..\index-4.html">
+				<span></span>
+				<img src="..\..\styles\oxide\logo-2.png" alt="Oxide">
+			</a></div>
+
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="..\..\index-4.html" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="..\..\downloads\index-3.html" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="..\..\plugins\index-3.html" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1550028215,
+		today: 1550016000,
+		todayDow: 3
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

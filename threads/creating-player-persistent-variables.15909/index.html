@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="https://oxidemod.org/" />
+    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+    <title>Creating player persistent variables | Oxide</title>
+    <noscript>
+        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+    </noscript>
+    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+    <script src="js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+    <link rel="canonical" href="https://oxidemod.org/threads/creating-player-persistent-variables.15909/" />
+    <meta name="description" content="I think i have a neat idea for a fairly simple mod, and i think i can butcher most of it from existing plugins that i have found, but i need to add a..." />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oxidemod.org/threads/creating-player-persistent-variables.15909/" />
+    <meta property="og:title" content="Creating player persistent variables" />
+    <meta property="og:description" content="I think i have a neat idea for a fairly simple mod, and i think i can butcher most of it from existing plugins that i have found, but i need to add a..." />
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="thread_view">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop ">
+                        <nav>
+                            <fieldset class="breadcrumb">
+                                <div class="boardTitle"><strong>Oxide</strong></div>
+                                <span class="crumbs">
+                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                </span>
+                            </fieldset>
+                        </nav>
+                    </div>
+                    <!-- h1 title, description -->
+                    <div class="titleBar">
+                        <h1>
+                            <a href="https://oxidemod.org/threads/creating-player-persistent-variables.15909/">Creating player persistent variables</a>
+                        </h1>
+                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">GGPedro</a>, <a
+                                href="threads/creating-player-persistent-variables.15909/"><span class="DateTime" title="Feb 19, 2016 at 6:36 PM">Feb 19, 2016</span></a>. </p>
+                    </div>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup SelectionCountContainer">
+                        </div>
+                    </div>
+                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
+                        <ol class="messageList" id="messageList">
+                            <li id="post-178709" class="message   " data-author="GGPedro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="GGPedro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">GGPedro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I think i have a neat idea for a fairly simple mod, and i think i can butcher most of it
+                                                from existing plugins that i have found, but i need to add a persistent Boolean to each player that i can then interact with. I have decompiled
+                                                Assembly-CSharp.dll as was suggested in another thread, but im still left fairly in the dark as to how to approach it. <br />
+                                                <br /> I would need to create a new sql column for my variable would i not? or would it get built automatically through the engine and just a simple
+                                                declaration with accessors be enough?<br />
+                                                <br /> Since its just a boolean i could add people to a group maybe, i am not 100% on how to do that either and it seems a bit of a hacky approach. Any
+                                                suggestions of where to go from here would be amazing. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">GGPedro</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 6:36 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/178709/permalink">#1</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-178710" class="message  staff " data-author="Wulf">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
+                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> You could store the player or their user ID along with the bool in a dictionary or
+                                                hashset, or even a datafile with Oxide if you&#039;d like. I don&#039;t think you&#039;d really need MySQL unless you plan on using that data with
+                                                something else externally as well. If you could explain a bit of what you are trying to do, then we may be able to provide more info. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/#post-178710" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 6:39 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/#post-178710" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/178710/permalink">#2</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-178791" class="message   " data-author="GGPedro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="GGPedro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">GGPedro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I wanted to make a highlander mod, If you have seen the film highlander (with Sean
+                                                Connery&#039;s superb Spanish accent) it should be easy to understand. Basically, in the film there are immortals who can only be killed by chopping of
+                                                their head. And there is some prophecy about the last one getting super powers etc etc.<br />
+                                                <br /> So i want the Boolean to represent whether you are an immortal or not, i imagine i will let people continue to play as normal people after they
+                                                lose their immortal status but it could also operate like a permadeath server too. but that option doesnt close if i add an immortal permastate so i
+                                                would still like to have one.<br />
+                                                <br /> It would be nice to have access to it on a webpage, then i can make a community page around it and people can easily see who is left without
+                                                having to make some crazy UI because i can do web much easier than Rust.<br />
+                                                <br /> It seems like a nice simple mod to start with, and an interesting little meta game to add into Rust <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">GGPedro</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/#post-178791" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 8:39 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/#post-178791" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/178791/permalink">#3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-178793" class="message  staff " data-author="Wulf">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
+                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="GGPedro">
+                                                    <aside>
+                                                        <div class="attribution type">GGPedro said: <a href="goto/post?id=178791#post-178791" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">I wanted to make a highlander mod, If you have seen the film highlander (with Sean Connery&#039;s superb Spanish accent)
+                                                                it should be easy to understand. Basically, in the film there are immortals who can only be killed by chopping of their head. And there
+                                                                is some prophecy about the last one getting super powers etc etc.<br />
+                                                                <br /> So i want the Boolean to represent whether you are an immortal or not, i imagine i will let people continue to play as normal
+                                                                people after they lose their immortal status but it could also operate like a permadeath server too. but that option doesnt close if i
+                                                                add an immortal permastate so i would still like to have one.<br />
+                                                                <br /> It would be nice to have access to it on a webpage, then i can make a community page around it and people can easily see who is
+                                                                left without having to make some crazy UI because i can do web much easier than Rust.<br />
+                                                                <br /> It seems like a nice simple mod to start with, and an interesting little meta game to add into Rust</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Yeah, you can handle that with one of the methods I suggested previously. The best way to make it persistent would be to store it to a datafile,
+                                                and then load that datafile when the server is started. There wouldn&#039;t be any way to decapitate a player though that I am aware of. <img src="styles/default/xenforo/clear.png"
+                                                    class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/#post-178793" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 8:42 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/#post-178793" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/178793/permalink">#4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-178798" class="message   " data-author="GGPedro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="GGPedro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">GGPedro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> haha no, but you can detect headshots and weapons though right? so death via headshot
+                                                from a slashing melee weapon? I mean, i dont think i will stick too close to the film, but the general idea is there - lose your special status under
+                                                abnormal death conditions.<br />
+                                                <br /> You mentioned Sql would only be needed if i wanted to interact with it via another program, does a website to display peoples status not count
+                                                for that?<br />
+                                                <br /> My plan currently is to butcher the Kill Feed plugin until i can get it to read out an immortal state and then go from there, sound like a good
+                                                way to go about it? Can you recommend any other plugins that might be good reading for what i am trying to do? <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">GGPedro</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/#post-178798" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 8:52 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/#post-178798" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/178798/permalink">#5</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-178803" class="message  staff " data-author="Wulf">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
+                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="GGPedro">
+                                                    <aside>
+                                                        <div class="attribution type">GGPedro said: <a href="goto/post?id=178798#post-178798" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">haha no, but you can detect headshots and weapons though right? so death via headshot from a slashing melee weapon? I
+                                                                mean, i dont think i will stick too close to the film, but the general idea is there - lose your special status under abnormal death
+                                                                conditions.<br />
+                                                                <br /> You mentioned Sql would only be needed if i wanted to interact with it via another program, does a website to display peoples
+                                                                status not count for that?<br />
+                                                                <br /> My plan currently is to butcher the Kill Feed plugin until i can get it to read out an immortal state and then go from there,
+                                                                sound like a good way to go about it? Can you recommend any other plugins that might be good reading for what i am trying to do?</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Yeah, MySQL would be a good option for that. There aren&#039;t many plugins that utilize it, as most of the time it&#039;s overkill for internal
+                                                use. You may try ZLevels Remaster, as it uses MySQL and such. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/#post-178803" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 8:59 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/#post-178803" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/178803/permalink">#6</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-178811" class="message   " data-author="GGPedro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="GGPedro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">GGPedro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thanks, I am going to spend some time trying to understand these plugins and mess with
+                                                them, i will probably be back. Lets hope my questions wont be too stupid. <br />
+                                                <br /> Thanks again. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">GGPedro</a>,</span>
+                                                <a href="threads/creating-player-persistent-variables.15909/#post-178811" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 19, 2016 at 9:10 PM">Feb
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-player-persistent-variables.15909/#post-178811" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/178811/permalink">#7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </form>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup">
+                        </div>
+                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+                    </div>
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent">
+                            </div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div id="header">
+            <div class="headerWidth">
+                <div id="logoBlock">
+                    <div id="logo"><a href="https://oxidemod.org/">
+                            <span></span>
+                            <img src="styles/oxide/logo.png" alt="Oxide" />
+                        </a></div>
+                    <span class="helper"></span>
+                </div>
+                <div id="navigation" class="">
+                    <div class="pageContent">
+                        <nav>
+                            <div class="navTabs">
+                                <ul class="publicTabs">
+                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+                                    </li>
+                                    <li class="navTab PopupClosed">
+                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+                                    </li>
+                                    <li class="navTab selected">
+                                        <div class="tabLinks"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="helper"></span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548963895,
+                today: 1548892800,
+                todayDow: 4
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "thread_view": true,
+                "message": true,
+                "bb_code": true,
+                "message_user_info": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "ih_xfid_"
+            },
+            _csrfToken: "",
+            _csrfRefreshUrl: "login/csrf-token-refresh",
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+
+    </script>
+</body>
+
+</html>

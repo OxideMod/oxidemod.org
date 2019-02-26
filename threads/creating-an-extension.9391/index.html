@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="https://oxidemod.org/" />
+    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+    <title>Creating an Extension | Oxide</title>
+    <noscript>
+        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+    </noscript>
+    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+    <script src="js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+    <link rel="canonical" href="https://oxidemod.org/threads/creating-an-extension.9391/" />
+    <meta name="description" content="So I am currently having issues creating an Oxide Extension for my Rust UI. I could not find any documentation on creating an extension so I have been..." />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oxidemod.org/threads/creating-an-extension.9391/" />
+    <meta property="og:title" content="Creating an Extension" />
+    <meta property="og:description" content="So I am currently having issues creating an Oxide Extension for my Rust UI. I could not find any documentation on creating an extension so I have been..." />
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="thread_view">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop ">
+                        <nav>
+                            <fieldset class="breadcrumb">
+                                <div class="boardTitle"><strong>Oxide</strong></div>
+                                <span class="crumbs">
+                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                </span>
+                            </fieldset>
+                        </nav>
+                    </div>
+                    <!-- h1 title, description -->
+                    <div class="titleBar">
+                        <h1>
+                            <a href="https://oxidemod.org/threads/creating-an-extension.9391/">Creating an Extension</a>
+                        </h1>
+                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Zuen</a>, <a href="threads/creating-an-extension.9391/"><span
+                                    class="DateTime" title="Jun 13, 2015 at 12:08 AM">Jun 13, 2015</span></a>. </p>
+                    </div>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup SelectionCountContainer">
+                        </div>
+                    </div>
+                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
+                        <ol class="messageList" id="messageList">
+                            <li id="post-98642" class="message   " data-author="Zuen">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zuen" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Zuen</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So I am currently having issues creating an Oxide Extension for my Rust UI. I could not
+                                                find any documentation on creating an extension so I have been using the Rust extension and RustIO but for some reason I still can not manage to get
+                                                mine to work.<br />
+                                                <br /> Can I perhaps ask for one of the developers to help me out on this issue? Some general direction of where I should look or giving me a crash
+                                                course on creating an extension.<br />
+                                                <br /> I am really trying to aim at creating the best possible UI system for rust so that other Plugin Developers can use this extension. This
+                                                extension gives you the full flexibility on creating a UI in the most simplest way possible. If this kicks off, I&#039;m hoping that it could become
+                                                part of the main Rust extension.<br />
+                                                <br /> Not only does this extension simplify the UI but it also checks to make sure no UI elements are out of the screen view.<br />
+                                                <br /> [EDIT] One of the main future features to add is a time based system so you can send a UI to a selected player or players and after a time
+                                                period it will be destroyed from the client. It&#039;s a good way to create some notification system. But of course I first have to get this extension
+                                                to work before I can implement that kind of a feature. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Zuen</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 12:08 AM">Jun 13,
+                                                        2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98642/permalink">#1</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-98657" class="message   " data-author="Hatemail">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hatemail" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Hatemail</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Whats the problem you are having? It is pretty simple to follow the <a href="https://github.com/OxideMod/Oxide/tree/master/Oxide.Ext.MySql"
+                                                    target="_blank" class="externalLink  rel=" nofollow">https://github.com/OxideMod/Oxide/tree/master/Oxide.Ext.MySql</a> and <a href="https://github.com/OxideMod/Oxide/tree/master/Oxide.Ext.SQLite"
+                                                    target="_blank" class="externalLink  rel=" nofollow">https://github.com/OxideMod/Oxide/tree/master/Oxide.Ext.SQLite</a> extensions code wise.<br />
+                                                This should then be pretty simple to modify for your new UI extension. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-98657" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 12:57 AM">Jun
+                                                        13, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-98657" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98657/permalink">#2</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-98663" class="message   " data-author="Zuen">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zuen" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Zuen</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> [EDIT] Okay so I have the extension loading in properly but now I have one issue... the
+                                                plugin is not allowing my using statement &quot;using Oxide.Ext.RustUI&quot;<br />
+                                                <br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>
+using Oxide.Core;
+using Oxide.Core.Extensions;
+
+namespace Oxide.Ext.RustUI
+{
+    public class RustUIExtension : Extension
+    {
+        public RustUIExtension(ExtensionManager manager)
+            : base(manager)
+        {
+        }
+
+        public override string Name { get { return &quot;RustUI&quot;; } }
+
+        public override VersionNumber Version { get { return new VersionNumber(1, 0, OxideMod.Version.Patch); } }
+
+        public override string Author { get { return &quot;Zuen Studio&quot;; } }
+
+        public override void Load()
+        {
+            Manager.RegisterLibrary(&quot;RustUI&quot;, new Libraries.RustUI());
+        }
+
+        public override void LoadPluginWatchers(string plugindir)
+        {  
+        }
+
+        public override void OnModLoad()
+        {
+        }
+    }
+}
+</pre>
+                                                </div>Logs<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>3:40 AM [Warning] Replaced obsolete game extension using directive 'Oxide.Ext.RustUI' in plugin 'RustUITest'
+3:40 AM [Error] RustUITest plugin failed to compile!
+3:40 AM [Error] RustUITest.cs(13,17): error CS0246: The type or namespace name `WindowUI' could not be found. Are you missing an assembly reference?</pre>
+                                                </div>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jun 13, 2015 at 2:44 AM">Jun 13, 2015</span>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Zuen</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-98663" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 1:17 AM">Jun
+                                                        13, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-98663" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98663/permalink">#3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-98710" class="message   " data-author="Hatemail">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hatemail" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Hatemail</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So you have both the magic reference and the using directive at the top of your plugin?<br />
+                                                //Reference: Oxide.Ext.RustUI<br /> using Oxide.Ext.RustUI <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-98710" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 4:38 AM">Jun
+                                                        13, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-98710" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98710/permalink">#4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-98770" class="message   " data-author="Zuen">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zuen" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Zuen</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I did not have the Magic reference but did add it with no change.<br />
+                                                <br /> Oxide Logs<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>11:16 AM [Info] Loading Oxide core v2.0.1047...
+11:16 AM [Info] Loading extensions...
+11:16 AM [Info] Loaded extension CSharp v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension JavaScript v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension Lua v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension MySql v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension Python v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension RustUI v1.0.1047 by Zuen Studio
+11:16 AM [Info] Loaded extension SQLite v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension Unity v1.0.1047 by Oxide Team
+11:16 AM [Info] Loaded extension Rust v1.0.1047 by Oxide Team
+11:16 AM [Info] Loading plugins...
+11:16 AM [Info] Loaded plugin Unity Core v1.0.0 by Oxide Team
+11:16 AM [Info] Loaded plugin Rust Core v1.0.0 by Oxide Team
+11:16 AM [Warning] Ignored obsolete game extension reference 'Oxide.Ext.RustUI' in plugin 'RustUITest'
+11:16 AM [Warning] Replaced obsolete game extension using directive 'Oxide.Ext.RustUI' in plugin 'RustUITest'
+11:16 AM [Error] RustUITest plugin failed to compile!
+11:16 AM [Error] RustUITest.cs(14,17): error CS0246: The type or namespace name `WindowUI' could not be found. Are you missing an assembly reference?
+</pre>
+                                                </div><br /> Oxide Compile Log<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>[SERVER] Started as service
+[SERVER] Running as service
+[SERVER] Got Message: Ready
+[SERVER] Got Message: Compile
+[SERVER] Console: RustUITest.cs(5,18): error CS0234: The type or namespace name `RustUI' does not exist in the namespace `Oxide.Game'. Are you missing an assembly reference?
+RustUITest.cs(12,26): error CS0246: The type or namespace name `Ext' could not be found. Are you missing an assembly reference?
+RustUITest.cs(14,17): error CS0246: The type or namespace name `WindowUI' could not be found. Are you missing an assembly reference?
+</pre>
+                                                </div><br /> Plugin Code<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>//Reference: Oxide.Ext.RustUI
+using System;
+
+using Oxide.Core;
+using Oxide.Ext.RustUI;
+
+namespace Oxide.Plugins
+{
+    [Info(&quot;Rust UI Test&quot;, &quot;ZuenTheMan&quot;, &quot;0.0.1&quot;)]
+    class RustUITest : RustPlugin
+    {
+        private readonly Ext.RustUI.Libraries.RustUI _rustUI = Interface.GetMod().GetLibrary&lt;Ext.RustUI.Libraries.RustUI&gt;();
+
+        private WindowUI testWindow;
+
+        [ChatCommand(&quot;uic&quot;)]
+        void cmdUIClose(BasePlayer player, string command, string[] args)
+        {
+            testWindow.Destroy(player);
+        }
+
+        [ChatCommand(&quot;ui&quot;)]
+        void cmdUIOpen(BasePlayer player, string command, string[] args)
+        {
+            try
+            {
+                testWindow.SendToPlayer(player);
+            }
+            catch (Exception ex)
+            {
+                SendReply(player, ex.Message);
+            }
+        }
+
+        void Loaded()
+        {
+            testWindow = _rustUI.CreateNewWindow(&quot;TestingUI&quot;, true, new Image(new Grid(GridType.Small), new ColorData(&quot;0.1&quot;, &quot;0.1&quot;, &quot;0.1&quot;, &quot;0.5&quot;)));
+            testWindow.NewControl(&quot;button_01&quot;, new Button(new Grid(new PositionData(1, 1, 1, 1), GridType.Small), new ColorData(&quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;0.5&quot;), new ButtonData(&quot;cmd&quot;, &quot;TestingUI&quot;), new TextData(&quot;Click Me&quot;)));
+        }
+    }
+}</pre>
+                                                </div>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Zuen</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-98770" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 10:13 AM">Jun
+                                                        13, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-98770" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98770/permalink">#5</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-98918" class="message   " data-author="Hatemail">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hatemail" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Hatemail</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Make sure IsGameExtension returns false. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-98918" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 7:24 PM">Jun
+                                                        13, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-98918" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98918/permalink">#6</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-99137" class="message   " data-author="Zuen">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zuen" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Zuen</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Still not working... and I thought you said this would be easy to follow... MySQL and
+                                                SQLite doesn&#039;t even have any &quot;IsGameExtension&quot; reference in the code. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Zuen</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-99137" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 14, 2015 at 11:07 AM">Jun
+                                                        14, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-99137" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/99137/permalink">#7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-99138" class="message   " data-author="Hatemail">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hatemail" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Hatemail</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> If you pm&#039;d me your extension code I could take a look. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+                                                <a href="threads/creating-an-extension.9391/#post-99138" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 14, 2015 at 11:10 AM">Jun
+                                                        14, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/creating-an-extension.9391/#post-99138" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/99138/permalink">#8</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </form>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup">
+                        </div>
+                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+                    </div>
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent">
+                            </div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div id="header">
+            <div class="headerWidth">
+                <div id="logoBlock">
+                    <div id="logo"><a href="https://oxidemod.org/">
+                            <span></span>
+                            <img src="styles/oxide/logo.png" alt="Oxide" />
+                        </a></div>
+                    <span class="helper"></span>
+                </div>
+                <div id="navigation" class="">
+                    <div class="pageContent">
+                        <nav>
+                            <div class="navTabs">
+                                <ul class="publicTabs">
+                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+                                    </li>
+                                    <li class="navTab PopupClosed">
+                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+                                    </li>
+                                    <li class="navTab selected">
+                                        <div class="tabLinks"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="helper"></span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548599377,
+                today: 1548547200,
+                todayDow: 0
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "thread_view": true,
+                "message": true,
+                "bb_code": true,
+                "message_user_info": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "ih_xfid_"
+            },
+            _csrfToken: "",
+            _csrfRefreshUrl: "login/csrf-token-refresh",
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Solved - Python and SendHelpText hook? | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/python-and-sendhelptext-hook.14868/" />
+	<meta name="description" content="Hi EveryBody,
+
+Is there a way to handle a CallHook on python plugin ? I have put helptext plugin and i want to put &quot;SendHelpText&quot; hook on notifier.py...." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/python-and-sendhelptext-hook.14868/" />
+	<meta property="og:title" content="Solved - Python and SendHelpText hook?" />
+	<meta property="og:description" content="Hi EveryBody,
+
+Is there a way to handle a CallHook on python plugin ? I have put helptext plugin and i want to put &quot;SendHelpText&quot; hook on notifier.py...." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/python-and-sendhelptext-hook.14868/">Python and SendHelpText hook?</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">oLaNceLoTo</a>, <a href="threads/python-and-sendhelptext-hook.14868/"><span class="DateTime" title="Jan 21, 2016 at 12:00 AM">Jan 21, 2016</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-166276" class="message   " data-author="oLaNceLoTo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="oLaNceLoTo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">oLaNceLoTo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hi EveryBody,<br />
+<br />
+Is there a way to handle a CallHook on python plugin ? I have put helptext plugin and i want to put &quot;SendHelpText&quot; hook on notifier.py.<br />
+<br />
+I have put this on notifier.py :<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>def SendHelpText(self, player):
+        helptext = &quot;&lt;size=18&gt;Notifier&lt;/size&gt; by &lt;color=#ce422b&gt;SkinN&lt;/color&gt;\n&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/players&lt;/color&gt; - Displays number of players&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/online&lt;/color&gt; - Displays online players&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/admins&lt;/color&gt; - Displays online admins&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/plugins&lt;/color&gt; - Displays server plugins&quot;
+        #player.ChatMessage(helptext)
+        rust.SendChatMessage(player, helptext, None, '76561198235146288')</pre>
+</div>And the callhook on helptext.lua is :<br />
+        
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>plugins.CallHook(&quot;SendHelpText&quot;, util.TableToArray({player}))</pre>
+</div><br />
+But nothing append. How can i handle the CallHook send by helptext plugin ?<br />
+<br />
+Regards,<br />
+oLaNceLoTo
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">oLaNceLoTo</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 21, 2016 at 12:00 AM">Jan 21, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/166276/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-166333" class="message   " data-author="Mughisi">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mughisi</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					CallHook will simply call the specified hook with the specified arguments on every plugin that specifies the hook in its code, unregarding which language the plugin is written in. Make sure to check the console or log file that no errors have occured. I will run some tests myself when I get home from work.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-166333" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 21, 2016 at 6:51 AM">Jan 21, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-166333" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/166333/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-166635" class="message   " data-author="oLaNceLoTo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="oLaNceLoTo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">oLaNceLoTo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I am waiting for your answer impatiently xD
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">oLaNceLoTo</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-166635" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 21, 2016 at 9:44 PM">Jan 21, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-166635" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/166635/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-166694" class="message   " data-author="Mughisi">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mughisi</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					So I have just tested this by downloading the latest version of notifier and then fixing a few tiny things that prevented it from loading and then I added the SendHelpText function you mentioned before and it was working for me. Is it possible that Notifier is actually throwing an error and preventing the plugin from being loaded for you like it was for me? As that would explain why the helptext wouldn&#039;t be shown to the player when he/she uses the /help command.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-166694" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 21, 2016 at 10:23 PM">Jan 21, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-166694" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/166694/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-166977" class="message   " data-author="oLaNceLoTo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="oLaNceLoTo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">oLaNceLoTo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					It&#039;s totally probable....I will check the log this evening. I Keep this post inform.<br />
+[DOUBLEPOST=1453493391,1453443104][/DOUBLEPOST]So no error or warning on the log when i type the command or before.....<br />
+[DOUBLEPOST=1453546603][/DOUBLEPOST]Is this code correct <br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre> rust.SendChatMessage(player, helptext, None, '76561198235146288')</pre>
+</div>For sending help txt to the player ?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">oLaNceLoTo</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-166977" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 10:56 AM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-166977" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/166977/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-167546" class="message   " data-author="Mughisi">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mughisi</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="oLaNceLoTo">
+	<aside>
+		
+			<div class="attribution type">oLaNceLoTo said:
+				
+					<a href="goto/post?id=166977#post-166977" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">It&#039;s totally probable....I will check the log this evening. I Keep this post inform.<br />
+[DOUBLEPOST=1453493391,1453443104][/DOUBLEPOST]So no error or warning on the log when i type the command or before.....<br />
+[DOUBLEPOST=1453546603][/DOUBLEPOST]Is this code correct<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre> rust.SendChatMessage(player, helptext, None, '76561198235146288')</pre>
+</div>For sending help txt to the player ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I used your code to display the helptext. Is the notifier plugin actually loaded?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-167546" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 11:41 AM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-167546" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/167546/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-167565" class="message   " data-author="oLaNceLoTo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="oLaNceLoTo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">oLaNceLoTo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					yes /players /online and /admins works<br />
+[DOUBLEPOST=1453553052][/DOUBLEPOST]i ve tried to unload all plugins exept helptext and notifier and the same<br />
+[DOUBLEPOST=1453553150][/DOUBLEPOST]I ve download the latest notifier <br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>self.Title = 'Notifier'
+        self.Version = V(2, 18, 0)
+        self.Author = 'SkinN'
+        self.Description = 'Server administration tool with chat based notifications'
+        self.ResourceId = 797</pre>
+</div>[DOUBLEPOST=1453553924][/DOUBLEPOST]I just tried to do the next code :<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>import re
+import time
+import BasePlayer
+import ConVar.Server as sv
+import TOD_Sky
+import UnityEngine.Random as random
+from System import Action, Int32, String
+
+DEV = True
+LINE = '-' * 50
+DBNAME = 'notifier-countries_db'
+
+class notifier:
+    def __init__(self):
+
+        self.Title = 'Notifier'
+        self.Version = V(2, 18, 0)
+        self.Author = 'SkinN'
+        self.Description = 'Server administration tool with chat based notifications'
+        self.ResourceId = 797
+       
+
+    def SendHelpText(self, player):
+        helptext = &quot;&lt;size=18&gt;Notifier&lt;/size&gt; by &lt;color=#ce422b&gt;SkinN&lt;/color&gt;\n&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/players&lt;/color&gt; - Displays number of players&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/online&lt;/color&gt; - Displays online players&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/admins&lt;/color&gt; - Displays online admins&quot;
+        helptext += &quot;  &quot; + &quot;&lt;color=\&quot;#ffd479\&quot;&gt;/plugins&lt;/color&gt; - Displays server plugins&quot;
+        #player.ChatMessage(helptext)
+        rust.SendChatMessage(player, helptext, None, '76561198235146288')
+        #rust.SendChatMessage(player, msg, None, profile)
+       
+    </pre>
+</div>This is the notifier file and it&#039;s do not show help<br />
+[DOUBLEPOST=1453554000][/DOUBLEPOST]And this is the all helptext.lua :<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>PLUGIN.Title        = &quot;Helptext&quot;
+PLUGIN.Description  = &quot;Hooks into plugins to send helptext&quot;
+PLUGIN.Author       = &quot;#Domestos&quot;
+PLUGIN.Version      = V(1, 4, 0)
+PLUGIN.HasConfig    = true
+PLUGIN.ResourceID   = 676
+
+function PLUGIN:Init()
+    command.AddChatCommand(&quot;help&quot;, self.Object, &quot;cmdHelp&quot;)
+    self:LoadDefaultConfig()
+end
+
+function PLUGIN:LoadDefaultConfig()
+    self.Config.Settings = self.Config.Settings or {}
+    self.Config.Settings.UseCustomHelpText = self.Config.Settings.UseCustomHelpText or &quot;false&quot;
+    self.Config.Settings.AllowHelpTextFromOtherPlugins = self.Config.Settings.AllowHelpTextFromOtherPlugins or &quot;true&quot;
+    self.Config.CustomHelpText = self.Config.CustomHelpText or {
+       &quot;custom helptext&quot;,
+       &quot;custom helptext&quot;
+    }
+    self:SaveConfig()
+end
+
+function PLUGIN:cmdHelp(player)
+    if not player then return end
+    if self.Config.Settings.UseCustomHelpText == &quot;true&quot; then
+        for _, helptext in pairs(self.Config.CustomHelpText) do
+            rust.SendChatMessage(player, helptext)
+        end
+    end
+    if self.Config.Settings.AllowHelpTextFromOtherPlugins == &quot;true&quot; then
+        plugins.CallHook(&quot;SendHelpText&quot;, util.TableToArray({player}))
+    end
+end</pre>
+</div>[DOUBLEPOST=1453554019][/DOUBLEPOST]Im on the yesterday Oxide plugins and yesterday RustDedicated update<br />
+[DOUBLEPOST=1453554220][/DOUBLEPOST]if you are free to test this afternoon, comme to the server : rust.ohbordel.fr:28015 (F1 =&gt; connect rust.ohbordel.fr:28015 =&gt; Enter) Server web site : <a href="http://rust.ohbordel.fr" target="_blank" class="externalLink  rel="nofollow">Rust - OhBordel !</a>  , server name : &quot;En Dev - Do not Join - [FR] RUST &amp; Bordel - Oh Bordel ! Fun and Repect Server&quot;
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">oLaNceLoTo</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-167565" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 12:43 PM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-167565" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/167565/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-167754" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					@<a href="http://oxidemod.org/members/olanceloto.100682/" class="internalLink">oLaNceLoTo</a>, let&#039;s keep the discussion here, since it doesn&#039;t directly relate to the other plugins as all it does it call a hook via Oxide, and since the discussion is already here. I tested with Notifier and HelpText and the portion of code you provided above, and it works fine as well.<br />
+<br />
+
+	
+	<img src="https://oxidemod.org/attachments/75933c6c26bb2c1a5bcb17588478b96c-png.16983/" alt="75933c6c26bb2c1a5bcb17588478b96c.png" class="bbCodeImage LbImage" />
+		
+ <br />
+<br />
+I&#039;ve attached the working version.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="notifier.py">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/notifier-py.16984/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/notifier-py.16984/" target="_blank">notifier.py</a></h6>
+						<dl><dt>File size:</dt> <dd>36.8 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>15</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited: <span class="DateTime" title="Jan 23, 2016 at 9:12 PM">Jan 23, 2016</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-167754" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 8:59 PM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-167754" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/167754/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-167773" class="message   " data-author="oLaNceLoTo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="oLaNceLoTo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">oLaNceLoTo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Even if you beleive I m&#039; a noob or something else i dont care, you gave me a valid file that work and with this solution I have found that my file had contain space and not tabulation for python..... It&#039;s why it didn&#039;t work.....<br />
+<br />
+And for keeping the face before finding, i have download notifier from here (Oxide plugin), then i have copy/pase the method SendHelpText from YOUR file, and it has not work.... I have so use notepad++, &quot;transform space to tabulation&quot; and it has work.....<br />
+<br />
+So the problem is come from, notepad++, my NTFS disk, my chrome brower or because i m on tse to my server.......
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">oLaNceLoTo</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-167773" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 10:21 PM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-167773" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/167773/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-167778" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="oLaNceLoTo">
+	<aside>
+		
+			<div class="attribution type">oLaNceLoTo said:
+				
+					<a href="goto/post?id=167773#post-167773" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Even if you beleive I m&#039; a noob or something else i dont care, you gave me a valid file that work and with this solution I have found that my file had contain space and not tabulation for python..... It&#039;s why it didn&#039;t work.....<br />
+<br />
+And for keeping the face before finding, i have download notifier from here (Oxide plugin), then i have copy/pase the method SendHelpText from YOUR file, and it has not work.... I have so use notepad++, &quot;transform space to tabulation&quot; and it has work.....<br />
+<br />
+So the problem is come from, notepad++, my NTFS disk, my chrome brower or because i m on tse to my server.......</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Nobody is calling you a noob or anything. Spacing is important though, especially with certain languages. Generally spaces should be used, not tabs.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-167778" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 10:28 PM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-167778" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/167778/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-167792" class="message   " data-author="oLaNceLoTo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="oLaNceLoTo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">oLaNceLoTo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Yes, i know it&#039;s my job i m now Responsible of a python web site...... I was never having this problem mainly that I do like every day.....<br />
+<br />
+But i work on a VM ubuntu with pycharm generally, i was here, on notepad++ and by Remote Desktop to add the method....<br />
+<br />
+Shortly, I hope it can help other people.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">oLaNceLoTo</a>,</span>
+					<a href="threads/python-and-sendhelptext-hook.14868/#post-167792" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 23, 2016 at 10:50 PM">Jan 23, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/python-and-sendhelptext-hook.14868/#post-167792" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/167792/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548597754,
+		today: 1548547200,
+		todayDow: 0
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

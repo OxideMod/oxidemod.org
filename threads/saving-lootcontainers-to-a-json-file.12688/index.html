@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Solved - Saving LootContainers to a JSON file? | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/saving-lootcontainers-to-a-json-file.12688/" />
+	<meta name="description" content="I am creating a mod called Tyranny. In the mod I am allowing taxation on the players. I wanted to save a crate specified by a player as the &quot;tax box.&quot;..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/saving-lootcontainers-to-a-json-file.12688/" />
+	<meta property="og:title" content="Solved - Saving LootContainers to a JSON file?" />
+	<meta property="og:description" content="I am creating a mod called Tyranny. In the mod I am allowing taxation on the players. I wanted to save a crate specified by a player as the &quot;tax box.&quot;..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/saving-lootcontainers-to-a-json-file.12688/">Saving LootContainers to a JSON file?</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Mythikos</a>, <a href="threads/saving-lootcontainers-to-a-json-file.12688/"><span class="DateTime" title="Nov 9, 2015 at 5:05 AM">Nov 9, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-142379" class="message   " data-author="Mythikos">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mythikos" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mythikos</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I am creating a mod called Tyranny. In the mod I am allowing taxation on the players. I wanted to save a crate specified by a player as the &quot;tax box.&quot; Is it possible to store a StorageContainer in a json file? Every time I did it I got an error saying there is a self referencing loop in Vector3.<br />
+<br />
+If it isnt possible to save a StorageContainer Object, can someone suggest another means perhaps saving the item?Any help or thoughts would be much appreciated. This is being coded in C#.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Nov 9, 2015 at 12:06 PM">Nov 9, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mythikos</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 9, 2015 at 5:05 AM">Nov 9, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142379/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-142389" class="message  staff " data-author="Calytic">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+<em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>DynamicConfigFile file = Interface.GetMod().DataFileSystem.GetDatafile(&quot;mydatafile&quot;);
+file.Settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142389" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 9, 2015 at 5:36 AM">Nov 9, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142389" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142389/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-142399" class="message   " data-author="Mythikos">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mythikos" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mythikos</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Calytic">
+	<aside>
+		
+			<div class="attribution type">Calytic said:
+				
+					<a href="goto/post?id=142389#post-142389" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>DynamicConfigFile file = Interface.GetMod().DataFileSystem.GetDatafile(&quot;mydatafile&quot;);
+file.Settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+DynamicConfigFile data = Interface.GetMod().DataFileSystem.GetDatafile(path);
+            data.Settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;</pre>
+</div>I added that too my dynamic file and this is still the output I get:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+[Oxide] 10:27 PM [Info] [Tyranny] Tyranny was unsuccessful unloaded/saved: Self referencing loop detected for property 'normalized' with type 'UnityEngine.Vector3'. Path 'KingData.TaxBox.dropPosition.normalized.normalized'.  at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference (Newtonsoft.Json.JsonWriter writer, System.Object value, Newtonsoft.Json.Serialization.JsonProperty property, Newtonsoft.Json.Serialization.JsonContract contract, Newtonsoft.Json.Serialization.JsonContainerContract containerContract, Newtonsoft.Json.Serialization.JsonProperty containerProperty) [0x00000] in &lt;filename unknown&gt;:0 
+  at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues (Newtonsoft.Json.JsonWriter writer, System.Object value, Newtonsoft.Json.Serialization.JsonContainerContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonProperty property, Newtonsoft.Json.Serialization.JsonContract&amp; memberContract, System.Object&amp; memberValue) [0x00000] in &lt;filename unknown&gt;:0 
+  at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject (Newtonsoft.Json.JsonWriter writer, System.Object value, Newtonsoft.Json.Serialization.JsonObjectContract contract, Newtonsoft.Json.Serialization.JsonProperty member, Newtonsoft.Json.Serialization.JsonContainerContract collectionContract, Newtonsoft.Json.Serialization.JsonProperty containerProperty) [0x00000] in &lt;filename unknown&gt;:0 
+</pre>
+</div>[DOUBLEPOST=1447070523,1447050284][/DOUBLEPOST]In the event someone might know whats going on, Ill go ahead and provide my data writing method as well.<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+         void WriteKingData(string path)
+        {
+            DynamicConfigFile data = Interface.GetMod().DataFileSystem.GetDatafile(path);
+            data.Settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+
+            Dictionary&lt;string, object&gt; profileData = new Dictionary&lt;string, object&gt;();
+
+            KingClass kData = King;
+            profileData.Add(&quot;KingID&quot;, kData.ID);
+            profileData.Add(&quot;KingName&quot;, kData.Name);
+            profileData.Add(&quot;RealmName&quot;, kData.Realm);
+            profileData.Add(&quot;TaxPercent&quot;, kData.Tax);
+            profileData.Add(&quot;TaxBox&quot;, kData.TaxBox); // This is what is failing
+
+            data[&quot;KingData&quot;] = profileData;
+
+            Interface.GetMod().DataFileSystem.SaveDatafile(path);
+        }
+</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mythikos</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142399" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 9, 2015 at 12:02 PM">Nov 9, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142399" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142399/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-142487" class="message  staff " data-author="Calytic">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+<em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					You&#039;re not using the DynamicConfigFile that has ReferenceLoopHandling.Ignore.    You can probably set it on the main datafilesystem but I don&#039;t have any reference code for that.<br />
+<br />
+To write the data you need something like..<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+data.WriteObject&lt;Dictionary&lt;string, object&gt;&gt;(profileData);
+</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142487" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 9, 2015 at 3:54 PM">Nov 9, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142487" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142487/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-142651" class="message   " data-author="Mythikos">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mythikos" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mythikos</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Calytic">
+	<aside>
+		
+			<div class="attribution type">Calytic said:
+				
+					<a href="goto/post?id=142487#post-142487" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You&#039;re not using the DynamicConfigFile that has ReferenceLoopHandling.Ignore.    You can probably set it on the main datafilesystem but I don&#039;t have any reference code for that.<br />
+<br />
+To write the data you need something like..<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+data.WriteObject&lt;Dictionary&lt;string, object&gt;&gt;(profileData);
+</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Would I just use the that line of code over Interface.GetMod().DataFileSystem.SaveDataFile(path);?<br />
+[DOUBLEPOST=1447147356,1447111150][/DOUBLEPOST]I literally spent the entire day trying to do this. I tried changing the entire system to use <br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+data.ReadObject&lt;Dictionary&lt;string, object&gt;&gt;(profileData);
+data.WriteObject&lt;Dictionary&lt;string, object&gt;&gt;(profileData);
+</pre>
+</div>I tried modifying my original system and modifying it like<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+DynamicConfigFile data =Interface.GetMod().DataFileSystem.GetDatafile(path);
+Interface.GetMod().DataFileSystem.SaveDatafile(path);
+</pre>
+</div>I can not get a system working that saves StorageContainers. Can someone please help me or perhaps provide some example code? Ive scanned  the plugins for rust experimental and I couldn&#039;t find one that saves StorageContainers. I am at a total loss, any help would be very much appreciated.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mythikos</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142651" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 10, 2015 at 9:22 AM">Nov 10, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142651" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142651/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-142736" class="message  staff " data-author="Calytic">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+<em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Alright well, you cant save storage containers in oxide data files.  In-game entities are only reliably saved in the worldsave file.  Look at my mod EntityOwner.  I create a reference list keyed by a unique ID for entities based on their position (GetEntityID)<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>public static string GetEntityID(BaseEntity entity)
+{
+    Vector3 position = entity.transform.position;
+    return &quot;x&quot; + position.x + &quot;y&quot; + position.y + &quot;z&quot; + position.z;
+}</pre>
+</div>This unique ID is then used in conjunction with the userID of the player to determine who owns the box (or any entity).  You don&#039;t really need to be storing the Vector3 or StorageContainer instance itself.  You just need to know its position.  Then, anytime anyone interacts with any box, you check it against your reference list to see if it one of your &quot;special&quot; boxes and do something different with it.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142736" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 10, 2015 at 11:01 AM">Nov 10, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142736" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142736/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-142973" class="message   " data-author="Mythikos">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mythikos" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mythikos</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I took your advice <a href="https://oxidemod.org/members/58712/" class="username" data-user="58712, @Calytic">@Calytic</a> and I got it mostly working.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Nov 13, 2015 at 7:19 AM">Nov 13, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mythikos</a>,</span>
+					<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142973" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 7:05 AM">Nov 11, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/saving-lootcontainers-to-a-json-file.12688/#post-142973" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/142973/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548598422,
+		today: 1548547200,
+		todayDow: 0
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

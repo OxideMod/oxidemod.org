@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Memory leak (RustDedicated using 4.6gb of Ram) | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/" />
+	<meta name="description" content="Wulf please help me solve this riddle!
+
+[img]
+
+[img]
+
+My server currently has 37 plugins.
+150k entities on the map." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/" />
+	<meta property="og:title" content="Memory leak (RustDedicated using 4.6gb of Ram)" />
+	<meta property="og:description" content="Wulf please help me solve this riddle!
+
+[img]
+
+[img]
+
+My server currently has 37 plugins.
+150k entities on the map." />
+	
+	
+	
+
+</head>
+
+<body class="node23 node1 node104 node106 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/">Memory leak (RustDedicated using 4.6gb of Ram)</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">Ray Meres</a>, <a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/"><span class="DateTime" title="May 5, 2015 at 3:02 AM">May 5, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-85517" class="message   " data-author="Ray Meres">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ray Meres" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Ray Meres</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Wulf please help me solve this riddle!<br />
+<br />
+<img src="proxy.php?image=http%3A%2F%2Fi.imgur.com%2Fu3PNtR5.png&amp;hash=5d1a1b09f1efa1a74c1f4c094c660715" class="bbCodeImage LbImage" alt="[&#x200B;IMG]" data-url="http://i.imgur.com/u3PNtR5.png" /><br />
+<br />
+<img src="proxy.php?image=http%3A%2F%2Fi.imgur.com%2FfjU35Er.png&amp;hash=a3233ceec50c16089b4f0292f2442e78" class="bbCodeImage LbImage" alt="[&#x200B;IMG]" data-url="http://i.imgur.com/fjU35Er.png" /><br />
+<br />
+My server currently has 37 plugins.<br />
+150k entities on the map.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Ray Meres</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 3:02 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85517/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85522" class="message   " data-author="seanterris">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="seanterris" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">seanterris</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					what makes you think it&#039;s a memory leak? does it get worse with time? do you have any errors in logs? does it depend on number of players in game?<br />
+<br />
+do you have a test server you could try few things on? if yes:<br />
+copy your server profile on the test server<br />
+rename plugins directory to something temporary<br />
+note the memory usage<br />
+rename plugins directory back to &quot;plugins&quot;<br />
+note the memory usage<br />
+give it some time, at least one day/night in-game cycle<br />
+fly around the map, spawn a lot of bears and hunt them with c4, invite some friends over. try to run most of the commands you have in your plugins. keep an eye on the memory usage. if you see rapid increases note what you did just before them.<br />
+if the memory usage stays high but stable (or increases in reasonable speed), chances are it&#039;s not a leak and that is what heavily modded, heavily used rust server needs.<br />
+if the memory usage however keeps climbing even if you doesn&#039;t do anything, it might be a leak. somewhere objects are being created in memory and not disposed properly after we don&#039;t need them anymore. if that&#039;s the case:<br />
+in your console, use oxide.Unload on every single plugin. keep an eye on the memory usage while you do it. if you are lucky, the memory usage will stop raising when you unload one of them. this would probably be your culprit.<br />
+if you don&#039;t see anything obvious, restart your rust server and keep adding plugins one by one, every time playing on the map a little bit and playing with the plugin too if possible. keep an eye on that memory. hopefully you would find the trouble maker that way<br />
+<br />
+this is a mundane thing to do but it might be necessary unfortunately.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">seanterris</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85522" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 4:36 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85522" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85522/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85531" class="message   " data-author="Ray Meres">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ray Meres" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Ray Meres</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="seanterris">
+	<aside>
+		
+			<div class="attribution type">seanterris said:
+				
+					<a href="goto/post?id=85522#post-85522" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">what makes you think it&#039;s a memory leak? does it get worse with time? do you have any errors in logs? does it depend on number of players in game?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Definitely a memory leak. I don&#039;t have a test server.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Ray Meres</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85531" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 6:00 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85531" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85531/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85533" class="message   " data-author="seanterris">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="seanterris" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">seanterris</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Ray Meres">
+	<aside>
+		
+			<div class="attribution type">Ray Meres said:
+				
+					<a href="goto/post?id=85531#post-85531" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Definitely a memory leak.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div> You don&#039;t know that unless you check that. Unless you have some extra info you didn&#039;t provide.<br />
+If you doesn&#039;t have a test server you would have to do it on your live one. Backup everything and close the server for 6 hours when it&#039;s least populated.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">seanterris</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85533" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 6:16 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85533" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85533/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85537" class="message   " data-author="Ray Meres">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ray Meres" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Ray Meres</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="seanterris">
+	<aside>
+		
+			<div class="attribution type">seanterris said:
+				
+					<a href="goto/post?id=85533#post-85533" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You don&#039;t know that unless you check that. Unless you have some extra info you didn&#039;t provide.<br />
+If you doesn&#039;t have a test server you would have to do it on your live one. Backup everything and close the server for 6 hours when it&#039;s least populated.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Do you run a server?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Ray Meres</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85537" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 6:26 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85537" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85537/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85545" class="message   " data-author="seanterris">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="seanterris" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">seanterris</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					not a public one, no, we are preparing one. whatever you are hinting at though, those are the correct steps to debug an issue like this -.-. but instead you choose to refuse to provide any extra info, you expect someone to solve/find you a &quot;memory leak&quot; on a server that has to stay live based on a screenshot from windows task manager. you need a master debugger and a remote psychic in one. &quot;good luck with that, lol&quot;.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">seanterris</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85545" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 6:57 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85545" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85545/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85548" class="message   " data-author="Ray Meres">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ray Meres" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Ray Meres</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="seanterris">
+	<aside>
+		
+			<div class="attribution type">seanterris said:
+				
+					<a href="goto/post?id=85545#post-85545" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">not a public one, no, we are preparing one. whatever you are hinting at though, those are the correct steps to debug an issue like this -.-. but instead you choose to refuse to provide any extra info, you expect someone to solve/find you a &quot;memory leak&quot; on a server that has to stay live based on a screenshot from windows task manager. you need a master debugger and a remote psychic in one. &quot;good luck with that, lol&quot;.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Well I could tell you don&#039;t because if you did you would know that 4.6gb of RAM is far from normal. I just restarted the server and it went down to 2gb RAM. The only explanation for that is a memory leak of some kind. RAM usage seems to increase the longer the server session has been running.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Ray Meres</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85548" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 7:06 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85548" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85548/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-85560" class="message   " data-author="seanterris">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="seanterris" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">seanterris</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Ray Meres">
+	<aside>
+		
+			<div class="attribution type">Ray Meres said:
+				
+					<a href="goto/post?id=85548#post-85548" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Well I could tell you don&#039;t because if you did you would know that 4.6gb of RAM is far from normal. I just restarted the server and it went down to 2gb RAM. The only explanation for that is a memory leak of some kind. RAM usage seems to increase the longer the server session has been running.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Look, that doesn&#039;t really mean anything yet. I don&#039;t have an experience running a Big&amp;Successful rust server, but i done &#039;couple&#039; of years in systems&amp;networks penitentiary. what may seem like a memory leak doesn&#039;t necessarily have to be a memory leak. you don&#039;t know if facepunch hadn&#039;t change their caching mechanisms for the dedicated servers, maybe the server see that there is constantly the same amount of RAM available and steals a bit after a bit to avoid disk I/O operations. but even if it&#039;s not something like that:<br />
+<br />
+memory leak means that the program doesn&#039;t manage its memory correctly, as in forgets free up a memory regions it doesn&#039;t need anymore. that doesn&#039;t have to be a case here, maybe oxide and all the plugins would work perfectly normal when run separate. something in your setup may cause for example two plugins to call third plugins method too quickly one after another, and a logical switch somewhere gets flipped at the bad moment - and instead of two objects you get four. that doesn&#039;t really count as a memory leak since the software works as designed, you are just not executing it properly <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> bugs like this would be very hard (if not impossible) to find by reading logs or source code files, even by very experienced programmers. you need a running server to run tests on, trust me, i&#039;m trying to save you some wasted hours here. you can always try to get a free few days trial for a half-decent vps, or if you have to run RustDedicated.exe on your local machine.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">seanterris</a>,</span>
+					<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85560" title="Permalink" class="datePermalink"><span class="DateTime" title="May 5, 2015 at 8:00 AM">May 5, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leak-rustdedicated-using-4-6gb-of-ram.8197/#post-85560" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/85560/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548949955,
+		today: 1548892800,
+		todayDow: 4
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

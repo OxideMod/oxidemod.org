@@ -1,0 +1,2651 @@
+﻿<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+		<!--<base href="https://oxidemod.org/">-->
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Solved - What is garbage collection? | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="..\..\css-77.css?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830">
+	<link rel="stylesheet" href="..\..\css-89.css?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830">
+	
+	
+
+	
+		<script src="..\..\js\jquery\jquery-1.11.0.min-2.js"></script>	
+		
+	<script src="..\..\js\xenforo\xenforo-2.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="196x196" href="..\..\styles\oxide\logo.og-2.png">
+<link rel="apple-touch-icon" href="..\..\styles\oxide\logo.og-2.png">
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="..\..\forums\-\index.xml">
+		
+	<link rel="next" href="page-2-2.html">
+	<link rel="canonical" href="index-3.html">
+	<meta name="description" content="What exactly is a garbage collect? Occasionally when I look at my console, I notice that RustIO takes too long sometimes and next to it, it says...">	<meta property="og:site_name" content="Oxide">
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png">
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://oxidemod.org/threads/what-is-garbage-collection.18748/">
+	<meta property="og:title" content="Solved - What is garbage collection?">
+	<meta property="og:description" content="What exactly is a garbage collect? Occasionally when I look at my console, I notice that RustIO takes too long sometimes and next to it, it says...">
+	
+	
+	
+
+</head>
+
+<body class="node23 node1 node104 node106 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="..\..\index-4.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\index-4.html#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\categories\archive.104\index-2.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\categories\game-discussion.106\index-2.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\forums\rust-discussion.23\index-211.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<span class="prefix prefixGreen">Solved</span> <a href="index-3.html">What is garbage collection?</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="..\..\forums\rust-discussion.23\index-211.html">Rust Discussion</a>' started by <a class="username" dir="auto">Alpha Toon</a>, <a href="index-3.html"><span class="DateTime" title="Jun 15, 2016 at 5:23 AM">Jun 15, 2016</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+
+
+<div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="2" data-last="2" data-sentinel="{{sentinel}}" data-baseurl="threads/what-is-garbage-collection.18748/page-{{sentinel}}">
+	
+	
+	<nav>
+		
+		
+		<a href="index-3.html" class="currentPage " rel="start">1</a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="page-2-2.html" class="">2</a>
+		
+		
+			<a href="page-2-2.html" class="text">Next &gt;</a>
+			
+		
+	</nav>	
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookiename="posts" data-controls="#InlineModControls" data-imodoptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-215960" class="message   " data-author="Alpha Toon">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Alpha Toon"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Alpha Toon</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					What exactly is a garbage collect? Occasionally when I look at my console, I notice that RustIO takes too long sometimes and next to it, it says Garbage Collect.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Alpha Toon</a>,</span>
+					<a href="index-3.html" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 15, 2016 at 5:23 AM">Jun 15, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/215960/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-216002" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="..\..\members\wulf.1115\index.html" class="avatar Avm" data-avatarhtml="true"><img src="..\..\data\avatars\m\1\1115-2.jpeg?1523727962" width="96" height="96" alt="Wulf"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="..\..\members\wulf.1115\index.html" class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					See <a href="https://msdn.microsoft.com/en-us/library/ee787088(v=vs.110).aspx" target="_blank" class="externalLink">https://msdn.microsoft.com/en-us/library/ee787088(v=vs.110).aspx</a>.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="..\..\members\wulf.1115\index.html" class="username author" dir="auto">Wulf</a>,</span>
+					<a href="index-3.html#post-216002" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 15, 2016 at 12:30 PM">Jun 15, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-216002" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/216002/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-216005" class="message   " data-author="sqroot">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="sqroot"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">sqroot</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					A garbage collector looks for unused memory on the heap (dynamic memory) and frees it (tells the OS that this memory may be used again).<br>
+There are several different techniques for garbage collection.<br>
+The one used in Unity is a &quot;stop the world&quot; garbage collector.<br>
+Put simply, it tracks all references to dynamic memory and marks these memory areas as &quot;used&quot;. Next it traverses the dynamic memory and frees every memory area that isn&#039;t marked as &quot;used&quot;.<br>
+Applications may not write to memory while this is happening, because then memory might get added but not marked as &quot;used&quot;, resulting in used memory being freed.<br>
+To achieve this, the garbage collector &quot;stops the world&quot;, meaning the entire application halts until all unused memory has been freed.<br>
+This is what you&#039;re seeing in your console, and because Rust:IO uses OnTick, the chance that a garbage collection occurs while Rust:IO is running is relatively high, as opposed to plugins that are only run once every few thousand ticks because they were called by a user command or similar.<br>
+<br>
+Garbage collectors are used so that programmers do not manually have to manage dynamic memory. If they forget to free dynamic memory in some case, a memory leak occurs: The amount of memory needed by the application increases until eventually all memory is used up.<br>
+<br>
+In reality the entire thing is a bit more complicated. GCs use relatively complicated algorithms to reduce the pause time (guard routines, colors, generations, ...) as well or use an algorithm that doesn&#039;t pause at all, at the cost of more memory leaks being possible (reference counting for example).<br>
+<br>
+tl;dr: Nothing you have to worry about (unless you&#039;re using a VPS with distributed memory - this might greatly slow down garbage collection).
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+					<a href="index-3.html#post-216005" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 15, 2016 at 12:58 PM">Jun 15, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-216005" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/216005/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-354944" class="message   " data-author="NaJunHui">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="NaJunHui"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">NaJunHui</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					There are two problems<br>
+<br>
+1.  assets/bundled/prefabs/autospawn/resource/v2_temp_forest/pine-1.prefab (Spawnable) Population is null, entity spawned from outside the spawn handler?<br>
+<br>
+2. Calling &#039;CanBeTargeted&#039; on &#039;ZoneManager v2.4.3&#039; took 766ms [GARBAGE COLLECT]<br>
+[other plugin are the same]
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">NaJunHui</a>,</span>
+					<a href="index-3.html#post-354944" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 8, 2017 at 3:36 AM">Oct 8, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-354944" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354944/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-354945" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a href="..\..\members\wulf.1115\index.html" class="avatar Avm" data-avatarhtml="true"><img src="..\..\data\avatars\m\1\1115-2.jpeg?1523727962" width="96" height="96" alt="Wulf"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a href="..\..\members\wulf.1115\index.html" class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					That means that the plugin took longer with that hook call that normal due to garbage collection (cleanup) in Rust/Unity.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a href="..\..\members\wulf.1115\index.html" class="username author" dir="auto">Wulf</a>,</span>
+					<a href="index-3.html#post-354945" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 8, 2017 at 3:37 AM">Oct 8, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-354945" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354945/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-359235" class="message   " data-author="wazzzup">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="wazzzup"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">wazzzup</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					how knows why after october update the garbage collection is so often? it could happen many times per minute! And it&#039;s no matter on entities or player count with all old plugins
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">wazzzup</a>,</span>
+					<a href="index-3.html#post-359235" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 22, 2017 at 10:29 AM">Oct 22, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-359235" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/359235/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-359239" class="message   " data-author="Smabezo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Smabezo"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Smabezo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Same problem here, so often
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Smabezo</a>,</span>
+					<a href="index-3.html#post-359239" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 22, 2017 at 11:13 AM">Oct 22, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-359239" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/359239/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-359272" class="message   " data-author="wazzzup">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="wazzzup"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">wazzzup</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					graphics are from 20 sept till today<br>
+<b><a href="..\..\attachments\players_gc-jpg.41493\index-1.html" class="internalLink">players_gc.jpg</a></b> - graphic players (green) and garbage collections (blue) - as you can see, gc is trippled from 13 sept<br>
+<b><a href="..\..\attachments\entities-jpg.41492\index-1.html" class="internalLink">entities.jpg</a></b> - graphic entities count - stay at same level<br>
+can send full fps/net/players/entities and other data per each second
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment image" title="entities.jpg">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="..\..\attachments\entities-jpg.41492\entities-1.jpg" target="_blank" class="LbTrigger" data-href="misc/lightbox"><img src="..\..\data\attachments\41\41493-fb514b75a6918e8346f4a3f9c9bcadfa-1.jpeg" alt="entities.jpg" class="LbImage"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="..\..\attachments\entities-jpg.41492\entities-1.jpg" target="_blank">entities.jpg</a></h6>
+						<dl><dt>File size:</dt> <dd>123.5 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>76</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+			<li class="attachment image" title="players_gc.jpg">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="..\..\attachments\players_gc-jpg.41493\players_gc-1.jpg" target="_blank" class="LbTrigger" data-href="misc/lightbox"><img src="..\..\data\attachments\41\41494-81d556f39841b3061a2068eb2f90d496-1.jpeg" alt="players_gc.jpg" class="LbImage"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="..\..\attachments\players_gc-jpg.41493\players_gc-1.jpg" target="_blank">players_gc.jpg</a></h6>
+						<dl><dt>File size:</dt> <dd>165.1 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>96</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">wazzzup</a>,</span>
+					<a href="index-3.html#post-359272" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 22, 2017 at 3:01 PM">Oct 22, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-359272" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/359272/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364142" class="message   " data-author="Ellan">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Ellan"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Ellan</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					These gc collections cause lag spikes for 1-2 sec EVERY time. And now we can&#039;t disable or manage this, because the cvar gc.interval has been disabled.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Nov 5, 2017 at 11:10 PM">Nov 5, 2017</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Ellan</a>,</span>
+					<a href="index-3.html#post-364142" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 5, 2017 at 11:03 PM">Nov 5, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364142" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364142/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364184" class="message   " data-author="Nimant">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Nimant"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Nimant</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hi All<br>
+<br>
+I see the main problem of rust lags is bad working of garbage collector.<br>
+It is my observation of this situation:<br>
+The garbage collector calls the second drop of fps to 0 and it practically does not depend on the server load. For example, if you force a garbage collection every 5 seconds on an almost empty server, the players begin to get a lags.<br>
+When you loaded the server, the garbage collector runs more often, and that&#039;s fine, but his work continues to create a drop in fps servers to 0, resulting in frequent lag for players<br>
+<br>
+On the diagram below 3 servers with different online, but wiped in one time.<br>
+<br>
+So, need to inform Garry to check this huge problem. Can anyone help with it ?
+	
+	<img src="..\..\attachments\fpss-jpg.42074\fpss-1.jpg" alt="fpss.jpg" class="bbCodeImage LbImage">
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Nov 6, 2017 at 12:41 AM">Nov 6, 2017</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Nimant</a>,</span>
+					<a href="index-3.html#post-364184" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 12:24 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364184" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364184/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364197" class="message   " data-author="Austinv900">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Austinv900"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Austinv900</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					GC.Collect() halts all threads until the Garbage collection is complete.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Austinv900</a>,</span>
+					<a href="index-3.html#post-364197" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 1:26 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364197" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364197/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364203" class="message   " data-author="Nimant">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Nimant"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Nimant</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Austinv900">
+	<aside>
+		
+			<div class="attribution type">Austinv900 said:
+				
+					<a href="goto/post?id=364197#post-364197" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">GC.Collect() halts all threads until the Garbage collection is complete.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>And ? So, it is normal to get lags all times ?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Nimant</a>,</span>
+					<a href="index-3.html#post-364203" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 1:36 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364203" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364203/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364211" class="message   " data-author="Smabezo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Smabezo"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Smabezo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					It needs to be fixed soon
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Smabezo</a>,</span>
+					<a href="index-3.html#post-364211" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 1:58 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364211" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364211/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364216" class="message   " data-author="Austinv900">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Austinv900"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Austinv900</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Garbage collect runs on its own unless called manually. There is very little you can do to control GC. It wouldnt really be a game issue more of a Unity issue. But unless your creating a bunch of objects and destroying them I don&#039;t think it would be a GC issue. You would have memory leaks if the GC wasn&#039;t working as it should be
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Austinv900</a>,</span>
+					<a href="index-3.html#post-364216" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 2:39 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364216" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364216/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364220" class="message   " data-author="Nimant">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Nimant"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Nimant</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Austinv900">
+	<aside>
+		
+			<div class="attribution type">Austinv900 said:
+				
+					<a href="goto/post?id=364216#post-364216" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Garbage collect runs on its own unless called manually. There is very little you can do to control GC. It wouldnt really be a game issue more of a Unity issue. But unless your creating a bunch of objects and destroying them I don&#039;t think it would be a GC issue. You would have memory leaks if the GC wasn&#039;t working as it should be</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>No memory leaks, servers consume over 5 Gb without any fluctuation
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Nimant</a>,</span>
+					<a href="index-3.html#post-364220" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 2:48 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364220" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364220/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364222" class="message   " data-author="Austinv900">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Austinv900"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Austinv900</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					That&#039;s normal <img src="..\..\styles\default\xenforo\clear-2.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)"><br>
+<br>
+How long does the fps sit at 0
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Austinv900</a>,</span>
+					<a href="index-3.html#post-364222" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 2:53 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364222" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364222/permalink">#16</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364228" class="message   " data-author="Melodeiro">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Melodeiro"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Melodeiro</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					We are really need an option to reduce the occurency of GC works. There was a gc.interval earlier, but its got disabled, and GC work is now happens very often, and takes too long time, comparing to how it was earlier. Its better to have a rare occurency of GC, and we are ok with paying certain amount of memory for that. The best option for modded servers might be an option to call it manually, so we can send a broadcast message &quot;lags will happen, be patient&quot;. Combining that process with the world saving would be the best option.<br>
+<br>
+But if there is nothing to do, because of Unity restrictions, thats would be pretty bad ofc. Most popular servers are in trouble now.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Melodeiro</a>,</span>
+					<a href="index-3.html#post-364228" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 3:38 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364228" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364228/permalink">#17</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364230" class="message   " data-author="Austinv900">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Austinv900"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Austinv900</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Server crashes because of a memory leaks during a save. Now your players are upset because you have todo a emergency wipe
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Austinv900</a>,</span>
+					<a href="index-3.html#post-364230" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 3:57 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364230" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364230/permalink">#18</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364240" class="message   " data-author="Melodeiro">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Melodeiro"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Melodeiro</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Austinv900">
+	<aside>
+		
+			<div class="attribution type">Austinv900 said:
+				
+					<a href="goto/post?id=364230#post-364230" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Server crashes because of a memory leaks during a save. Now your players are upset because you have todo a emergency wipe</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>But rust can force GC before doing save, so this problem will never occur, isn&#039;t it?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Melodeiro</a>,</span>
+					<a href="index-3.html#post-364240" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 5:04 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364240" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364240/permalink">#19</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-364244" class="message   " data-author="Austinv900">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Austinv900"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Austinv900</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Melodeiro">
+	<aside>
+		
+			<div class="attribution type">Melodeiro said:
+				
+					<a href="goto/post?id=364240#post-364240" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">But rust can force GC before doing save, so this problem will never occur, isn&#039;t it?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You know oxide does Garbage Collection too
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Austinv900</a>,</span>
+					<a href="index-3.html#post-364244" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 6, 2017 at 5:42 AM">Nov 6, 2017</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-364244" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/364244/permalink">#20</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	<input type="hidden" name="_xfToken" value="">
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+
+
+<div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="2" data-last="2" data-sentinel="{{sentinel}}" data-baseurl="threads/what-is-garbage-collection.18748/page-{{sentinel}}">
+	
+	
+	<nav>
+		
+		
+		<a href="index-3.html" class="currentPage " rel="start">1</a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="page-2-2.html" class="">2</a>
+		
+		
+			<a href="page-2-2.html" class="text">Next &gt;</a>
+			
+		
+	</nav>	
+	
+	
+</div>
+
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="..\..\terms\index-2.html">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="..\..\index-4.html">
+				<span></span>
+				<img src="..\..\styles\oxide\logo-2.png" alt="Oxide">
+			</a></div>
+
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="..\..\index-4.html" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="..\..\downloads\index-3.html" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="..\..\plugins\index-3.html" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1550040216,
+		today: 1550016000,
+		todayDow: 3
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

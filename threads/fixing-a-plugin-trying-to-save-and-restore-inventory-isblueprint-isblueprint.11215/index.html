@@ -1,0 +1,2650 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Fixing a plugin; trying to save and restore inventory... isBlueprint/IsBlueprint() | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/" />
+	<meta name="description" content="Hey all,
+
+So I'm looking at the Inventory-Guardian.lua, [http://oxidemod.org/plugins/inventory-guardian.773/]
+(hoping to change maps tomorrow and keep..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/" />
+	<meta property="og:title" content="Fixing a plugin; trying to save and restore inventory... isBlueprint/IsBlueprint()" />
+	<meta property="og:description" content="Hey all,
+
+So I'm looking at the Inventory-Guardian.lua, [http://oxidemod.org/plugins/inventory-guardian.773/]
+(hoping to change maps tomorrow and keep..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/">Fixing a plugin; trying to save and restore inventory... isBlueprint/IsBlueprint()</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">KittyMeowMeow</a>, <a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/"><span class="DateTime" title="Aug 20, 2015 at 12:04 PM">Aug 20, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-121731" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey all,<br />
+<br />
+So I&#039;m looking at the Inventory-Guardian.lua, [<a href="http://oxidemod.org/plugins/inventory-guardian.773/]" class="internalLink">http://oxidemod.org/plugins/inventory-guardian.773/]</a><br />
+(hoping to change maps tomorrow and keep players inventories)<br />
+<br />
+and it hasn&#039;t been updated in a while, and since recent changes to items from updates the last couple of weeks, it hasn&#039;t worked.<br />
+<br />
+so, line 287 is throwing an error in console, and the relevant code looks like this:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>  -- Create an inventory item
+        local itemEntity = global.ItemManager.CreateByName(item.name, item.amount)
+      
+        -- Check for Blueprint field
+        if item.bp then
+          -- Set Item as Blueprint
+          itemEntity.isBlueprint = true
+        -- Check for Health field
+        elseif item.condition and self.Settings.KeepItemCondition then
+          -- Define item health
+          itemEntity.condition = item.condition     
+        end</pre>
+</div>line 287 being &quot;itemEntity.isBlueprint = true&quot;... the error being &quot;isblueprint filed or property does not exist&quot;<br />
+<br />
+<br />
+<br />
+Anyone have any ideas on how I might fix this? I&#039;m still very new to working on plugins.<br />
+<br />
+Thanks for any help you can give. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 12:04 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121731/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121732" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					itemEntity.isBlueprint() = true
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121732" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 12:12 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121732" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121732/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121737" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PaiN">
+	<aside>
+		
+			<div class="attribution type">PaiN said:
+				
+					<a href="goto/post?id=121732#post-121732" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">itemEntity.isBlueprint() = true</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>But now it&#039;s throwing a syntax error. Same line. &quot;near =&quot;<br />
+...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121737" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 12:31 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121737" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121737/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121761" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					IsBlueprint() actually, the I is capital. They changed it from a property to a function call in a recent patch.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121761" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 2:23 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121761" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121761/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121764" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=121761#post-121761" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">IsBlueprint() actually, the I is capital. They changed it from a property to a function call in a recent patch.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Oh yeah i forgot about that .... happens.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121764" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 2:37 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121764" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121764/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121880" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					So I changed it to a capital I... still didn&#039;t change the syntax error on 287... <br />
+<br />
+Do I have to initialize that function before I call it or anything? Or does it know it from the assembly automatically....<br />
+<br />
+Something isn&#039;t working in the plugin still... <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121880" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 8:49 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121880" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121880/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121881" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="KittyMeowMeow">
+	<aside>
+		
+			<div class="attribution type">KittyMeowMeow said:
+				
+					<a href="goto/post?id=121880#post-121880" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">So I changed it to a capital I... still didn&#039;t change the syntax error on 287...<br />
+<br />
+Do I have to initialize that function before I call it or anything? Or does it know it from the assembly automatically....<br />
+<br />
+Something isn&#039;t working in the plugin still... <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>It would have changed the error. Please provide the updated log.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121881" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 8:50 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121881" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121881/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121884" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Yeah, it&#039;s been showing a &quot;syntax error&quot; when I reload the plugin, since changing it to a function call.<br />
+<br />
+Here&#039;s what the error says in it&#039;s entirety:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>[RCON][188.165.226.225:53825] oxide.reload Inventory-Guardian
+[Oxide] 12:51 PM [Error] Failed to load plugin Inventory-Guardian
+File: Inventory-Guardian.lua Line: 287 syntax error near '=':
+at NLua.Lua.ThrowExceptionFromError (Int32 oldTop) [0x00000] in :0
+at NLua.Lua.LoadString (System.String chunk, System.String name) [0x00000] in :0
+at Oxide.Ext.Lua.Plugins.LuaPlugin.Load () [0x00000] in :0
+at Oxide.Ext.Lua.Plugins.LuaPluginLoader.Load (System.String directory, System.String name) [0x00000] in :0
+at Oxide.Core.OxideMod.LoadPlugin (System.String name) [0x00000] in :0 </pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121884" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 8:52 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121884" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121884/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121887" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="KittyMeowMeow">
+	<aside>
+		
+			<div class="attribution type">KittyMeowMeow said:
+				
+					<a href="goto/post?id=121884#post-121884" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Yeah, it&#039;s been showing a &quot;syntax error&quot; when I reload the plugin, since changing it to a function call.<br />
+<br />
+Here&#039;s what the error says in it&#039;s entirety:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>[RCON][188.165.226.225:53825] oxide.reload Inventory-Guardian
+[Oxide] 12:51 PM [Error] Failed to load plugin Inventory-Guardian
+File: Inventory-Guardian.lua Line: 287 syntax error near '=':
+at NLua.Lua.ThrowExceptionFromError (Int32 oldTop) [0x00000] in :0
+at NLua.Lua.LoadString (System.String chunk, System.String name) [0x00000] in :0
+at Oxide.Ext.Lua.Plugins.LuaPlugin.Load () [0x00000] in :0
+at Oxide.Ext.Lua.Plugins.LuaPluginLoader.Load (System.String directory, System.String name) [0x00000] in :0
+at Oxide.Core.OxideMod.LoadPlugin (System.String name) [0x00000] in :0 </pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Please post that portion of the code you are editing, the error is different though.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121887" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 8:57 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121887" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121887/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121891" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Sure, the code I&#039;ve been editing is that snippet at the top in my first post. At line 287.<br />
+<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>  -- Create an inventory item
+        local itemEntity = global.ItemManager.CreateByName(item.name, item.amount)
+     
+        -- Check for Blueprint field
+        if item.bp then
+          -- Set Item as Blueprint
+          itemEntity.IsBlueprint() = true
+        -- Check for Health field
+        elseif item.condition and self.Settings.KeepItemCondition then
+          -- Define item health
+          itemEntity.condition = item.condition    
+        end</pre>
+</div>That&#039;s how the code should now read in the file I&#039;m uploading to my server. That&#039;s what&#039;s throwing the &quot;syntax error&quot; near &quot;=&quot; on 287 (itenEntity.IsBlueprint() = true)...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121891" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:01 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121891" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121891/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121893" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="KittyMeowMeow">
+	<aside>
+		
+			<div class="attribution type">KittyMeowMeow said:
+				
+					<a href="goto/post?id=121891#post-121891" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Sure, the code I&#039;ve been editing is that snippet at the top in my first post. At line 287.<br />
+<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>  -- Create an inventory item
+        local itemEntity = global.ItemManager.CreateByName(item.name, item.amount)
+    
+        -- Check for Blueprint field
+        if item.bp then
+          -- Set Item as Blueprint
+          itemEntity.IsBlueprint() = true
+        -- Check for Health field
+        elseif item.condition and self.Settings.KeepItemCondition then
+          -- Define item health
+          itemEntity.condition = item.condition   
+        end</pre>
+</div>That&#039;s how the code should now read in the file I&#039;m uploading to my server. That&#039;s what&#039;s throwing the &quot;syntax error&quot; near &quot;=&quot; on 287 (itenEntity.IsBlueprint() = true)...</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Try this version
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="Inventory-Guardian.lua">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/inventory-guardian-lua.11977/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/inventory-guardian-lua.11977/" target="_blank">Inventory-Guardian.lua</a></h6>
+						<dl><dt>File size:</dt> <dd>57.9 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>24</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121893" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:04 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121893" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121893/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121894" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="PaiN">
+	<aside>
+		
+			<div class="attribution type">PaiN said:
+				
+					<a href="goto/post?id=121893#post-121893" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Try this version</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Same error.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121894" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:07 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121894" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121894/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121895" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="KittyMeowMeow">
+	<aside>
+		
+			<div class="attribution type">KittyMeowMeow said:
+				
+					<a href="goto/post?id=121891#post-121891" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Sure, the code I&#039;ve been editing is that snippet at the top in my first post. At line 287.<br />
+<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>  -- Create an inventory item
+        local itemEntity = global.ItemManager.CreateByName(item.name, item.amount)
+    
+        -- Check for Blueprint field
+        if item.bp then
+          -- Set Item as Blueprint
+          itemEntity.IsBlueprint() = true
+        -- Check for Health field
+        elseif item.condition and self.Settings.KeepItemCondition then
+          -- Define item health
+          itemEntity.condition = item.condition   
+        end</pre>
+</div>That&#039;s how the code should now read in the file I&#039;m uploading to my server. That&#039;s what&#039;s throwing the &quot;syntax error&quot; near &quot;=&quot; on 287 (itenEntity.IsBlueprint() = true)...</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You could use this instead: itemEntity.SetFlag(Item.Flag.Blueprint, true).
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121895" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:07 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121895" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121895/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121902" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=121895#post-121895" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You could use this instead: itemEntity.SetFlag(Item.Flag.Blueprint, true).</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Progress!<br />
+<br />
+Now, it is at least loading, throwing no errors...<br />
+<br />
+I am guessing there will be problems with the rest of the code, and the old property itemEntity.isBlueprint (it&#039;s frequently used in some sections of the plugin... so I&#039;ll need to change that to the new flag system somehow?) -- any tips?<br />
+<br />
+Also, for my knowledge in learning, how can I figure this stuff out? I was aware that something with items changed and it broke the plugin, but where would I find that the change was the property isBlueprint to the function call IsBlueprint() ? (assembly?) , and where did you pull SetFlag from?<br />
+<br />
+Just trying to get better at troubleshooting stuff myself, too. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+<br />
+<br />
+I&#039;ll play around with saving and restoring, and ask more questions as errors are popping up
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121902" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:15 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121902" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121902/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121904" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="KittyMeowMeow">
+	<aside>
+		
+			<div class="attribution type">KittyMeowMeow said:
+				
+					<a href="goto/post?id=121902#post-121902" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Progress!<br />
+<br />
+Now, it is at least loading, throwing no errors...<br />
+<br />
+I am guessing there will be problems with the rest of the code, and the old property itemEntity.isBlueprint (it&#039;s frequently used in some sections of the plugin... so I&#039;ll need to change that to the new flag system somehow?) -- any tips?<br />
+<br />
+Also, for my knowledge in learning, how can I figure this stuff out? I was aware that something with items changed and it broke the plugin, but where would I find that the change was the property isBlueprint to the function call IsBlueprint() ? (assembly?) , and where did you pull SetFlag from?<br />
+<br />
+Just trying to get better at troubleshooting stuff myself, too. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+<br />
+<br />
+I&#039;ll play around with saving and restoring, and ask more questions as errors are popping up</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You can use itemEntity.IsBlueprint() in most of those situations.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121904" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:20 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121904" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121904/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121905" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Newest error:<br />
+-- While moving things from my inventory to a box, after saving it (to restore later)<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>File: Inventory-Guardian.lua Line: 287 attempt to index global 'Item' (a nil value):
+at NLua.Lua.ThrowExceptionFromError (Int32 oldTop) [0x00000] in :0
+at NLua.Lua.CallFunction (System.Object function, System.Object[] args, System.Type[] returnTypes) [0x00000] in :0
+at NLua.LuaFunction.Call (System.Object[] args, System.Type[] returnTypes) [0x00000] in :0
+at NLua.Method.LuaDelegate.CallFunction (System.Object[] args, System.Object[] inArgs, System.Int32[] outArgs) [0x00000] in :0
+at LuaGeneratedClass1.CallFunction () [0x00000] in :0
+at Oxide.Core.Libraries.Timer+TimerInstance.Update () [0x00000] in :0 </pre>
+</div>Same error gets thrown when trying to restore saved items.<br />
+[DOUBLEPOST=1440104501][/DOUBLEPOST]
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=121895#post-121895" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You could use this instead: itemEntity.SetFlag(Item.Flag.Blueprint, true).</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>This code seems to clear the syntax error problem that I was having, but I&#039;m still having the &quot;nil&quot; value for &quot;Item&quot;   on that line...<br />
+if I change the I to an i... like itemEntity... it says Flag is the nil value in the error...<br />
+<br />
+Help?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121905" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 9:20 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121905" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121905/permalink">#16</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121915" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hmmm, try itemEntity:SetFlag(global.Item.Flag.Blueprint, true) instead.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121915" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 10:15 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121915" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121915/permalink">#17</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-121920" class="message   " data-author="KittyMeowMeow">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="KittyMeowMeow" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">KittyMeowMeow</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=121915#post-121915" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Hmmm, try itemEntity:SetFlag(global.Item.Flag.Blueprint, true) instead.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>lol, /ig.restore  gave me all my items as blueprints. xD    ... 1000 Wood in a stack, as a blueprint. xD<br />
+-- I&#039;d say that&#039;s more progress, tho!!!<br />
+<br />
+So, now there&#039;s something going on, either when they get saved, or the if/else isn&#039;t getting skipped if it&#039;s not a blueprint or something?<br />
+<br />
+Thank you so much for the help! I think we&#039;ve almost got it. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /><br />
+[DOUBLEPOST=1440105874][/DOUBLEPOST]Current error:    ... when I do /ig.save<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>[Oxide] 2:21 PM [Error] Failed to call hook 'cmdSaveInventory' on plugin 'Inventory-Guardian v0.1.5'
+File: Inventory-Guardian.lua Line: 199 instance method 'IsBlueprint' requires a non null target object:
+at NLua.Lua.ThrowExceptionFromError (Int32 oldTop) [0x00000] in :0
+at NLua.Lua.CallFunction (System.Object function, System.Object[] args, System.Type[] returnTypes) [0x00000] in :0
+at NLua.Lua.CallFunction (System.Object function, System.Object[] args) [0x00000] in :0
+at NLua.LuaFunction.Call (System.Object[] args) [0x00000] in :0
+at Oxide.Ext.Lua.Plugins.LuaPlugin.OnCallHook (System.String hookname, System.Object[] args) [0x00000] in :0
+at Oxide.Core.Plugins.Plugin.CallHook (System.String hookname, System.Object[] args) [0x00000] in :0 </pre>
+</div>relevant code:<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>-- Loop by the Main Items
+  while mainItems:MoveNext() do
+    -- Save current item to player's inventory table
+    self.Data.GlobalInventory[playerID]['main'][tostring(mainCount)] = {name = tostring(mainItems.Current.info.shortname), amount = mainItems.Current.amount, condition =  mainItems.Current.condition, bp = mainItems.Current.IsBlueprint()}
+    -- Increment the count
+    mainCount = mainCount + 1
+  end</pre>
+</div>line 199 starts on &quot;self.Data.GlobalInventory....&quot; and ends after &quot;... .IsBlueprint()}<br />
+[DOUBLEPOST=1440111904][/DOUBLEPOST]Okay, so, after some fiddling, I can get /ig.save to work, and save inventory, by setting the end of line 199 to isBlueprint. (Not a function call)<br />
+<br />
+BUT<br />
+<br />
+when doing /ig.restore, that for some reason triggers the &quot;Set Item as Blueprint&quot; trigger on whatever it&#039;s saving... <br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>  -- Create an inventory item
+        local itemEntity = global.ItemManager.CreateByName(item.name, item.amount)
+     
+        -- Check for Blueprint field
+        if item.bp then
+          -- Set Item as Blueprint
+         itemEntity.SetFlag(Item.Flag.Blueprint, true)
+        -- Check for Health field
+        elseif item.condition and self.Settings.KeepItemCondition then
+          -- Define item health
+          itemEntity.condition = item.condition    
+        end</pre>
+</div>So,<br />
+What&#039;s the correct way I should be having this plugin check if the item is a blueprint?<br />
+IsBlueprint() throws an error in console (see above)<br />
+and isBlueprint passes a true value to the Blueprint/SetFlag function...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">KittyMeowMeow</a>,</span>
+					<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121920" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 20, 2015 at 10:21 PM">Aug 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/fixing-a-plugin-trying-to-save-and-restore-inventory-isblueprint-isblueprint.11215/#post-121920" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/121920/permalink">#18</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548538234,
+		today: 1548460800,
+		todayDow: 6
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

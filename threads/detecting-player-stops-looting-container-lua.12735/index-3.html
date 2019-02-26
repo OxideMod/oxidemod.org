@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="https://oxidemod.org/" />
+    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+    <title>Detecting player stops looting container? (Lua) | Oxide</title>
+    <noscript>
+        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+    </noscript>
+    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+    <script src="js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+    <link rel="canonical" href="https://oxidemod.org/threads/detecting-player-stops-looting-container-lua.12735/" />
+    <meta name="description" content="I am trying to detect, and run 'stuff', when a player stops looting a container with lua.  Is this possible?  Thanks." />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oxidemod.org/threads/detecting-player-stops-looting-container-lua.12735/" />
+    <meta property="og:title" content="Detecting player stops looting container? (Lua)" />
+    <meta property="og:description" content="I am trying to detect, and run 'stuff', when a player stops looting a container with lua.  Is this possible?  Thanks." />
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="thread_view">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop ">
+                        <nav>
+                            <fieldset class="breadcrumb">
+                                <div class="boardTitle"><strong>Oxide</strong></div>
+                                <span class="crumbs">
+                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                </span>
+                            </fieldset>
+                        </nav>
+                    </div>
+                    <!-- h1 title, description -->
+                    <div class="titleBar">
+                        <h1>
+                            <a href="https://oxidemod.org/threads/detecting-player-stops-looting-container-lua.12735/">Detecting player stops looting container? (Lua)</a>
+                        </h1>
+                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">insane8472</a>, <a
+                                href="threads/detecting-player-stops-looting-container-lua.12735/"><span class="DateTime" title="Nov 11, 2015 at 3:25 PM">Nov 11, 2015</span></a>. </p>
+                    </div>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup SelectionCountContainer">
+                        </div>
+                    </div>
+                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
+                        <ol class="messageList" id="messageList">
+                            <li id="post-143032" class="message   " data-author="insane8472">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">insane8472</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I am trying to detect, and run &#039;stuff&#039;, when a player stops looting a
+                                                container with lua. Is this possible? Thanks. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 3:25 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143032/permalink">#1</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143067" class="message   " data-author="Deicide666ra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Deicide666ra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> As far as I know there is no existing hook for this. Would be nice to have
+                                                OnPlayerLootEnded though! <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143067" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 5:19 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143067" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143067/permalink">#2</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143068" class="message   " data-author="LaserHydra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">LaserHydra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                                                    <aside>
+                                                        <div class="attribution type">Deicide666ra said: <a href="goto/post?id=143067#post-143067" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">As far as I know there is no existing hook for this. Would be nice to have OnPlayerLootEnded though!</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>In C# are able to add a GameObject to an BaseEntity to hook PlayerStoppedLooting<br /> but I don&#039;t know in Lua. It would propably need a
+                                                Hook in Oxide. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143068" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 5:29 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143068" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143068/permalink">#3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143069" class="message   " data-author="Deicide666ra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Deicide666ra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                                                    <aside>
+                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=143068#post-143068" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">In C# are able to add a GameObject to an BaseEntity to hook PlayerStoppedLooting<br /> but I don&#039;t know in Lua. It
+                                                                would propably need a Hook in Oxide.</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Really? I haven&#039;t seen that technique used.. Is there a plugin that does something like that or code that does this you could show me? <div
+                                                    class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143069" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 5:31 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143069" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143069/permalink">#4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143070" class="message   " data-author="insane8472">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">insane8472</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thanks for the replies. Plan B it is.<br /> [DOUBLEPOST=1447263135][/DOUBLEPOST] <div
+                                                    class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                                                    <aside>
+                                                        <div class="attribution type">Deicide666ra said: <a href="goto/post?id=143069#post-143069" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Really? I haven&#039;t seen that technique used.. Is there a plugin that does something like that or code that does this
+                                                                you could show me?</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Backpack and quick sort plugins use this method. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143070" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 5:31 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143070" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143070/permalink">#5</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143074" class="message   " data-author="LaserHydra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">LaserHydra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                                                    <aside>
+                                                        <div class="attribution type">Deicide666ra said: <a href="goto/post?id=143069#post-143069" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Really? I haven&#039;t seen that technique used.. Is there a plugin that does something like that or code that does this
+                                                                you could show me?</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>My Backpacks plugin does it like that.<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>
+        void OpenBackpack(BasePlayer player)
+        {
+            if (!backpacks.ContainsKey(player.UserIDString))
+                backpacks.Add(player.UserIDString, new Backpack());
+         
+            BaseEntity backpack = GameManager.server.CreateEntity(backpackEntity, new Vector3(player.transform.position.x, player.transform.position.y - 1, player.transform.position.z));
+
+            backpack.SendMessage(&quot;SetDeployedBy&quot;, player, UnityEngine.SendMessageOptions.DontRequireReceiver);
+            backpack.Spawn(true);
+
+            StorageContainer loot = backpack.GetComponent&lt;StorageContainer&gt;();
+
+            foreach (BackpackItem backpackItem in backpacks[player.userID.ToString()].items)
+            {
+                Item item = ItemManager.CreateByItemID(backpackItem.itemid, backpackItem.amount, backpackItem.blueprint, backpackItem.skinid);
+                item.MoveToContainer(loot.inventory, backpackItem.slot);
+            }
+         
+            backpack.gameObject.AddComponent&lt;LootingHandler&gt;();
+            loot.PlayerOpenLoot(player);
+
+            activeBackpacks[player.UserIDString] = backpack;
+        }</pre>
+                                                </div>
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>
+        class LootingHandler : MonoBehaviour
+        {
+            private void PlayerStoppedLooting(BasePlayer player)
+            {
+                Interface.Oxide.RootPluginManager.GetPlugin(&quot;Backpacks&quot;).Call(&quot;CloseBackpack&quot;, player);
+            }
+        }</pre>
+                                                </div>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143074" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 5:36 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143074" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143074/permalink">#6</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143085" class="message   " data-author="Deicide666ra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Deicide666ra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m not too versed into Unity&#039;s Mono system, but how exactly does this work?
+                                                You&#039;re just declaring a function inside a class derived from MonoBehavior... but it&#039;s not overriding anything. How does this work? When the
+                                                Rust &quot;PlayerStoppedLooting&quot; function is called, it scans all MonoBehaviors in the object to see if one defined a function with the same
+                                                signature and calls it? Or does MonoBehavior actually have a function called PlayerStoppedLooting and your class is essentially overriding it? By
+                                                default AFAIK if you do not override it will create a &quot;new&quot; function which only gets called if you have a specific instance of
+                                                LootingHandler?<br />
+                                                <br /> The link is unclear to me... I&#039;m slightly confused <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                                                    title="Stick Out Tongue    :p" />
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143085" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 6:06 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143085" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143085/permalink">#7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143094" class="message   " data-author="LaserHydra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">LaserHydra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                                                    <aside>
+                                                        <div class="attribution type">Deicide666ra said: <a href="goto/post?id=143085#post-143085" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">I&#039;m not too versed into Unity&#039;s Mono system, but how exactly does this work? You&#039;re just declaring a
+                                                                function inside a class derived from MonoBehavior... but it&#039;s not overriding anything. How does this work? When the Rust
+                                                                &quot;PlayerStoppedLooting&quot; function is called, it scans all MonoBehaviors in the object to see if one defined a function with the
+                                                                same signature and calls it? Or does MonoBehavior actually have a function called PlayerStoppedLooting and your class is essentially
+                                                                overriding it? By default AFAIK if you do not override it will create a &quot;new&quot; function which only gets called if you have a
+                                                                specific instance of LootingHandler?<br />
+                                                                <br /> The link is unclear to me... I&#039;m slightly confused <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7"
+                                                                    alt=":p" title="Stick Out Tongue    :p" /></div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>same for me. I am not sure how it works but thats how I understood what it is doing. Idk why and how but it is doing it. So fuck it and use it
+                                                xD.<br />
+                                                <a href="http://docs.unity3d.com/ScriptReference/GameObject.AddComponent.html" target="_blank" class="externalLink  rel=" nofollow">Unity - Scripting
+                                                    API:</a>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143094" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 6:31 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143094" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143094/permalink">#8</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-143109" class="message   " data-author="Deicide666ra">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Deicide666ra</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                                                    <aside>
+                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=143094#post-143094" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">same for me. I am not sure how it works but thats how I understood what it is doing. Idk why and how but it is doing it.
+                                                                So fuck it and use it xD.<br />
+                                                                <a href="http://docs.unity3d.com/ScriptReference/GameObject.AddComponent.html" target="_blank" class="externalLink  rel=" nofollow">Unity
+                                                                    - Scripting API:</a></div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Lol, fair enough. Also pretty confused about the GetComponent call but hey it works <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7"
+                                                    alt=":p" title="Stick Out Tongue    :p" />
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                                                <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143109" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 11, 2015 at 7:19 PM">Nov
+                                                        11, 2015</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/detecting-player-stops-looting-container-lua.12735/#post-143109" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/143109/permalink">#9</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </form>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup">
+                        </div>
+                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+                    </div>
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent">
+                            </div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div id="header">
+            <div class="headerWidth">
+                <div id="logoBlock">
+                    <div id="logo"><a href="https://oxidemod.org/">
+                            <span></span>
+                            <img src="styles/oxide/logo.png" alt="Oxide" />
+                        </a></div>
+                    <span class="helper"></span>
+                </div>
+                <div id="navigation" class="">
+                    <div class="pageContent">
+                        <nav>
+                            <div class="navTabs">
+                                <ul class="publicTabs">
+                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+                                    </li>
+                                    <li class="navTab PopupClosed">
+                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+                                    </li>
+                                    <li class="navTab selected">
+                                        <div class="tabLinks"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="helper"></span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1549528370,
+                today: 1549497600,
+                todayDow: 4
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "thread_view": true,
+                "message": true,
+                "bb_code": true,
+                "message_user_info": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "ih_xfid_"
+            },
+            _csrfToken: "",
+            _csrfRefreshUrl: "login/csrf-token-refresh",
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+
+    </script>
+</body>
+
+</html>

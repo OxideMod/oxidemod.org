@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="https://oxidemod.org/" />
+    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+    <title>Destroying entities? | Oxide</title>
+    <noscript>
+        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+    </noscript>
+    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+    <link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+    <script src="js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+    <link rel="canonical" href="https://oxidemod.org/threads/destroying-entities.17434/" />
+    <meta name="description" content="Hi. I am trying to make a plugin that destroy (for example) all barricades.
+But I have absolutly no idea where to start. 
+Do you know in which plugins..." />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oxidemod.org/threads/destroying-entities.17434/" />
+    <meta property="og:title" content="Destroying entities?" />
+    <meta property="og:description" content="Hi. I am trying to make a plugin that destroy (for example) all barricades.
+But I have absolutly no idea where to start. 
+Do you know in which plugins..." />
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="thread_view">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop ">
+                        <nav>
+                            <fieldset class="breadcrumb">
+                                <div class="boardTitle"><strong>Oxide</strong></div>
+                                <span class="crumbs">
+                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                </span>
+                            </fieldset>
+                        </nav>
+                    </div>
+                    <!-- h1 title, description -->
+                    <div class="titleBar">
+                        <h1>
+                            <a href="https://oxidemod.org/threads/destroying-entities.17434/">Destroying entities?</a>
+                        </h1>
+                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Reynostrum</a>, <a
+                                href="threads/destroying-entities.17434/"><span class="DateTime" title="Apr 18, 2016 at 6:58 PM">Apr 18, 2016</span></a>. </p>
+                    </div>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup SelectionCountContainer">
+                        </div>
+                    </div>
+                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
+                        <ol class="messageList" id="messageList">
+                            <li id="post-197847" class="message   " data-author="Reynostrum">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Reynostrum" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Reynostrum</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi. I am trying to make a plugin that destroy (for example) all barricades.<br /> But I
+                                                have absolutly no idea where to start. <br /> Do you know in which plugins can I see something like searching entities by name or something like that?<br />
+                                                <br /> Thank you. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Reynostrum</a>,</span>
+                                                <a href="threads/destroying-entities.17434/" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 18, 2016 at 6:58 PM">Apr 18,
+                                                        2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/197847/permalink">#1</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198164" class="message   " data-author="Absolut">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Absolut" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Absolut</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I am actually trying to do something similar. I will paste what I have and perhaps
+                                                someone can inject some wisdom. To further the point, I have made an Engineer class within my BattleRoyale server. I want to destroy the player owned
+                                                Turrets on death. I am currently destroying all corpses OnEntitySpawned so I figured I could check the corpse OwnerID and use that to match built
+                                                turrets with the dead player and then destroy the turret. Anyway, I am lost on how to &quot;find&quot; turrets... Help would be awesome! Here is a code
+                                                snippet:<br />
+                                                <br />
+                                                <a href="https://justpaste.it/tg5v" target="_blank" class="externalLink  rel=" nofollow">//NoHelicopter, NoCorpse, DestroyTurrets of Corpse Owner
+                                                    private readonly string heliPrefab = &quot;a... - justpaste.it</a><br />
+                                                <br /> also here for simplicity....<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>        //NoHelicopter, NoCorpse, DestroyTurrets of Corpse Owner
+
+      
+            private readonly string heliPrefab = &quot;assets/prefabs/npc/patrol helicopter/patrolhelicopter.prefab&quot;;
+            private readonly string corpsePrefab = &quot;assets/prefabs/player/player_corpse.prefab&quot;;
+          
+            private uint heliPrefabId;
+            private uint corpsePrefabId;
+          
+        void OnEntitySpawned(BaseNetworkable entity)
+      
+        {
+            heliPrefabId = StringPool.Get(heliPrefab);
+            corpsePrefabId = StringPool.Get(corpsePrefab);
+
+            if (entity == null) return;
+            if (entity.prefabID == heliPrefabId)
+            {
+                entity.Kill();
+                Puts(&quot;NoHeli : Patrol Stopped!&quot;);
+            }
+            if (entity.prefabID == corpsePrefabId)
+            {
+[B]        //ATTEMPT AT TURRET DESTRUCTION[/B]
+                //var corpseOwner = entity.OwnerID;
+                    //check for turrets in game
+                   // {
+                  //  if turretFound.OwnerID == corpseOwner;
+                  //  entity.kill();
+                  //  }
+                entity.Kill();
+                Puts(&quot;Corpse Deleted&quot;);
+            }
+
+        }</pre>
+                                                </div>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 19, 2016 at 11:00 PM">Apr 19, 2016</span>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Absolut</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198164" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 10:27 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198164" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198164/permalink">#2</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198175" class="message   " data-author="DylanSMR">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">DylanSMR</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Example:<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>var foundentities = UnityEngine.Object.FindObjectsOfType&lt;BaseEntity&gt;();
+var  prefabID = 1234;
+foreach(var entity in  foundentities)
+{
+    if(entity.prefabID = prefabID)
+    {
+         entity.Kill();
+    }
+}</pre>
+                                                </div>This checks every entity in the server for(prefabID) and if it matches it kills the entity.<br />
+                                                <br /> Example for turrets is the same thing. Just do:<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>var foundent = UnityEngine.Object.FindObjectsOfType&lt;BaseEntity&gt;(); 
+foreach(var turret in foundent)
+{
+    if(turret.OwnerID == corpseOwnerID)
+    {
+        turret.Kill();
+    }
+}</pre>
+                                                </div>[DOUBLEPOST=1461103148][/DOUBLEPOST]Of course replace all of the variables with your needs! <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198175" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 10:58 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198175" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198175/permalink">#3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198178" class="message   " data-author="Absolut">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Absolut" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Absolut</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                                                    <aside>
+                                                        <div class="attribution type">DylanSMR said: <a href="goto/post?id=198175#post-198175" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Example:<br />
+                                                                <div class="bbCodeBlock bbCodeCode">
+                                                                    <div class="type">Code:</div>
+                                                                    <pre>var foundentities = UnityEngine.Object.FindObjectsOfType&lt;BaseEntity&gt;();
+var  prefabID = 1234;
+foreach(var entity in  foundentities)
+{
+    if(entity.prefabID = prefabID)
+    {
+         entity.Kill();
+    }
+}</pre>
+                                                                </div>This checks every entity in the server for(prefabID) and if it matches it kills the entity.<br />
+                                                                <br /> Example for turrets is the same thing. Just do:<br />
+                                                                <div class="bbCodeBlock bbCodeCode">
+                                                                    <div class="type">Code:</div>
+                                                                    <pre>var foundent = UnityEngine.Object.FindObjectsOfType&lt;BaseEntity&gt;();
+foreach(var turret in foundent)
+{
+    if(turret.OwnerID == corpseOwnerID)
+    {
+        turret.Kill();
+    }
+}</pre>
+                                                                </div>[DOUBLEPOST=1461103148][/DOUBLEPOST]Of course replace all of the variables with your needs!
+                                                            </div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Thanks <a href="https://oxidemod.org/members/53846/" class="username" data-user="53846, @DylanSMR">@DylanSMR</a> , I guess I continue to have
+                                                issues finding prefabID&#039;s because as you can see from the snippet I was already referencing the prefabID for the Heli and corpses. Is there a more
+                                                comprehensive list of IDs versus this one: <a href="http://docs.oxidemod.org/rust/#prefabs-list" target="_blank" class="externalLink  rel=" nofollow">Rust</a><br />
+                                                <br /> Beyond not knowing the prefabID for AutoTurret this is extremely helpful! I am but a mere peon when developing code.. lol (in case that
+                                                wasn&#039;t obvious) <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Absolut</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198178" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:04 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198178" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198178/permalink">#4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198180" class="message   " data-author="DylanSMR">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">DylanSMR</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Absolut">
+                                                    <aside>
+                                                        <div class="attribution type">Absolut said: <a href="goto/post?id=198178#post-198178" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Thanks <a href="https://oxidemod.org/members/53846/" class="username" data-user="53846, @DylanSMR">@DylanSMR</a> , I
+                                                                guess I continue to have issues finding prefabID&#039;s because as you can see from the snippet I was already referencing the prefabID
+                                                                for the Heli and corpses. Is there a more comprehensive list of IDs versus this one: <a href="http://docs.oxidemod.org/rust/#prefabs-list"
+                                                                    target="_blank" class="externalLink  rel=" nofollow">Rust</a><br />
+                                                                <br /> Beyond not knowing the prefabID for AutoTurret this is extremely helpful! I am but a mere peon when developing code.. lol (in
+                                                                case that wasn&#039;t obvious)</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Um I think I can compile a list. Give me a few moments!<br /> [DOUBLEPOST=1461104941][/DOUBLEPOST]You can use, <br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>        [ConsoleCommand(&quot;items&quot;)]
+        void Items(ConsoleSystem.Arg arg) {
+            var prefab = arg.Args[0];
+            var prefabID = StringPool.Get(prefab);
+            Puts(&quot;PrefabID of &quot;+prefab+&quot; is &quot;+prefabID+&quot;&quot;);
+        }   </pre>
+                                                </div>too find a prefabID. What you do is for example:<br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>Input:
+items assets/bundled/prefabs/autospawn/animals/wolf.prefab
+Output:
+[Oxide] 17:28 [Info] [BlueprintBlocker] PrefabID of assets/bundled/prefabs/autospawn/animals/wolf.prefab is 4102598860
+
+</pre>
+                                                </div>[DOUBLEPOST=1461104992][/DOUBLEPOST]So you would replace &quot;assets/bundled/prefabs/autospawn/animal/wolf.prefab&quot; with the full turret
+                                                asset name. To find those I think you can use this: <a href="http://oxidemod.org/threads/getting-list-of-animals.12814/#post-144238" class="internalLink">Solved
+                                                    - Getting list of animals? | Oxide</a>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198180" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:06 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198180" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198180/permalink">#5</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198187" class="message   " data-author="Absolut">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Absolut" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Absolut</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                                                    <aside>
+                                                        <div class="attribution type">DylanSMR said: <a href="goto/post?id=198180#post-198180" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Um I think I can compile a list. Give me a few moments!<br /> [DOUBLEPOST=1461104941][/DOUBLEPOST]You can use,<br />
+                                                                <div class="bbCodeBlock bbCodeCode">
+                                                                    <div class="type">Code:</div>
+                                                                    <pre>        [ConsoleCommand(&quot;items&quot;)]
+        void Items(ConsoleSystem.Arg arg) {
+            var prefab = arg.Args[0];
+            var prefabID = StringPool.Get(prefab);
+            Puts(&quot;PrefabID of &quot;+prefab+&quot; is &quot;+prefabID+&quot;&quot;);
+        }   </pre>
+                                                                </div>too find a prefabID. What you do is for example:<br />
+                                                                <div class="bbCodeBlock bbCodeCode">
+                                                                    <div class="type">Code:</div>
+                                                                    <pre>Input:
+items assets/bundled/prefabs/autospawn/animals/wolf.prefab
+Output:
+[Oxide] 17:28 [Info] [BlueprintBlocker] PrefabID of assets/bundled/prefabs/autospawn/animals/wolf.prefab is 4102598860
+
+</pre>
+                                                                </div>[DOUBLEPOST=1461104992][/DOUBLEPOST]So you would replace &quot;assets/bundled/prefabs/autospawn/animal/wolf.prefab&quot; with the
+                                                                full turret asset name. To find those I think you can use this: <a href="http://oxidemod.org/threads/getting-list-of-animals.12814/#post-144238"
+                                                                    class="internalLink">Solved - Getting list of animals? | Oxide</a>
+                                                            </div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Now we are getting close to my actual question which apparently I am learning to ask.. lol<br />
+                                                <br /> I don&#039;t have a list of assets. I don&#039;t even have the full turret asset name : )<br />
+                                                <br /> Where is a list of those? <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Absolut</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198187" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:32 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198187" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198187/permalink">#6</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198189" class="message   " data-author="DylanSMR">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">DylanSMR</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Absolut">
+                                                    <aside>
+                                                        <div class="attribution type">Absolut said: <a href="goto/post?id=198187#post-198187" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Now we are getting close to my actual question which apparently I am learning to ask.. lol<br />
+                                                                <br /> I don&#039;t have a list of assets. I don&#039;t even have the full turret asset name : )<br />
+                                                                <br /> Where is a list of those?</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Dont know myself, lucky for you I need it for my plugin im updating so im gonna go ask it in dev forums real fast. <a href="https://oxidemod.org/members/1115/"
+                                                    class="username" data-user="1115, @Wulf">@Wulf</a> is on so it should be a nice fast response(Hopefully) <img src="styles/default/xenforo/clear.png"
+                                                    class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br /> [DOUBLEPOST=1461105471][/DOUBLEPOST]<a href="http://oxidemod.org/threads/getting-all-prefab-names.12475/"
+                                                    class="internalLink">Solved - Getting all prefab names? | Oxide</a>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198189" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:33 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198189" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198189/permalink">#7</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198194" class="message   " data-author="Absolut">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Absolut" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Absolut</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                                                    <aside>
+                                                        <div class="attribution type">DylanSMR said: <a href="goto/post?id=198189#post-198189" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">Dont know myself, lucky for you I need it for my plugin im updating so im gonna go ask it in dev forums real fast. <a
+                                                                    href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> is on so it should be a nice fast
+                                                                response(Hopefully) <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
+                                                                [DOUBLEPOST=1461105471][/DOUBLEPOST]<a href="http://oxidemod.org/threads/getting-all-prefab-names.12475/" class="internalLink">Solved -
+                                                                    Getting all prefab names? | Oxide</a></div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Thank you! <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Absolut</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198194" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:39 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198194" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198194/permalink">#8</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198195" class="message   " data-author="DylanSMR">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">DylanSMR</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Heres a list I just compiled in-case you had troubles with the snippet wulf provided.
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                        <div class="attachedFiles">
+                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
+                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                                                <li class="attachment" title="AllAssets.txt">
+                                                    <div class="boxModelFixer primaryContent">
+                                                        <div class="thumbnail">
+                                                            <a href="attachments/allassets-txt.20779/" target="_blank" class="genericAttachment"></a>
+                                                        </div>
+                                                        <div class="attachmentInfo pairsJustified">
+                                                            <h6 class="filename"><a href="attachments/allassets-txt.20779/" target="_blank">AllAssets.txt</a></h6>
+                                                            <dl><dt>File size:</dt>
+                                                                <dd>350.4 KB</dd>
+                                                            </dl>
+                                                            <dl><dt>Views:</dt>
+                                                                <dd>59</dd>
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198195" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:44 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198195" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198195/permalink">#9</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198201" class="message   " data-author="Absolut">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Absolut" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Absolut</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> lol just got it. However, unlike some slick method of spitting it out to a log file, I
+                                                created a console command and had it spit into RustAdmin. It worked though : ) <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Absolut</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198201" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:55 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198201" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198201/permalink">#10</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198202" class="message   " data-author="DylanSMR">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">DylanSMR</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Absolut">
+                                                    <aside>
+                                                        <div class="attribution type">Absolut said: <a href="goto/post?id=198201#post-198201" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">lol just got it. However, unlike some slick method of spitting it out to a log file, I created a console command and had
+                                                                it spit into RustAdmin. It worked though : )</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>I just saved it to a data file <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198202" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 19, 2016 at 11:56 PM">Apr
+                                                        19, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198202" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198202/permalink">#11</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-198206" class="message   " data-author="Absolut">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Absolut" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Absolut</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So close.. having issues connecting the OwnerID of the corpse to the Turret. Getting:
+                                                Type `BaseNetworkable&#039; does not contain a definition for `OwnerID&#039; and no extension method `OwnerID&#039; of type `BaseNetworkable&#039;
+                                                could be found. Are you missing an assembly reference?<br />
+                                                <br /> Any thoughts? Thanks again for your help!<br />
+                                                <br /> //NoHelicopter, NoCorpse, DestroyTurrets of Corpse Owner<br />
+                                                <br />
+                                                <br /> private readonly string heliPrefab = &quot;assets/prefabs/npc/patrol helicopter/patrolhelicopter.prefab&quot;;<br /> private readonly string
+                                                cargoPrefab = &quot;assets /prefabs/npc/cargo plane/cargo_plane.prefab&quot;;<br /> private readonly string corpsePrefab =
+                                                &quot;assets/prefabs/player/player_corpse.prefab&quot;;<br /> private readonly string turretPrefab =
+                                                &quot;assets/prefabs/npc/autoturret/autoturret_deployed.prefab&quot;;<br />
+                                                <br />
+                                                <br /> private uint heliPrefabId;<br /> private uint corpsePrefabId;<br /> private uint cargoPrefabId;<br /> private uint turretPrefabId;<br />
+                                                <br /> void OnEntitySpawned(BaseNetworkable entity)<br />
+                                                <br /> {<br /> heliPrefabId = StringPool.Get(heliPrefab);<br /> cargoPrefabId = StringPool.Get(cargoPrefab);<br /> corpsePrefabId =
+                                                StringPool.Get(corpsePrefab);<br /> turretPrefabId = StringPool.Get(turretPrefab);<br />
+                                                <br /> if (entity == null) return;<br /> if (entity.prefabID == heliPrefabId || entity.prefabID == cargoPrefabId)<br /> {<br /> entity.Kill();<br /> }<br />
+                                                if (entity.prefabID == corpsePrefabId)<br /> {<br /> entity.Kill();<br /> Puts(&quot;Corpse Deleted&quot;);<br /> //Set Corpse OwnerID<br /> var
+                                                corpseOwner = entity.OwnerID;<br /> //check for turrets in game<br /> var foundEnt = UnityEngine.Object.FindObjectsOfType&lt;BaseEntity&gt;();<br />
+                                                <br /> foreach (var turret in foundEnt)<br /> {<br /> if (turret.prefabID == turretPrefabId)<br /> {<br /> if (turret.OwnerID == corpseOwner);<br />
+                                                turret.Kill();<br /> }<br /> }<br /> }<br /> }<br /> [DOUBLEPOST=1461108222][/DOUBLEPOST] <div class="bbCodeBlock bbCodeQuote" data-author="Absolut">
+                                                    <aside>
+                                                        <div class="attribution type">Absolut said: <a href="goto/post?id=198206#post-198206" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">So close.. having issues connecting the OwnerID of the corpse to the Turret. Getting: Type `BaseNetworkable&#039; does
+                                                                not contain a definition for `OwnerID&#039; and no extension method `OwnerID&#039; of type `BaseNetworkable&#039; could be found. Are
+                                                                you missing an assembly reference?<br />
+                                                                <br /> Any thoughts? Thanks again for your help!<br />
+                                                                <br /> //NoHelicopter, NoCorpse, DestroyTurrets of Corpse Owner<br />
+                                                                <br />
+                                                                <br /> private readonly string heliPrefab = &quot;assets/prefabs/npc/patrol helicopter/patrolhelicopter.prefab&quot;;<br /> private
+                                                                readonly string cargoPrefab = &quot;assets /prefabs/npc/cargo plane/cargo_plane.prefab&quot;;<br /> private readonly string
+                                                                corpsePrefab = &quot;assets/prefabs/player/player_corpse.prefab&quot;;<br /> private readonly string turretPrefab =
+                                                                &quot;assets/prefabs/npc/autoturret/autoturret_deployed.prefab&quot;;<br />
+                                                                <br />
+                                                                <br /> private uint heliPrefabId;<br /> private uint corpsePrefabId;<br /> private uint cargoPrefabId;<br /> private uint
+                                                                turretPrefabId;<br />
+                                                                <br /> void OnEntitySpawned(BaseNetworkable entity)<br />
+                                                                <br /> {<br /> heliPrefabId = StringPool.Get(heliPrefab);<br /> cargoPrefabId = StringPool.Get(cargoPrefab);<br /> corpsePrefabId =
+                                                                StringPool.Get(corpsePrefab);<br /> turretPrefabId = StringPool.Get(turretPrefab);<br />
+                                                                <br /> if (entity == null) return;<br /> if (entity.prefabID == heliPrefabId || entity.prefabID == cargoPrefabId)<br /> {<br />
+                                                                entity.Kill();<br /> }<br /> if (entity.prefabID == corpsePrefabId)<br /> {<br /> entity.Kill();<br /> Puts(&quot;Corpse
+                                                                Deleted&quot;);<br /> //Set Corpse OwnerID<br /> var corpseOwner = entity.OwnerID;<br /> //check for turrets in game<br /> var foundEnt
+                                                                = UnityEngine.Object.FindObjectsOfType&lt;BaseEntity&gt;();<br />
+                                                                <br /> foreach (var turret in foundEnt)<br /> {<br /> if (turret.prefabID == turretPrefabId)<br /> {<br /> if (turret.OwnerID ==
+                                                                corpseOwner);<br /> turret.Kill();<br /> }<br /> }<br /> }<br /> }</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>on a very exciting side note, disabling owner check DOES kill all turrets on death but I think it would kill all turrets not just the ones owned
+                                                by &quot;corpse&quot; or baseplayer <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Absolut</a>,</span>
+                                                <a href="threads/destroying-entities.17434/#post-198206" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 20, 2016 at 12:04 AM">Apr
+                                                        20, 2016</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/destroying-entities.17434/#post-198206" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198206/permalink">#12</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </form>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup">
+                        </div>
+                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+                    </div>
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent">
+                            </div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div id="header">
+            <div class="headerWidth">
+                <div id="logoBlock">
+                    <div id="logo"><a href="https://oxidemod.org/">
+                            <span></span>
+                            <img src="styles/oxide/logo.png" alt="Oxide" />
+                        </a></div>
+                    <span class="helper"></span>
+                </div>
+                <div id="navigation" class="">
+                    <div class="pageContent">
+                        <nav>
+                            <div class="navTabs">
+                                <ul class="publicTabs">
+                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+                                    </li>
+                                    <li class="navTab PopupClosed">
+                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+                                    </li>
+                                    <li class="navTab selected">
+                                        <div class="tabLinks"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="helper"></span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548556397,
+                today: 1548547200,
+                todayDow: 0
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "thread_view": true,
+                "message": true,
+                "bb_code": true,
+                "message_user_info": true,
+                "attached_files": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "ih_xfid_"
+            },
+            _csrfToken: "",
+            _csrfRefreshUrl: "login/csrf-token-refresh",
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+
+    </script>
+</body>
+
+</html>

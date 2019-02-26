@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>NullReferenceException in my code | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/nullreferenceexception-in-my-code.19064/" />
+	<meta name="description" content="The error is
+22:22 [Error] Failed to call hook 'OnEntityDeath' on plugin 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/nullreferenceexception-in-my-code.19064/" />
+	<meta property="og:title" content="NullReferenceException in my code" />
+	<meta property="og:description" content="The error is
+22:22 [Error] Failed to call hook 'OnEntityDeath' on plugin 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/nullreferenceexception-in-my-code.19064/">NullReferenceException in my code</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">ThunderZ</a>, <a href="threads/nullreferenceexception-in-my-code.19064/"><span class="DateTime" title="Jun 30, 2016 at 12:21 AM">Jun 30, 2016</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-220612" class="message   " data-author="ThunderZ">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ThunderZ" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">ThunderZ</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					The error is<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>22:22 [Error] Failed to call hook 'OnEntityDeath' on plugin 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+22:22 [Debug]   at Oxide.Plugins.NukeTown.OnEntityDeath (.BaseCombatEntity entity, .HitInfo hitInfo) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Plugins.NukeTown.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Plugins.Plugin.CallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+</pre>
+</div>the code<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        void OnEntityDeath(BaseCombatEntity entity, HitInfo hitInfo){
+            if(entity is BasePlayer){
+                var killer = hitInfo.Initiator.ToPlayer();
+                var victim = entity.ToPlayer();
+              
+                if(killer == victim &amp;&amp; playerData.Kills.ContainsKey(killer.userID)){
+                    playerData.Deaths[victim.userID]++;
+                    return;
+                }
+              
+                if(killer &amp;&amp; playerData.Kills.ContainsKey(killer.userID)){
+                    playerData.Kills[killer.userID]++;
+                }
+          
+                if(victim &amp;&amp; playerData.Deaths.ContainsKey(victim.userID)){
+                    playerData.Deaths[victim.userID]++;
+                }
+              
+                //victim.Respawn();
+              
+                //rust.BroadcastChat(string.Format(&quot;K: {0} D: {1}&quot;, playerData.Kills[killer.userID], playerData.Deaths[killer.userID]),null,null);
+              
+                //Puts(playerData.Kills[killer.userID]);
+                //Puts(playerData.Deaths[killer.userID]);
+            }
+        }</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jun 30, 2016 at 1:16 AM">Jun 30, 2016</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">ThunderZ</a>,</span>
+					<a href="threads/nullreferenceexception-in-my-code.19064/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2016 at 12:21 AM">Jun 30, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/nullreferenceexception-in-my-code.19064/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/220612/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-220617" class="message   " data-author="FuJiCuRa">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="FuJiCuRa" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">FuJiCuRa</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					try this one on the first part....<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        void OnEntityDeath(BaseCombatEntity entity, HitInfo hitInfo){
+            if(entity != null &amp;&amp; entity is BasePlayer){
+                var killer = hitInfo.Initiator as BasePlayer;
+                var victim = entity as BasePlayer;
+
+...
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
+					<a href="threads/nullreferenceexception-in-my-code.19064/#post-220617" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 30, 2016 at 1:11 AM">Jun 30, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/nullreferenceexception-in-my-code.19064/#post-220617" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/220617/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-221082" class="message   " data-author="ThunderZ">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ThunderZ" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">ThunderZ</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0
+01:50 [Error] Failed to run a 1.00 timer in 'NukeTown v1.0.0' (NullReferenceException: Object reference not set to an instance of an object)
+01:50 [Debug]   at Oxide.Plugins.NukeTown.&lt;initTimer&gt;m__1 () [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Libraries.Timer+TimerInstance.FireCallback () [0x00000] in &lt;filename unknown&gt;:0 </pre>
+</div>
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        void initGame(){
+            timer.Repeat(1f, 0, () =&gt;
+            {
+                if(BasePlayer.activePlayerList.Count == 0){
+                        currTick = 0;
+                        msgTick = 0;
+                }
+               
+                if(msgTick &gt;= msgPerTick){
+                    rust.BroadcastChat(string.Format(&quot;[{1}] Next map: {0}&quot;, nextMap, nukeTag),null,null);
+                    msgTick = 0;
+                }
+               
+                if(currTick == maxTick-10){
+                    showScores();
+                    godMode = 1;
+                }
+               
+                if(currTick &gt; maxTick){
+                    rust.BroadcastChat(string.Format(&quot;[{1}] Switching to {0}.&quot;, nextMap, nukeTag),null,null);
+                   
+                    currSpawn = 1;
+            
+                    relocatePlayers(nextMap);
+                   
+                    if(nextMap == &quot;Powerplant&quot;){
+                        spawnsname = &quot;Powerplant&quot;;
+                        nextMap = &quot;Satellite&quot;;
+                    }
+                    else if(nextMap == &quot;Satellite&quot;){
+                        spawnsname = &quot;Satellite&quot;;
+                        nextMap = &quot;Water Treatment&quot;;
+                    }
+                    else if(nextMap == &quot;Water Treatment&quot;){
+                        spawnsname = &quot;Water Treatment&quot;;
+                        nextMap = &quot;Trainyard&quot;;
+                    }
+                    else if(nextMap == &quot;Trainyard&quot;){
+                        spawnsname = &quot;Trainyard&quot;;
+                        nextMap = &quot;Dome&quot;;
+                    }
+                    else if(nextMap == &quot;Dome&quot;){
+                        spawnsname = &quot;Dome&quot;;
+                        nextMap = &quot;Airfield&quot;;
+                    }
+                    else if(nextMap == &quot;Airfield&quot;){
+                        spawnsname = &quot;Airfield&quot;;
+                        nextMap = &quot;Powerplant&quot;;
+                    }
+
+                    godMode = 0;
+                   
+                    playerData.Kills.Clear();
+                    playerData.Deaths.Clear();
+                    deleteScores();
+                   
+                    initPlayers();
+                   
+                    currTick = 0;
+                }
+               
+
+                currTick++;
+                msgTick++;
+                TOD_Sky.Instance.Cycle.Hour=12.00f;
+                RefreshUI();
+            });
+        }</pre>
+</div>This happens when running a timer.repeat upon server initialization if i reload the plugin it works fine.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">ThunderZ</a>,</span>
+					<a href="threads/nullreferenceexception-in-my-code.19064/#post-221082" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 1, 2016 at 3:27 AM">Jul 1, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/nullreferenceexception-in-my-code.19064/#post-221082" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/221082/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-221152" class="message   " data-author="Mughisi">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mughisi</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					When exactly do you execute that method? Seeing that you have some TOD stuff in there it might just be that you are calling the method to soon (before TOD is initialized) leaving you with an NRE.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+					<a href="threads/nullreferenceexception-in-my-code.19064/#post-221152" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 1, 2016 at 11:36 AM">Jul 1, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/nullreferenceexception-in-my-code.19064/#post-221152" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/221152/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-221369" class="message   " data-author="ThunderZ">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ThunderZ" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">ThunderZ</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Mughisi">
+	<aside>
+		
+			<div class="attribution type">Mughisi said:
+				
+					<a href="goto/post?id=221152#post-221152" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">When exactly do you execute that method? Seeing that you have some TOD stuff in there it might just be that you are calling the method to soon (before TOD is initialized) leaving you with an NRE.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        void OnPluginLoaded(){
+            initPlayers();
+            //killSleepers();
+            OpenUIAll();
+            initGame();
+        }</pre>
+</div>[DOUBLEPOST=1467412854][/DOUBLEPOST]
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="ThunderZ">
+	<aside>
+		
+			<div class="attribution type">ThunderZ said:
+				
+					<a href="goto/post?id=221369#post-221369" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        void OnPluginLoaded(){
+            initPlayers();
+            //killSleepers();
+            OpenUIAll();
+            initGame();
+        }</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I fixed it using OnServerInitialized() instead.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">ThunderZ</a>,</span>
+					<a href="threads/nullreferenceexception-in-my-code.19064/#post-221369" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 1, 2016 at 11:22 PM">Jul 1, 2016</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/nullreferenceexception-in-my-code.19064/#post-221369" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/221369/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548963802,
+		today: 1548892800,
+		todayDow: 4
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Passing commands through GUI into ingame console | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/passing-commands-through-gui-into-ingame-console.31180/" />
+	<meta name="description" content="Hi guys,
+
+I've been trying to pass commands through a recycled GUI to suite my own needs, into the games console, which is only usable by admins with..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/passing-commands-through-gui-into-ingame-console.31180/" />
+	<meta property="og:title" content="Passing commands through GUI into ingame console" />
+	<meta property="og:description" content="Hi guys,
+
+I've been trying to pass commands through a recycled GUI to suite my own needs, into the games console, which is only usable by admins with..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/passing-commands-through-gui-into-ingame-console.31180/">Passing commands through GUI into ingame console</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Mars Argo</a>, <a href="threads/passing-commands-through-gui-into-ingame-console.31180/"><span class="DateTime" title="Jul 15, 2018 at 10:10 PM">Jul 15, 2018</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-408455" class="message   " data-author="Mars Argo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mars Argo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mars Argo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hi guys,<br />
+<br />
+I&#039;ve been trying to pass commands through a recycled GUI to suite my own needs, into the games console, which is only usable by admins with an Oxide permission I&#039;ve predefined. <br />
+<br />
+my issue is playerbase doesn&#039;t have the command i&#039;m trying to use, and i have no idea how to change it into a suitable structure to pass it from a gui button i&#039;ve set, into the ingame console.<br />
+<br />
+Any insight is much appreciated.<br />
+<br />
+The code i&#039;ve been changing and editing to try and get it to work:<br />
+<br />
+&quot;<br />
+       [ConsoleCommand(&quot;padm_teleport&quot;)]<br />
+        private void ccmdAdminMenu(ConsoleSystem.Arg arg)<br />
+        {<br />
+            var player = arg.Player();<br />
+            if (player == null) return;<br />
+           // ulong targetId;<br />
+<br />
+            //if (!VerifyPermission(ref player, &quot;AdminMenu.allow&quot;) || !GetTargetFromArg(ref arg, out targetId) || !configData.Enableteleport)<br />
+           //     return;<br />
+<br />
+            covalence.Players.FindPlayer(player.UserIDString).Teleport(targetId);<br />
+            LogInfo($&quot;{player.displayName}: Teleported too {targetId}&quot;);<br />
+            BuildUI(Player, UiPage.PlayersPage, targetId.ToString());<br />
+        } <br />
+&quot;<br />
+<br />
+Error:<br />
+<br />
+Error while compiling: AdminMenu.cs(1378,21): error CS1503: Argument `#1&#039; cannot convert `Oxide.Game.Rust.Libraries.Player&#039; expression to type `BasePlayer&#039;<br />
+<br />
+Much appreciated, sorry for being a nub. im sure i missed something obvious / am being an idiot, but im very new to C# and plugin development and such for Rust as is, so again, be gentle with me haha.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mars Argo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 15, 2018 at 10:10 PM">Jul 15, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408455/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408474" class="message   " data-author="MrPoundsign">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="MrPoundsign" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">MrPoundsign</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I think you want<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>arg.Connection.player as BasePlayer</pre>
+</div>Just looking at other plugins.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">MrPoundsign</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408474" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 16, 2018 at 3:59 AM">Jul 16, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408474" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408474/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408523" class="message   " data-author="Mars Argo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mars Argo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mars Argo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey, i&#039;ll take a look. Thank you.<br />
+[DOUBLEPOST=1531769809][/DOUBLEPOST]The original developer of the GUI im using is much more skilled than me, this is my learning curve so to speak. I appreciate the help.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mars Argo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408523" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 16, 2018 at 8:34 PM">Jul 16, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408523" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408523/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408527" class="message   " data-author="Mars Argo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mars Argo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mars Argo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Not sure if i&#039;m dumb or not, still can&#039;t get it to run, just getting a base player conversion error again, i think im going to try and work around it until i get it down. Thanks though. Chances are your recommendation would work, i just still don&#039;t know how to structure it. <br />
+<br />
+
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="MrPoundsign">
+	<aside>
+		
+			<div class="attribution type">MrPoundsign said:
+				
+					<a href="goto/post?id=408474#post-408474" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I think you want<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>arg.Connection.player as BasePlayer</pre>
+</div>Just looking at other plugins.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mars Argo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408527" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 16, 2018 at 9:56 PM">Jul 16, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408527" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408527/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408541" class="message   " data-author="Steenamaroo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Steenamaroo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Steenamaroo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<i>var player = arg.Connection.player as BasePlayer;</i><br />
+ is correct and does need fixed,<br />
+but the error is coming from &#039;BuildUI(Player,.....&#039;<br />
+<br />
+Player with a capital is a type and the error is telling you that type is Oxide.Game.Rust.Libraries.Player, where the method expects BasePlayer.<br />
+<br />
+Change the arg.Connection line, and then Player to player, and see what the next error is. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Steenamaroo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408541" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 17, 2018 at 12:22 AM">Jul 17, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408541" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408541/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408545" class="message   " data-author="Mars Argo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mars Argo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mars Argo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey there. Thank you, feel a bit silly now.<br />
+<br />
+Next error is:<br />
+<br />
+Error while compiling: AdminMenu.cs(1191,72): error CS1503: Argument `#1&#039; cannot convert `ulong&#039; expression to type `Oxide.Core.Libraries.Covalence.GenericPosition&#039;<br />
+<br />
+One issue passed, another presented haha. <br />
+<br />
+Thanks for the help so far.<br />
+<br />
+
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="Steenamaroo">
+	<aside>
+		
+			<div class="attribution type">Steenamaroo said:
+				
+					<a href="goto/post?id=408541#post-408541" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote"><i>var player = arg.Connection.player as BasePlayer;</i><br />
+ is correct and does need fixed,<br />
+but the error is coming from &#039;BuildUI(Player,.....&#039;<br />
+<br />
+Player with a capital is a type and the error is telling you that type is Oxide.Game.Rust.Libraries.Player, where the method expects BasePlayer.<br />
+<br />
+Change the arg.Connection line, and then Player to player, and see what the next error is. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mars Argo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408545" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 17, 2018 at 1:31 AM">Jul 17, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408545" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408545/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408546" class="message   " data-author="Steenamaroo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Steenamaroo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Steenamaroo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Use the error and the clues it gives you.<br />
+The complaint is about trying to convert ulong to type ..GenericPosition.<br />
+<br />
+So I guess you&#039;re passing a player.userID to something that wants a location?<br />
+<br />
+Post your up to date code in a codeblock as you go. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Steenamaroo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408546" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 17, 2018 at 1:40 AM">Jul 17, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408546" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408546/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408569" class="message   " data-author="Mars Argo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mars Argo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mars Argo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I am. I&#039;m trying to pass a command to find a player, by ID and bring them to the ID of the player using the interface, in this case, my admins, as well as find the id of players, and use the teleport command to bring my admins to them, which is the focus of this case/code, i can worry about figuring out the bring later...<br />
+ <br />
+I&#039;m doing it using a consolecommand method, passing it off to check a permission, then if the permission is enabled, it should pass the code, to find the player, and then move the admin using the gui to the position of the player, which in this case im trying to call with targetId.<br />
+<br />
+Here&#039;s the code so far:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>       [ConsoleCommand(&quot;admin_goto&quot;)]
+        private void ccmdAdminMenu(ConsoleSystem.Arg arg)
+        {
+            var player = arg.Connection.player as BasePlayer;
+            ulong targetId;
+            if (player == null) return;
+
+
+            (!VerifyPermission(ref player, &quot;AdminMenu.allow&quot;) || !GetTargetFromArg(ref arg, out targetId) || !configData.Enableteleport);
+            return;
+
+            covalence.Players.FindPlayer(player.UserIDString).Teleport(targetId);
+            LogInfo($&quot;{player.displayName}: Teleported too {targetId}&quot;);
+            BuildUI(player, UiPage.PlayersPage, targetId.ToString());
+        }</pre>
+</div>I&#039;ll try to further edit and make changes shortly. I&#039;m unable to work on it very much, so decided the great plugin developers of Oxide forums might be able to help, to which you&#039;ve been fantastic so far. Let me know if there are any glaring issues, other than ulong being incorrect. Just gotta find out what i need to replace it with now haha. <br />
+<br />
+Thanks
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mars Argo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408569" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 17, 2018 at 12:49 PM">Jul 17, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408569" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408569/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408581" class="message   " data-author="Steenamaroo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Steenamaroo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Steenamaroo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Ok,<br />
+You&#039;ve lost the &quot;if&quot; before your three conditions there, so that won&#039;t compile.<br />
+<br />
+The error you&#039;re being told about is<br />
+<i>covalence.Players.FindPlayer(player.UserIDString).Teleport(targetId);</i><br />
+<br />
+It looks like Teleport() will accept BasePlayer, Vector3, or string, but you&#039;re feeding it ulong.<br />
+or it accepts player, position, or name, and you&#039;re feeding it ID.<br />
+<br />
+If you have the BasePlayer you have direct access all those things and more,<br />
+so matching the given ID against ID&#039;s of online players to get the BasePlayer might be better?<br />
+<br />
+If you declare target = null before, then you can check if it&#039;s still null after the loop, to know if you found someone or not.<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+BasePlayer target = null;
+foreach (BasePlayer current in BasePlayer.activePlayerList)
+{
+    if (current.userID == targetId)
+    {
+        target = current;
+        player.Teleport(target.transform.position);
+        //rest of stuff
+    }
+}
+if (target == null)
+Puts(&quot;Couldn't find that player online&quot;);
+</pre>
+</div>I&#039;m sure there are more direct ways, but I thought that would be easy to visualise.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jul 17, 2018 at 10:47 PM">Jul 17, 2018</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Steenamaroo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408581" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 17, 2018 at 4:52 PM">Jul 17, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408581" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408581/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-408611" class="message   " data-author="Mars Argo">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mars Argo" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Mars Argo</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey,<br />
+<br />
+Thank you for taking timeout of your days to help me, it&#039;s much appreciated.<br />
+<br />
+
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="Steenamaroo">
+	<aside>
+		
+			<div class="attribution type">Steenamaroo said:
+				
+					<a href="goto/post?id=408581#post-408581" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Ok,<br />
+You&#039;ve lost the &quot;if&quot; before your three conditions there, so that won&#039;t compile.<br />
+<br />
+The error you&#039;re being told about is<br />
+<i>covalence.Players.FindPlayer(player.UserIDString).Teleport(targetId);</i><br />
+<br />
+It looks like Teleport() will accept BasePlayer, Vector3, or string, but you&#039;re feeding it ulong.<br />
+or it accepts player, position, or name, and you&#039;re feeding it ID.<br />
+<br />
+If you have the BasePlayer you have direct access all those things and more,<br />
+so matching the given ID against ID&#039;s of online players to get the BasePlayer might be better?<br />
+<br />
+If you declare target = null before, then you can check if it&#039;s still null after the loop, to know if you found someone or not.<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+BasePlayer target = null;
+foreach (BasePlayer current in BasePlayer.activePlayerList)
+{
+    if (current.userID == targetId)
+    {
+        target = current;
+        player.Teleport(target.transform.position);
+        //rest of stuff
+    }
+}
+if (target == null)
+Puts(&quot;Couldn't find that player online&quot;);
+</pre>
+</div>I&#039;m sure there are more direct ways, but I thought that would be easy to visualise.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I&#039;ll keep progressing, and see how i go . If i finish my customised Gui and if i have permission from the original GUI&#039;s developer, post it so people can use it if they want.<br />
+<br />
+Thanks again, ill let you know how i get on if you have any interest. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Mars Argo</a>,</span>
+					<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408611" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 18, 2018 at 12:13 AM">Jul 18, 2018</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/passing-commands-through-gui-into-ingame-console.31180/#post-408611" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/408611/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548533064,
+		today: 1548460800,
+		todayDow: 6
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

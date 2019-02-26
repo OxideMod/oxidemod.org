@@ -1,0 +1,2326 @@
+﻿<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+		<!--<base href="https://oxidemod.org/">-->
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Stopping Supply Signal airdrop from spawning (LUA) | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="..\..\css-77.css?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830">
+	<link rel="stylesheet" href="..\..\css-80.css?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830">
+	
+	
+
+	
+		<script src="..\..\js\jquery\jquery-1.11.0.min-2.js"></script>	
+		
+	<script src="..\..\js\xenforo\xenforo-2.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="196x196" href="..\..\styles\oxide\logo.og-2.png">
+<link rel="apple-touch-icon" href="..\..\styles\oxide\logo.og-2.png">
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="..\..\forums\-\index.xml">
+		
+	
+	<link rel="canonical" href="index-3.html">
+	<meta name="description" content="I would like to know how it is possible or if it is even possible to stop the airdrop spawned by the supply signal (latest Rust) from spawning">	<meta property="og:site_name" content="Oxide">
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png">
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://oxidemod.org/threads/stopping-supply-signal-airdrop-from-spawning-lua.8478/">
+	<meta property="og:title" content="Stopping Supply Signal airdrop from spawning (LUA)">
+	<meta property="og:description" content="I would like to know how it is possible or if it is even possible to stop the airdrop spawned by the supply signal (latest Rust) from spawning">
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="..\..\index-4.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\index-4.html#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\categories\archive.104\index-2.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\categories\plugin-development.105\index-2.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="..\..\forums\rust-development.4\index-166.html" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="index-3.html">Stopping Supply Signal airdrop from spawning (LUA)</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="..\..\forums\rust-development.4\index-166.html">Rust Development</a>' started by <a class="username" dir="auto">LaserHydra</a>, <a href="index-3.html"><span class="DateTime" title="May 15, 2015 at 1:04 PM">May 15, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookiename="posts" data-controls="#InlineModControls" data-imodoptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-88930" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I would like to know how it is possible or if it is even possible to stop the airdrop spawned by the supply signal (latest Rust) from spawning
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 1:04 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/88930/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-88986" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=88930#post-88930" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I would like to know how it is possible or if it is even possible to stop the airdrop spawned by the supply signal (latest Rust) from spawning</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>First off have you looked into how rust is handling the supply signal and airdrop? If so to speed this process along can you post the code related to the supply signal and airdrops in this thread. I ask this because it gets you to look at how rust is doing things and how you might be able to modify it. <br>
+Once you have done this I can help you.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-88986" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 4:31 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-88986" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/88986/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89056" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					In the decompiled Assemply file?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89056" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 6:56 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89056" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89056/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89113" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=89056#post-89056" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">In the decompiled Assemply file?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Yup
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89113" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 9:20 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89113" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89113/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89126" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Thats all I found... As I said, im not that great in searching through the decompiled data..<br>
+
+	
+	<img src="..\..\attachments\screenshot_21-png.8895\Screenshot_21-1.png" alt="Screenshot_21.png" class="bbCodeImage LbImage">
+		
+ 
+	
+	<img src="..\..\attachments\screenshot_27-png.8896\Screenshot_27-1.png" alt="Screenshot_27.png" class="bbCodeImage LbImage">
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89126" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 9:55 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89126" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89126/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89130" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=89126#post-89126" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Thats all I found... As I said, im not that great in searching through the decompiled data..<br>
+
+
+	<a href="https://oxidemod.org/attachments/8895/" target="_blank">View attachment 8895</a>
+	
+ 
+
+	<a href="https://oxidemod.org/attachments/8896/" target="_blank">View attachment 8896</a>
+	
+</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Update your files..<br>
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>public class SupplySignal : TimedExplosive
+{
+    public SupplySignal()
+    {
+    }
+
+    public override void Explode()
+    {
+        GameManager gameManager = GameManager.server;
+        Vector3 vector3 = new Vector3();
+        Quaternion quaternion = new Quaternion();
+        BaseEntity baseEntity = gameManager.CreateEntity(&quot;events/cargo_plane&quot;, vector3, quaternion, true);
+        if (baseEntity)
+        {
+            baseEntity.GetComponent&lt;CargoPlane&gt;().InitDropPosition(base.GetEstimatedWorldPosition());
+            baseEntity.Spawn(true);
+        }
+        Effect.server.Run(this.explosionEffect.resourcePath, this, 0, Vector3.zero, Vector3.up, null, true);
+        base.Invoke(&quot;FinishUp&quot;, 120f);
+    }
+
+    public void FinishUp()
+    {
+        base.Kill(BaseNetworkable.DestroyMode.None);
+    }
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89130" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:07 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89130" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89130/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89131" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					You mean updating my assembly file? I got the latest Rust version though...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89131" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:09 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89131" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89131/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89132" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=89131#post-89131" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You mean updating my assembly file? I got the latest Rust version though...</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You need the rust server files.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89132" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:11 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89132" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89132/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89134" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Hatemail">
+	<aside>
+		
+			<div class="attribution type">Hatemail said:
+				
+					<a href="goto/post?id=89132#post-89132" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You need the rust server files.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>The problem there is that strangely those arent displaying where they should be, and where they were.
+	
+	<img src="..\..\attachments\screenshot_30-png.8898\Screenshot_30-1.png" alt="Screenshot_30.png" class="bbCodeImage LbImage">
+		
+ 
+	
+	<img src="..\..\attachments\screenshot_29-png.8899\Screenshot_29-1.png" alt="Screenshot_29.png" class="bbCodeImage LbImage">
+		
+ 
+	
+	<img src="..\..\attachments\screenshot_28-png.8900\Screenshot_28-1.png" alt="Screenshot_28.png" class="bbCodeImage LbImage">
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89134" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:13 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89134" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89134/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89136" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Just use the one that you download when installing oxide.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89136" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:33 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89136" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89136/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89138" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					okay.<br>
+Got it now:<br>
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+using System;
+using UnityEngine;
+
+public class SupplySignal : TimedExplosive
+{
+    public SupplySignal()
+    {
+    }
+
+    public override void Explode()
+    {
+        GameManager gameManager = GameManager.server;
+        Vector3 vector3 = new Vector3();
+        Quaternion quaternion = new Quaternion();
+        BaseEntity baseEntity = gameManager.CreateEntity(&quot;events/cargo_plane&quot;, vector3, quaternion, true);
+        if (baseEntity)
+        {
+            baseEntity.GetComponent&lt;CargoPlane&gt;().InitDropPosition(base.GetEstimatedWorldPosition());
+            baseEntity.Spawn(true);
+        }
+        Effect.server.Run(this.explosionEffect.resourcePath, this, 0, Vector3.get_zero(), Vector3.get_up(), null, true);
+        base.Invoke(&quot;FinishUp&quot;, 120f);
+    }
+
+    public void FinishUp()
+    {
+        base.Kill(BaseNetworkable.DestroyMode.None);
+    }
+}</pre>
+</div>[DOUBLEPOST=1431726086][/DOUBLEPOST]I guess I would need to replace / override that &quot;Explode&quot; function anyhow?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89138" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:38 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89138" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89138/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89144" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=89138#post-89138" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">okay.<br>
+Got it now:<br>
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+using System;
+using UnityEngine;
+
+public class SupplySignal : TimedExplosive
+{
+    public SupplySignal()
+    {
+    }
+
+    public override void Explode()
+    {
+        GameManager gameManager = GameManager.server;
+        Vector3 vector3 = new Vector3();
+        Quaternion quaternion = new Quaternion();
+        BaseEntity baseEntity = gameManager.CreateEntity(&quot;events/cargo_plane&quot;, vector3, quaternion, true);
+        if (baseEntity)
+        {
+            baseEntity.GetComponent&lt;CargoPlane&gt;().InitDropPosition(base.GetEstimatedWorldPosition());
+            baseEntity.Spawn(true);
+        }
+        Effect.server.Run(this.explosionEffect.resourcePath, this, 0, Vector3.get_zero(), Vector3.get_up(), null, true);
+        base.Invoke(&quot;FinishUp&quot;, 120f);
+    }
+
+    public void FinishUp()
+    {
+        base.Kill(BaseNetworkable.DestroyMode.None);
+    }
+}</pre>
+</div>[DOUBLEPOST=1431726086][/DOUBLEPOST]I guess I would need to replace / override that &quot;Explode&quot; function anyhow?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>No just destroy the cargo plane.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89144" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:45 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89144" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89144/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89145" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Hatemail">
+	<aside>
+		
+			<div class="attribution type">Hatemail said:
+				
+					<a href="goto/post?id=89144#post-89144" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">No just destroy the cargo plane.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Now the question, how am I able to detect the right airdrop to delete... I mean I basicly know how to kill an entity...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89145" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 10:50 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89145" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89145/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89151" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=89145#post-89145" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Now the question, how am I able to detect the right airdrop to delete... I mean I basicly know how to kill an entity...</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>That is something for you to figure out.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89151" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 11:06 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89151" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89151/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89152" class="message   " data-author="LaserHydra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="LaserHydra"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">LaserHydra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Hatemail">
+	<aside>
+		
+			<div class="attribution type">Hatemail said:
+				
+					<a href="goto/post?id=89151#post-89151" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">That is something for you to figure out.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Just a tip which could help me: Will the Code I posted up there help me there or outside of it?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+					<a href="index-3.html#post-89152" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 11:07 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89152" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89152/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-89162" class="message   " data-author="Hatemail">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="..\..\styles\default\xenforo\avatars\avatar_m-2.png" width="96" height="96" alt="Hatemail"></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Hatemail</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+	<aside>
+		
+			<div class="attribution type">LaserHydra said:
+				
+					<a href="goto/post?id=89152#post-89152" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Just a tip which could help me: Will the Code I posted up there help me there or outside of it?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Ofc it will..<br>
+<br>
+Write the code to do the following:<br>
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>function ThrowSignalHook
+    local planes = GetAllCargoPlanes()
+    if planes.length == 1 then
+       planes[0]:Destroy()
+    else
+        local lowestTime = GetSecondsTaken(planes[0])
+        local lastSpawnedPlane = planes[0]
+        for plane in planes do
+            if GetSecondsTaken(plane) &lt; lowestTime then
+                lowestTime = GetSecondsTaken(plane)
+                lastSpawnedPlane = plane
+            end if
+        end
+    lastSpawnedPlane:Destroy()
+    end if
+end</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+					<a href="index-3.html#post-89162" title="Permalink" class="datePermalink"><span class="DateTime" title="May 15, 2015 at 11:37 PM">May 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="index-3.html#post-89162" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/89162/permalink">#16</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	<input type="hidden" name="_xfToken" value="">
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="..\..\terms\index-2.html">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="..\..\index-4.html">
+				<span></span>
+				<img src="..\..\styles\oxide\logo-2.png" alt="Oxide">
+			</a></div>
+
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="..\..\index-4.html" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="..\..\downloads\index-3.html" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="..\..\plugins\index-3.html" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1550045956,
+		today: 1550016000,
+		todayDow: 3
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="https://oxidemod.org/" />
+    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+    <title>Can&#039;t call static method in static class | Oxide</title>
+    <noscript>
+        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+    </noscript>
+    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+    <script src="js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+    <link rel="canonical" href="https://oxidemod.org/threads/cant-call-static-method-in-static-class.26003/" />
+    <meta name="description" content="I'm working on my own plugin, and I'm new to Rust, so this will help me start out. I am having problems with one of my classes. It's a class that holds..." />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://oxidemod.org/threads/cant-call-static-method-in-static-class.26003/" />
+    <meta property="og:title" content="Can&#039;t call static method in static class" />
+    <meta property="og:description" content="I'm working on my own plugin, and I'm new to Rust, so this will help me start out. I am having problems with one of my classes. It's a class that holds..." />
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="thread_view">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop ">
+                        <nav>
+                            <fieldset class="breadcrumb">
+                                <div class="boardTitle"><strong>Oxide</strong></div>
+                                <span class="crumbs">
+                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+                                        <span class="arrow"><span>&gt;</span></span>
+                                    </span>
+                                </span>
+                            </fieldset>
+                        </nav>
+                    </div>
+                    <!-- h1 title, description -->
+                    <div class="titleBar">
+                        <h1>
+                            <a href="https://oxidemod.org/threads/cant-call-static-method-in-static-class.26003/">Can&#039;t call static method in static class</a>
+                        </h1>
+                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">JustCallMeAPro</a>,
+                            <a href="threads/cant-call-static-method-in-static-class.26003/"><span class="DateTime" title="Jun 20, 2017 at 8:44 AM">Jun 20, 2017</span></a>. </p>
+                    </div>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup SelectionCountContainer">
+                        </div>
+                    </div>
+                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
+                        <ol class="messageList" id="messageList">
+                            <li id="post-332474" class="message   " data-author="JustCallMeAPro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JustCallMeAPro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">JustCallMeAPro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m working on my own plugin, and I&#039;m new to Rust, so this will help me start
+                                                out. I am having problems with one of my classes. It&#039;s a class that holds Authorization Level based functions, and they are all static. When I say
+                                                a command and run a function in that class, it throws an object reference error, but not sure why. When I run <span style="text-decoration: underline">any</span>
+                                                method inside AuthLevel class, it throws this error. What I don&#039;t understand is that I have other static classes with static methods and
+                                                variables, that I can call and get/set without any errors. It&#039;s just this one class. Any help would be appreciated, and thanks.<br />
+                                                <br /> Here is the error:<br />
+                                                <br /> (03:35:54) | ExType: TypeInitializationException<br />
+                                                <br /> (03:35:55) | Failed to call hook &#039;CallAction&#039; on plugin &#039;AdminMenu v0.1.0&#039; (NullReferenceException: Object reference not set
+                                                to an instance of an object)<br />
+                                                <br /> (03:35:55) | at (wrapper stelemref) object:stelemref (object,intptr,object)<br />
+                                                <br /> at Oxide.Plugins.AdminMenu+AuthLevel..cctor () [0x00000] in &lt;filename unknown&gt;:0<br />
+                                                <br /> And here is the code:<br />
+                                                <br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>
+        static class AuthLevel
+        {
+            static public int[] auth_levels =
+            {
+                0, //No Access
+                1,
+                2,
+                3 //Full Access
+            };
+
+            public static string[][] allowedCommandsPerAuthLevel =
+            {
+                allowedCommandsPerAuthLevel[0] = new string[] { },
+                allowedCommandsPerAuthLevel[1] = new string[] {
+                    &quot;viewbans&quot;, &quot;ban&quot;, &quot;kick&quot;, &quot;unban&quot; },
+                allowedCommandsPerAuthLevel[2] = new string[] {
+                    &quot;open&quot;, &quot;close&quot;, &quot;reload&quot;, &quot;airdrop&quot;, &quot;vectortp&quot;, &quot;listplayers&quot;, &quot;listadmins&quot;, &quot;viewbans&quot;, &quot;kick&quot;, &quot;kickall&quot;, &quot;ban&quot;, &quot;unban&quot;, &quot;tp&quot;, &quot;spawnanimal&quot;,
+                    &quot;kill&quot;, &quot;mute&quot;, &quot;give&quot;, &quot;say&quot;, &quot;godmode&quot;, &quot;noclip&quot;, &quot;deathloop&quot;, &quot;setmoney&quot;, &quot;popup&quot;, &quot;turrets&quot;, &quot;setfire&quot;, &quot;rename&quot;, &quot;airdrop&quot;, &quot;airstrike&quot;, &quot;clearinv&quot;,
+                    &quot;repairinv&quot;, &quot;rotate&quot;, &quot;listkits&quot;, &quot;addkit&quot;, &quot;deletekit&quot;, &quot;loadkit&quot;, &quot;clonekit&quot;, &quot;saveplayerkit&quot;
+                },
+                allowedCommandsPerAuthLevel[3] = new string[] {
+                    &quot;open&quot;, &quot;close&quot;, &quot;reload&quot;, &quot;airdrop&quot;, &quot;vectortp&quot;, &quot;listplayers&quot;, &quot;listadmins&quot;, &quot;viewbans&quot;, &quot;kick&quot;, &quot;kickall&quot;, &quot;ban&quot;, &quot;unban&quot;, &quot;tp&quot;, &quot;spawnanimal&quot;, &quot;kill&quot;,
+                    &quot;mute&quot;, &quot;give&quot;, &quot;say&quot;, &quot;godmode&quot;, &quot;noclip&quot;, &quot;deathloop&quot;, &quot;setmoney&quot;, &quot;popup&quot;, &quot;turrets&quot;, &quot;setfire&quot;, &quot;rename&quot;, &quot;airdrop&quot;, &quot;airstrike&quot;, &quot;clearinv&quot;, &quot;repairinv&quot;,
+                    &quot;rotate&quot;, &quot;listkits&quot;, &quot;addkit&quot;, &quot;deletekit&quot;, &quot;loadkit&quot;, &quot;clonekit&quot;, &quot;saveplayerkit&quot;, &quot;setpermission&quot;, &quot;acceptauthrequest&quot;, &quot;freezetime&quot;, &quot;settime&quot;, &quot;setpassword&quot;, &quot;setjoinmsg&quot;
+                }
+            };
+
+            public static int returnAuthLevelFromID(string ID)
+            {
+                return 3;
+            }
+
+            public static bool commandAllowed(BasePlayer player, string command, string ID)
+            {
+                int auth_level = returnAuthLevelFromID(ID);
+
+                if (allowedCommandsPerAuthLevel[auth_level].ToList().FindIndex(element =&gt; element == command) &lt; 0)
+                    return false;
+
+                return true;
+            }
+
+            public static bool test()
+            {
+                return true;
+            }
+        }</pre>
+                                                </div><br />
+                                                <div class="bbCodeBlock bbCodeCode">
+                                                    <div class="type">Code:</div>
+                                                    <pre>
+        [ChatCommand(&quot;adminmenu&quot;)]
+        void CallAction(BasePlayer player, string command, string[] args)
+        {
+            //if (AuthLevel.returnAuthLevelFromID(player.UserIDString) &lt; 1)
+            //return;
+
+            /*if (args == null)
+                return;
+
+            if (args[0] == null)
+                return;*/
+
+            string arg_command = &quot;test&quot;;//args[0];
+
+            if (!(AuthLevel.test())) //player, arg_command, &quot;&quot; TODO FIX AuthLevel object reference error
+            {
+                SendMessage(player, &quot;{0} {1}&quot;, &quot;[AdminMenu]: &quot;, &quot;You are not authorized to use this command.&quot;);
+                return;
+            }
+
+            switch(command.ToLower())
+            {
+
+            }
+
+            SendMessage(player, &quot;{0} {1}&quot;, &quot;[AdminMenu]: &quot;, &quot;The '&quot; + arg_command + &quot;' command has executed successfully.&quot;);
+            //SendMessage(player, &quot;AdminMenu v{0}. Type -help for a list of commands.&quot;, AdminMenuInfoAttribute.Version);
+            //Puts(&quot;Player {0} has executed command {1}&quot;, player.displayName, command);
+        }</pre>
+                                                </div>
+                                                <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">JustCallMeAPro</a>,</span>
+                                                <a href="threads/cant-call-static-method-in-static-class.26003/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2017 at 8:44 AM">Jun
+                                                        20, 2017</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/cant-call-static-method-in-static-class.26003/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/332474/permalink">#1</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-332491" class="message   " data-author="Ryan">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ryan" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">Ryan</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I would not make the class static and instead just the methods inside of it. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">Ryan</a>,</span>
+                                                <a href="threads/cant-call-static-method-in-static-class.26003/#post-332491" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2017 at 9:50 AM">Jun
+                                                        20, 2017</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/cant-call-static-method-in-static-class.26003/#post-332491" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/332491/permalink">#2</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-332566" class="message   " data-author="JustCallMeAPro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JustCallMeAPro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">JustCallMeAPro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                                                <div class="bbCodeBlock bbCodeQuote" data-author="Ryan">
+                                                    <aside>
+                                                        <div class="attribution type">Ryan said: <a href="goto/post?id=332491#post-332491" class="AttributionLink">&uarr;</a>
+                                                        </div>
+                                                        <blockquote class="quoteContainer">
+                                                            <div class="quote">I would not make the class static and instead just the methods inside of it.</div>
+                                                            <div class="quoteExpand">Click to expand...</div>
+                                                        </blockquote>
+                                                    </aside>
+                                                </div>Alright thanks, will try it and post results.<br />
+                                                <br /> EDIT: Nope still getting same result in console. Even with a non-static class.<br /> [DOUBLEPOST=1497975902][/DOUBLEPOST]If I have to, I
+                                                don&#039;t mind moving the methods outside of the class, I just like to have neat, organized functions. I tried moving the test method outside of the
+                                                class, and voila, it worked. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jun 20, 2017 at 5:10 PM">Jun 20, 2017</span>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">JustCallMeAPro</a>,</span>
+                                                <a href="threads/cant-call-static-method-in-static-class.26003/#post-332566" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2017 at 4:58 PM">Jun
+                                                        20, 2017</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/cant-call-static-method-in-static-class.26003/#post-332566" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/332566/permalink">#3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="post-332593" class="message   " data-author="JustCallMeAPro">
+                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
+                                    <div class="messageUserBlock ">
+                                        <div class="avatarHolder">
+                                            <span class="helper"></span>
+                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JustCallMeAPro" /></a>
+                                        </div>
+                                        <h3 class="userText">
+                                            <a class="username" dir="auto">JustCallMeAPro</a>
+                                        </h3>
+                                        <span class="arrow"><span></span></span>
+                                    </div>
+                                </div>
+                                <div class="messageInfo primaryContent">
+                                    <div class="messageContent">
+                                        <article>
+                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ok so I&#039;ve narrowed it down to being a problem with how I initialize my
+                                                allowedCommandsPerAuthLevel array.<br />
+                                                <br /> EDIT: Can a mod/admin close this. I have figured out what was causing the error. Thanks again Ryan for your help. <div class="messageTextEndMarker">&nbsp;</div>
+                                            </blockquote>
+                                        </article>
+                                    </div>
+                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jun 20, 2017 at 6:29 PM">Jun 20, 2017</span>
+                                    </div>
+                                    <div class="messageMeta ToggleTriggerAnchor">
+                                        <div class="privateControls">
+                                            <span class="item muted">
+                                                <span class="authorEnd"><a class="username author" dir="auto">JustCallMeAPro</a>,</span>
+                                                <a href="threads/cant-call-static-method-in-static-class.26003/#post-332593" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2017 at 6:07 PM">Jun
+                                                        20, 2017</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="publicControls">
+                                            <a href="threads/cant-call-static-method-in-static-class.26003/#post-332593" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                                                data-href="posts/332593/permalink">#4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </form>
+                    <div class="pageNavLinkGroup">
+                        <div class="linkGroup">
+                        </div>
+                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+                    </div>
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent">
+                            </div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div id="header">
+            <div class="headerWidth">
+                <div id="logoBlock">
+                    <div id="logo"><a href="https://oxidemod.org/">
+                            <span></span>
+                            <img src="styles/oxide/logo.png" alt="Oxide" />
+                        </a></div>
+                    <span class="helper"></span>
+                </div>
+                <div id="navigation" class="">
+                    <div class="pageContent">
+                        <nav>
+                            <div class="navTabs">
+                                <ul class="publicTabs">
+                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+                                    </li>
+                                    <li class="navTab PopupClosed">
+                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+                                    </li>
+                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+                                    </li>
+                                    <li class="navTab selected">
+                                        <div class="tabLinks"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="helper"></span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548801913,
+                today: 1548720000,
+                todayDow: 2
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "thread_view": true,
+                "message": true,
+                "bb_code": true,
+                "message_user_info": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "ih_xfid_"
+            },
+            _csrfToken: "",
+            _csrfRefreshUrl: "login/csrf-token-refresh",
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+
+    </script>
+</body>
+
+</html>

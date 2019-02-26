@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Memory leaks and other things | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/memory-leaks-and-other-things.9403/" />
+	<meta name="description" content="Hello I was involved in a post yesterday regarding the memory leaks which I thought was sorted until I woke up this morning. 75% Memory being used. The..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/memory-leaks-and-other-things.9403/" />
+	<meta property="og:title" content="Memory leaks and other things" />
+	<meta property="og:description" content="Hello I was involved in a post yesterday regarding the memory leaks which I thought was sorted until I woke up this morning. 75% Memory being used. The..." />
+	
+	
+	
+
+</head>
+
+<body class="node23 node1 node104 node106 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/memory-leaks-and-other-things.9403/">Memory leaks and other things</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">Snipes 2</a>, <a href="threads/memory-leaks-and-other-things.9403/"><span class="DateTime" title="Jun 13, 2015 at 11:02 AM">Jun 13, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-98780" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hello I was involved in a post yesterday regarding the memory leaks which I thought was sorted until I woke up this morning. 75% Memory being used. The server was wiped on the main update so I was hoping it would last till the next ^^ Wishful thinking I know. I&#039;m using all the mod tools i.e decay, twig,wood,stone remove daily and also removing buildings myself that are beyond repair. When typing global.colliders it&#039;s saying 30255 colliders enabled and 8167 disabled.<br />
+<br />
+Problems I&#039;m having atm are most probably not oxide related but at least people answer you in this forum not like facepunch <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
+<br />
+1.  Memory leaks: Anyone know of any issue with mods atm that could be causing the memory to be worse? (This could just be Rust is it?)<br />
+2. Rendering: when flying the whole screen now freezes any time im close to a building. (anyone else having this)<br />
+3. Dead bodies? I&#039;m using mods to control this atm but can anyone confirm if this is the same on their server?<br />
+<br />
+Thanks for taking the time to read this.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jun 13, 2015 at 2:02 PM">Jun 13, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 11:02 AM">Jun 13, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98780/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-98868" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					All know memory leaks were fixed in the latest Rust updates.You may want to make sure you are on the latest of Rust and Oxide.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-98868" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 4:53 PM">Jun 13, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-98868" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98868/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-98987" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I&#039;m fully updated and just restarting the server is hitting 50% and slowly goes up from there. I&#039;ve spoke to my host and they are saying the server is using 5 gig of ram when the server restarts and it starts heading to the 8 gig mark after a few hours. The server is full most of the time so I&#039;m needing to kick 100 players every few hours.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-98987" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 10:24 PM">Jun 13, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-98987" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98987/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-98991" class="message   " data-author="PaiN">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">PaiN</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I&#039;v read your 1post but what about cleaning every some hours or mins ? automatically <br />
+You can make some &quot;Clean Up&quot; every x seconds with TimedExecute <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+Some players like to &quot;troll&quot; sometimes and they are placing useless stuff on the ground..<br />
+What can help you to execute:<br />
+1.<b>Twig Remover:</b>  <a href="http://oxidemod.org/plugins/twig-remover.864/" class="internalLink">http://oxidemod.org/plugins/twig-remover.864/</a><br />
+2. <b>(I edited it from twig remover but it works well)Wood Remover:</b> <a href="http://oxidemod.org/threads/twig-remover.7461/#post-84969" class="internalLink">http://oxidemod.org/threads/twig-remover.7461/#post-84969</a><br />
+3. <b>(Another version that i edited from twig remover) Stone Remover: </b><a href="http://oxidemod.org/threads/twig-remover.7461/#post-85993" class="internalLink">http://oxidemod.org/threads/twig-remover.7461/#post-85993</a>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jun 13, 2015 at 10:37 PM">Jun 13, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-98991" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 13, 2015 at 10:29 PM">Jun 13, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-98991" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/98991/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-99003" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Yeah m8 I&#039;m already using them all lol. I must be the most active admin removing crap on the map ^^ Think I&#039;ll need to wipe if I don&#039;t find the reason.<br />
+<br />
+Message from my host<br />
+<br />
+Unfortunately we&#039;re unable to determine the source of memory leaks. We can only advise you and hopefully you&#039;ll be able to find them! <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+[DOUBLEPOST=1434397983,1434234216][/DOUBLEPOST]Hello quick check.. Just wiped the server. All updated and installed the update mod tool (handy) everything is sorted. My last question is the server im using is running 8gig with a full wipe its using about 25% ram (34 users atm)  is that about right?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-99003" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 15, 2015 at 8:53 PM">Jun 15, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-99003" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/99003/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-99889" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Can I ask if anyone is having memory leaks? Server is fully updated, just wiped and using 25% of 8 gig to start with. Then the memory starts to go up and doesn&#039;t stop. Even when the server starts to get quiet the ram doesn&#039;t go down.<br />
+<br />
+<ul>
+<li>Steam fully updated</li>
+<li>Oxide updated</li>
+<li>Oxide plugins all up to date</li>
+</ul><br />
+Just back from work<br />
+<a href="http://postimage.org/" target="_blank" class="externalLink  rel="nofollow"><img src="proxy.php?image=http%3A%2F%2Fs17.postimg.org%2Fc4n6xg7hr%2FCapture.png&amp;hash=7f595d7ed9e19d4cac6e23a78152d94f" class="bbCodeImage LbImage" alt="[&#x200B;IMG]" data-url="http://s17.postimg.org/c4n6xg7hr/Capture.png" /></a><br />
+<br />
+If you know of any reasons for this please enlighten me as I&#039;ve already wiped my server thinking this would solve the problem.<br />
+<br />
+Thanks for reading.<br />
+[DOUBLEPOST=1434679426,1434475639][/DOUBLEPOST]Quick update. Still having memory issues<br />
+<br />
+Reinstalled my server tonight then added all the plugins I use. I&#039;m stabbing in the dark but does any of the plugins I&#039;m using conflict with each other?<br />
+0friendsAPI.lua <br />
+    admin-door-unlocker.lua <br />
+    AirdropControl.cs <br />
+    AutoDoorCloser.lua <br />
+    BetterLoot.cs <br />
+    BetterStability.cs <br />
+    BoxLooters.cs <br />
+    BuildingGrades.cs <br />
+    BuildingOwners.cs <br />
+    Clans.cs <br />
+    CleanUp.cs <br />
+    CopyPaste.cs <br />
+    CorpseCleaner.cs <br />
+    CraftingController.cs <br />
+    deathnotes.py <br />
+    FriendlyFire.lua                                                     <br />
+    Give.cs <br />
+    Godmode.cs <br />
+    helptext.lua <br />
+    Kits.cs <br />
+    m-DisappearingCorpses.lua <br />
+    m-GatherRate.lua <br />
+    m-Teleportation.lua <br />
+    m-Time.lua <br />
+    NoDistanceLoot.cs <br />
+    notifier.py <br />
+    privatemessage.lua <br />
+    radline.py <br />
+    RankME.py <br />
+    RemoverTool.cs <br />
+    RustBugFixes.cs <br />
+    SignArtist.cs <br />
+    StackSizes.cs <br />
+    StoneRemover.cs <br />
+    TwigRemover.cs <br />
+    TwigsDecay.cs <br />
+    Updater.lua <br />
+    voter.lua <br />
+    WhoUpdated.cs <br />
+    WoodRemover.cs <br />
+    ZoneManager.cs
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-99889" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 3:03 AM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-99889" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/99889/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-100768" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					It could really be anything. We can&#039;t really pinpoint it for you, you&#039;ll just need to try to narrow it down by removing plugins, testing individually, etc.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-100768" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 3:06 AM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-100768" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/100768/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-100786" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Yeah, I&#039;ve tried unloading each plugin and giving it 10 minutes in-between but the memory doesn&#039;t dissipate as the server starts to empty. It really is a strange one <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /> I&#039;ll stay hopeful that a solution will be found over time but atm I&#039;ll just need to restart the server every few hours. I&#039;ll add my oxide log just in case anyone spots something wrong.<br />
+<br />
+<a href="http://www.fireon-community.com/reads/oxidelogs.txt" target="_blank" class="externalLink  rel="nofollow">http://www.fireon-community.com/reads/oxidelogs.txt</a>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-100786" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 3:40 AM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-100786" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/100786/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-100989" class="message   " data-author="Nogrod">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Nogrod" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Nogrod</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					you can try one of my dev plugins and check if there are game objects which were leaking the memory:<br />
+<br />
+EDIT: replaced with uploaded plugin file<br />
+<br />
+it will add the console commands <b>goo.snap</b> and <b>goo.diff</b><br />
+create a object snapshot with goo.snap and you can see the changes with goo.diff (repeatable after a snapshot)
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="GameObjectObserver.cs">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/gameobjectobserver-cs.10029/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/gameobjectobserver-cs.10029/" target="_blank">GameObjectObserver.cs</a></h6>
+						<dl><dt>File size:</dt> <dd>3.1 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>23</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jun 20, 2015 at 11:37 PM">Jun 20, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Nogrod</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-100989" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 6:33 PM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-100989" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/100989/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-101014" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					What do I save this as? Will test it and see what it does lol
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-101014" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 9:06 PM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-101014" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/101014/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-101020" class="message   " data-author="Nogrod">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Nogrod" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Nogrod</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					it is a simple plugin -&gt; GameObjectObserver.cs would be the filename
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Nogrod</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-101020" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 9:17 PM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-101020" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/101020/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-101038" class="message   " data-author="Snipes 2">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Snipes 2" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Snipes 2</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Ive added it to my oxide plugin folder but Ive got a feelings you&#039;ll say im wrong lol, sorry Im a noob at this..<br />
+<br />
+Tried these goo.snap and goo.diff in console but nothing
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Snipes 2</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-101038" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 19, 2015 at 10:37 PM">Jun 19, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-101038" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/101038/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-101371" class="message   " data-author="Cheeze">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Cheeze" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Cheeze</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Thanks for this, works on mine but I&#039;m crap at interpretating the results.... this is what I got running the commands one after the other, like less than a second apart...<br />
+Objects: 1242443 Types: 1162   <br />
+________________________________________________________________________________________________________________________________________________________________<br />
+Type: servercollision Count: 468244<br />
+Type: build/wall Count: 76239<br />
+Type: build/pillar Count: 68667<br />
+Type: build/floor Count: 67047<br />
+Type: Mesh Count: 49496<br />
+Type: build/foundation Count: 31532<br />
+Type: build/floor.triangle Count: 23487<br />
+Type: autospawn/resource/forest-temperate/oak-1 Count: 15281<br />
+Type: autospawn/resource/forest-temperate/oak-2 Count: 14651<br />
+Type: items/furnace_deployed Count: 11896<br />
+________________________________________________________________________________________________________________________________________________________________<br />
+<br />
+[6/20/2015 11:26:19 PM] [Oxide] 11:26 PM [Info] [GameObjectObserver]<br />
+________________________________________________________________________________________________________________________________________________________________<br />
+Objects: 1242524(+81) Types: 1163(+1)   <br />
+________________________________________________________________________________________________________________________________________________________________<br />
+Type: Burlap Sack(Clone) Count: 25<br />
+Type: charcoal (world) Count: 20<br />
+Type: items/grenade.beancan.deployed Count: 8<br />
+Type: wolfmeat_cooked (world) Count: 5<br />
+Type: rock (world) Count: 5<br />
+Type: w_rock_LOD3 Count: 5<br />
+Type: servercollision Count: 4<br />
+Type: build/foundation Count: 4<br />
+Type: w_rock_LOD2 Count: 4<br />
+Type: rock.worldmodel(Clone) Count: 3<br />
+________________________________________________________________________________________________________________________________________________________________<br />
+[DOUBLEPOST=1434839008][/DOUBLEPOST]So I take that as +81 objects added in that brief time?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Cheeze</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-101371" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2015 at 11:22 PM">Jun 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-101371" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/101371/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-101377" class="message   " data-author="Nogrod">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Nogrod" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Nogrod</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					yes, normally you would wait some time or until memory usage increased before you use goo.diff to see how the object counts have changed...
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Nogrod</a>,</span>
+					<a href="threads/memory-leaks-and-other-things.9403/#post-101377" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2015 at 11:38 PM">Jun 20, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/memory-leaks-and-other-things.9403/#post-101377" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/101377/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1549599956,
+		today: 1549584000,
+		todayDow: 5
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

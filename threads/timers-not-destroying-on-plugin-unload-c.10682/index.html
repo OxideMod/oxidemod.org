@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Timers not destroying on plugin unload (C#) | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/timers-not-destroying-on-plugin-unload-c.10682/" />
+	<meta name="description" content="I probably found the bug.
+Here's code snippet:
+http://pastebin.com/0G1xSYCp
+
+Result: Timer is lost, and there is no way to stop it unless you saved its..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/timers-not-destroying-on-plugin-unload-c.10682/" />
+	<meta property="og:title" content="Timers not destroying on plugin unload (C#)" />
+	<meta property="og:description" content="I probably found the bug.
+Here's code snippet:
+http://pastebin.com/0G1xSYCp
+
+Result: Timer is lost, and there is no way to stop it unless you saved its..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/timers-not-destroying-on-plugin-unload-c.10682/">Timers not destroying on plugin unload (C#)</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">VVoid</a>, <a href="threads/timers-not-destroying-on-plugin-unload-c.10682/"><span class="DateTime" title="Jul 30, 2015 at 10:26 PM">Jul 30, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-114149" class="message   " data-author="VVoid">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VVoid" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">VVoid</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I probably found the bug.<br />
+Here&#039;s code snippet:<br />
+<a href="http://pastebin.com/0G1xSYCp" target="_blank" class="externalLink  rel="nofollow">http://pastebin.com/0G1xSYCp</a><br />
+<br />
+Result: Timer is lost, and there is no way to stop it unless you saved its handle during creation.<br />
+<br />
+Bug or plugin design mistake?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">VVoid</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:26 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114149/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114153" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					I&#039;m not quite sure what you&#039;re referring to. Timers are destroyed on Unload by default, as long as the plugin instance is passed to it.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited: <span class="DateTime" title="Jul 30, 2015 at 11:04 PM">Jul 30, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114153" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:30 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114153" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114153/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114156" class="message   " data-author="Reneb">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Reneb" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Reneb</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					always been like that.<br />
+you need to destroy the timer on plugin unload.<br />
+[DOUBLEPOST=1438291934][/DOUBLEPOST]
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=114153#post-114153" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I&#039;m not quite sure what you&#039;re referring to. Timers are destroyed on Unload by default, as long as the plugin instance is passed to it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>is it now? because before we always had to manually unlaod the timers
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Reneb</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114156" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:31 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114156" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114156/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114159" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Reneb">
+	<aside>
+		
+			<div class="attribution type">Reneb said:
+				
+					<a href="goto/post?id=114156#post-114156" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">always been like that.<br />
+you need to destroy the timer on plugin unload.<br />
+[DOUBLEPOST=1438291934][/DOUBLEPOST]<br />
+is it now? because before we always had to manually unlaod the timers</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>It&#039;s always been automatic, a lot of people just didn&#039;t pass the plugin instance/owner to it. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114159" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:34 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114159" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114159/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114178" class="message   " data-author="VVoid">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VVoid" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">VVoid</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=114153#post-114153" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I&#039;m not quite sure what you&#039;re referring to. Timers are destroyed on Unload by default, as long as the plugin instance is passed to it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Okay. Let me show again <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+<a href="http://pastebin.com/YbHWBeYG" target="_blank" class="externalLink  rel="nofollow">http://pastebin.com/YbHWBeYG</a><br />
+<br />
+Result:<br />
+
+
+
+<div class="bbCodeBlock bbCodeQuote">
+	<aside>
+		
+		<blockquote class="quoteContainer"><div class="quote">&gt; oxide.reload TimerTest<br />
+[Oxide] 12:41 AM [Info] TimerTest was compiled successfully in 100ms<br />
+<b>[Oxide] 12:41 AM [Info] Loaded plugin TimerTest v1.0.0 by ...</b><br />
+[Oxide] 12:41 AM [Info] [TimerTest] Loaded.<br />
+[Oxide] 12:41 AM [Info] [TimerTest] Unloaded.<br />
+<b>[Oxide] 12:41 AM [Info] Unloaded plugin TimerTest v1.0.0 by ...<br />
+[Oxide] 12:41 AM [Info] [TimerTest] Initialized.</b><br />
+[Oxide] 12:41 AM [Info] [TimerTest] Tick-tock.<br />
+[Oxide] 12:41 AM [Info] [TimerTest] Tick-tock.<br />
+[Oxide] 12:41 AM [Info] [TimerTest] Tick-tock.<br />
+[Oxide] 12:41 AM [Info] [TimerTest] Tick-tock.<br />
+[Oxide] 12:41 AM [Info] [TimerTest] Tick-tock.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>It will happen only if you reload plugin after the server has already been loaded.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">VVoid</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114178" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:46 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114178" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114178/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114181" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="VVoid">
+	<aside>
+		
+			<div class="attribution type">VVoid said:
+				
+					<a href="goto/post?id=114178#post-114178" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Okay. Let me show again <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+<a href="http://pastebin.com/YbHWBeYG" target="_blank" class="externalLink">http://pastebin.com/YbHWBeYG</a><br />
+<br />
+Result:<br />
+<br />
+<br />
+It will happen only if you reload plugin after the server has already been loaded.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Yeah, that&#039;s because you haven&#039;t destroyed it and you didn&#039;t pass the plugin instance to it, so the server has no idea what plugin owns the timer.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114181" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:48 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114181" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114181/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114186" class="message   " data-author="VVoid">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VVoid" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">VVoid</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=114181#post-114181" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Yeah, that&#039;s because you haven&#039;t destroyed it and you didn&#039;t pass the plugin instance to it, so the server has no idea what plugin owns the timer.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>So.. this can be considered as a plugin design error?<br />
+I am just a bit frustrated because OnServerInitialized is still being called, even if plugin was Unloaded and thus timer is created after unloading and it wont be destroyed automatically.<br />
+<br />
+Well, my mistake, probably. Sorry for bothering.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">VVoid</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114186" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 10:57 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114186" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114186/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114190" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="VVoid">
+	<aside>
+		
+			<div class="attribution type">VVoid said:
+				
+					<a href="goto/post?id=114186#post-114186" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">So.. this can be considered as a plugin design error?<br />
+I am just a bit frustrated because OnServerInitialized is still being called, even if plugin was Unloaded and thus timer is created after unloading and it wont be destroyed automatically.<br />
+<br />
+Well, my mistake, probably. Sorry for bothering.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I&#039;m not sure how to do it with C# plugins, but with all the others, simply passing the plugin instance at the end of the timer is the solution.<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>timer.Repeat(10, 0, function()
+    rust.BroadcastChat(&quot;SERVER&quot;, &quot;Hello world!&quot;)
+end, self.Plugin)</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114190" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 11:03 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114190" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114190/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114202" class="message   " data-author="VVoid">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VVoid" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">VVoid</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=114190#post-114190" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I&#039;m not sure how to do it with C# plugins, but with all the others, simply passing the plugin instance at the end of the timer is the solution.<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>timer.Repeat(10, 0, function()
+    rust.BroadcastChat(&quot;SERVER&quot;, &quot;Hello world!&quot;)
+end, self.Plugin)</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>But it&#039;s happening already i suppose?<br />
+<br />
+PluginTimers.cs<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        public Timer Every(float interval, Action callback)
+        {
+            return new Timer(timer.Repeat(interval, -1, callback, plugin));
+        }</pre>
+</div>RustPlugin.cs / CSharpPlugin.cs<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+        public abstract class RustPlugin : CSharpPlugin
+
+        ....
+
+        public CSharpPlugin() : base()
+        {
+            timer = new PluginTimers(this);</pre>
+</div>To make sure, i&#039;ve created timer in a explicit way (as you did):<br />
+<a href="http://pastebin.com/uP41FaWQ" target="_blank" class="externalLink  rel="nofollow">http://pastebin.com/uP41FaWQ</a><br />
+And nothing changed.<br />
+
+
+
+<div class="bbCodeBlock bbCodeQuote">
+	<aside>
+		
+		<blockquote class="quoteContainer"><div class="quote">&gt; oxide.reload TimerTest<br />
+[Oxide] 1:13 AM [Info] TimerTest was compiled successfully in 544ms<br />
+[Oxide] 1:13 AM [Info] Loaded plugin TimerTest v1.0.0 by ...<br />
+[Oxide] 1:13 AM [Info] [TimerTest] Loaded.<br />
+[Oxide] 1:13 AM [Info] [TimerTest] Unloaded.<br />
+<b>[Oxide] 1:13 AM [Info] Unloaded plugin TimerTest v1.0.0 by ...<br />
+[Oxide] 1:13 AM [Info] [TimerTest] Initialized.</b><br />
+[Oxide] 1:14 AM [Info] [TimerTest] Tick-tock.<br />
+[Oxide] 1:14 AM [Info] [TimerTest] Tick-tock.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>The likely problem is that timer is being created after when life cycle of plugin has ended. Not because the timer is doesn&#039;t know who created him.<br />
+<br />
+Such behavior seems too weird. OnServerInitialized shouldn&#039;t be called if plugin is already unloaded, either timers shouldn&#039;t be created under same circumstances.<br />
+<br />
+p.s Whoops. Please, move this post to the <a href="http://oxidemod.org/threads/timers-not-destroying-on-plugin-unload.10682/" class="internalLink">new thread</a> too <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+			<div class="editDate">
+			
+				Last edited by a moderator: <span class="DateTime" title="Jul 30, 2015 at 11:24 PM">Jul 30, 2015</span>
+			
+			</div>
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">VVoid</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114202" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 11:17 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114202" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114202/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114215" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="VVoid">
+	<aside>
+		
+			<div class="attribution type">VVoid said:
+				
+					<a href="goto/post?id=114202#post-114202" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">But it&#039;s happening already i suppose?<br />
+<br />
+PluginTimers.cs<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>        public Timer Every(float interval, Action callback)
+        {
+            return new Timer(timer.Repeat(interval, -1, callback, plugin));
+        }</pre>
+</div>RustPlugin.cs / CSharpPlugin.cs<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>
+        public abstract class RustPlugin : CSharpPlugin
+
+        ....
+
+        public CSharpPlugin() : base()
+        {
+            timer = new PluginTimers(this);</pre>
+</div>To make sure, i&#039;ve created timer in a explicit way (as you did):<br />
+<a href="http://pastebin.com/uP41FaWQ" target="_blank" class="externalLink">http://pastebin.com/uP41FaWQ</a><br />
+And nothing changed.<br />
+<br />
+<br />
+The likely problem is that timer is being created after when life cycle of plugin has ended. Not because the timer is doesn&#039;t know who created him.<br />
+<br />
+Such behavior seems too weird. OnServerInitialized shouldn&#039;t be called if plugin is already unloaded, either timers shouldn&#039;t be created under same circumstances.<br />
+<br />
+p.s Whoops. Please, move this post to the <a href="http://oxidemod.org/threads/timers-not-destroying-on-plugin-unload.10682/" class="internalLink">new thread</a> too <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I&#039;ll pass it by the others, as they&#039;re the C# guys. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114215" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 30, 2015 at 11:34 PM">Jul 30, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114215" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114215/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114446" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Don&#039;t be lazy and rely on others to clean up your timers, do it properly like this:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>namespace Oxide.Plugins
+{
+    [Info(&quot;TEST&quot;, &quot;TEST by Deicide666ra&quot;, &quot;1.0.0&quot;)]
+    public class Test : RustPlugin
+    {
+        private Timer g_timer;
+
+        void OnServerInitialized()
+        {
+            g_timer = timer.Every(300, OnTimer);
+        }
+
+        void OnTimer()
+        {
+            Puts(&quot;Tick tock!&quot;);
+        }
+
+        void Unloaded()
+        {
+            if (g_timer != null)
+            {
+                g_timer.Destroy();
+                g_timer = null;
+            }
+        }
+    }
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114446" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 31, 2015 at 2:54 PM">Jul 31, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114446" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114446/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114468" class="message   " data-author="VVoid">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VVoid" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">VVoid</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=114446#post-114446" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Don&#039;t be lazy and rely on others to clean up your timers, do it properly like this:<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>namespace Oxide.Plugins
+{
+    [Info(&quot;TEST&quot;, &quot;TEST by Deicide666ra&quot;, &quot;1.0.0&quot;)]
+    public class Test : RustPlugin
+    {
+        private Timer g_timer;
+
+        void OnServerInitialized()
+        {
+            g_timer = timer.Every(300, OnTimer);
+        }
+
+        void OnTimer()
+        {
+            Puts(&quot;Tick tock!&quot;);
+        }
+
+        void Unloaded()
+        {
+            if (g_timer != null)
+            {
+                g_timer.Destroy();
+                g_timer = null;
+            }
+        }
+    }
+}</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Don&#039;t be lazy reading the code a bit more carefully.<br />
+This happens when plugin unloads itself, and of course i taken care about the timer destroy in Unloaded method(which isn&#039;t necessary!), if you didn&#039;t seen it too.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">VVoid</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114468" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 31, 2015 at 3:52 PM">Jul 31, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114468" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114468/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114470" class="message   " data-author="Deicide666ra">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Deicide666ra</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="VVoid">
+	<aside>
+		
+			<div class="attribution type">VVoid said:
+				
+					<a href="goto/post?id=114468#post-114468" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Don&#039;t be lazy reading the code a bit more carefully.<br />
+This happens when plugin unloads itself, and of course i taken care about the timer destroy in Unloaded method(which isn&#039;t necessary!), if you didn&#039;t seen it too.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I see, sorry I only read the first snippet which did not destroy the timer.<br />
+<br />
+Why not use OnLoad() instead of OnServerInitialized for this?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114470" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 31, 2015 at 3:59 PM">Jul 31, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114470" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114470/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114471" class="message   " data-author="VVoid">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VVoid" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">VVoid</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+	<aside>
+		
+			<div class="attribution type">Deicide666ra said:
+				
+					<a href="goto/post?id=114470#post-114470" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I see, sorry I only read the first snippet which did not destroy the timer.<br />
+<br />
+Why not use OnLoad() instead of OnServerInitialized for this?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>For instance, because i don&#039;t want to start the timer before the server loads.<br />
+<br />
+Of course there are ways to do it in another way and avoid this. But the only reason why i posting this is because i think it could be a bug.<br />
+<br />
+Once plugin is unloaded it is also being removed from plugin manager and hook subscriptions, and therefore Oxide shouldn&#039;t call OnServerInitialized on it after that.<br />
+But somehow it happens.<br />
+[DOUBLEPOST=1438360293][/DOUBLEPOST]Alright, got it! It is not a bug.<br />
+Loaded and Init hooks is called from HandleAddedToManager methods.<br />
+Forcing unload of plugin at this moment causes it to unload in the middle of loading process and the shit will happen.<br />
+<br />
+Simply said, there is <i>no way</i> to unload plugin earlier than OnServerInitialized / OnPluginLoaded is called.<br />
+<br />
+Remember this and do not repeat my mistake <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">VVoid</a>,</span>
+					<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114471" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 31, 2015 at 4:20 PM">Jul 31, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/timers-not-destroying-on-plugin-unload-c.10682/#post-114471" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114471/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548599088,
+		today: 1548547200,
+		todayDow: 0
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

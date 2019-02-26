@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+		<base href="https://oxidemod.org/" />
+		<script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	
+
+	<title>Making a spawn point, also plugin loads incorrectly (JS) | Oxide</title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
+	
+	
+
+	
+		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
+		
+	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
+		
+	
+	<link rel="canonical" href="https://oxidemod.org/threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/" />
+	<meta name="description" content="Hey. I put the below code inside notepad++. I save it as 'purge.js' (a javascript file). I upload it into my plugins folder and try for it to work. I..." />	<meta property="og:site_name" content="Oxide" />
+	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
+	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://oxidemod.org/threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/" />
+	<meta property="og:title" content="Making a spawn point, also plugin loads incorrectly (JS)" />
+	<meta property="og:description" content="Hey. I put the below code inside notepad++. I save it as 'purge.js' (a javascript file). I upload it into my plugins folder and try for it to work. I..." />
+	
+	
+	
+
+</head>
+
+<body class="node4 node1 node104 node105 SelectQuotable">
+
+
+
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="thread_view">
+	<div class="pageWidth">
+		<div class="pageContent">
+			
+			
+			
+
+			
+
+			
+			
+				<div class="breadBoxTop ">
+					
+					
+
+<nav>
+	
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+	
+
+	<fieldset class="breadcrumb">			
+		<div class="boardTitle"><strong>Oxide</strong></div>
+		
+		<span class="crumbs">
+			
+				
+
+					
+						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
+							<span class="arrow"><span>&gt;</span></span>
+						</span>
+					
+
+					
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
+								<span class="arrow"><span>&gt;</span></span>
+							</span>
+						
+					
+				
+			
+		</span>
+	</fieldset>
+</nav>
+				</div>
+			
+			
+	
+			
+
+
+
+			
+				
+
+						
+			
+			
+			
+						
+						
+													
+								<!-- h1 title, description -->
+								<div class="titleBar">
+									
+									<h1>
+										
+											
+												<a href="https://oxidemod.org/threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/">Making a spawn point, also plugin loads incorrectly (JS)</a>
+											
+										
+									</h1>
+
+									<p id="pageDescription" class="muted ">
+	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Captain. Knee Gell</a>, <a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/"><span class="DateTime" title="Aug 1, 2015 at 12:18 PM">Aug 1, 2015</span></a>.
+</p>
+								</div>
+							
+						
+						
+						
+						
+
+						
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<div class="pageNavLinkGroup">
+	<div class="linkGroup SelectionCountContainer">
+		
+		
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<form action="inline-mod/post/switch" method="post"
+	class="InlineModForm section"
+	data-cookieName="posts"
+	data-controls="#InlineModControls"
+	data-imodOptions="#ModerationSelect option">
+
+	<ol class="messageList" id="messageList">
+		
+			
+				
+
+
+<li id="post-114718" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Hey. I put the below code inside notepad++. I save it as &#039;purge.js&#039; (a javascript file). I upload it into my plugins folder and try for it to work. I get an error such as &#039;unknown file name 0&#039; or something along the lines of that.<br />
+<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>var purge = {
+    Title : &quot;purge&quot;,
+    Description : &quot;Informs players of the Purge&quot;,
+    Author : &quot;Matthew Lang&quot;,
+    Version : V(0, 1, 0),
+    ResourceId : 0
+
+    Init: function() {
+        print(&quot;Init works!&quot;);
+    }
+       
+    Unload: function() {
+        print(&quot;Plugin unloaded.&quot;);
+    }
+       
+    OnPlayerSpawn: function(player) {
+        rust.ForcePlayerPosition(player, 1400, 6, -1882);
+        rust.SendChatMessage(player, &quot;RUST:RP&quot;, &quot;You've been spawned at the Trading Zone!&quot;);
+        rust.SendChatMessage(player, &quot;RUST:RP&quot;, &quot;Think you were killed on sight and it is not a purge? Contact an admin.&quot;);
+    }
+   
+    command.AddChatCommand(&quot;purge&quot;, self.purge, &quot;purge&quot;)
+   
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 1, 2015 at 12:18 PM">Aug 1, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114718/permalink">#1</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114882" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Your plugin isn&#039;t properly formatting, you&#039;re missing commas after the end of each section.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-114882" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 1, 2015 at 11:22 PM">Aug 1, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-114882" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114882/permalink">#2</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-114999" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=114882#post-114882" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Your plugin isn&#039;t properly formatting, you&#039;re missing commas after the end of each section.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Sorry to be a pain, I am new to this so yeah... This still doesn&#039;t seem to work<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>var purge = {
+    Title : &quot;purge&quot;,
+    Description : &quot;Informs players of the Purge&quot;,
+    Author : &quot;Matthew Lang&quot;,
+    Version : V(0, 1, 0),
+    ResourceId : 0,
+
+    Init: function() {
+        print(&quot;Init works!&quot;);
+    },
+       
+    Unload: function() {
+        print(&quot;Plugin unloaded.&quot;);
+    },
+       
+    OnPlayerSpawn: function(player) {
+        rust.ForcePlayerPosition(player, 1400, 6, -1882);
+        rust.SendChatMessage(player, &quot;RUST:RP&quot;, &quot;You've been spawned at the Trading Zone!&quot;);
+        rust.SendChatMessage(player, &quot;RUST:RP&quot;, &quot;Think you were killed on sight and it is not a purge? Contact an admin.&quot;);
+    }
+}</pre>
+</div>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-114999" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 8:10 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-114999" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/114999/permalink">#3</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115001" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=114999#post-114999" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Sorry to be a pain, I am new to this so yeah... This still doesn&#039;t seem to work<br />
+
+
+<div class="bbCodeBlock bbCodeCode">
+	<div class="type">Code:</div>
+	<pre>var purge = {
+    Title : &quot;purge&quot;,
+    Description : &quot;Informs players of the Purge&quot;,
+    Author : &quot;Matthew Lang&quot;,
+    Version : V(0, 1, 0),
+    ResourceId : 0,
+
+    Init: function() {
+        print(&quot;Init works!&quot;);
+    },
+      
+    Unload: function() {
+        print(&quot;Plugin unloaded.&quot;);
+    },
+      
+    OnPlayerSpawn: function(player) {
+        rust.ForcePlayerPosition(player, 1400, 6, -1882);
+        rust.SendChatMessage(player, &quot;RUST:RP&quot;, &quot;You've been spawned at the Trading Zone!&quot;);
+        rust.SendChatMessage(player, &quot;RUST:RP&quot;, &quot;Think you were killed on sight and it is not a purge? Contact an admin.&quot;);
+    }
+}</pre>
+</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>That works fine here. Are you getting any errors? Make sure you named the file purge.js to match your main class.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115001" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 8:27 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115001" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115001/permalink">#4</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115007" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=115001#post-115001" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">That works fine here. Are you getting any errors? Make sure you named the file purge.js to match your main class.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>The file name is &#039;purge.js&#039; and is inside the plugins folder, where all the other working plugins are. I am running the server off a VPS, and the console goes fast and is hard to read/interpret as when you scroll up it takes you back to the bottom.<br />
+<br />
+Here is the latest logs I found inside &#039;my_server_identity\oxide\logs&#039; I cannot make anything of them, and I do not see anything saying Purge either. Again, I am sorry to be a pain.<br />
+<br />
+<a href="http://pastebin.com/5Vajx6fm" target="_blank" class="externalLink  rel="nofollow">http://pastebin.com/5Vajx6fm</a>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115007" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 8:52 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115007" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115007/permalink">#5</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115008" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=115007#post-115007" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">The file name is &#039;purge.js&#039; and is inside the plugins folder, where all the other working plugins are. I am running the server off a VPS, and the console goes fast and is hard to read/interpret as when you scroll up it takes you back to the bottom.<br />
+<br />
+Here is the latest logs I found inside &#039;my_server_identity\oxide\logs&#039; I cannot make anything of them, and I do not see anything saying Purge either. Again, I am sorry to be a pain.<br />
+<br />
+<a href="http://pastebin.com/5Vajx6fm" target="_blank" class="externalLink">http://pastebin.com/5Vajx6fm</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>That&#039;s the log file for the C# (.cs) compiler, you won&#039;t see any info about JavaScript plugins in there. Check the logs prefixed with oxide_ instead.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115008" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 8:56 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115008" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115008/permalink">#6</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115010" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=115008#post-115008" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">That&#039;s the log file for the C# (.cs) compiler, you won&#039;t see any info about JavaScript plugins in there. Check the logs prefixed with oxide_ instead.</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>I checked the log, and still I do not see anything related to &#039;purge.js&#039;, however I did notice this line:<br />
+12:01 AM [Error] Failed to load plugin &#039;1&#039; (no source found)<br />
+<br />
+This is not the full log, as pastebin can only take 512 KB. I looked through it however, and there is no more plugins being loaded.<br />
+<a href="http://pastebin.com/b1vEFDKy" target="_blank" class="externalLink  rel="nofollow">http://pastebin.com/b1vEFDKy</a>
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115010" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:03 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115010" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115010/permalink">#7</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115011" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=115010#post-115010" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">I checked the log, and still I do not see anything related to &#039;purge.js&#039;, however I did notice this line:<br />
+12:01 AM [Error] Failed to load plugin &#039;1&#039; (no source found)<br />
+<br />
+This is not the full log, as pastebin can only take 512 KB. I looked through it however, and there is no more plugins being loaded.<br />
+<a href="http://pastebin.com/b1vEFDKy" target="_blank" class="externalLink">http://pastebin.com/b1vEFDKy</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>From the looks of your log, you do not seem to have purge.js in the right location, otherwise you&#039;d see some indication that it at least tried to load it.<br />
+<br />
+You also seem to be trying to load a lot of Oxide 1.18 plugins, which is what all the &quot;missing version&quot; error messages are for.<br />
+<br />
+You can use the &quot;Upload a File&quot; button here. The Failed to load error is from using &quot;-load&quot; in your startup script.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115011" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:06 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115011" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115011/permalink">#8</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115013" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<img src="https://oxidemod.org/attachments/11-png.11345/" alt="11.PNG" class="bbCodeImage LbImage" />
+		
+ 
+	
+	<img src="https://oxidemod.org/attachments/12-png.11346/" alt="12.PNG" class="bbCodeImage LbImage" />
+		
+ <br />
+Thank you very much for trying to help me!<br />
+[DOUBLEPOST=1438503291][/DOUBLEPOST]
+
+
+<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=115013#post-115013" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+	
+	<img src="https://oxidemod.org/attachments/11-png.11345/" alt="11.PNG" class="bbCodeImage LbImage" />
+		
+ 
+	
+	<img src="https://oxidemod.org/attachments/12-png.11346/" alt="12.PNG" class="bbCodeImage LbImage" />
+		
+<br />
+Thank you very much for trying to help me!</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>By the way, the command is CmdPurge, no longer CmdNotice
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+
+
+
+<div class="attachedFiles">
+	<h4 class="attachedFilesHeader">Attached Files:</h4>
+	<ul class="attachmentList SquareThumbs"
+		data-thumb-height="50"
+		data-thumb-selector="div.thumbnail > a">
+		
+			<li class="attachment" title="oxide_02-08-2015.txt">
+				<div class="boxModelFixer primaryContent">
+					
+					<div class="thumbnail">
+						
+							<a href="attachments/oxide_02-08-2015-txt.11344/" target="_blank" class="genericAttachment"></a>
+						
+					</div>
+					
+					<div class="attachmentInfo pairsJustified">
+						<h6 class="filename"><a href="attachments/oxide_02-08-2015-txt.11344/" target="_blank">oxide_02-08-2015.txt</a></h6>
+						<dl><dt>File size:</dt> <dd>111.3 KB</dd></dl>
+						<dl><dt>Views:</dt> <dd>14</dd></dl>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+
+
+
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115013" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:12 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115013" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115013/permalink">#9</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115016" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=115013#post-115013" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">
+
+	<a href="https://oxidemod.org/attachments/11345/" target="_blank">View attachment 11345</a>
+	
+ 
+
+	<a href="https://oxidemod.org/attachments/11346/" target="_blank">View attachment 11346</a>
+	
+<br />
+Thank you very much for trying to help me!<br />
+[DOUBLEPOST=1438503291][/DOUBLEPOST]<br />
+<br />
+By the way, the command is CmdPurge, no longer CmdNotice</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Okay, so if you look in your log and search from the bottom up for &quot;purge&quot;, you&#039;ll see your issue. You are trying to use C# function formatting for the arguments on line 27, so remove the first part of each arg and your current error should go away. Also keep in mind that there is no &quot;OnHurt&quot; hook in Oxide 2.0 for Rust. I&#039;d recommend looking at our docs to see the available hooks for the version of Rust you are developing for. You seem to still have a mix of Experimental and Legacy going on. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115016" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:18 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115016" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115016/permalink">#10</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115017" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+	<aside>
+		
+			<div class="attribution type">Wulf said:
+				
+					<a href="goto/post?id=115016#post-115016" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Okay, so if you look in your log and search from the bottom up for &quot;purge&quot;, you&#039;ll see your issue. You are trying to use C# function formatting for the arguments on line 27, so remove the first part of each arg and your current error should go away. Also keep in mind that there is no &quot;OnHurt&quot; hook in Oxide 2.0 for Rust. I&#039;d recommend looking at our docs to see the available hooks for the version of Rust you are developing for. You seem to still have a mix of Experimental and Legacy going on. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>You&#039;re a genius! Thank you so much for your assistance and time!<br />
+[DOUBLEPOST=1438503989][/DOUBLEPOST]I did that, and it now loads. It says &#039;init works&#039; etc. However this block of red text appears.<br />
+[Oxide] 10;24 AM [Error] Failed to initialize plugin purge<br />
+File: purge.js Line: 10 Column: 8 ReferenceError self is not defined:<br />
+then tons of Jint.Native things that I cannot understand. What should self.Plugin be?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115017" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:24 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115017" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115017/permalink">#11</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115018" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=115017#post-115017" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">You&#039;re a genius! Thank you so much for your assistance and time!<br />
+[DOUBLEPOST=1438503989][/DOUBLEPOST]I did that, and it now loads. It says &#039;init works&#039; etc. However this block of red text appears.<br />
+[Oxide] 10;24 AM [Error] Failed to initialize plugin purge<br />
+File: purge.js Line: 10 Column: 8 ReferenceError self is not defined:<br />
+then tons of Jint.Native things that I cannot understand. What should self.Plugin be?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Add self as the first argument in each function.<br />
+<br />
+Init : function(self) {<br />
+<br />
+OnPlayerRespawned : function (self, player) {<br />
+<br />
+Make note that renamed the OnPlayerSpawn hook to the correct name. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115018" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:29 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115018" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115018/permalink">#12</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115021" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Ok. What does the &#039;self&#039; indicate?
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115021" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:45 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115021" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115021/permalink">#13</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115022" class="message  staff " data-author="Wulf">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto" itemprop="name">Wulf</a>
+			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					<div class="bbCodeBlock bbCodeQuote" data-author="Captain. Knee Gell">
+	<aside>
+		
+			<div class="attribution type">Captain. Knee Gell said:
+				
+					<a href="goto/post?id=115021#post-115021" class="AttributionLink">&uarr;</a>
+				
+			</div>
+		
+		<blockquote class="quoteContainer"><div class="quote">Ok. What does the &#039;self&#039; indicate?</div><div class="quoteExpand">Click to expand...</div></blockquote>
+	</aside>
+</div>Actually, I was thinking of Python, so disregard the self comment!<br />
+<br />
+For your issue, replace self.Plugin with this.Plugin. What it does is pass the plugin instance.
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115022" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 9:50 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115022" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115022/permalink">#14</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+			
+				
+
+
+<li id="post-115024" class="message   " data-author="Captain. Knee Gell">
+
+	
+
+<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
+<div class="messageUserBlock ">
+	
+		<div class="avatarHolder">
+			<span class="helper"></span>
+			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Captain. Knee Gell" /></a>
+			
+			
+		</div>
+	
+
+
+	
+		<h3 class="userText">
+			<a class="username" dir="auto">Captain. Knee Gell</a>
+			
+			
+		</h3>
+	
+		
+	
+		
+
+
+	<span class="arrow"><span></span></span>
+</div>
+</div>
+
+	<div class="messageInfo primaryContent">
+		
+		
+		
+		
+		
+		<div class="messageContent">		
+			<article>
+				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+					
+					Ok thanks
+					<div class="messageTextEndMarker">&nbsp;</div>
+				</blockquote>
+			</article>
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+				
+		<div class="messageMeta ToggleTriggerAnchor">
+			
+			<div class="privateControls">
+				
+				<span class="item muted">
+					<span class="authorEnd"><a class="username author" dir="auto">Captain. Knee Gell</a>,</span>
+					<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115024" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 2, 2015 at 10:08 AM">Aug 2, 2015</span></a>
+				</span>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			<div class="publicControls">
+				<a href="threads/making-a-spawn-point-also-plugin-loads-incorrectly-js.10725/#post-115024" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/115024/permalink">#15</a>
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+	
+</li>
+			
+		
+		
+	</ol>
+
+	
+
+	
+
+</form>
+
+
+	<div class="pageNavLinkGroup">
+		
+			
+				<div class="linkGroup">
+					
+				</div>
+			
+			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
+
+			
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+												
+												
+					
+			
+						
+			
+						
+			
+
+
+			<footer>
+				
+
+
+<div class="footer">
+		<div class="pageContent">
+			
+            
+            
+            </div>
+			
+		
+			
+			
+			<span class="helper"></span>
+			<ul class="footerLinks">
+			
+				
+				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+				
+				
+				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+			
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+</div>
+
+			</footer>
+		</div>
+	</div>
+</div>
+
+<header>
+	
+
+
+<div id="header">
+	<div class="headerWidth">
+		<div id="logoBlock">
+			
+			
+			<div id="logo"><a href="https://oxidemod.org/">
+				<span></span>
+				<img src="styles/oxide/logo.png" alt="Oxide" />
+			</a></div>
+			
+			
+			<span class="helper"></span>
+
+</div>
+		
+
+
+<div id="navigation" class="">
+	<div class="pageContent">
+		<nav>
+			<div class="navTabs">
+				<ul class="publicTabs">
+
+					
+					
+
+					
+					
+
+					
+					
+						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
+
+							
+						</li>
+					
+
+					<li class="navTab PopupClosed">
+	<a href="https://umod.org/documentation" class="navLink">Docs</a>
+</li>
+
+
+					
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
+
+							
+						</li>
+						
+					
+						
+							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+
+							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
+
+							
+						</li>
+						
+					
+					
+
+					
+					
+
+					
+					
+
+					
+					<li class="navTab selected"><div class="tabLinks"></div></li>
+				</ul>
+
+				
+				
+			</div>
+
+			<span class="helper"></span>
+		</nav>
+	</div>
+</div>
+	</div>
+</div>
+
+	
+	
+</header>
+
+</div>
+
+<script>
+
+
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1548555923,
+		today: 1548547200,
+		todayDow: 0
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(255, 255, 255)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
+	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "login/csrf-token-refresh",
+	_jsVersion: "f33b43a2"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
