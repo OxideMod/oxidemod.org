@@ -1,779 +1,769 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Solved - Auto granting permissions based on day of week? | Oxide</title>
+    <base href="" />
+    <title>Oxide - Solved - Auto granting permissions based on day of week?</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/auto-granting-permissions-based-on-day-of-week.27367/" />
-    <meta name="description" content="Hello,
-
-I have few ideas how to achieve it, but I would like a second opinion for a method that would definitely do what I want, instead of me bumping..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/auto-granting-permissions-based-on-day-of-week.27367/" />
-    <meta property="og:title" content="Solved - Auto granting permissions based on day of week?" />
-    <meta property="og:description" content="Hello,
-
-I have few ideas how to achieve it, but I would like a second opinion for a method that would definitely do what I want, instead of me bumping..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Auto granting permissions based on day of week?" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/auto-granting-permissions-based-on-day-of-week.27367/">Auto granting permissions based
-                                on day of week?</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">-=Skate=-</a>, <a
-                                href="threads/auto-granting-permissions-based-on-day-of-week.27367/"><span class="DateTime" title="Oct 4, 2017 at 6:32 AM">Oct 4, 2017</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/">Auto granting permissions based on day
+            of week?</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">-=Skate=-</a>, <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/"><span class="DateTime" title="Oct 4, 2017 at 6:32 AM">Oct
+                4, 2017</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-353979" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hello,<br />
+                        <br /> I have few ideas how to achieve it, but I would like a second opinion for a method that would definitely do what I want, instead of me bumping into many problems half
+                        way and having to work around it.<br />
+                        <br /> Cheers ! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Oct 4, 2017 at 6:32 AM">Oct 4, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/353979/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354067" class="message" data-author="redBDGR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="redBDGR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">redBDGR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I suppose you could use this to get which day it currently is?<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>DateTime.Today.DayOfWeek</pre>
                         </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-353979" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">redBDGR</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354067" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 4, 2017 at 3:30 PM">Oct 4, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354067" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354067/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354157" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Im considering using <a href="http://oxidemod.org/plugins/cron-library.1754/" class="internalLink">Cron Library
+                            for Rust | Oxide</a> to help me out with timed event execution as the command would have to be executed at a certain hour. However, what can be done about the actual
+                        execution of a command ? How do I call &quot;grant group default permission.allow&quot; ?<br />
+                        <br /> [EDIT]: Nwm, found it: ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;, null); <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Oct 5, 2017 at 1:00 AM">Oct 5, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354157" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 12:51 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354157" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354157/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354171" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
+                            <aside>
+                                <div class="attribution type">-=Skate=- said: <a href="#post-354157" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello,<br />
-                                                <br /> I have few ideas how to achieve it, but I would like a second opinion for a method that would definitely do what I want, instead of me bumping
-                                                into many problems half way and having to work around it.<br />
-                                                <br /> Cheers ! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 4, 2017 at 6:32 AM">Oct
-                                                        4, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/353979/permalink">#1</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Im considering using <a href="http://oxidemod.org/plugins/cron-library.1754/" class="internalLink">Cron Library for Rust | Oxide</a> to help me
+                                        out with timed event execution as the command would have to be executed at a certain hour. However, what can be done about the actual execution of a command ?
+                                        How do I call &quot;grant group default permission.allow&quot; ?<br />
+                                        <br /> [EDIT]: Nwm, found it: ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;, null);</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You don&#039;t need top run a command, just call the permission.GrantGroupPermission method directly. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354171" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 1:29 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354171" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354171/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354182" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">What would be an exact syntax for that ?<br />
+                        <br /> e.g. &quot;permission.GrantGroup(default, permission.allow) ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354182" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:29 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354182" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354182/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354183" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
+                            <aside>
+                                <div class="attribution type">-=Skate=- said: <a href="#post-354182" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-354067" class="message   " data-author="redBDGR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="redBDGR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">redBDGR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I suppose you could use this to get which day it currently is?<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>DateTime.Today.DayOfWeek</pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">redBDGR</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354067" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 4, 2017 at 3:30 PM">Oct 4, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354067" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354067/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354157" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Im considering using <a href="http://oxidemod.org/plugins/cron-library.1754/" class="internalLink">Cron
-                                                    Library for Rust | Oxide</a> to help me out with timed event execution as the command would have to be executed at a certain hour. However, what
-                                                can be done about the actual execution of a command ? How do I call &quot;grant group default permission.allow&quot; ?<br />
-                                                <br /> [EDIT]: Nwm, found it: ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;, null); <div
-                                                    class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Oct 5, 2017 at 1:00 AM">Oct 5, 2017</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354157" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 12:51 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354157" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354157/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354171" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
-                                                    <aside>
-                                                        <div class="attribution type">-=Skate=- said: <a href="goto/post?id=354157#post-354157" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Im considering using <a href="http://oxidemod.org/plugins/cron-library.1754/" class="internalLink">Cron Library for Rust
-                                                                    | Oxide</a> to help me out with timed event execution as the command would have to be executed at a certain hour. However, what can
-                                                                be done about the actual execution of a command ? How do I call &quot;grant group default permission.allow&quot; ?<br />
-                                                                <br /> [EDIT]: Nwm, found it: ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;,
-                                                                null);</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You don&#039;t need top run a command, just call the permission.GrantGroupPermission method directly. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354171" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 1:29 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354171" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354171/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354182" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> What would be an exact syntax for that ?<br />
-                                                <br /> e.g. &quot;permission.GrantGroup(default, permission.allow) ? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354182" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:29 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354182" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354182/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354183" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
-                                                    <aside>
-                                                        <div class="attribution type">-=Skate=- said: <a href="goto/post?id=354182#post-354182" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">What would be an exact syntax for that ?<br />
-                                                                <br /> e.g. &quot;permission.GrantGroup(default, permission.allow) ?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>GrantGroupPermission(string name, string perm, Plugin owner)<br />
-                                                <br /> permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this); <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354183" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:32 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354183" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354183/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354184" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> No errors in console, but it doesn&#039;t do anything when called either. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354184" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:37 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354184" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354184/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354185" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=354183#post-354183" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">GrantGroupPermission(string name, string perm, Plugin owner)<br />
-                                                                <br /> permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this);</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>That&#039;s the same method that the command uses to grant the permission, so should work fine. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354185" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:38 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354185" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354185/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354186" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> //ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default
-                                                permission.allow&quot;, null);<br /> permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this);<br />
-                                                <br /> Got them both on the same line when called. This does nothing, but if I swap comment outs, it works. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354186" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:41 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354186" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354186/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354187" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
-                                                    <aside>
-                                                        <div class="attribution type">-=Skate=- said: <a href="goto/post?id=354186#post-354186" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">//ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;, null);<br />
-                                                                permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this);<br />
-                                                                <br /> Got them both on the same line when called. This does nothing, but if I swap comment outs, it works.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Try with null instead of this for the method. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354187" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:42 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354187" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354187/permalink">#10</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354188" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Just did, no reaction whatsoever.<br /> [DOUBLEPOST=1507168235][/DOUBLEPOST]Also, while
-                                                on similar topic, is there a way to call chat commands via plugin as admin ? Cos my other option would be re-write other plugins to have console
-                                                commands registered. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354188" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:48 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354188" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354188/permalink">#11</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354189" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
-                                                    <aside>
-                                                        <div class="attribution type">-=Skate=- said: <a href="goto/post?id=354188#post-354188" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Just did, no reaction whatsoever.<br /> [DOUBLEPOST=1507168235][/DOUBLEPOST]Also, while on similar topic, is there a way
-                                                                to call chat commands via plugin as admin ? Cos my other option would be re-write other plugins to have console commands registered.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>If a chat command expects a player, they will error as the server console doesn&#039;t really have a player; so it depends on the command. <div
-                                                    class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354189" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:54 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354189" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354189/permalink">#12</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354190" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> No, commands would be of similar nature as &quot;/kits resetdata&quot; <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Oct 5, 2017 at 3:09 AM">Oct 5, 2017</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354190" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 2:59 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354190" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354190/permalink">#13</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354191" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
-                                                    <aside>
-                                                        <div class="attribution type">-=Skate=- said: <a href="goto/post?id=354190#post-354190" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">No commands would be of similar nature as &quot;/kits resetdata&quot;</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>If they have any sort of reply to the player, they&#039;d error. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354191" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 3:06 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354191" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354191/permalink">#14</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-354192" class="message   " data-author="-=Skate=-">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="-=Skate=-" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">-=Skate=-</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> No SendReply, just /data folder management<br /> [DOUBLEPOST=1507170245][/DOUBLEPOST]So
-                                                what would be the command to call it ? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
-                                                <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354192" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Oct 5, 2017 at 3:08 AM">Oct 5, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354192" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/354192/permalink">#15</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">What would be an exact syntax for that ?<br />
+                                        <br /> e.g. &quot;permission.GrantGroup(default, permission.allow) ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>GrantGroupPermission(string name, string perm, Plugin owner)<br />
+                        <br /> permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this); <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354183" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:32 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354183" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354183/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354184" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">No errors in console, but it doesn&#039;t do anything when called either. <div class="messageTextEndMarker">&nbsp;
                         </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354184" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:37 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354184" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354184/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354185" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-354183" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">GrantGroupPermission(string name, string perm, Plugin owner)<br />
+                                        <br /> permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this);</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>That&#039;s the same method that the command uses to grant the permission, so should work fine. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354185" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:38 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354185" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354185/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354186" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">//ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;,
+                        null);<br /> permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this);<br />
+                        <br /> Got them both on the same line when called. This does nothing, but if I swap comment outs, it works. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354186" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:41 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354186" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354186/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354187" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
+                            <aside>
+                                <div class="attribution type">-=Skate=- said: <a href="#post-354186" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">//ConsoleSystem.Run(ConsoleSystem.Option.Server.Quiet(), &quot;grant group default permission.allow&quot;, null);<br />
+                                        permission.GrantGroupPermission(&quot;default&quot;, &quot;permission.allow&quot;, this);<br />
+                                        <br /> Got them both on the same line when called. This does nothing, but if I swap comment outs, it works.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Try with null instead of this for the method. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354187" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:42 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354187" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354187/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354188" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Just did, no reaction whatsoever.<br /> [DOUBLEPOST=1507168235][/DOUBLEPOST]Also, while on similar topic, is there
+                        a way to call chat commands via plugin as admin ? Cos my other option would be re-write other plugins to have console commands registered. <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354188" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:48 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354188" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354188/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354189" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
+                            <aside>
+                                <div class="attribution type">-=Skate=- said: <a href="#post-354188" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Just did, no reaction whatsoever.<br /> [DOUBLEPOST=1507168235][/DOUBLEPOST]Also, while on similar topic, is there a way to call chat commands
+                                        via plugin as admin ? Cos my other option would be re-write other plugins to have console commands registered.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>If a chat command expects a player, they will error as the server console doesn&#039;t really have a player; so it depends on the command. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354189" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:54 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354189" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354189/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354190" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">No, commands would be of similar nature as &quot;/kits resetdata&quot; <div class="messageTextEndMarker">&nbsp;
+                        </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Oct 5, 2017 at 3:09 AM">Oct 5, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354190" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 2:59 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354190" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354190/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354191" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="-=Skate=-">
+                            <aside>
+                                <div class="attribution type">-=Skate=- said: <a href="#post-354190" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">No commands would be of similar nature as &quot;/kits resetdata&quot;</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>If they have any sort of reply to the player, they&#039;d error. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354191" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 3:06 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354191" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354191/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-354192" class="message" data-author="-=Skate=-">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="-=Skate=-" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">-=Skate=-</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">No SendReply, just /data folder management<br /> [DOUBLEPOST=1507170245][/DOUBLEPOST]So what would be the command
+                        to call it ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">-=Skate=-</a>,</span>
+                        <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354192" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 5, 2017 at 3:08 AM">Oct 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/auto-granting-permissions-based-on-day-of-week.27367/#post-354192" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/354192/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -781,9 +771,9 @@ I have few ideas how to achieve it, but I would like a second opinion for a meth
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548554392,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -801,18 +791,17 @@ I have few ideas how to achieve it, but I would like a second opinion for a meth
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -838,8 +827,6 @@ I have few ideas how to achieve it, but I would like a second opinion for a meth
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

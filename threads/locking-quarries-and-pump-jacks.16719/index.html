@@ -1,1524 +1,608 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Rust - Locking Quarries and Pump Jacks | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/locking-quarries-and-pump-jacks.16719/" />
-	<meta name="description" content="So I run a PVE server but that still dosent stop people from building raid towers to get over walls and looting quarries (and on my server) pump jacks...." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/locking-quarries-and-pump-jacks.16719/" />
-	<meta property="og:title" content="Rust - Locking Quarries and Pump Jacks" />
-	<meta property="og:description" content="So I run a PVE server but that still dosent stop people from building raid towers to get over walls and looting quarries (and on my server) pump jacks...." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Rust - Locking Quarries and Pump Jacks</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Rust - Locking Quarries and Pump Jacks" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node10 node1 node104 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Requests</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixRed">Rust</span> <a href="https://oxidemod.org/threads/locking-quarries-and-pump-jacks.16719/">Locking Quarries and Pump Jacks</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">Razor14150</a>, <a href="threads/locking-quarries-and-pump-jacks.16719/"><span class="DateTime" title="Mar 17, 2016 at 4:56 PM">Mar 17, 2016</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Requests</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-188176" class="message   " data-author="Razor14150">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Razor14150" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Razor14150</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixRed">Rust</span> <a href="/threads/locking-quarries-and-pump-jacks.16719/">Locking Quarries and Pump Jacks</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username"
+            dir="auto">Razor14150</a>, <a href="/threads/locking-quarries-and-pump-jacks.16719/"><span class="DateTime" title="Mar 17, 2016 at 4:56 PM">Mar 17,
+                2016</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					So I run a PVE server but that still dosent stop people from building raid towers to get over walls and looting quarries (and on my server) pump jacks. Is there a way that a code lock could be scripted to be added onto the lowgrade fuel barels and dump bin or the unit as a whole? I am willing to pay for this addon if it needs to be created. If payed for I would ask to keep this addon private.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 17, 2016 at 4:56 PM">Mar 17, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/188176/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-188598" class="message   " data-author="DylanSMR">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DylanSMR</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I might try it sooner or later. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Mar 19, 2016 at 12:13 AM">Mar 19, 2016</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-188598" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 18, 2016 at 9:35 PM">Mar 18, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-188598" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/188598/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-188649" class="message   " data-author="Razor14150">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Razor14150" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Razor14150</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I would greatly appreciate it, if you could as a placeholder make a way to lock quarries as a whole? It could really help my server.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-188649" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 19, 2016 at 12:45 AM">Mar 19, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-188649" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/188649/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-188652" class="message   " data-author="DylanSMR">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DylanSMR</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Razor14150">
-	<aside>
-		
-			<div class="attribution type">Razor14150 said:
-				
-					<a href="goto/post?id=188649#post-188649" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I would greatly appreciate it, if you could as a placeholder make a way to lock quarries as a whole? It could really help my server.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I will send you a quick plugin that disables the ability to loot quarrys at all for now.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-188652" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 19, 2016 at 12:59 AM">Mar 19, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-188652" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/188652/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-189155" class="message   " data-author="VW.Pole">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VW.Pole" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">VW.Pole</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					You could also just remove all quarries with ent kill
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">VW.Pole</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189155" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 20, 2016 at 9:34 PM">Mar 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189155" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/189155/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-189157" class="message   " data-author="DylanSMR">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DylanSMR</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="VW.Pole">
-	<aside>
-		
-			<div class="attribution type">VW.Pole said:
-				
-					<a href="goto/post?id=189155#post-189155" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">You could also just remove all quarries with ent kill</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Yeah true, but then the players have to re-make them!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189157" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 20, 2016 at 9:43 PM">Mar 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189157" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/189157/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-189158" class="message   " data-author="VW.Pole">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VW.Pole" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">VW.Pole</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
-	<aside>
-		
-			<div class="attribution type">DylanSMR said:
-				
-					<a href="goto/post?id=189157#post-189157" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah true, but then the players have to re-make them!</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Then you could block crafting quarries and survey charges
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">VW.Pole</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189158" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 20, 2016 at 9:46 PM">Mar 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189158" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/189158/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-189179" class="message   " data-author="Razor14150">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Razor14150" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Razor14150</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<a href="https://oxidemod.org/members/16411/" class="username" data-user="16411, @VW.Pole">@VW.Pole</a> I want people to be able to use there quarries I just am tired of people raid towering into peoples quarrys and raiding them. I run a server that has a PVE time and all setting the server to PVE does is prevents people from destroying them.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189179" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 20, 2016 at 11:16 PM">Mar 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189179" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/189179/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-189232" class="message   " data-author="VW.Pole">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="VW.Pole" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">VW.Pole</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Razor14150">
-	<aside>
-		
-			<div class="attribution type">Razor14150 said:
-				
-					<a href="goto/post?id=189179#post-189179" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote"><a href="https://oxidemod.org/members/16411/" class="username" data-user="16411, @VW.Pole">@VW.Pole</a> I want people to be able to use there quarries I just am tired of people raid towering into peoples quarrys and raiding them. I run a server that has a PVE time and all setting the server to PVE does is prevents people from destroying them.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Oh then i missunderstood you
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">VW.Pole</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189232" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 21, 2016 at 7:55 AM">Mar 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189232" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/189232/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-189428" class="message   " data-author="Razor14150">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Razor14150" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Razor14150</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="VW.Pole">
-	<aside>
-		
-			<div class="attribution type">VW.Pole said:
-				
-					<a href="goto/post?id=189232#post-189232" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Oh then i missunderstood you</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>NP bud
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
-					<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189428" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 22, 2016 at 3:45 AM">Mar 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/locking-quarries-and-pump-jacks.16719/#post-189428" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/189428/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-188176" class="message" data-author="Razor14150">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Razor14150" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Razor14150</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So I run a PVE server but that still dosent stop people from building raid towers to get over walls and looting
+                        quarries (and on my server) pump jacks. Is there a way that a code lock could be scripted to be added onto the lowgrade fuel barels and dump bin or the unit as a whole? I am
+                        willing to pay for this addon if it needs to be created. If payed for I would ask to keep this addon private. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 17, 2016 at 4:56 PM">Mar 17, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/188176/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-188598" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I might try it sooner or later. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8"
+                            alt=":D" title="Big Grin    :D" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Mar 19, 2016 at 12:13 AM">Mar 19, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-188598" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 18, 2016 at 9:35 PM">Mar 18, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-188598" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/188598/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-188649" class="message" data-author="Razor14150">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Razor14150" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Razor14150</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I would greatly appreciate it, if you could as a placeholder make a way to lock quarries as a whole? It could
+                        really help my server. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-188649" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 19, 2016 at 12:45 AM">Mar 19, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-188649" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/188649/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-188652" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Razor14150">
+                            <aside>
+                                <div class="attribution type">Razor14150 said: <a href="#post-188649" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I would greatly appreciate it, if you could as a placeholder make a way to lock quarries as a whole? It could really help my server.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I will send you a quick plugin that disables the ability to loot quarrys at all for now. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-188652" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 19, 2016 at 12:59 AM">Mar 19, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-188652" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/188652/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-189155" class="message" data-author="VW.Pole">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="VW.Pole" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">VW.Pole</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> You could also just remove all quarries with ent kill <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">VW.Pole</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189155" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 20, 2016 at 9:34 PM">Mar 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189155" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/189155/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-189157" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="VW.Pole">
+                            <aside>
+                                <div class="attribution type">VW.Pole said: <a href="#post-189155" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">You could also just remove all quarries with ent kill</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Yeah true, but then the players have to re-make them! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189157" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 20, 2016 at 9:43 PM">Mar 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189157" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/189157/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-189158" class="message" data-author="VW.Pole">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="VW.Pole" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">VW.Pole</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                            <aside>
+                                <div class="attribution type">DylanSMR said: <a href="#post-189157" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah true, but then the players have to re-make them!</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Then you could block crafting quarries and survey charges <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">VW.Pole</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189158" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 20, 2016 at 9:46 PM">Mar 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189158" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/189158/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-189179" class="message" data-author="Razor14150">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Razor14150" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Razor14150</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="https://oxidemod.org/members/16411/" class="username" data-user="16411, @VW.Pole">@VW.Pole</a> I want people to be able to use there quarries I just am tired of people
+                        raid towering into peoples quarrys and raiding them. I run a server that has a PVE time and all setting the server to PVE does is prevents people from destroying them. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189179" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 20, 2016 at 11:16 PM">Mar 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189179" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/189179/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-189232" class="message" data-author="VW.Pole">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="VW.Pole" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">VW.Pole</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Razor14150">
+                            <aside>
+                                <div class="attribution type">Razor14150 said: <a href="#post-189179" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="https://oxidemod.org/members/16411/" class="username" data-user="16411, @VW.Pole">@VW.Pole</a> I want people to be able to use there
+                                        quarries I just am tired of people raid towering into peoples quarrys and raiding them. I run a server that has a PVE time and all setting the server to PVE
+                                        does is prevents people from destroying them.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Oh then i missunderstood you <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">VW.Pole</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189232" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 21, 2016 at 7:55 AM">Mar 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189232" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/189232/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-189428" class="message" data-author="Razor14150">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Razor14150" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Razor14150</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="VW.Pole">
+                            <aside>
+                                <div class="attribution type">VW.Pole said: <a href="#post-189232" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Oh then i missunderstood you</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>NP bud <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Razor14150</a>,</span>
+                        <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189428" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 22, 2016 at 3:45 AM">Mar 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/locking-quarries-and-pump-jacks.16719/#post-189428" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/189428/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548551172,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

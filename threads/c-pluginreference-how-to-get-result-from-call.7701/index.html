@@ -1,553 +1,542 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>C# PluginReference how to get result from Call | Oxide</title>
+    <base href="" />
+    <title>Oxide - C# PluginReference how to get result from Call</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/c-pluginreference-how-to-get-result-from-call.7701/" />
-    <meta name="description" content="Hello, how to get result from .Call function what used for PluginReference in csharp?
-
-        [PluginReference]
-        private static Plugin Test;..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/c-pluginreference-how-to-get-result-from-call.7701/" />
-    <meta property="og:title" content="C# PluginReference how to get result from Call" />
-    <meta property="og:description" content="Hello, how to get result from .Call function what used for PluginReference in csharp?
-
-        [PluginReference]
-        private static Plugin Test;..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - C# PluginReference how to get result from Call" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/c-pluginreference-how-to-get-result-from-call.7701/">C# PluginReference how to get result from Call</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">AlexALX_[rus-ua]</a>,
-                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/"><span class="DateTime" title="Apr 12, 2015 at 9:23 PM">Apr 12, 2015</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-78985" class="message   " data-author="AlexALX_[rus-ua]">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">AlexALX_[rus-ua]</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello, how to get result from .Call function what used for PluginReference in csharp?<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        [PluginReference]
-        private static Plugin Test;
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
 
-            var test = Test.Call(&quot;GetInfo&quot;,player);
+<div class="titleBar">
+    <h1>
+        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/">C# PluginReference how to get result from Call</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">AlexALX_[rus-ua]</a>, <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/"><span class="DateTime"
+                title="Apr 12, 2015 at 9:23 PM">Apr 12, 2015</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-78985" class="message" data-author="AlexALX_[rus-ua]">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">AlexALX_[rus-ua]</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hello, how to get result from .Call function what used for PluginReference in csharp?<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        [PluginReference]
+        private static Plugin Test;            var test = Test.Call(&quot;GetInfo&quot;,player);
             Puts(test.ToString());</pre>
-                                                </div>I&#039;m getting<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>[Oxide] 11:25 PM [Error] Failed to call hook 'OnPlayerChat' on plugin 'Test Core' (ArgumentException: failed to convert parameters)
+                        </div>I&#039;m getting<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[Oxide] 11:25 PM [Error] Failed to call hook 'OnPlayerChat' on plugin 'Test Core' (ArgumentException: failed to convert parameters)
 [Oxide] 11:25 PM [Debug]  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in &lt;filename unknown&gt;:0
   at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Core.Plugins.Plugin.CallHook (System.String hookname, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
-                                                </div>So what i&#039;m doing wrong? It should return bool but i cannot get result... <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 9:23 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/78985/permalink">#1</a>
-                                        </div>
-                                    </div>
+                        </div>So what i&#039;m doing wrong? It should return bool but i cannot get result... <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 9:23 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/78985/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-78987" class="message" data-author="Hatemail">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Hatemail" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Hatemail</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Your problem isn&#039;t with the test call it is with your plugin Test Core having a problem with its OnPlayerChat
+                        hook and from the looks of it you have a bad method signature. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78987" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 9:35 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78987" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/78987/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-78990" class="message" data-author="AlexALX_[rus-ua]">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">AlexALX_[rus-ua]</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Test Core is using code what i quoted and actually tries to get result in OnPlayerChat hook, so problem with code
+                        what i wrote. Other plugin called just &quot;Test&quot; and i&#039;m using reference from it. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78990" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 10:48 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78990" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/78990/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-78992" class="message" data-author="Bombardir">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Bombardir" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Bombardir</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="AlexALX_[rus-ua]">
+                            <aside>
+                                <div class="attribution type">AlexALX_[rus-ua] said: <a href="#post-78990" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-78987" class="message   " data-author="Hatemail">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hatemail" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Hatemail</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Test Core is using code what i quoted and actually tries to get result in OnPlayerChat hook, so problem with code what i wrote. Other plugin
+                                        called just &quot;Test&quot; and i&#039;m using reference from it.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Try it:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>var test = Test.Call(&quot;GetInfo&quot;, new object[] { player });</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Bombardir</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78992" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 10:51 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78992" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/78992/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-78993" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="AlexALX_[rus-ua]">
+                            <aside>
+                                <div class="attribution type">AlexALX_[rus-ua] said: <a href="#post-78990" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Your problem isn&#039;t with the test call it is with your plugin Test Core having a
-                                                problem with its OnPlayerChat hook and from the looks of it you have a bad method signature. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78987" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 9:35 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78987" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/78987/permalink">#2</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Test Core is using code what i quoted and actually tries to get result in OnPlayerChat hook, so problem with code what i wrote. Other plugin
+                                        called just &quot;Test&quot; and i&#039;m using reference from it.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>What does the GetInfo method look like in Test.cs? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78993" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 10:52 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78993" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/78993/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-78999" class="message" data-author="AlexALX_[rus-ua]">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">AlexALX_[rus-ua]</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Bombardir">
+                            <aside>
+                                <div class="attribution type">Bombardir said: <a href="#post-78992" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-78990" class="message   " data-author="AlexALX_[rus-ua]">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Try it:<br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>var test = Test.Call(&quot;GetInfo&quot;, new object[] { player });</pre>
                                         </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">AlexALX_[rus-ua]</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
                                     </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Same result.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Mughisi">
+                            <aside>
+                                <div class="attribution type">Mughisi said: <a href="#post-78993" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Test Core is using code what i quoted and actually tries to get result in OnPlayerChat
-                                                hook, so problem with code what i wrote. Other plugin called just &quot;Test&quot; and i&#039;m using reference from it. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78990" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 10:48 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78990" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/78990/permalink">#3</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">What does the GetInfo method look like in Test.cs?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>For now it just bool what always return true, just want actually get this &quot;true&quot;, but in future there will be another data. In Test plugin itself this function
+                        works fine and always return true like should. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78999" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 11:30 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78999" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/78999/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-79005" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="AlexALX_[rus-ua]">
+                            <aside>
+                                <div class="attribution type">AlexALX_[rus-ua] said: <a href="#post-78999" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-78992" class="message   " data-author="Bombardir">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Bombardir" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Bombardir</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Same result.<br />
+                                        <br />
+                                        <br /> For now it just bool what always return true, just want actually get this &quot;true&quot;, but in future there will be another data. In Test plugin
+                                        itself this function works fine and always return true like should.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Does GetInfo take a BasePlayer argument? Might help if you&#039;d actually post that method even if it&#039;s just returning true as a test <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79005" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 11:46 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79005" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/79005/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-79007" class="message" data-author="AlexALX_[rus-ua]">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">AlexALX_[rus-ua]</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Mughisi">
+                            <aside>
+                                <div class="attribution type">Mughisi said: <a href="#post-79005" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="AlexALX_[rus-ua]">
-                                                    <aside>
-                                                        <div class="attribution type">AlexALX_[rus-ua] said: <a href="goto/post?id=78990#post-78990" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Test Core is using code what i quoted and actually tries to get result in OnPlayerChat hook, so problem with code what i
-                                                                wrote. Other plugin called just &quot;Test&quot; and i&#039;m using reference from it.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Try it:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>var test = Test.Call(&quot;GetInfo&quot;, new object[] { player });</pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Bombardir</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78992" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 10:51 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78992" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/78992/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-78993" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="AlexALX_[rus-ua]">
-                                                    <aside>
-                                                        <div class="attribution type">AlexALX_[rus-ua] said: <a href="goto/post?id=78990#post-78990" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Test Core is using code what i quoted and actually tries to get result in OnPlayerChat hook, so problem with code what i
-                                                                wrote. Other plugin called just &quot;Test&quot; and i&#039;m using reference from it.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>What does the GetInfo method look like in Test.cs? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78993" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 10:52 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78993" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/78993/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-78999" class="message   " data-author="AlexALX_[rus-ua]">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">AlexALX_[rus-ua]</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Bombardir">
-                                                    <aside>
-                                                        <div class="attribution type">Bombardir said: <a href="goto/post?id=78992#post-78992" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Try it:<br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>var test = Test.Call(&quot;GetInfo&quot;, new object[] { player });</pre>
-                                                                </div>
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Same result.<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Mughisi">
-                                                    <aside>
-                                                        <div class="attribution type">Mughisi said: <a href="goto/post?id=78993#post-78993" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">What does the GetInfo method look like in Test.cs?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>For now it just bool what always return true, just want actually get this &quot;true&quot;, but in future there will be another data. In Test
-                                                plugin itself this function works fine and always return true like should. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78999" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 11:30 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-78999" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/78999/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-79005" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="AlexALX_[rus-ua]">
-                                                    <aside>
-                                                        <div class="attribution type">AlexALX_[rus-ua] said: <a href="goto/post?id=78999#post-78999" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Same result.<br />
-                                                                <br />
-                                                                <br /> For now it just bool what always return true, just want actually get this &quot;true&quot;, but in future there will be another
-                                                                data. In Test plugin itself this function works fine and always return true like should.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Does GetInfo take a BasePlayer argument? Might help if you&#039;d actually post that method even if it&#039;s just returning true as a test <div
-                                                    class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79005" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 11:46 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79005" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/79005/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-79007" class="message   " data-author="AlexALX_[rus-ua]">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">AlexALX_[rus-ua]</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Mughisi">
-                                                    <aside>
-                                                        <div class="attribution type">Mughisi said: <a href="goto/post?id=79005#post-79005" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Does GetInfo take a BasePlayer argument? Might help if you&#039;d actually post that method even if it&#039;s just
-                                                                returning true as a test</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Ah, sorry, yes it take player argument and trying get steamid by player.userID.ToString();<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        public bool GetInfo(BasePlayer ply) {
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Does GetInfo take a BasePlayer argument? Might help if you&#039;d actually post that method even if it&#039;s just returning true as a test</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Ah, sorry, yes it take player argument and trying get steamid by player.userID.ToString();<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        public bool GetInfo(BasePlayer ply) {
             if (ply==null) return false;
             var sid = ply.userID.ToString();
             return true;
         }</pre>
-                                                </div>just forgot that i use ply in this function (need for future thing). <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79007" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 12, 2015 at 11:59 PM">Apr
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79007" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/79007/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-79033" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Okay so the call should to GetInfo should actually work like you&#039;re doing it but
-                                                are you sure that you have gotten the BasePlayer from <br />
-                                                <i>ConsoleSystem.Arg </i>because the error you are receiving is an ArgumentException. Can&#039;t really tell from the code you gave us if you have a
-                                                valid player argument for the Call. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79033" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 13, 2015 at 5:21 AM">Apr
-                                                        13, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79033" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/79033/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-79164" class="message   " data-author="AlexALX_[rus-ua]">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">AlexALX_[rus-ua]</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hm, you was right about <i>ConsoleSystem.Arg</i>, i have wrong paramether in
-                                                OnPlayerChat (just forgot about this), but i still can&#039;t understand how to use result from Call function.<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>            var test = TestExt.Call(&quot;GetInfo&quot;,arg.Player());
+                        </div>just forgot that i use ply in this function (need for future thing). <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79007" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 12, 2015 at 11:59 PM">Apr 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79007" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/79007/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-79033" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Okay so the call should to GetInfo should actually work like you&#039;re doing it but are you sure that you have
+                        gotten the BasePlayer from <br />
+                        <i>ConsoleSystem.Arg </i>because the error you are receiving is an ArgumentException. Can&#039;t really tell from the code you gave us if you have a valid player argument for
+                        the Call. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79033" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 13, 2015 at 5:21 AM">Apr 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79033" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/79033/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-79164" class="message" data-author="AlexALX_[rus-ua]">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">AlexALX_[rus-ua]</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hm, you was right about <i>ConsoleSystem.Arg</i>, i have wrong paramether in OnPlayerChat (just forgot about
+                        this), but i still can&#039;t understand how to use result from Call function.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>            var test = TestExt.Call(&quot;GetInfo&quot;,arg.Player());
             Puts(test.ToString());</pre>
-                                                </div>With this code i&#039;m getting:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>[Oxide] 11:42 PM [Error] Failed to call hook 'OnPlayerChat' on plugin 'Test Ext' (NullReferenceException: Object reference not set to an instance of an object)
+                        </div>With this code i&#039;m getting:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[Oxide] 11:42 PM [Error] Failed to call hook 'OnPlayerChat' on plugin 'Test Ext' (NullReferenceException: Object reference not set to an instance of an object)
 [Oxide] 11:42 PM [Debug]   at Oxide.Plugins.TestExt.OnPlayerChat (.Arg arg) [0x00000] in &lt;filename unknown&gt;:0
   at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&amp;)
   at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in &lt;filename unknown&gt;:0 </pre>
-                                                </div>Whats wrong? Inside <a href="https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.CSharp/CSharpPlugin.cs" target="_blank" class="externalLink  rel="
-                                                    nofollow">https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.CSharp/CSharpPlugin.cs</a> i found this:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>            public object Call(string method_name, params object[] args)
+                        </div>Whats wrong? Inside <a href="https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.CSharp/CSharpPlugin.cs" target="_blank" class="externalLink  rel="
+                            nofollow">https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.CSharp/CSharpPlugin.cs</a> i found this:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>            public object Call(string method_name, params object[] args)
             {
                 MethodInfo method;
                 if (!Methods.TryGetValue(method_name, out method))
@@ -558,84 +547,84 @@
                 if (method == null) throw new MissingMethodException(FieldType.Name, method_name);
                 return method.Invoke(Value, args);
             }</pre>
-                                                </div>What return method.Invoke(Value, args); means and how to use it? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 13, 2015 at 10:05 PM">Apr 13, 2015</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79164" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 13, 2015 at 9:43 PM">Apr
-                                                        13, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79164" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/79164/permalink">#10</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-79171" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> We can&#039;t do anything without seeing your entire method, there could be something
-                                                wrong before your call to the other plugin as well but because you are only showing use the call we can&#039;t see that <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79171" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 13, 2015 at 10:02 PM">Apr
-                                                        13, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79171" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/79171/permalink">#11</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-79172" class="message   " data-author="AlexALX_[rus-ua]">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">AlexALX_[rus-ua]</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ok here full test code (with some &quot;using&quot; garbage)<br />
-                                                <br /> TestCore.cs<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>// Reference: Oxide.Ext.Rust
+                        </div>What return method.Invoke(Value, args); means and how to use it? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Apr 13, 2015 at 10:05 PM">Apr 13, 2015</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79164" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 13, 2015 at 9:43 PM">Apr 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79164" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/79164/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-79171" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">We can&#039;t do anything without seeing your entire method, there could be something wrong before your call to
+                        the other plugin as well but because you are only showing use the call we can&#039;t see that <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79171" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 13, 2015 at 10:02 PM">Apr 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79171" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/79171/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-79172" class="message" data-author="AlexALX_[rus-ua]">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="AlexALX_[rus-ua]" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">AlexALX_[rus-ua]</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Ok here full test code (with some &quot;using&quot; garbage)<br />
+                        <br /> TestCore.cs<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>// Reference: Oxide.Ext.Rust
 // Reference: Newtonsoft.Json
 using System.Collections.Generic;
 using System.Linq;
@@ -645,9 +634,7 @@ using Oxide.Core.Configuration;
 using Oxide.Plugins;
 using UnityEngine;
 using System;
-using Newtonsoft.Json;
-
-namespace Oxide.Plugins
+using Newtonsoft.Json;namespace Oxide.Plugins
 {
     [Info(&quot;Test Core&quot;, &quot;AlexALX&quot;, &quot;0.0.1&quot;)]
     public class TestCore : RustPlugin
@@ -656,9 +643,7 @@ namespace Oxide.Plugins
         public TestCore()
         {
             //HasConfig = true;
-        }
-
-        public bool GetInfo(BasePlayer ply) {
+        }        public bool GetInfo(BasePlayer ply) {
             if (ply==null) return false;
             var sid = ply.userID.ToString();
             return true;
@@ -674,10 +659,10 @@ namespace Oxide.Plugins
     }
    
 }</pre>
-                                                </div>TestExt.cs<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>// Reference: Oxide.Ext.Rust
+                        </div>TestExt.cs<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>// Reference: Oxide.Ext.Rust
 // Reference: Newtonsoft.Json
 using System.Collections.Generic;
 using System.Linq;
@@ -687,9 +672,7 @@ using Oxide.Core.Configuration;
 using Oxide.Plugins;
 using UnityEngine;
 using System;
-using Newtonsoft.Json;
-
-namespace Oxide.Plugins
+using Newtonsoft.Json;namespace Oxide.Plugins
 {
     [Info(&quot;Test Ext&quot;, &quot;AlexALX&quot;, &quot;0.0.1&quot;)]
     public class TestExt : RustPlugin
@@ -711,60 +694,60 @@ namespace Oxide.Plugins
     }
    
 }</pre>
-                                                </div>What i&#039;m getting when say anything in chat:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>[Oxide] 12:14 AM [Info] [TEST CORE] True
+                        </div>What i&#039;m getting when say anything in chat:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[Oxide] 12:14 AM [Info] [TEST CORE] True
 [Oxide] 12:14 AM [Error] Failed to call hook 'OnPlayerChat' on plugin 'Test Ext' (NullReferenceException: Object reference not set to an instance of an object)
 [Oxide] 12:14 AM [Debug]   at Oxide.Plugins.TestExt.OnPlayerSpawned (.Arg arg) [0x00000] in &lt;filename unknown&gt;:0
   at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&amp;)
   at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in &lt;filename unknown&gt;:0 </pre>
-                                                </div>[DOUBLEPOST=1428960286][/DOUBLEPOST]Oh, it seems get it finally working by remove &quot;public&quot; from &quot;GetInfo&quot; function.
-                                                Didn&#039;t know that this can cause problem. <br /> Thank you for help anyway. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79172" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 13, 2015 at 10:14 PM">Apr
-                                                        13, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79172" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/79172/permalink">#12</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-81316" class="message   " data-author="Polynomial">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Polynomial" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Polynomial</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I figured out why this is happening.<br />
-                                                <br /> If you look into the RustPlugin source, you can see that it inherits from CSPlugin which then inherits from BasePlugin. The BasePlugin class
-                                                implements the plain and generic Call functions, but both then call CallHook, which is abstract. The implementation of CallHook is in CSPlugin, and it
-                                                reads from a private field called &quot;hooks&quot;, which is a dictionary with value type MethodInfo.<br />
-                                                <br /> Looking a little further, I found the culprit inside the CSPlugin constructor, which populates the hooks:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>// ... snipped
+                        </div>[DOUBLEPOST=1428960286][/DOUBLEPOST]Oh, it seems get it finally working by remove &quot;public&quot; from &quot;GetInfo&quot; function. Didn&#039;t know that this can
+                        cause problem. <br /> Thank you for help anyway. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">AlexALX_[rus-ua]</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79172" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 13, 2015 at 10:14 PM">Apr 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-79172" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/79172/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-81316" class="message" data-author="Polynomial">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Polynomial" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Polynomial</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I figured out why this is happening.<br />
+                        <br /> If you look into the RustPlugin source, you can see that it inherits from CSPlugin which then inherits from BasePlugin. The BasePlugin class implements the plain and
+                        generic Call functions, but both then call CallHook, which is abstract. The implementation of CallHook is in CSPlugin, and it reads from a private field called
+                        &quot;hooks&quot;, which is a dictionary with value type MethodInfo.<br />
+                        <br /> Looking a little further, I found the culprit inside the CSPlugin constructor, which populates the hooks:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>// ... snipped
             for (int i = types.Count - 1; i &gt;= 0; i--)
             {
                 MethodInfo[] methods = types[i].GetMethods(BindingFlags.Instance | BindingFlags.NonPublic);
@@ -778,57 +761,57 @@ namespace Oxide.Plugins
                     }
                 }
             }</pre>
-                                                </div>As you can see, it only looks for non-public instance methods, hence why it ignored your public method. This is potentially a bug in Oxide,
-                                                depending on how you look at it. It can be resolved by passing Instance, NonPublic, and Public together. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Polynomial</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81316" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2015 at 12:29 AM">Apr
-                                                        22, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81316" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/81316/permalink">#13</a>
-                                        </div>
-                                    </div>
+                        </div>As you can see, it only looks for non-public instance methods, hence why it ignored your public method. This is potentially a bug in Oxide, depending on how you look at
+                        it. It can be resolved by passing Instance, NonPublic, and Public together. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Polynomial</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81316" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2015 at 12:29 AM">Apr 22, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81316" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/81316/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-81317" class="message" data-author="Hatemail">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Hatemail" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Hatemail</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Polynomial">
+                            <aside>
+                                <div class="attribution type">Polynomial said: <a href="#post-81316" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-81317" class="message   " data-author="Hatemail">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hatemail" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Hatemail</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Polynomial">
-                                                    <aside>
-                                                        <div class="attribution type">Polynomial said: <a href="goto/post?id=81316#post-81316" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I figured out why this is happening.<br />
-                                                                <br /> If you look into the RustPlugin source, you can see that it inherits from CSPlugin which then inherits from BasePlugin. The
-                                                                BasePlugin class implements the plain and generic Call functions, but both then call CallHook, which is abstract. The implementation of
-                                                                CallHook is in CSPlugin, and it reads from a private field called &quot;hooks&quot;, which is a dictionary with value type MethodInfo.<br />
-                                                                <br /> Looking a little further, I found the culprit inside the CSPlugin constructor, which populates the hooks:<br />
-                                                                <br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>// ... snipped
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I figured out why this is happening.<br />
+                                        <br /> If you look into the RustPlugin source, you can see that it inherits from CSPlugin which then inherits from BasePlugin. The BasePlugin class implements
+                                        the plain and generic Call functions, but both then call CallHook, which is abstract. The implementation of CallHook is in CSPlugin, and it reads from a private
+                                        field called &quot;hooks&quot;, which is a dictionary with value type MethodInfo.<br />
+                                        <br /> Looking a little further, I found the culprit inside the CSPlugin constructor, which populates the hooks:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>// ... snipped
             for (int i = types.Count - 1; i &gt;= 0; i--)
             {
                 MethodInfo[] methods = types[i].GetMethods(BindingFlags.Instance | BindingFlags.NonPublic);
@@ -842,139 +825,134 @@ namespace Oxide.Plugins
                     }
                 }
             }</pre>
-                                                                </div>As you can see, it only looks for non-public instance methods, hence why it ignored your public method. This is potentially a bug
-                                                                in Oxide, depending on how you look at it. It can be resolved by passing Instance, NonPublic, and Public together.
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Was done on purpose actually. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
+                                        </div>As you can see, it only looks for non-public instance methods, hence why it ignored your public method. This is potentially a bug in Oxide, depending on
+                                        how you look at it. It can be resolved by passing Instance, NonPublic, and Public together.
                                     </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81317" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2015 at 12:34 AM">Apr
-                                                        22, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81317" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/81317/permalink">#14</a>
-                                        </div>
-                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Was done on purpose actually. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Hatemail</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81317" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2015 at 12:34 AM">Apr 22, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81317" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/81317/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-81318" class="message" data-author="Polynomial">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Polynomial" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Polynomial</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Hatemail">
+                            <aside>
+                                <div class="attribution type">Hatemail said: <a href="#post-81317" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-81318" class="message   " data-author="Polynomial">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Polynomial" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Polynomial</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Hatemail">
-                                                    <aside>
-                                                        <div class="attribution type">Hatemail said: <a href="goto/post?id=81317#post-81317" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Was done on purpose actually.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Any particular reason? Seems odd (or backwards, at least) that private methods would be exclusively selected, while public methods would be
-                                                ignored. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Polynomial</a>,</span>
-                                                <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81318" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2015 at 12:36 AM">Apr
-                                                        22, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81318" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/81318/permalink">#15</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Was done on purpose actually.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Any particular reason? Seems odd (or backwards, at least) that private methods would be exclusively selected, while public methods would be ignored. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Polynomial</a>,</span>
+                        <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81318" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2015 at 12:36 AM">Apr 22, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-pluginreference-how-to-get-result-from-call.7701/#post-81318" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/81318/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -982,9 +960,9 @@ namespace Oxide.Plugins
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548555924,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -1002,18 +980,17 @@ namespace Oxide.Plugins
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -1039,8 +1016,6 @@ namespace Oxide.Plugins
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

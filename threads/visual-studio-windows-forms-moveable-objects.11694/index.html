@@ -1,2187 +1,896 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>[Visual Studio | Windows Forms] moveable objects | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/visual-studio-windows-forms-moveable-objects.11694/" />
-	<meta name="description" content="Does anybody know on how to make people able to move &amp; resize specific object like buttons and text?" />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/visual-studio-windows-forms-moveable-objects.11694/" />
-	<meta property="og:title" content="[Visual Studio | Windows Forms] moveable objects" />
-	<meta property="og:description" content="Does anybody know on how to make people able to move &amp; resize specific object like buttons and text?" />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - [Visual Studio | Windows Forms] moveable objects</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - [Visual Studio | Windows Forms] moveable objects" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/visual-studio-windows-forms-moveable-objects.11694/">[Visual Studio | Windows Forms] moveable objects</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">LaserHydra</a>, <a href="threads/visual-studio-windows-forms-moveable-objects.11694/"><span class="DateTime" title="Sep 12, 2015 at 10:41 PM">Sep 12, 2015</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-128238" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/">[Visual Studio | Windows Forms] moveable objects</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">LaserHydra</a>, <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/"><span class="DateTime"
+                title="Sep 12, 2015 at 10:41 PM">Sep 12, 2015</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Does anybody know on how to make people able to move &amp; resize specific object like buttons and text?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 12, 2015 at 10:41 PM">Sep 12, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128238/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128279" class="message   " data-author="Norn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Norn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Norn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<a href="http://www.codeproject.com/Tips/178587/Draggable-WinForms-Controls" target="_blank" class="externalLink  rel="nofollow">Draggable WinForms Controls - CodeProject</a><br />
-<br />
-May be worth looking at
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Norn</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128279" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 3:25 AM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128279" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128279/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128281" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Norn">
-	<aside>
-		
-			<div class="attribution type">Norn said:
-				
-					<a href="goto/post?id=128279#post-128279" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote"><a href="http://www.codeproject.com/Tips/178587/Draggable-WinForms-Controls" target="_blank" class="externalLink  rel="nofollow">Draggable WinForms Controls - CodeProject</a><br />
-<br />
-May be worth looking at</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>thanks. I&#039;ll see what I can do with that. Im going to try building up an visual GUI generator <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128281" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 4:34 AM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128281" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128281/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128288" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					From what I know there is nothing built in to allow that.. Winforms is a pretty static thing!<br />
-<br />
-That project Norm recommended is probably your best shot at something like this unless you do it all yourself. The flexibility of .NET and the underlying Win32 platform is very powerful, but it&#039;s also pretty painful to toy with when you start doing things like that.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128288" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 6:30 AM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128288" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128288/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128298" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					You think I could maybe try making an Unity APP instead of an WinForm?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128298" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 10:14 AM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128298" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128298/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128302" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Never toyed with Unity, no clue. I would have said jquery, that thing is pretty kick ass to make things like this <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128302" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 10:43 AM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128302" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128302/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128304" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
-	<aside>
-		
-			<div class="attribution type">Deicide666ra said:
-				
-					<a href="goto/post?id=128302#post-128302" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Never toyed with Unity, no clue. I would have said jquery, that thing is pretty kick ass to make things like this <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Im trying Unity right now. With like 0 knowledge about it ^^<br />
-[DOUBLEPOST=1442141042][/DOUBLEPOST]How would you Initialize a new button within a script? lol. New UnityEngine.UI.Button does not work
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128304" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 10:55 AM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128304" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128304/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128319" class="message   " data-author="Norn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Norn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Norn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I would use jquery to be honest, learning curve isn&#039;t that hard
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Norn</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128319" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 12:32 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128319" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128319/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128320" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Norn">
-	<aside>
-		
-			<div class="attribution type">Norn said:
-				
-					<a href="goto/post?id=128319#post-128319" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I would use jquery to be honest, learning curve isn&#039;t that hard</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>idk anything about jquery I don&#039;t even know what it does. lol
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128320" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 12:33 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128320" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128320/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128321" class="message   " data-author="Norn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Norn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Norn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-	<aside>
-		
-			<div class="attribution type">LaserHydra said:
-				
-					<a href="goto/post?id=128320#post-128320" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">idk anything about jquery I don&#039;t even know what it does. lol</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It&#039;s basically javascript made easier with the jquery class<br />
-<br />
-<a href="https://jquery.com/" target="_blank" class="externalLink  rel="nofollow">jQuery</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Norn</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128321" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 12:34 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128321" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128321/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128323" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Norn">
-	<aside>
-		
-			<div class="attribution type">Norn said:
-				
-					<a href="goto/post?id=128321#post-128321" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">It&#039;s basically javascript made easier with the jquery class<br />
-<br />
-<a href="https://jquery.com/" target="_blank" class="externalLink  rel="nofollow">jQuery</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>but how would I make an Application with that lol, with addable buttons etc. Also would need to learn js then ---
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128323" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 12:40 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128323" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128323/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128386" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-	<aside>
-		
-			<div class="attribution type">LaserHydra said:
-				
-					<a href="goto/post?id=128323#post-128323" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">but how would I make an Application with that lol, with addable buttons etc. Also would need to learn js then ---</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Yeah if you don&#039;t know HTML and JS it might be a bit of a challenge.. But jquery is magical. You can just add a class to any UI object to make it movable, takes like 20 seconds.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128386" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 6:17 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128386" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128386/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128388" class="message   " data-author="LaserHydra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">LaserHydra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
-	<aside>
-		
-			<div class="attribution type">Deicide666ra said:
-				
-					<a href="goto/post?id=128386#post-128386" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah if you don&#039;t know HTML and JS it might be a bit of a challenge.. But jquery is magical. You can just add a class to any UI object to make it movable, takes like 20 seconds.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I know basics of HTML and CSS but not really JS<br />
-[DOUBLEPOST=1442165283][/DOUBLEPOST]
-
-
-<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
-	<aside>
-		
-			<div class="attribution type">Deicide666ra said:
-				
-					<a href="goto/post?id=128386#post-128386" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah if you don&#039;t know HTML and JS it might be a bit of a challenge.. But jquery is magical. You can just add a class to any UI object to make it movable, takes like 20 seconds.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>But we mean the same moving right? Let the user move them with the mouse. Also I need to be able to get the position and size of it.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128388" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 6:26 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128388" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128388/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128458" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-	<aside>
-		
-			<div class="attribution type">LaserHydra said:
-				
-					<a href="goto/post?id=128388#post-128388" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I know basics of HTML and CSS but not really JS<br />
-[DOUBLEPOST=1442165283][/DOUBLEPOST]<br />
-But we mean the same moving right? Let the user move them with the mouse. Also I need to be able to get the position and size of it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>jquery is just a javascript tool that makes everything html/css easier. I haven&#039;t toyed with it in a while but basically you can create html/css UI elements with it really easily (similar to what you&#039;d do in C#) something like new jquery.ui.button(posx, posy, width, height, text) and you can attach classes that change the behavior of these (one being movable). With this the user can click and hold on a button or any such defined UI element and just drag it around the web page.<br />
-<br />
-Jquery is to javascript what LINQ is to C#... and more... it&#039;s a very different way of doing things but extremely powerful with very little code. Good stuff, it&#039;s brilliant.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128458" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 13, 2015 at 11:40 PM">Sep 13, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128458" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128458/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128614" class="message  staff " data-author="Calytic">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-<em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I have developed multiple WYSIWYG editors in the decade I have been coding.  Any research on the subject will quickly reveal that developing a good WYSIWYG editor is <i>really hard</i>.  Given your level of experience, I would not recommend this unless you are willing to put down weeks, possibly months, of effort.  The problem seems trivial at first, and you think, &quot;well if that moron Calytic can do it - so could I&quot;.  And <i>you can</i>, but be prepared to be onslaught by a full regimen of, albeit common, difficult programming problems.  Developing a WYSIWYG for me took about 2 weeks, and this was even still leveraging existing technologies to the fullest extent possible.  I already knew how I would do it when I started, had a ton of prior experience doing similar applications, and fortunately it ended up working out for me.  Even I ran into some unexpected obstacles but that is a story for another day.<br />
-<br />
-There are 2 good ways to accomplish what you want.  As others have stated, using HTML/JS is really the smartest move.  Building a system like this using a conventional desktop application is only really feasible if you leverage an existing graphics engine and even then you&#039;ll have to spin up most of the components yourself.  In contrast, a web-based solution with existing technologies is the easiest and least painful route.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128614" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 14, 2015 at 7:57 PM">Sep 14, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128614" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128614/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-128616" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Good post cyclone and so true. This and damn text editors, looks so simple until you get into the million edge cases and &quot;what ifs&quot;. I worked for 10 years on a wysiwyg win32 windows based app and man, we were still bitching at the complexity and limitations when I left the project. Its really not simple.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128616" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 14, 2015 at 8:19 PM">Sep 14, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/visual-studio-windows-forms-moveable-objects.11694/#post-128616" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128616/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-128238" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Does anybody know on how to make people able to move &amp; resize specific object like buttons and text? <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 12, 2015 at 10:41 PM">Sep 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/128238/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128279" class="message" data-author="Norn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Norn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Norn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="http://www.codeproject.com/Tips/178587/Draggable-WinForms-Controls" target="_blank" class="externalLink  rel=" nofollow">Draggable WinForms Controls -
+                            CodeProject</a><br />
+                        <br /> May be worth looking at <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Norn</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128279" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 3:25 AM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128279" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128279/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128281" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Norn">
+                            <aside>
+                                <div class="attribution type">Norn said: <a href="#post-128279" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="http://www.codeproject.com/Tips/178587/Draggable-WinForms-Controls" target="_blank" class="externalLink  rel=" nofollow">Draggable
+                                            WinForms Controls - CodeProject</a><br />
+                                        <br /> May be worth looking at</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>thanks. I&#039;ll see what I can do with that. Im going to try building up an visual GUI generator <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128281" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 4:34 AM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128281" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128281/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128288" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> From what I know there is nothing built in to allow that.. Winforms is a pretty static thing!<br />
+                        <br /> That project Norm recommended is probably your best shot at something like this unless you do it all yourself. The flexibility of .NET and the underlying Win32 platform
+                        is very powerful, but it&#039;s also pretty painful to toy with when you start doing things like that. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128288" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 6:30 AM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128288" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128288/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128298" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> You think I could maybe try making an Unity APP instead of an WinForm? <div class="messageTextEndMarker">&nbsp;
+                        </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128298" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 10:14 AM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128298" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128298/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128302" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Never toyed with Unity, no clue. I would have said jquery, that thing is pretty kick ass to make things like this
+                        <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128302" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 10:43 AM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128302" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128302/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128304" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                            <aside>
+                                <div class="attribution type">Deicide666ra said: <a href="#post-128302" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Never toyed with Unity, no clue. I would have said jquery, that thing is pretty kick ass to make things like this <img
+                                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Im trying Unity right now. With like 0 knowledge about it ^^<br /> [DOUBLEPOST=1442141042][/DOUBLEPOST]How would you Initialize a new button within a script? lol. New
+                        UnityEngine.UI.Button does not work <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128304" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 10:55 AM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128304" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128304/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128319" class="message" data-author="Norn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Norn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Norn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I would use jquery to be honest, learning curve isn&#039;t that hard <div class="messageTextEndMarker">&nbsp;
+                        </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Norn</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128319" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 12:32 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128319" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128319/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128320" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Norn">
+                            <aside>
+                                <div class="attribution type">Norn said: <a href="#post-128319" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I would use jquery to be honest, learning curve isn&#039;t that hard</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>idk anything about jquery I don&#039;t even know what it does. lol <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128320" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 12:33 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128320" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128320/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128321" class="message" data-author="Norn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Norn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Norn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-128320" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">idk anything about jquery I don&#039;t even know what it does. lol</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It&#039;s basically javascript made easier with the jquery class<br />
+                        <br />
+                        <a href="https://jquery.com/" target="_blank" class="externalLink  rel=" nofollow">jQuery</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Norn</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128321" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 12:34 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128321" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128321/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128323" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Norn">
+                            <aside>
+                                <div class="attribution type">Norn said: <a href="#post-128321" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It&#039;s basically javascript made easier with the jquery class<br />
+                                        <br />
+                                        <a href="https://jquery.com/" target="_blank" class="externalLink  rel=" nofollow">jQuery</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>but how would I make an Application with that lol, with addable buttons etc. Also would need to learn js then --- <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128323" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 12:40 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128323" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128323/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128386" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-128323" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">but how would I make an Application with that lol, with addable buttons etc. Also would need to learn js then ---</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Yeah if you don&#039;t know HTML and JS it might be a bit of a challenge.. But jquery is magical. You can just add a class to any UI object to make it movable, takes like
+                        20 seconds. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128386" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 6:17 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128386" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128386/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128388" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                            <aside>
+                                <div class="attribution type">Deicide666ra said: <a href="#post-128386" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah if you don&#039;t know HTML and JS it might be a bit of a challenge.. But jquery is magical. You can just add a class to any UI object to
+                                        make it movable, takes like 20 seconds.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I know basics of HTML and CSS but not really JS<br /> [DOUBLEPOST=1442165283][/DOUBLEPOST] <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                            <aside>
+                                <div class="attribution type">Deicide666ra said: <a href="#post-128386" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah if you don&#039;t know HTML and JS it might be a bit of a challenge.. But jquery is magical. You can just add a class to any UI object to
+                                        make it movable, takes like 20 seconds.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>But we mean the same moving right? Let the user move them with the mouse. Also I need to be able to get the position and size of it. <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128388" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 6:26 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128388" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128388/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128458" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-128388" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I know basics of HTML and CSS but not really JS<br /> [DOUBLEPOST=1442165283][/DOUBLEPOST]<br /> But we mean the same moving right? Let the user
+                                        move them with the mouse. Also I need to be able to get the position and size of it.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>jquery is just a javascript tool that makes everything html/css easier. I haven&#039;t toyed with it in a while but basically you can create html/css UI elements with it
+                        really easily (similar to what you&#039;d do in C#) something like new jquery.ui.button(posx, posy, width, height, text) and you can attach classes that change the behavior of
+                        these (one being movable). With this the user can click and hold on a button or any such defined UI element and just drag it around the web page.<br />
+                        <br /> Jquery is to javascript what LINQ is to C#... and more... it&#039;s a very different way of doing things but extremely powerful with very little code. Good stuff,
+                        it&#039;s brilliant. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128458" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 13, 2015 at 11:40 PM">Sep 13, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128458" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128458/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128614" class="message staff" data-author="Calytic">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a href="members/calytic.58712/" class="avatar Avm" data-avatarhtml="true"><img src="data/avatars/m/58/58712.jpg?1463423255" width="96" height="96" alt="Calytic" /></a>
+                </div>
+                <h3 class="userText">
+                    <a href="members/calytic.58712/" class="username" dir="auto" itemprop="name">Calytic</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                    <em class="userBanner bannerGreen wrapped" itemprop="title"><span class="before"></span><strong>Community Mod</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I have developed multiple WYSIWYG editors in the decade I have been coding. Any research on the subject will
+                        quickly reveal that developing a good WYSIWYG editor is <i>really hard</i>. Given your level of experience, I would not recommend this unless you are willing to put down weeks,
+                        possibly months, of effort. The problem seems trivial at first, and you think, &quot;well if that moron Calytic can do it - so could I&quot;. And <i>you can</i>, but be
+                        prepared to be onslaught by a full regimen of, albeit common, difficult programming problems. Developing a WYSIWYG for me took about 2 weeks, and this was even still leveraging
+                        existing technologies to the fullest extent possible. I already knew how I would do it when I started, had a ton of prior experience doing similar applications, and fortunately
+                        it ended up working out for me. Even I ran into some unexpected obstacles but that is a story for another day.<br />
+                        <br /> There are 2 good ways to accomplish what you want. As others have stated, using HTML/JS is really the smartest move. Building a system like this using a conventional
+                        desktop application is only really feasible if you leverage an existing graphics engine and even then you&#039;ll have to spin up most of the components yourself. In contrast,
+                        a web-based solution with existing technologies is the easiest and least painful route. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a href="members/calytic.58712/" class="username author" dir="auto">Calytic</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128614" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 14, 2015 at 7:57 PM">Sep 14, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128614" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128614/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-128616" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Good post cyclone and so true. This and damn text editors, looks so simple until you get into the million edge
+                        cases and &quot;what ifs&quot;. I worked for 10 years on a wysiwyg win32 windows based app and man, we were still bitching at the complexity and limitations when I left the
+                        project. Its really not simple. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128616" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Sep 14, 2015 at 8:19 PM">Sep 14, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/visual-studio-windows-forms-moveable-objects.11694/#post-128616" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/128616/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548533113,
-		today: 1548460800,
-		todayDow: 6
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

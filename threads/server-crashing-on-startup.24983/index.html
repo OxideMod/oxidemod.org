@@ -1,1054 +1,444 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Server crashing on startup | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/server-crashing-on-startup.24983/" />
-	<meta name="description" content="Hello all,
-
-I am in need of help. I am currently setting up a new server and on the way of this I have met a error while trying to get the server up...." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/server-crashing-on-startup.24983/" />
-	<meta property="og:title" content="Server crashing on startup" />
-	<meta property="og:description" content="Hello all,
-
-I am in need of help. I am currently setting up a new server and on the way of this I have met a error while trying to get the server up...." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Server crashing on startup</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Server crashing on startup" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node62 node1 node104 node106 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/reign-of-kings-discussion.62/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Reign of Kings Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/server-crashing-on-startup.24983/">Server crashing on startup</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/reign-of-kings-discussion.62/">Reign of Kings Discussion</a>' started by <a class="username" dir="auto">Pandah</a>, <a href="threads/server-crashing-on-startup.24983/"><span class="DateTime" title="Apr 16, 2017 at 12:07 AM">Apr 16, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/reign-of-kings-discussion.62/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Reign of Kings Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-315647" class="message   " data-author="Pandah">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pandah" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pandah</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/server-crashing-on-startup.24983/">Server crashing on startup</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/reign-of-kings-discussion.62/">Reign of Kings Discussion</a>' started by <a class="username"
+            dir="auto">Pandah</a>, <a href="/threads/server-crashing-on-startup.24983/"><span class="DateTime" title="Apr 16, 2017 at 12:07 AM">Apr 16, 2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hello all,<br />
-<br />
-I am in need of help. I am currently setting up a new server and on the way of this I have met a error while trying to get the server up. <br />
-<br />
-This is the error message I receive, thank you very much if you&#039;re able to help me.<br />
-<br />
-nity Player [version: Unity 5.1.1p2_82544090e14f]<br />
-<br />
-ROK.exe caused an Access Violation (0xc0000005)<br />
-  in module ROK.exe at 0033:3fae59e0.<br />
-<br />
-Error occurred at 2017-04-16_010036.<br />
-D:\RELOCATED\DENNISS1\GameServers\TC64068436851337021235075\ROK.exe, run by SYSTEM.<br />
-71% memory in use.<br />
-32738 MB physical memory [9431 MB free].<br />
-65474 MB paging file [33033 MB free].<br />
-8388608 MB user address space [8371844 MB free].<br />
-Read from location 00e428f0 caused an access violation.<br />
-<br />
-Context:<br />
-RDI:    0xf8000000  RSI: 0x40750060  RAX:   0x00000040<br />
-RBX:    0x08e3f3a0  RCX: 0x38750060  RDX:   0xc86f2898<br />
-RIP:    0x3fae59e0  RBP: 0x08e3f3b8  SegCs: 0x00000033<br />
-EFlags: 0x00010206  RSP: 0x08e3ede8  SegSs: 0x0000002b<br />
-R8:    0xf8000000  R9: 0xffc00000  R10:   0x00000000<br />
-R11:    0x40750060  R12: 0x08e3ef40  R13:   0x00000000<br />
-R14:    0x04d50fe0  R15: 0x00000000<br />
-<br />
-Bytes at CS:EIP:<br />
-4c 8b 4c 0a f8 4c 8b 54 0a f0 4c 0f c3 49 f8 4c
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-
-
-
-<div class="attachedFiles">
-	<h4 class="attachedFilesHeader">Attached Files:</h4>
-	<ul class="attachmentList SquareThumbs"
-		data-thumb-height="50"
-		data-thumb-selector="div.thumbnail > a">
-		
-			<li class="attachment" title="output_log (1).txt">
-				<div class="boxModelFixer primaryContent">
-					
-					<div class="thumbnail">
-						
-							<a href="attachments/output_log-1-txt.36126/" target="_blank" class="genericAttachment"></a>
-						
-					</div>
-					
-					<div class="attachmentInfo pairsJustified">
-						<h6 class="filename"><a href="attachments/output_log-1-txt.36126/" target="_blank">output_log (1).txt</a></h6>
-						<dl><dt>File size:</dt> <dd>240.4 KB</dd></dl>
-						<dl><dt>Views:</dt> <dd>11</dd></dl>
-					</div>
-				</div>
-			</li>
-		
-			<li class="attachment" title="output_log (1).txt">
-				<div class="boxModelFixer primaryContent">
-					
-					<div class="thumbnail">
-						
-							<a href="attachments/output_log-1-txt.36127/" target="_blank" class="genericAttachment"></a>
-						
-					</div>
-					
-					<div class="attachmentInfo pairsJustified">
-						<h6 class="filename"><a href="attachments/output_log-1-txt.36127/" target="_blank">output_log (1).txt</a></h6>
-						<dl><dt>File size:</dt> <dd>240.4 KB</dd></dl>
-						<dl><dt>Views:</dt> <dd>9</dd></dl>
-					</div>
-				</div>
-			</li>
-		
-	</ul>
-</div>
-
-
-
-
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 16, 2017 at 12:07 AM">Apr 16, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/315647/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-316017" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					According to the logs, your server appears to not be fully updated, and is likely using mismatched game DLLs. This can happen from using an older Oxide build or the base game not being updated fully before installing Oxide.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/#post-316017" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 16, 2017 at 10:53 PM">Apr 16, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/#post-316017" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/316017/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-316025" class="message   " data-author="Pandah">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pandah" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pandah</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=316017#post-316017" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">According to the logs, your server appears to not be fully updated, and is likely using mismatched game DLLs. This can happen from using an older Oxide build or the base game not being updated fully before installing Oxide.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Should I run the steam update then install oxide or ?<br />
-<br />
-Also this is the update of oxide I am using is this correct?<br />
-<a href="https://gyazo.com/cbbc5bd68e1c11a9c30d715d92a52b0e" target="_blank" class="externalLink  rel="nofollow">Gyazo - cbbc5bd68e1c11a9c30d715d92a52b0e.png</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Apr 17, 2017 at 2:12 AM">Apr 17, 2017</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/#post-316025" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 16, 2017 at 11:12 PM">Apr 16, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/#post-316025" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/316025/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-316052" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pandah">
-	<aside>
-		
-			<div class="attribution type">Pandah said:
-				
-					<a href="goto/post?id=316025#post-316025" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Should I run the steam update then install oxide or ?<br />
-<br />
-Also this is the update of oxide I am using is this correct?<br />
-<a href="https://gyazo.com/cbbc5bd68e1c11a9c30d715d92a52b0e" target="_blank" class="externalLink">Gyazo - cbbc5bd68e1c11a9c30d715d92a52b0e.png</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I can&#039;t really say, as all of what is listed in the information from that is host appears to be outdated by months and years for some.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/#post-316052" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 17, 2017 at 2:13 AM">Apr 17, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/#post-316052" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/316052/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-316181" class="message   " data-author="Pandah">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pandah" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pandah</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=316052#post-316052" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I can&#039;t really say, as all of what is listed in the information from that is host appears to be outdated by months and years for some.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I haven&#039;t a clue what to do? ;/
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/#post-316181" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 17, 2017 at 3:55 PM">Apr 17, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/#post-316181" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/316181/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-316194" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pandah">
-	<aside>
-		
-			<div class="attribution type">Pandah said:
-				
-					<a href="goto/post?id=316181#post-316181" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I haven&#039;t a clue what to do? ;/</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I&#039;d suggest contacting them to verify the are using the correct links, not what they have showing in the info.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/#post-316194" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 17, 2017 at 4:50 PM">Apr 17, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/#post-316194" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/316194/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-316442" class="message   " data-author="Pandah">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pandah" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pandah</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=316194#post-316194" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I&#039;d suggest contacting them to verify the are using the correct links, not what they have showing in the info.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I&#039;m still gettin the error <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Unity Player [version: Unity 5.1.1p2_82544090e14f]
-
-ROK.exe caused an Access Violation (0xc0000005)
-  in module ROK.exe at 0033:400759e0.
-
-Error occurred at 2017-04-18_182642.
+<ol class="messageList" id="messageList">
+    <li id="post-315647" class="message" data-author="Pandah">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pandah" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pandah</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello all,<br />
+                        <br /> I am in need of help. I am currently setting up a new server and on the way of this I have met a error while trying to get the server up. <br />
+                        <br /> This is the error message I receive, thank you very much if you&#039;re able to help me.<br />
+                        <br /> nity Player [version: Unity 5.1.1p2_82544090e14f]<br />
+                        <br /> ROK.exe caused an Access Violation (0xc0000005)<br /> in module ROK.exe at 0033:3fae59e0.<br />
+                        <br /> Error occurred at 2017-04-16_010036.<br /> D:\RELOCATED\DENNISS1\GameServers\TC64068436851337021235075\ROK.exe, run by SYSTEM.<br /> 71% memory in use.<br /> 32738 MB
+                        physical memory [9431 MB free].<br /> 65474 MB paging file [33033 MB free].<br /> 8388608 MB user address space [8371844 MB free].<br /> Read from location 00e428f0 caused an
+                        access violation.<br />
+                        <br /> Context:<br /> RDI: 0xf8000000 RSI: 0x40750060 RAX: 0x00000040<br /> RBX: 0x08e3f3a0 RCX: 0x38750060 RDX: 0xc86f2898<br /> RIP: 0x3fae59e0 RBP: 0x08e3f3b8 SegCs:
+                        0x00000033<br /> EFlags: 0x00010206 RSP: 0x08e3ede8 SegSs: 0x0000002b<br /> R8: 0xf8000000 R9: 0xffc00000 R10: 0x00000000<br /> R11: 0x40750060 R12: 0x08e3ef40 R13:
+                        0x00000000<br /> R14: 0x04d50fe0 R15: 0x00000000<br />
+                        <br /> Bytes at CS:EIP:<br /> 4c 8b 4c 0a f8 4c 8b 54 0a f0 4c 0f c3 49 f8 4c <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="output_log (1).txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/output_log-1-txt.36126/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/output_log-1-txt.36126/" target="_blank">output_log (1).txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>240.4 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>11</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="attachment" title="output_log (1).txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/output_log-1-txt.36127/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/output_log-1-txt.36127/" target="_blank">output_log (1).txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>240.4 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>9</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 16, 2017 at 12:07 AM">Apr 16, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/315647/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-316017" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> According to the logs, your server appears to not be fully updated, and is likely using mismatched game DLLs.
+                        This can happen from using an older Oxide build or the base game not being updated fully before installing Oxide. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/#post-316017" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 16, 2017 at 10:53 PM">Apr 16, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/#post-316017" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/316017/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-316025" class="message" data-author="Pandah">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pandah" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pandah</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-316017" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">According to the logs, your server appears to not be fully updated, and is likely using mismatched game DLLs. This can happen from using an older
+                                        Oxide build or the base game not being updated fully before installing Oxide.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Should I run the steam update then install oxide or ?<br />
+                        <br /> Also this is the update of oxide I am using is this correct?<br />
+                        <a href="https://gyazo.com/cbbc5bd68e1c11a9c30d715d92a52b0e" target="_blank" class="externalLink  rel=" nofollow">Gyazo - cbbc5bd68e1c11a9c30d715d92a52b0e.png</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 17, 2017 at 2:12 AM">Apr 17, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/#post-316025" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 16, 2017 at 11:12 PM">Apr 16, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/#post-316025" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/316025/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-316052" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pandah">
+                            <aside>
+                                <div class="attribution type">Pandah said: <a href="#post-316025" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Should I run the steam update then install oxide or ?<br />
+                                        <br /> Also this is the update of oxide I am using is this correct?<br />
+                                        <a href="https://gyazo.com/cbbc5bd68e1c11a9c30d715d92a52b0e" target="_blank" class="externalLink">Gyazo - cbbc5bd68e1c11a9c30d715d92a52b0e.png</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I can&#039;t really say, as all of what is listed in the information from that is host appears to be outdated by months and years for some. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/#post-316052" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 17, 2017 at 2:13 AM">Apr 17, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/#post-316052" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/316052/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-316181" class="message" data-author="Pandah">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pandah" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pandah</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-316052" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I can&#039;t really say, as all of what is listed in the information from that is host appears to be outdated by months and years for some.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I haven&#039;t a clue what to do? ;/ <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/#post-316181" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 17, 2017 at 3:55 PM">Apr 17, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/#post-316181" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/316181/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-316194" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pandah">
+                            <aside>
+                                <div class="attribution type">Pandah said: <a href="#post-316181" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I haven&#039;t a clue what to do? ;/</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I&#039;d suggest contacting them to verify the are using the correct links, not what they have showing in the info. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/#post-316194" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 17, 2017 at 4:50 PM">Apr 17, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/#post-316194" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/316194/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-316442" class="message" data-author="Pandah">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pandah" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pandah</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-316194" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I&#039;d suggest contacting them to verify the are using the correct links, not what they have showing in the info.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I&#039;m still gettin the error <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Unity Player [version: Unity 5.1.1p2_82544090e14f]ROK.exe caused an Access Violation (0xc0000005)
+  in module ROK.exe at 0033:400759e0.Error occurred at 2017-04-18_182642.
 D:\RELOCATED\DENNISS1\GameServers\TC64068436851337021235075\ROK.exe, run by SYSTEM.
 73% memory in use.
 32738 MB physical memory [8788 MB free].
 65474 MB paging file [35887 MB free].
 8388608 MB user address space [8371844 MB free].
-Read from location 00d728f0 caused an access violation.
-
-Context:
+Read from location 00d728f0 caused an access violation.Context:
 RDI:    0xf8000000  RSI: 0x40ce0060  RAX:   0x00000040
 RBX:    0x08d6f810  RCX: 0x38ce0060  RDX:   0xc8092898
 RIP:    0x400759e0  RBP: 0x08d6f828  SegCs: 0x00000033
 EFlags: 0x00010206  RSP: 0x08d6f258  SegSs: 0x0000002b
 R8:    0xf8000000  R9: 0xffc00000  R10:   0x00000000
 R11:    0x40ce0060  R12: 0x08d6f3b0  R13:   0x00000000
-R14:    0x04ea0fe0  R15: 0x00000000
-
-Bytes at CS:EIP:
-4c 8b 4c 0a f8 4c 8b 54 0a f0 4c 0f c3 49 f8 4c
-
-Stack:
+R14:    0x04ea0fe0  R15: 0x00000000Bytes at CS:EIP:
+4c 8b 4c 0a f8 4c 8b 54 0a f0 4c 0f c3 49 f8 4cStack:
 0x08d6f258: 3fc1d86d 00000001 3f800000 00000000 m..?.......?....
 0x08d6f268: 3fa76e78 00000001 38ce0060 00000005 xn.?....`..8....
 0x08d6f278: 08d6f810 00000000 0c874100 00000000 .........A......
@@ -1268,313 +658,148 @@ Stack:
 0x08d6ffd8: 00000000 00000000 00000000 00000000 ................
 0x08d6ffe8: 00000000 00000000 00000000 00000000 ................
 0x08d6fff8: 00000000 00000000                   ........</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Apr 18, 2017 at 6:18 PM">Apr 18, 2017</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
-					<a href="threads/server-crashing-on-startup.24983/#post-316442" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 18, 2017 at 5:28 PM">Apr 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-on-startup.24983/#post-316442" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/316442/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
-
-			</footer>
-		</div>
-	</div>
-</div>
-
-<header>
-	
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 18, 2017 at 6:18 PM">Apr 18, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pandah</a>,</span>
+                        <a href="/threads/server-crashing-on-startup.24983/#post-316442" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 18, 2017 at 5:28 PM">Apr 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-on-startup.24983/#post-316442" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/316442/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548532730,
-		today: 1548460800,
-		todayDow: 6
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"attached_files":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

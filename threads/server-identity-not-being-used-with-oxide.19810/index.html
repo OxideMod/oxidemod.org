@@ -1,2816 +1,1188 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Solved - Server identity not being used with Oxide | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	<link rel="next" href="threads/server-identity-not-being-used-with-oxide.19810/page-2" />
-	<link rel="canonical" href="https://oxidemod.org/threads/server-identity-not-being-used-with-oxide.19810/" />
-	<meta name="description" content="Hi, I've just updated Rust and Oxide to the latest versions on Citadel hosting.  Booting my server back up, I noticed that only Rust:IO was running -..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/server-identity-not-being-used-with-oxide.19810/" />
-	<meta property="og:title" content="Solved - Server identity not being used with Oxide" />
-	<meta property="og:description" content="Hi, I've just updated Rust and Oxide to the latest versions on Citadel hosting.  Booting my server back up, I noticed that only Rust:IO was running -..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Solved - Server identity not being used with Oxide</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Server identity not being used with Oxide" />
+    <meta property="og:description" content="" />
 </head>
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
 
-<body class="node23 node1 node104 node106 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/server-identity-not-being-used-with-oxide.19810/">Server identity not being used with Oxide</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">myles.</a>, <a href="threads/server-identity-not-being-used-with-oxide.19810/"><span class="DateTime" title="Jul 21, 2016 at 8:25 PM">Jul 21, 2016</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/server-identity-not-being-used-with-oxide.19810/">Server identity not being used with Oxide</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">myles.</a>, <a href="/threads/server-identity-not-being-used-with-oxide.19810/"><span class="DateTime" title="Jul 21, 2016 at 8:25 PM">Jul 21,
+                2016</span></a>.
+    </p>
+</div>
 <div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
-
-
-<div class="PageNav"
-	data-page="1"
-	data-range="2"
-	data-start="2"
-	data-end="2"
-	data-last="2"
-	data-sentinel="{{sentinel}}"
-	data-baseurl="threads/server-identity-not-being-used-with-oxide.19810/page-{{sentinel}}">
-	
-	
-	<nav>
-		
-		
-		<a href="threads/server-identity-not-being-used-with-oxide.19810/" class="currentPage " rel="start">1</a>
-		
-		
-		
-		
-		
-		
-		
-		<a href="threads/server-identity-not-being-used-with-oxide.19810/page-2" class="">2</a>
-		
-		
-			<a href="threads/server-identity-not-being-used-with-oxide.19810/page-2" class="text">Next &gt;</a>
-			
-		
-	</nav>	
-	
-	
+    <div class="linkGroup SelectionCountContainer">
+    </div>
+    <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="2" data-last="2" data-sentinel=""
+        data-baseurl="threads/server-identity-not-being-used-with-oxide.19810/page-">
+        <nav>
+            <a href="/threads/server-identity-not-being-used-with-oxide.19810/" class="currentPage " rel="start">1</a>
+            <a href="/threads/server-identity-not-being-used-with-oxide.19810/page-2" class="">2</a>
+            <a href="/threads/server-identity-not-being-used-with-oxide.19810/page-2" class="text">Next &gt;</a>
+        </nav>
+    </div>
 </div>
-
-</div>
-
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-233510" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hi, I&#039;ve just updated Rust and Oxide to the latest versions on Citadel hosting.  Booting my server back up, I noticed that only Rust:IO was running - none of my other ~30 mods.<br />
-<br />
-Looking via FTP I can see that my server identity folder isn&#039;t being used, despite the identity being specified on the command line.<br />
-<br />
-A new folder has been created, with Rust:IO assets inside named &quot;my_server_identity&quot;. <br />
-<br />
-Please advise?!  Wulf if you&#039;re around please help!<br />
-<br />
-Thanks!<br />
-[DOUBLEPOST=1469129320][/DOUBLEPOST]version:<br />
-<br />
-Build Version: 953.74<br />
-Build Date: Thursday, July 21, 2016 6:50:35 PM<br />
-Unity Version: 5.4.0f1<br />
-Changeset: 15759<br />
-Branch: /main<br />
-<br />
-oxide.version:<br />
-<br />
-(20:27:40) | [Oxide] 21:25 [Info] Oxide 2.0.2202 for Rust 953.74 (1477)
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:25 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233510/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233515" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I can&#039;t reproduce the issue. None of the identity settings were changed, so my only thought is that you&#039;re missing the oxide.config.json file somehow.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233515" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:29 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233515" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233515/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233516" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=233515#post-233515" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I can&#039;t reproduce the issue. None of the identity settings were changed, so my only thought is that you&#039;re missing the oxide.config.json file somehow.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Thanks for the swift reply Wulf.  Please could you advise where it should live and where I might be able to find a copy so I can upload it?<br />
-<br />
-Cheers!<br />
-<br />
-EDIT: found it, it&#039;s in the root of my server :/
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233516" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:31 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233516" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233516/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233518" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233516#post-233516" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Thanks for the swift reply Wulf.  Please could you advise where it should live and where I might be able to find a copy so I can upload it?<br />
-<br />
-Cheers!</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It comes with every Oxide build. It was just renamed from oxide.root.json to oxide.config.json and tweaked a bit in this update. If your server started though, it sounds like it found it and loaded it fine. Could you upload the full log?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233518" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:32 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233518" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233518/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233520" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=233518#post-233518" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">It comes with every Oxide build. It was just renamed from oxide.root.json to oxide.config.json and tweaked a bit in this update. If your server started though, it sounds like it found it and loaded it fine. Could you upload the full log?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I&#039;ve tried hard-coding my server identity in the JSON, as it had &quot;my_server_identity&quot; on line 7.<br />
-<br />
-Attempting a restart now, if that doesn&#039;t work I&#039;ll upload my logs here.  Fingers crossed!<br />
-<br />
-EDIT:  that worked, 35 plugins loaded successfully.  Very strange!  Any idea what might be causing this?  It&#039;s not the end of the world if I have to hard-code it in the JSON, just bizarre that it&#039;s worked fine for ~6 months until now.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233520" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:35 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233520" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233520/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233525" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233520#post-233520" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I&#039;ve tried hard-coding my server identity in the JSON, as it had &quot;my_server_identity&quot; on line 7.<br />
-<br />
-Attempting a restart now, if that doesn&#039;t work I&#039;ll upload my logs here.  Fingers crossed!<br />
-<br />
-EDIT:  that worked, 35 plugins loaded successfully.  Very strange!  Any idea what might be causing this?  It&#039;s not the end of the world if I have to hard-code it in the JSON, just bizarre that it&#039;s worked fine for ~6 months until now.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The identity is hard-coded in the config as the last resort option under InstanceCommandLines. The first option is the -oxide.dir variable path, the second is the combination of your +server.identity and the static parts.<br />
-<br />
-Not sure why it would not work for you, but using the same config works fine on my end.<br />
-<br />
-In the end, we&#039;ll likely be moving it all to the root directory though to simplify it.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233525" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:38 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233525" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233525/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233530" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=233525#post-233525" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The identity is already hard-coded in the config as the last resort option under InstanceCommandLines. The first option is the -oxide.dir variable path, the second is the combination of your +server.identity and the static parts.<br />
-<br />
-Not sure why it would not work for you, but using the same config works fine on my end.<br />
-<br />
-In the end, we&#039;ll likely be moving it all to the root directory though to simplify it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The only thing I can think is that it&#039;s set up wrong in my .bat file, so it defaults to the JSON value.  The daft thing is, this hasn&#039;t changed as far as I can tell but will affect any server owner using Citadel as they auto-generate this .bat file in the control panel.<br />
-<br />
-Will investigate further and let them know if this is the case.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233530" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:45 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233530" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233530/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233533" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233530#post-233530" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The only thing I can think is that it&#039;s set up wrong in my .bat file, so it defaults to the JSON value.  The daft thing is, this hasn&#039;t changed as far as I can tell but will affect any server owner using Citadel as they auto-generate this .bat file in the control panel.<br />
-<br />
-Will investigate further and let them know if this is the case.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>What do you have set for +server.identity in your startup script with the host? The default identity for Rust is &quot;my_server_identity&quot;, which is why our config uses that.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233533" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:46 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233533" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233533/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233539" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					It wasn&#039;t specified, -identity &quot;xxxx&quot;  was specified.  I&#039;ve now set this to match the aforementioned directory which was working.  Waiting on a restart to see if that fixes it.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233539" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:54 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233539" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233539/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233540" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233539#post-233539" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">It wasn&#039;t specified, -identity &quot;xxxx&quot;  was specified.  I&#039;ve now set this to match the aforementioned directory which was working.  Waiting on a restart to see if that fixes it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Yeah, there&#039;s no setting or command in Rust called &quot;identity&quot;, it&#039;d need to be &quot;server.identity&quot; to work.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233540" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:55 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233540" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233540/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233543" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=233540#post-233540" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah, there&#039;s no setting or command in Rust called &quot;identity&quot;, it&#039;d need to be &quot;server.identity&quot; to work.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Interesting... Setting it to &quot;xxxx&quot; as per expected functionality crashes the server - won&#039;t load at all.  Trying a new dir with copied over files.<br />
-<br />
-EDIT:  I should clarify, &quot;xxxx&quot; is actually &quot;CitadelServers.Com&quot;, full path is:<br />
-<br />
-rootip/server/CitadelServers.Com/oxide<br />
-<br />
-I&#039;ve created a new directory:<br />
-<br />
-rootip/server/test/oxide, and set +server.identity &quot;test&quot; in my .bat.  Will see if that works!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233543" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 8:58 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233543" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233543/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233546" class="message   " data-author="Resistance">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Resistance" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Resistance</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233543#post-233543" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Interesting... Setting it to &quot;xxxx&quot; as per expected functionality crashes the server - won&#039;t load at all.  Trying a new dir with copied over files.<br />
-<br />
-EDIT:  I should clarify, &quot;xxxx&quot; is actually &quot;CitadelServers.Com&quot;, full path is:<br />
-<br />
-rootip/server/CitadelServers.Com/oxide<br />
-<br />
-I&#039;ve created a new directory:<br />
-<br />
-rootip/server/test/oxide, and set +server.identity &quot;test&quot; in my .bat.  Will see if that works!</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>So if you have it set to this +server.identity &quot;my_server_identity&quot; in your bat file the server will crash?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233546" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:04 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233546" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233546/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233549" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Resistance">
-	<aside>
-		
-			<div class="attribution type">Resistance said:
-				
-					<a href="goto/post?id=233546#post-233546" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">So if you have it set to this +server.identity &quot;my_server_identity&quot; in your bat file the server will crash?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>No, I had +server.identity set to &quot;CitadelServers.Com&quot;
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233549" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:06 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233549" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233549/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233553" class="message   " data-author="Resistance">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Resistance" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Resistance</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233549#post-233549" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">No, I had +server.identity set to &quot;CitadelServers.Com&quot;</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>And if you put it to +server.identity &quot;my_server_identity&quot; does it work ok
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233553" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:07 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233553" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233553/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233559" class="message   " data-author="Devnull 2">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Devnull 2" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Devnull 2</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Strange it does not load any addons that I&#039;ve got for me either. I also don&#039;t see where plugin directory is defined any more in the config. Attached is the startup log and oxide.config.json. It also shows that it is loading oxide.root.json in the startup, but there isn&#039;t one anymore...
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-
-
-
-<div class="attachedFiles">
-	<h4 class="attachedFilesHeader">Attached Files:</h4>
-	<ul class="attachmentList SquareThumbs"
-		data-thumb-height="50"
-		data-thumb-selector="div.thumbnail > a">
-		
-			<li class="attachment" title="startup_log.txt">
-				<div class="boxModelFixer primaryContent">
-					
-					<div class="thumbnail">
-						
-							<a href="attachments/startup_log-txt.25338/" target="_blank" class="genericAttachment"></a>
-						
-					</div>
-					
-					<div class="attachmentInfo pairsJustified">
-						<h6 class="filename"><a href="attachments/startup_log-txt.25338/" target="_blank">startup_log.txt</a></h6>
-						<dl><dt>File size:</dt> <dd>4.2 KB</dd></dl>
-						<dl><dt>Views:</dt> <dd>47</dd></dl>
-					</div>
-				</div>
-			</li>
-		
-			<li class="attachment" title="oxide.config.json">
-				<div class="boxModelFixer primaryContent">
-					
-					<div class="thumbnail">
-						
-							<a href="attachments/oxide-config-json.25340/" target="_blank" class="genericAttachment"></a>
-						
-					</div>
-					
-					<div class="attachmentInfo pairsJustified">
-						<h6 class="filename"><a href="attachments/oxide-config-json.25340/" target="_blank">oxide.config.json</a></h6>
-						<dl><dt>File size:</dt> <dd>245 bytes</dd></dl>
-						<dl><dt>Views:</dt> <dd>51</dd></dl>
-					</div>
-				</div>
-			</li>
-		
-	</ul>
-</div>
-
-
-
-
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Devnull 2</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233559" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:16 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233559" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233559/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233563" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Devnull 2">
-	<aside>
-		
-			<div class="attribution type">Devnull 2 said:
-				
-					<a href="goto/post?id=233559#post-233559" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Strange it does not load any addons that I&#039;ve got for me either. I also don&#039;t see where plugin directory is defined any more in the config. Attached is the startup log and oxide.config.json. It also shows that it is loading oxide.root.json in the startup, but there isn&#039;t one anymore...</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The plugin directory is under oxide/plugins, like it has always been. If you had a custom path, you&#039;d need to move them to oxide/plugins.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233563" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:17 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233563" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233563/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233566" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Resistance">
-	<aside>
-		
-			<div class="attribution type">Resistance said:
-				
-					<a href="goto/post?id=233553#post-233553" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">And if you put it to +server.identity &quot;my_server_identity&quot; does it work ok</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Presumably it would, as long as your oxide folder containing your plugins/configs is named this under rootip/server/
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233566" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:18 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233566" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233566/permalink">#17</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233568" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="myles.">
-	<aside>
-		
-			<div class="attribution type">myles. said:
-				
-					<a href="goto/post?id=233566#post-233566" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Presumably it would, as long as your oxide folder containing your plugins/configs is named this under rootip/server/</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The default oxide.config.json uses whatever you set for the identity, there&#039;s no need to manually change it in most cases.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233568" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:19 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233568" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233568/permalink">#18</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233569" class="message   " data-author="myles.">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="myles." /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">myles.</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Devnull 2">
-	<aside>
-		
-			<div class="attribution type">Devnull 2 said:
-				
-					<a href="goto/post?id=233559#post-233559" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Strange it does not load any addons that I&#039;ve got for me either. I also don&#039;t see where plugin directory is defined any more in the config. Attached is the startup log and oxide.config.json. It also shows that it is loading oxide.root.json in the startup, but there isn&#039;t one anymore...</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Out of curiosity - are you a Citadel Servers customer?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233569" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:19 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233569" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233569/permalink">#19</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-233576" class="message   " data-author="Devnull 2">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Devnull 2" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Devnull 2</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=233563#post-233563" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The plugin directory is under oxide/plugins, like it has always been. If you had a custom path, you&#039;d need to move them to oxide/plugins.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Indeed, my plugins path thus far was \server\plugins\ and now it is under \server\my_server_identity\oxide\plugins\
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Devnull 2</a>,</span>
-					<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233576" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2016 at 9:23 PM">Jul 21, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-identity-not-being-used-with-oxide.19810/#post-233576" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233576/permalink">#20</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-
-
-<div class="PageNav"
-	data-page="1"
-	data-range="2"
-	data-start="2"
-	data-end="2"
-	data-last="2"
-	data-sentinel="{{sentinel}}"
-	data-baseurl="threads/server-identity-not-being-used-with-oxide.19810/page-{{sentinel}}">
-	
-	
-	<nav>
-		
-		
-		<a href="threads/server-identity-not-being-used-with-oxide.19810/" class="currentPage " rel="start">1</a>
-		
-		
-		
-		
-		
-		
-		
-		<a href="threads/server-identity-not-being-used-with-oxide.19810/page-2" class="">2</a>
-		
-		
-			<a href="threads/server-identity-not-being-used-with-oxide.19810/page-2" class="text">Next &gt;</a>
-			
-		
-	</nav>	
-	
-	
-</div>
-
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-233510" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi, I&#039;ve just updated Rust and Oxide to the latest versions on Citadel hosting. Booting my server back up, I
+                        noticed that only Rust:IO was running - none of my other ~30 mods.<br />
+                        <br /> Looking via FTP I can see that my server identity folder isn&#039;t being used, despite the identity being specified on the command line.<br />
+                        <br /> A new folder has been created, with Rust:IO assets inside named &quot;my_server_identity&quot;. <br />
+                        <br /> Please advise?! Wulf if you&#039;re around please help!<br />
+                        <br /> Thanks!<br /> [DOUBLEPOST=1469129320][/DOUBLEPOST]version:<br />
+                        <br /> Build Version: 953.74<br /> Build Date: Thursday, July 21, 2016 6:50:35 PM<br /> Unity Version: 5.4.0f1<br /> Changeset: 15759<br /> Branch: /main<br />
+                        <br /> oxide.version:<br />
+                        <br /> (20:27:40) | [Oxide] 21:25 [Info] Oxide 2.0.2202 for Rust 953.74 (1477) <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:25 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/233510/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233515" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I can&#039;t reproduce the issue. None of the identity settings were changed, so my only thought is that
+                        you&#039;re missing the oxide.config.json file somehow. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233515" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:29 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233515" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233515/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233516" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-233515" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I can&#039;t reproduce the issue. None of the identity settings were changed, so my only thought is that you&#039;re missing the
+                                        oxide.config.json file somehow.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Thanks for the swift reply Wulf. Please could you advise where it should live and where I might be able to find a copy so I can upload it?<br />
+                        <br /> Cheers!<br />
+                        <br /> EDIT: found it, it&#039;s in the root of my server :/ <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233516" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:31 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233516" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233516/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233518" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233516" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Thanks for the swift reply Wulf. Please could you advise where it should live and where I might be able to find a copy so I can upload it?<br />
+                                        <br /> Cheers!</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It comes with every Oxide build. It was just renamed from oxide.root.json to oxide.config.json and tweaked a bit in this update. If your server started though, it sounds
+                        like it found it and loaded it fine. Could you upload the full log? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233518" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:32 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233518" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233518/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233520" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-233518" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It comes with every Oxide build. It was just renamed from oxide.root.json to oxide.config.json and tweaked a bit in this update. If your server
+                                        started though, it sounds like it found it and loaded it fine. Could you upload the full log?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I&#039;ve tried hard-coding my server identity in the JSON, as it had &quot;my_server_identity&quot; on line 7.<br />
+                        <br /> Attempting a restart now, if that doesn&#039;t work I&#039;ll upload my logs here. Fingers crossed!<br />
+                        <br /> EDIT: that worked, 35 plugins loaded successfully. Very strange! Any idea what might be causing this? It&#039;s not the end of the world if I have to hard-code it in the
+                        JSON, just bizarre that it&#039;s worked fine for ~6 months until now. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233520" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:35 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233520" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233520/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233525" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233520" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I&#039;ve tried hard-coding my server identity in the JSON, as it had &quot;my_server_identity&quot; on line 7.<br />
+                                        <br /> Attempting a restart now, if that doesn&#039;t work I&#039;ll upload my logs here. Fingers crossed!<br />
+                                        <br /> EDIT: that worked, 35 plugins loaded successfully. Very strange! Any idea what might be causing this? It&#039;s not the end of the world if I have to
+                                        hard-code it in the JSON, just bizarre that it&#039;s worked fine for ~6 months until now.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The identity is hard-coded in the config as the last resort option under InstanceCommandLines. The first option is the -oxide.dir variable path, the second is the
+                        combination of your +server.identity and the static parts.<br />
+                        <br /> Not sure why it would not work for you, but using the same config works fine on my end.<br />
+                        <br /> In the end, we&#039;ll likely be moving it all to the root directory though to simplify it. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233525" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:38 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233525" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233525/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233530" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-233525" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The identity is already hard-coded in the config as the last resort option under InstanceCommandLines. The first option is the -oxide.dir
+                                        variable path, the second is the combination of your +server.identity and the static parts.<br />
+                                        <br /> Not sure why it would not work for you, but using the same config works fine on my end.<br />
+                                        <br /> In the end, we&#039;ll likely be moving it all to the root directory though to simplify it.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The only thing I can think is that it&#039;s set up wrong in my .bat file, so it defaults to the JSON value. The daft thing is, this hasn&#039;t changed as far as I can
+                        tell but will affect any server owner using Citadel as they auto-generate this .bat file in the control panel.<br />
+                        <br /> Will investigate further and let them know if this is the case. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233530" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:45 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233530" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233530/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233533" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233530" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The only thing I can think is that it&#039;s set up wrong in my .bat file, so it defaults to the JSON value. The daft thing is, this hasn&#039;t
+                                        changed as far as I can tell but will affect any server owner using Citadel as they auto-generate this .bat file in the control panel.<br />
+                                        <br /> Will investigate further and let them know if this is the case.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>What do you have set for +server.identity in your startup script with the host? The default identity for Rust is &quot;my_server_identity&quot;, which is why our config
+                        uses that. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233533" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:46 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233533" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233533/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233539" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> It wasn&#039;t specified, -identity &quot;xxxx&quot; was specified. I&#039;ve now set this to match the
+                        aforementioned directory which was working. Waiting on a restart to see if that fixes it. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233539" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:54 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233539" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233539/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233540" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233539" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It wasn&#039;t specified, -identity &quot;xxxx&quot; was specified. I&#039;ve now set this to match the aforementioned directory which was
+                                        working. Waiting on a restart to see if that fixes it.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Yeah, there&#039;s no setting or command in Rust called &quot;identity&quot;, it&#039;d need to be &quot;server.identity&quot; to work. <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233540" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:55 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233540" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233540/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233543" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-233540" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah, there&#039;s no setting or command in Rust called &quot;identity&quot;, it&#039;d need to be &quot;server.identity&quot; to work.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Interesting... Setting it to &quot;xxxx&quot; as per expected functionality crashes the server - won&#039;t load at all. Trying a new dir with copied over files.<br />
+                        <br /> EDIT: I should clarify, &quot;xxxx&quot; is actually &quot;CitadelServers.Com&quot;, full path is:<br />
+                        <br /> rootip/server/CitadelServers.Com/oxide<br />
+                        <br /> I&#039;ve created a new directory:<br />
+                        <br /> rootip/server/test/oxide, and set +server.identity &quot;test&quot; in my .bat. Will see if that works! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233543" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 8:58 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233543" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233543/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233546" class="message" data-author="Resistance">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Resistance" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Resistance</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233543" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Interesting... Setting it to &quot;xxxx&quot; as per expected functionality crashes the server - won&#039;t load at all. Trying a new dir with
+                                        copied over files.<br />
+                                        <br /> EDIT: I should clarify, &quot;xxxx&quot; is actually &quot;CitadelServers.Com&quot;, full path is:<br />
+                                        <br /> rootip/server/CitadelServers.Com/oxide<br />
+                                        <br /> I&#039;ve created a new directory:<br />
+                                        <br /> rootip/server/test/oxide, and set +server.identity &quot;test&quot; in my .bat. Will see if that works!</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>So if you have it set to this +server.identity &quot;my_server_identity&quot; in your bat file the server will crash? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233546" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:04 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233546" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233546/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233549" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Resistance">
+                            <aside>
+                                <div class="attribution type">Resistance said: <a href="#post-233546" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">So if you have it set to this +server.identity &quot;my_server_identity&quot; in your bat file the server will crash?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>No, I had +server.identity set to &quot;CitadelServers.Com&quot; <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233549" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:06 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233549" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233549/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233553" class="message" data-author="Resistance">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Resistance" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Resistance</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233549" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">No, I had +server.identity set to &quot;CitadelServers.Com&quot;</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>And if you put it to +server.identity &quot;my_server_identity&quot; does it work ok <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233553" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:07 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233553" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233553/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233559" class="message" data-author="Devnull 2">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Devnull 2" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Devnull 2</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Strange it does not load any addons that I&#039;ve got for me either. I also don&#039;t see where plugin
+                        directory is defined any more in the config. Attached is the startup log and oxide.config.json. It also shows that it is loading oxide.root.json in the startup, but there
+                        isn&#039;t one anymore... <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="startup_log.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/startup_log-txt.25338/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/startup_log-txt.25338/" target="_blank">startup_log.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>4.2 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>47</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="attachment" title="oxide.config.json">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/oxide-config-json.25340/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/oxide-config-json.25340/" target="_blank">oxide.config.json</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>245 bytes</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>51</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Devnull 2</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233559" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:16 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233559" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233559/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233563" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Devnull 2">
+                            <aside>
+                                <div class="attribution type">Devnull 2 said: <a href="#post-233559" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Strange it does not load any addons that I&#039;ve got for me either. I also don&#039;t see where plugin directory is defined any more in the
+                                        config. Attached is the startup log and oxide.config.json. It also shows that it is loading oxide.root.json in the startup, but there isn&#039;t one anymore...
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The plugin directory is under oxide/plugins, like it has always been. If you had a custom path, you&#039;d need to move them to oxide/plugins. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233563" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:17 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233563" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233563/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233566" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Resistance">
+                            <aside>
+                                <div class="attribution type">Resistance said: <a href="#post-233553" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">And if you put it to +server.identity &quot;my_server_identity&quot; does it work ok</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Presumably it would, as long as your oxide folder containing your plugins/configs is named this under rootip/server/ <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233566" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:18 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233566" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233566/permalink">#17</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233568" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="myles.">
+                            <aside>
+                                <div class="attribution type">myles. said: <a href="#post-233566" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Presumably it would, as long as your oxide folder containing your plugins/configs is named this under rootip/server/</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The default oxide.config.json uses whatever you set for the identity, there&#039;s no need to manually change it in most cases. <div class="messageTextEndMarker">&nbsp;
+                        </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233568" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:19 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233568" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233568/permalink">#18</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233569" class="message" data-author="myles.">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="myles." /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">myles.</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Devnull 2">
+                            <aside>
+                                <div class="attribution type">Devnull 2 said: <a href="#post-233559" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Strange it does not load any addons that I&#039;ve got for me either. I also don&#039;t see where plugin directory is defined any more in the
+                                        config. Attached is the startup log and oxide.config.json. It also shows that it is loading oxide.root.json in the startup, but there isn&#039;t one anymore...
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Out of curiosity - are you a Citadel Servers customer? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">myles.</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233569" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:19 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233569" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233569/permalink">#19</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-233576" class="message" data-author="Devnull 2">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Devnull 2" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Devnull 2</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-233563" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The plugin directory is under oxide/plugins, like it has always been. If you had a custom path, you&#039;d need to move them to oxide/plugins.
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Indeed, my plugins path thus far was \server\plugins\ and now it is under \server\my_server_identity\oxide\plugins\ <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Devnull 2</a>,</span>
+                        <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233576" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2016 at 9:23 PM">Jul 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-identity-not-being-used-with-oxide.19810/#post-233576" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/233576/permalink">#20</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+<div class="pageNavLinkGroup">
+    <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="2" data-last="2" data-sentinel=""
+        data-baseurl="threads/server-identity-not-being-used-with-oxide.19810/page-">
+        <nav>
+            <a href="/threads/server-identity-not-being-used-with-oxide.19810/" class="currentPage " rel="start">1</a>
+            <a href="/threads/server-identity-not-being-used-with-oxide.19810/page-2" class="">2</a>
+            <a href="/threads/server-identity-not-being-used-with-oxide.19810/page-2" class="text">Next &gt;</a>
+        </nav>
+    </div>
 </div>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548589244,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

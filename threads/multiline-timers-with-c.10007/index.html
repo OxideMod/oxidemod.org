@@ -1,287 +1,107 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Multiline timers with C# | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/multiline-timers-with-c.10007/" />
-	<meta name="description" content="So i want to repeat a multi-line function with a timer. Somehow it doesnt work .. maybe i dont know the proper way.. trying for 20mins to figure it..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/multiline-timers-with-c.10007/" />
-	<meta property="og:title" content="Multiline timers with C#" />
-	<meta property="og:description" content="So i want to repeat a multi-line function with a timer. Somehow it doesnt work .. maybe i dont know the proper way.. trying for 20mins to figure it..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Multiline timers with C#</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Multiline timers with C#" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/multiline-timers-with-c.10007/">Multiline timers with C#</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">PaiN</a>, <a href="threads/multiline-timers-with-c.10007/"><span class="DateTime" title="Jul 4, 2015 at 7:39 PM">Jul 4, 2015</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-105698" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/multiline-timers-with-c.10007/">Multiline timers with C#</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">PaiN</a>, <a href="/threads/multiline-timers-with-c.10007/"><span class="DateTime" title="Jul 4, 2015 at 7:39 PM">Jul 4, 2015</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					So i want to repeat a multi-line function with a timer. Somehow it doesnt work .. maybe i dont know the proper way.. trying for 20mins to figure it out. in lua it was easier <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+<ol class="messageList" id="messageList">
+    <li id="post-105698" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So i want to repeat a multi-line function with a timer. Somehow it doesnt work .. maybe i dont know the proper
+                        way.. trying for 20mins to figure it out. in lua it was easier <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                            title="Stick Out Tongue    :p" /><br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
         var timerrepeat = timer.Repeat(1, 0, ()
         {
             foreach(BasePlayer current in frozenPlayers)
@@ -296,108 +116,46 @@
             }
         )
 </pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 7:39 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105698/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105704" class="message   " data-author="Vilsol">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vilsol" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vilsol</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>var timerrepeat = timer.Repeat(1, 0, () =&gt; {
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 7:39 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105698/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105704" class="message" data-author="Vilsol">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vilsol" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vilsol</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>var timerrepeat = timer.Repeat(1, 0, () =&gt; {
     foreach(BasePlayer current in frozenPlayers) {
         var position = current.transform.position;
         var configPos = new Vector3(position.x, position.y, position.z);
@@ -407,114 +165,48 @@
         }
     }
 });</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105704" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 7:47 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105704" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105704/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105707" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Error:<br />
-<a href="http://screenshot.sh/mMdc6MOsyP0Cs" target="_blank" class="externalLink  rel="nofollow">http://screenshot.sh/mMdc6MOsyP0Cs</a><br />
-<br />
-Code:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105704" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 7:47 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105704" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105704/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105707" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Error:<br />
+                        <a href="http://screenshot.sh/mMdc6MOsyP0Cs" target="_blank" class="externalLink  rel=" nofollow">http://screenshot.sh/mMdc6MOsyP0Cs</a><br />
+                        <br /> Code:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
             timer.Repeat(1, 0, () =&gt; {
        
             foreach(BasePlayer current in frozenPlayers) {
@@ -529,442 +221,180 @@ Code:<br />
                
                 }
             }
-        });
-
-</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105707" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 7:56 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105707" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105707/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105709" class="message   " data-author="Vilsol">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vilsol" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vilsol</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Are you sure that the error is inside this code block? Check the line number
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105709" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 7:57 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105709" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105709/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105711" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Vilsol">
-	<aside>
-		
-			<div class="attribution type">Vilsol said:
-				
-					<a href="goto/post?id=105709#post-105709" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Are you sure that the error is inside this code block? Check the line number</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>yep its the last line that i gave u above<br />
-the &quot;});&quot;
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105711" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 7:58 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105711" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105711/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105713" class="message   " data-author="Vilsol">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vilsol" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vilsol</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The code block that I posted has properly matching brackets, it must be something outside of it affecting it.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105713" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 8:00 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105713" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105713/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105714" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Vilsol">
-	<aside>
-		
-			<div class="attribution type">Vilsol said:
-				
-					<a href="goto/post?id=105713#post-105713" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The code block that I posted has properly matching brackets, it must be something outside of it affecting it.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I will just give u all the code <br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+        });</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105707" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 7:56 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105707" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105707/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105709" class="message" data-author="Vilsol">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vilsol" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vilsol</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Are you sure that the error is inside this code block? Check the line number <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105709" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 7:57 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105709" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105709/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105711" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Vilsol">
+                            <aside>
+                                <div class="attribution type">Vilsol said: <a href="#post-105709" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Are you sure that the error is inside this code block? Check the line number</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>yep its the last line that i gave u above<br /> the &quot;});&quot; <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105711" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 7:58 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105711" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105711/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105713" class="message" data-author="Vilsol">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vilsol" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vilsol</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The code block that I posted has properly matching brackets, it must be something outside of it affecting it.
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105713" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 8:00 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105713" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105713/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105714" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Vilsol">
+                            <aside>
+                                <div class="attribution type">Vilsol said: <a href="#post-105713" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The code block that I posted has properly matching brackets, it must be something outside of it affecting it.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I will just give u all the code <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
 using System.Collections.Generic;
 using System.Reflection;
 using System;
 using System.Data;
 using UnityEngine;
-using Oxide.Core;
-
-namespace Oxide.Plugins
+using Oxide.Core;namespace Oxide.Plugins
 {
     [Info(&quot;Mind Freeze&quot;, &quot;PaiN&quot;, &quot;1.2.0&quot;, ResourceId = 1198)]
     [Description(&quot;Allows you to freeze players with a legit way.&quot;)]
@@ -1029,236 +459,102 @@ namespace Oxide.Plugins
             timer.Destroy(); 
             frozenPlayers.Clear();
         }
-    }
-
-}
+    }}
 </pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105714" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 8:01 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105714" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105714/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105715" class="message   " data-author="Vilsol">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vilsol" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vilsol</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					All you have done is placed the timer in the general class directory... it isn&#039;t in any method, the error has nothing to do with brackets, you have to put it in a proper method.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105715" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 8:03 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105715" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105715/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105730" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Vilsol">
-	<aside>
-		
-			<div class="attribution type">Vilsol said:
-				
-					<a href="goto/post?id=105715#post-105715" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">All you have done is placed the timer in the general class directory... it isn&#039;t in any method, the error has nothing to do with brackets, you have to put it in a proper method.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I&#039;m probably dumb.. these timers are so annoying ;/<br />
-<br />
-I did something.. but errorhttp://screenshot.sh/ouZ3pWKSCuSnS<br />
-here is my code:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105714" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 8:01 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105714" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105714/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105715" class="message" data-author="Vilsol">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vilsol" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vilsol</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> All you have done is placed the timer in the general class directory... it isn&#039;t in any method, the error
+                        has nothing to do with brackets, you have to put it in a proper method. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vilsol</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105715" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 8:03 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105715" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105715/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105730" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Vilsol">
+                            <aside>
+                                <div class="attribution type">Vilsol said: <a href="#post-105715" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">All you have done is placed the timer in the general class directory... it isn&#039;t in any method, the error has nothing to do with brackets,
+                                        you have to put it in a proper method.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I&#039;m probably dumb.. these timers are so annoying ;/<br />
+                        <br /> I did something.. but errorhttp://screenshot.sh/ouZ3pWKSCuSnS<br /> here is my code:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
 using System.Collections.Generic;
 using System.Reflection;
 using System;
 using System.Data;
 using UnityEngine;
-using Oxide.Core;
-
-namespace Oxide.Plugins
+using Oxide.Core;namespace Oxide.Plugins
 {
     [Info(&quot;Mind Freeze&quot;, &quot;PaiN&quot;, &quot;1.2.0&quot;, ResourceId = 1198)]
     [Description(&quot;Allows you to freeze players with a legit way.&quot;)]
@@ -1326,280 +622,126 @@ namespace Oxide.Plugins
             timerepeat.Destroy(); 
             frozenPlayers.Clear();
         }
-    }
-
-}
+    }}
 </pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105730" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 8:24 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105730" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105730/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105734" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I think it would be much simpler if you made a function for the timer. Right now you&#039;re creating a new anonymous function with () =&gt; and you&#039;re simply mixing your brackets.<br />
-[DOUBLEPOST=1436038846][/DOUBLEPOST]
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>    // your version fixed:
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105730" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 8:24 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105730" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105730/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105734" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I think it would be much simpler if you made a function for the timer. Right now you&#039;re creating a new
+                        anonymous function with () =&gt; and you&#039;re simply mixing your brackets.<br /> [DOUBLEPOST=1436038846][/DOUBLEPOST] <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>    // your version fixed:
     void Timer(BasePlayer player, string cmd, string[] args)
     {
         timer.Repeat(1, 0, () =&gt;
             {
                 foreach (BasePlayer current in frozenPlayers)
-                {
-
-                    var position = current.transform.position;
+                {                    var position = current.transform.position;
                     var configPos = new Vector3(position.x, position.y, position.z);
                     if (Vector3.Distance(current.transform.position, configPos) &lt; 1)
-                    {
-
-                        var timerrepeat = timer.Repeat(1, 0, () =&gt; current.ClientRPCPlayer(null, current, &quot;ForcePositionTo&quot;, new object[] { configPos }));
-                        current.TransformChanged();
-
-                    }
+                    {                        var timerrepeat = timer.Repeat(1, 0, () =&gt; current.ClientRPCPlayer(null, current, &quot;ForcePositionTo&quot;, new object[] { configPos }));
+                        current.TransformChanged();                    }
                 }
             }
         );
-    }
-
-
-    // Version that avoids the confusion
+    }    // Version that avoids the confusion
     void Timer(BasePlayer player, string cmd, string[] args)
     {
         timer.Repeat(1, 0, OnTimer);
-    }
-
-    void OnTimer()
+    }    void OnTimer()
     {
         foreach (BasePlayer current in frozenPlayers)
-        {
-
-            var position = current.transform.position;
+        {            var position = current.transform.position;
             var configPos = new Vector3(position.x, position.y, position.z);
             if (Vector3.Distance(current.transform.position, configPos) &lt; 1)
-            {
-
-                var timerrepeat = timer.Repeat(1, 0, () =&gt; current.ClientRPCPlayer(null, current, &quot;ForcePositionTo&quot;, new object[] { configPos }));
-                current.TransformChanged();
-
-            }
+            {                var timerrepeat = timer.Repeat(1, 0, () =&gt; current.ClientRPCPlayer(null, current, &quot;ForcePositionTo&quot;, new object[] { configPos }));
+                current.TransformChanged();            }
         }
     }
 </pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105734" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 8:29 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105734" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105734/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105745" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Well the code works.<br />
-<br />
-Freeze = Works<br />
-Unfreeze = No<br />
-<br />
-Ehh what to do .. the unfreeze command is good but doesnt working thats what i dont like in coding <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
-<br />
-my current code:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105734" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 8:29 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105734" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105734/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105745" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Well the code works.<br />
+                        <br /> Freeze = Works<br /> Unfreeze = No<br />
+                        <br /> Ehh what to do .. the unfreeze command is good but doesnt working thats what i dont like in coding <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
+                        <br /> my current code:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
 using System.Collections.Generic;
 using System.Reflection;
 using System;
 using System.Data;
 using UnityEngine;
-using Oxide.Core;
-
-namespace Oxide.Plugins
+using Oxide.Core;namespace Oxide.Plugins
 {
     [Info(&quot;Mind Freeze&quot;, &quot;PaiN&quot;, &quot;1.2.0&quot;, ResourceId = 1198)]
     [Description(&quot;Allows you to freeze players with a legit way.&quot;)]
@@ -1627,9 +769,7 @@ namespace Oxide.Plugins
         [ChatCommand(&quot;unfreeze&quot;)]
         void cmdUnFreeze(BasePlayer player, string cmd, string[] args)
         {
-            var target = BasePlayer.Find(args[0]);
-
-                frozenPlayers.Remove(target);
+            var target = BasePlayer.Find(args[0]);                frozenPlayers.Remove(target);
                    
         }
        
@@ -1642,22 +782,14 @@ namespace Oxide.Plugins
         void TimerStart()
         {
         timer.Repeat(5, 0, OnTimer);
-        }
-
-    void OnTimer()
+        }    void OnTimer()
     {
         foreach (BasePlayer current in frozenPlayers)
-        {
-
-            var position = current.transform.position;
+        {            var position = current.transform.position;
             var configPos = new Vector3(position.x, position.y, position.z);
             if (Vector3.Distance(current.transform.position, configPos) &lt; 1)
-            {
-
-                var timerrepeat = timer.Repeat(1, 0, () =&gt; current.ClientRPCPlayer(null, current, &quot;ForcePositionTo&quot;, new object[] { configPos }));
-                current.TransformChanged();
-
-            }
+            {                var timerrepeat = timer.Repeat(1, 0, () =&gt; current.ClientRPCPlayer(null, current, &quot;ForcePositionTo&quot;, new object[] { configPos }));
+                current.TransformChanged();            }
         }
     }
        
@@ -1667,866 +799,384 @@ namespace Oxide.Plugins
             timerrepeat.Destroy(); 
             frozenPlayers.Clear();
         }
-    }
-
-}
+    }}
 </pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105745" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 9:11 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105745" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105745/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105756" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					OK I looked a little more closely at your code. <br />
-<br />
-You don&#039;t need to start a new timer for forcePositionTo, simply call current.ClientRPCPlayer directly. What you are doing with your current code is that every 5 seconds, you start a new timer for every frozen player that brings them back to their position. All you want is to bring them back to their position once every second, so change your main timer to 1 second (the one that calls &quot;OnTimer&quot;) and remove the other timer.<br />
-<br />
-This will make it so that every 1 second, OnTimer will be called and that function will simply loop through frozenPlayers and bring them back to their position. As soon as you .Remove them from the frozenPlayer list, they&#039;ll be free to move (unless you added them several times -- a list allows that -- you might want to check the list before adding to make sure you&#039;re not adding a player multiple times).<br />
-<br />
-Also, you should clean up the code a bit. No need to have the function TimerStart, just put it&#039;s line of code straight into ServerInitialized. Make sure you KEEP that timer as well and on the unload of the plugin, you&#039;ll want to destroy it.<br />
-<br />
-Finally, dunno if it&#039;s because you aren&#039;t finished or I misunderstand how permissions work, but I have a feeling you are not checking for permissions currently (only registering a permission type).
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105756" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 9:43 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105756" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105756/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105760" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
-	<aside>
-		
-			<div class="attribution type">Deicide666ra said:
-				
-					<a href="goto/post?id=105756#post-105756" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">OK I looked a little more closely at your code.<br />
-<br />
-You don&#039;t need to start a new timer for forcePositionTo, simply call current.ClientRPCPlayer directly. What you are doing with your current code is that every 5 seconds, you start a new timer for every frozen player that brings them back to their position. All you want is to bring them back to their position once every second, so change your main timer to 1 second (the one that calls &quot;OnTimer&quot;) and remove the other timer.<br />
-<br />
-This will make it so that every 1 second, OnTimer will be called and that function will simply loop through frozenPlayers and bring them back to their position. As soon as you .Remove them from the frozenPlayer list, they&#039;ll be free to move (unless you added them several times -- a list allows that -- you might want to check the list before adding to make sure you&#039;re not adding a player multiple times).<br />
-<br />
-Also, you should clean up the code a bit. No need to have the function TimerStart, just put it&#039;s line of code straight into ServerInitialized. Make sure you KEEP that timer as well and on the unload of the plugin, you&#039;ll want to destroy it.<br />
-<br />
-Finally, dunno if it&#039;s because you aren&#039;t finished or I misunderstand how permissions work, but I have a feeling you are not checking for permissions currently (only registering a permission type).</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Okay so your post just made me to think better.. about the permission yes yes i know i will add it later.. i will make a cleanup also before posting an update.. Thank you so much.. only some people are so helpfull like you.<br />
-<br />
-And you said about checking the list.. ? Where is it ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105760" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 9:59 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105760" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105760/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105762" class="message   " data-author="Deicide666ra">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Deicide666ra" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Deicide666ra</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					C# is a very powerful language but it can definitely be confusing until you got some good experience with it. Most of my experience is with C++ so the transition wasn&#039;t so bad for me (C++ is a lot worse than C# in terms of complexity), but I can totally understand having trouble if you&#039;re coming from LUA or other &quot;simple&quot; scripting languages.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105762" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 10:02 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105762" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105762/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105766" class="message   " data-author="PaiN">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PaiN" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">PaiN</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
-	<aside>
-		
-			<div class="attribution type">Deicide666ra said:
-				
-					<a href="goto/post?id=105762#post-105762" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">C# is a very powerful language but it can definitely be confusing until you got some good experience with it. Most of my experience is with C++ so the transition wasn&#039;t so bad for me (C++ is a lot worse than C# in terms of complexity), but I can totally understand having trouble if you&#039;re coming from LUA or other &quot;simple&quot; scripting languages.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Also i wanted to explain why i had 2 timers.. <br />
-The first calls the OnTimer.<br />
-THE SECOND:<br />
-So without the second timer the first timer every 1 sec saves the position that the player is on right now(So if i dont have the timer there and the freezed target runs it will save the position that he is running every 1 sec and will just rollback him just a bit). What do i need to do ? Probably save the position in the /freeze functions. But how..
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105766" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 10:11 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105766" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105766/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-105775" class="message   " data-author="Bombardir">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Bombardir" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Bombardir</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Your first timer will Repeat and call new Timers again and again...<br />
-+ Some Lua &lt;-&gt; C# analogies:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>C#:
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105745" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 9:11 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105745" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105745/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105756" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> OK I looked a little more closely at your code. <br />
+                        <br /> You don&#039;t need to start a new timer for forcePositionTo, simply call current.ClientRPCPlayer directly. What you are doing with your current code is that every 5
+                        seconds, you start a new timer for every frozen player that brings them back to their position. All you want is to bring them back to their position once every second, so
+                        change your main timer to 1 second (the one that calls &quot;OnTimer&quot;) and remove the other timer.<br />
+                        <br /> This will make it so that every 1 second, OnTimer will be called and that function will simply loop through frozenPlayers and bring them back to their position. As soon
+                        as you .Remove them from the frozenPlayer list, they&#039;ll be free to move (unless you added them several times -- a list allows that -- you might want to check the list
+                        before adding to make sure you&#039;re not adding a player multiple times).<br />
+                        <br /> Also, you should clean up the code a bit. No need to have the function TimerStart, just put it&#039;s line of code straight into ServerInitialized. Make sure you KEEP
+                        that timer as well and on the unload of the plugin, you&#039;ll want to destroy it.<br />
+                        <br /> Finally, dunno if it&#039;s because you aren&#039;t finished or I misunderstand how permissions work, but I have a feeling you are not checking for permissions currently
+                        (only registering a permission type). <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105756" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 9:43 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105756" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105756/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105760" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                            <aside>
+                                <div class="attribution type">Deicide666ra said: <a href="#post-105756" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">OK I looked a little more closely at your code.<br />
+                                        <br /> You don&#039;t need to start a new timer for forcePositionTo, simply call current.ClientRPCPlayer directly. What you are doing with your current code is
+                                        that every 5 seconds, you start a new timer for every frozen player that brings them back to their position. All you want is to bring them back to their
+                                        position once every second, so change your main timer to 1 second (the one that calls &quot;OnTimer&quot;) and remove the other timer.<br />
+                                        <br /> This will make it so that every 1 second, OnTimer will be called and that function will simply loop through frozenPlayers and bring them back to their
+                                        position. As soon as you .Remove them from the frozenPlayer list, they&#039;ll be free to move (unless you added them several times -- a list allows that -- you
+                                        might want to check the list before adding to make sure you&#039;re not adding a player multiple times).<br />
+                                        <br /> Also, you should clean up the code a bit. No need to have the function TimerStart, just put it&#039;s line of code straight into ServerInitialized. Make
+                                        sure you KEEP that timer as well and on the unload of the plugin, you&#039;ll want to destroy it.<br />
+                                        <br /> Finally, dunno if it&#039;s because you aren&#039;t finished or I misunderstand how permissions work, but I have a feeling you are not checking for
+                                        permissions currently (only registering a permission type).</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Okay so your post just made me to think better.. about the permission yes yes i know i will add it later.. i will make a cleanup also before posting an update.. Thank you
+                        so much.. only some people are so helpfull like you.<br />
+                        <br /> And you said about checking the list.. ? Where is it ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105760" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 9:59 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105760" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105760/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105762" class="message" data-author="Deicide666ra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Deicide666ra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Deicide666ra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> C# is a very powerful language but it can definitely be confusing until you got some good experience with it.
+                        Most of my experience is with C++ so the transition wasn&#039;t so bad for me (C++ is a lot worse than C# in terms of complexity), but I can totally understand having trouble
+                        if you&#039;re coming from LUA or other &quot;simple&quot; scripting languages. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Deicide666ra</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105762" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 10:02 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105762" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105762/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105766" class="message" data-author="PaiN">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PaiN" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PaiN</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Deicide666ra">
+                            <aside>
+                                <div class="attribution type">Deicide666ra said: <a href="#post-105762" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">C# is a very powerful language but it can definitely be confusing until you got some good experience with it. Most of my experience is with C++
+                                        so the transition wasn&#039;t so bad for me (C++ is a lot worse than C# in terms of complexity), but I can totally understand having trouble if you&#039;re
+                                        coming from LUA or other &quot;simple&quot; scripting languages.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Also i wanted to explain why i had 2 timers.. <br /> The first calls the OnTimer.<br /> THE SECOND:<br /> So without the second timer the first timer every 1 sec saves
+                        the position that the player is on right now(So if i dont have the timer there and the freezed target runs it will save the position that he is running every 1 sec and will
+                        just rollback him just a bit). What do i need to do ? Probably save the position in the /freeze functions. But how.. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PaiN</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105766" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 10:11 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105766" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105766/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-105775" class="message" data-author="Bombardir">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Bombardir" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Bombardir</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Your first timer will Repeat and call new Timers again and again...<br /> + Some Lua &lt;-&gt; C#
+                        analogies:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>C#:
 ...
-var timerrepeat = ...
-
-Lua:
+var timerrepeat = ...Lua:
 ...
 local timerrepeat = ...
 ---------------------------------------------------------
 </pre>
-</div>You just create new local var and not use your &#039;private Timer timerrepeat;&#039; var.<br />
-Also it&#039;s not a table of timers, it&#039;s variable that contain only <b>one </b>timer. (you need to use <b>List&lt;Timer&gt;</b> or <b>HashSet&lt;Timer&gt;</b> or<b> Timer[]</b>)<br />
-+ If u want to unfreeze 1 player then you need to use <b>Dictionary&lt;ulong, Timer&gt; </b>(in lua: local table[steam] = timer), google for more info.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Bombardir</a>,</span>
-					<a href="threads/multiline-timers-with-c.10007/#post-105775" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2015 at 10:51 PM">Jul 4, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiline-timers-with-c.10007/#post-105775" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/105775/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>You just create new local var and not use your &#039;private Timer timerrepeat;&#039; var.<br /> Also it&#039;s not a table of timers, it&#039;s variable that contain
+                        only <b>one </b>timer. (you need to use <b>List&lt;Timer&gt;</b> or <b>HashSet&lt;Timer&gt;</b> or<b> Timer[]</b>)<br /> + If u want to unfreeze 1 player then you need to use
+                        <b>Dictionary&lt;ulong, Timer&gt; </b>(in lua: local table[steam] = timer), google for more info. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
-
-			</footer>
-		</div>
-	</div>
-</div>
-
-<header>
-	
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Bombardir</a>,</span>
+                        <a href="/threads/multiline-timers-with-c.10007/#post-105775" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2015 at 10:51 PM">Jul 4, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiline-timers-with-c.10007/#post-105775" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/105775/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548555686,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

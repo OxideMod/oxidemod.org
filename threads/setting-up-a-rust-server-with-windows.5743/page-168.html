@@ -1,2775 +1,1120 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Setting up a Rust server with Windows | Page 168 | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	<link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	<link rel="prev" href="threads/setting-up-a-rust-server-with-windows.5743/page-167" /><link rel="next" href="threads/setting-up-a-rust-server-with-windows.5743/page-169" />
-	<link rel="canonical" href="https://oxidemod.org/threads/setting-up-a-rust-server-with-windows.5743/page-168" />
-	<meta name="description" content="The rcon.ip setting can be 0.0.0.0 or the IP of the server itself.
-That did the trick. Thanks so much for the support Wulf!" />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/setting-up-a-rust-server-with-windows.5743/" />
-	<meta property="og:title" content="Setting up a Rust server with Windows" />
-	<meta property="og:description" content="The rcon.ip setting can be 0.0.0.0 or the IP of the server itself.
-That did the trick. Thanks so much for the support Wulf!" />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Setting up a Rust server with Windows | Page 168</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Setting up a Rust server with Windows | Page 168" />
+    <meta property="og:description" content="" />
 </head>
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/guides-and-tips.103/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Guides and Tips</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
 
-<body class="node103 node1 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/guides-and-tips.103/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Guides and Tips</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/setting-up-a-rust-server-with-windows.5743/">Setting up a Rust server with Windows</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/guides-and-tips.103/">Guides and Tips</a>' started by <a class="username" dir="auto">Wulf</a>, <a href="threads/setting-up-a-rust-server-with-windows.5743/"><span class="DateTime" title="Oct 9, 2014 at 5:09 PM">Oct 9, 2014</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
+<div class="titleBar">
+    <h1>
+        <a href="/threads/setting-up-a-rust-server-with-windows.5743/">Setting up a Rust server with Windows</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/guides-and-tips.103/">Guides and Tips</a>' started by <a class="username"
+            dir="auto">Wulf</a>, <a href="/threads/setting-up-a-rust-server-with-windows.5743/"><span class="DateTime" title="Oct 9, 2014 at 5:09 PM">Oct 9,
+                2014</span></a>.
+    </p>
+</div>
 <div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
-
-
-<div class="PageNav"
-	data-page="168"
-	data-range="2"
-	data-start="166"
-	data-end="170"
-	data-last="221"
-	data-sentinel="{{sentinel}}"
-	data-baseurl="threads/setting-up-a-rust-server-with-windows.5743/page-{{sentinel}}">
-	
-	
-	<nav>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-167" class="text">&lt; Prev</a>
-			
-		
-		
-		<a href="threads/setting-up-a-rust-server-with-windows.5743/" class="" rel="start">1</a>
-		
-		
-			<a class="PageNavPrev ">&larr;</a> <span class="scrollable"><span class="items">
-		
-		
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-166" class="">166</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-167" class="">167</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168" class="currentPage ">168</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-169" class="">169</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-170" class="">170</a>
-		
-		
-		
-			</span></span> <a class="PageNavNext ">&rarr;</a>
-		
-		
-		<a href="threads/setting-up-a-rust-server-with-windows.5743/page-221" class="">221</a>
-		
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-169" class="text">Next &gt;</a>
-			
-		
-	</nav>	
-	
-	
+    <div class="linkGroup SelectionCountContainer">
+    </div>
+    <div class="PageNav" data-page="168" data-range="2" data-start="166" data-end="170" data-last="221" data-sentinel=""
+        data-baseurl="threads/setting-up-a-rust-server-with-windows.5743/page-">
+        <nav>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-167" class="text">&lt; Prev</a>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/" class="" rel="start">1</a>
+            <a class="PageNavPrev ">&larr;</a> <span class="scrollable"><span class="items">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-166" class="">166</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-167" class="">167</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168" class="currentPage ">168</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-169" class="">169</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-170" class="">170</a>
+                </span></span> <a class="PageNavNext ">&rarr;</a>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-221" class="">221</a>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-169" class="text">Next &gt;</a>
+        </nav>
+    </div>
 </div>
-
-</div>
-
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-139351" class="message   " data-author="MrMackeyMKayyy">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="MrMackeyMKayyy" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">MrMackeyMKayyy</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=139349#post-139349" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The rcon.ip setting can be 0.0.0.0 or the IP of the server itself.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>That did the trick. Thanks so much for the support Wulf!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">MrMackeyMKayyy</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139351" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 28, 2015 at 6:12 PM">Oct 28, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139351" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139351/permalink">#3341</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139592" class="message   " data-author="SeBL4RD 2">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="SeBL4RD 2" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">SeBL4RD 2</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Wulf you fucked server.cfg with latest oxide update...
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">SeBL4RD 2</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139592" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 10:32 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139592" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139592/permalink">#3342</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139599" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="SeBL4RD 2">
-	<aside>
-		
-			<div class="attribution type">SeBL4RD 2 said:
-				
-					<a href="goto/post?id=139592#post-139592" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Wulf you fucked server.cfg with latest oxide update...</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Oxide doesn&#039;t touch server.cfg. Read the Rust dev blog.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139599" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 10:39 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139599" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139599/permalink">#3343</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139602" class="message   " data-author="SeBL4RD 2">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="SeBL4RD 2" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">SeBL4RD 2</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Ahhhh ok, and now what folder it is?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">SeBL4RD 2</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139602" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 10:44 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139602" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139602/permalink">#3344</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139604" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="SeBL4RD 2">
-	<aside>
-		
-			<div class="attribution type">SeBL4RD 2 said:
-				
-					<a href="goto/post?id=139602#post-139602" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Ahhhh ok, and now what folder it is?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It&#039;s now where it was always supposed to have been, under server/identity/cfg.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139604" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 10:52 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139604" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139604/permalink">#3345</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139607" class="message   " data-author="SeBL4RD 2">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="SeBL4RD 2" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">SeBL4RD 2</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Ok <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />. Thanks Wulf !
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">SeBL4RD 2</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139607" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 11:00 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139607" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139607/permalink">#3346</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139611" class="message   " data-author="thedavenproject">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="thedavenproject" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">thedavenproject</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Can u tell me how to update my rust server that i pay for?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">thedavenproject</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139611" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 11:06 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139611" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139611/permalink">#3347</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139612" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="thedavenproject">
-	<aside>
-		
-			<div class="attribution type">thedavenproject said:
-				
-					<a href="goto/post?id=139611#post-139611" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Can u tell me how to update my rust server that i pay for?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>If your host has a control panel, it&#039;s generally done via that.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139612" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 29, 2015 at 11:11 PM">Oct 29, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139612" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139612/permalink">#3348</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139695" class="message   " data-author="thedavenproject">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="thedavenproject" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">thedavenproject</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=139612#post-139612" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">If your host has a control panel, it&#039;s generally done via that.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>ok thx <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">thedavenproject</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139695" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 30, 2015 at 12:29 PM">Oct 30, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139695" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139695/permalink">#3349</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139715" class="message   " data-author="Loup-des-Neiges">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Loup-des-Neiges" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Loup-des-Neiges</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The &quot;+server.ip &quot; still does not work ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Loup-des-Neiges</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139715" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 30, 2015 at 1:44 PM">Oct 30, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139715" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139715/permalink">#3350</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139735" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Loup-des-Neiges">
-	<aside>
-		
-			<div class="attribution type">Loup-des-Neiges said:
-				
-					<a href="goto/post?id=139715#post-139715" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The &quot;+server.ip &quot; still does not work ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It has always worked, you just have to set it to a valid IP that your machine actually has assigned to it.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139735" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 30, 2015 at 2:47 PM">Oct 30, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139735" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139735/permalink">#3351</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139940" class="message   " data-author="DikkatDeli">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DikkatDeli" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DikkatDeli</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a><br />
-<br />
-i installed server file on my computer win10 x64 bit bur whjn i run the bat file console closes itself immediately<br />
-i guess i have to install some Framworks ? or what sould i do
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DikkatDeli</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139940" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 1:38 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139940" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139940/permalink">#3352</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139943" class="message   " data-author="Resistance">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Resistance" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Resistance</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DikkatDeli">
-	<aside>
-		
-			<div class="attribution type">DikkatDeli said:
-				
-					<a href="goto/post?id=139940#post-139940" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote"><a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a><br />
-<br />
-i installed server file on my computer win10 x64 bit bur whjn i run the bat file console closes itself immediately<br />
-i guess i have to install some Framworks ? or what sould i do</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Looks like you never built it right or something in your bat file could be wrong
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139943" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 1:42 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139943" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139943/permalink">#3353</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139944" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DikkatDeli">
-	<aside>
-		
-			<div class="attribution type">DikkatDeli said:
-				
-					<a href="goto/post?id=139940#post-139940" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote"><a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a><br />
-<br />
-i installed server file on my computer win10 x64 bit bur whjn i run the bat file console closes itself immediately<br />
-i guess i have to install some Framworks ? or what sould i do</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>You are most likely not running if from the location in the .bat file.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139944" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 1:44 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139944" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139944/permalink">#3354</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139994" class="message   " data-author="CadaO">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="CadaO" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">CadaO</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Please, HELP ME! <br />
-<br />
-Win Server 2008 Standard
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-
-
-
-<div class="attachedFiles">
-	<h4 class="attachedFilesHeader">Attached Files:</h4>
-	<ul class="attachmentList SquareThumbs"
-		data-thumb-height="50"
-		data-thumb-selector="div.thumbnail > a">
-		
-			<li class="attachment" title="output_log.txt">
-				<div class="boxModelFixer primaryContent">
-					
-					<div class="thumbnail">
-						
-							<a href="attachments/output_log-txt.13917/" target="_blank" class="genericAttachment"></a>
-						
-					</div>
-					
-					<div class="attachmentInfo pairsJustified">
-						<h6 class="filename"><a href="attachments/output_log-txt.13917/" target="_blank">output_log.txt</a></h6>
-						<dl><dt>File size:</dt> <dd>10 KB</dd></dl>
-						<dl><dt>Views:</dt> <dd>10</dd></dl>
-					</div>
-				</div>
-			</li>
-		
-	</ul>
-</div>
-
-
-
-
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">CadaO</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139994" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 6:17 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139994" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139994/permalink">#3355</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-139996" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="CadaO">
-	<aside>
-		
-			<div class="attribution type">CadaO said:
-				
-					<a href="goto/post?id=139994#post-139994" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Please, HELP ME!<br />
-<br />
-Win Server 2008 Standard</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Does the server have a graphics card? Are you using -nographics in your startup script?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139996" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 6:22 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139996" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139996/permalink">#3356</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-140006" class="message   " data-author="CadaO">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="CadaO" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">CadaO</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=139996#post-139996" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Does the server have a graphics card? Are you using -nographics in your startup script?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Hi Wulf =D<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>@echo off
-cls
-:start
-
-RustDedicated -batchmode -nographics +server.ip 0.0.0.0 +rcon.ip 0.0.0.0 +server.port 28015 +rcon.port 28016 +rcon.password &quot;changeme&quot; +server.maxplayers 10 +server.hostname &quot;My Oxide Server&quot; +server.identity &quot;my_server_identity&quot; +server.level &quot;Procedural Map&quot; +server.seed 12345 +server.worldsize 4000 +server.saveinterval 300 +server.globalchat true +server.description &quot;Powered by Oxide&quot; +server.headerimage &quot;http://oxidemod.org/styles/oxide/logo.png&quot; +server.url &quot;http://oxidemod.org&quot;
-
-@echo.
-@echo Restarting server...
-@echo.
-goto start</pre>
-</div>[DOUBLEPOST=1446318055][/DOUBLEPOST]On my PC works.<br />
-Windows Server 2008 UPDATE 100%<br />
-<br />
-The server does not.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">CadaO</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140006" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 6:54 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140006" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140006/permalink">#3357</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-140011" class="message   " data-author="Resistance">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Resistance" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Resistance</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="CadaO">
-	<aside>
-		
-			<div class="attribution type">CadaO said:
-				
-					<a href="goto/post?id=140006#post-140006" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Hi Wulf =D<br />
-<br />
-<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>@echo off
-cls
-:start
-
-RustDedicated -batchmode -nographics +server.ip 0.0.0.0 +rcon.ip 0.0.0.0 +server.port 28015 +rcon.port 28016 +rcon.password &quot;changeme&quot; +server.maxplayers 10 +server.hostname &quot;My Oxide Server&quot; +server.identity &quot;my_server_identity&quot; +server.level &quot;Procedural Map&quot; +server.seed 12345 +server.worldsize 4000 +server.saveinterval 300 +server.globalchat true +server.description &quot;Powered by Oxide&quot; +server.headerimage &quot;http://oxidemod.org/styles/oxide/logo.png&quot; +server.url &quot;http://oxidemod.org&quot;
-
-@echo.
-@echo Restarting server...
-@echo.
-goto start</pre>
-</div>[DOUBLEPOST=1446318055][/DOUBLEPOST]On my PC works.<br />
-Windows Server 2008 UPDATE 100%<br />
-<br />
-The server does not.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Needs to be RustDedicated.exe<br />
-remove<br />
--nographics<br />
-+server.ip 0.0.0.0<br />
-cls<br />
-:start<br />
-@echo.<br />
-@echo Restarting server...<br />
-@echo.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140011" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 7:32 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140011" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140011/permalink">#3358</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-140014" class="message   " data-author="CadaO">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="CadaO" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">CadaO</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Not work =&#039;(<br />
-Server Manager<br />
-<a href="http://i.imgur.com/3RcYwtE.jpg" target="_blank" class="externalLink  rel="nofollow">http://i.imgur.com/3RcYwtE.jpg</a><br />
-Programs<br />
-<a href="http://i.imgur.com/yrZ3qpB.jpg" target="_blank" class="externalLink  rel="nofollow">http://i.imgur.com/yrZ3qpB.jpg</a><br />
-Server Not Work<br />
-<a href="http://i.imgur.com/i0IwNcw.jpg" target="_blank" class="externalLink  rel="nofollow">http://i.imgur.com/i0IwNcw.jpg</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">CadaO</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140014" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 7:38 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140014" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140014/permalink">#3359</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-140017" class="message   " data-author="Resistance">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Resistance" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Resistance</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					It take a little bit of time before it will show anything in the console but without seeing your files live its hard to know if you have them done right. I have seen many over skype and some people dont build it right<br />
-This is the way I have my bat file with some info hiiden<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>@echo off
-RustDedicated.exe -batchmode +ai.move false +server.port 28015 +rcon.port 28016 +server.radiation true +rcon.ip 0.0.0.0 +rcon.password &quot;**hiddenpassword&quot;&quot;&quot; +server.maxplayers 200 +server.hostname &quot;Clan Wars |Stacks|FF|Remove|TP|Home|Kits|Clans&quot; +server.worldsize 6000 +server.seed 7 +server.headerimage &quot;http://www.mywebsite.net/war.jpg&quot; +server.url www.mywebsite.net +server.description &quot;Welcome to Clan Wars\nA huge map for your exploration needs.\nWhere you can build your base and combat your neighbours.\n\nPLUGINS\nAntiCheat - AutoDoorCloser - Clans - Compass - Teleport - Removertool - LiveMap - Friendly Fire - Trade - QuickSmelt - QuickSort -RankME - SignArtist - DayVote - StackSizes \nand many more&quot;</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
-					<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140017" title="Permalink" class="datePermalink"><span class="DateTime" title="Oct 31, 2015 at 7:41 PM">Oct 31, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140017" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140017/permalink">#3360</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-
-
-<div class="PageNav"
-	data-page="168"
-	data-range="2"
-	data-start="166"
-	data-end="170"
-	data-last="221"
-	data-sentinel="{{sentinel}}"
-	data-baseurl="threads/setting-up-a-rust-server-with-windows.5743/page-{{sentinel}}">
-	
-	
-	<nav>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-167" class="text">&lt; Prev</a>
-			
-		
-		
-		<a href="threads/setting-up-a-rust-server-with-windows.5743/" class="" rel="start">1</a>
-		
-		
-			<a class="PageNavPrev ">&larr;</a> <span class="scrollable"><span class="items">
-		
-		
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-166" class="">166</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-167" class="">167</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-168" class="currentPage ">168</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-169" class="">169</a>
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-170" class="">170</a>
-		
-		
-		
-			</span></span> <a class="PageNavNext ">&rarr;</a>
-		
-		
-		<a href="threads/setting-up-a-rust-server-with-windows.5743/page-221" class="">221</a>
-		
-		
-			<a href="threads/setting-up-a-rust-server-with-windows.5743/page-169" class="text">Next &gt;</a>
-			
-		
-	</nav>	
-	
-	
-</div>
-
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-139351" class="message" data-author="MrMackeyMKayyy">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="MrMackeyMKayyy" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">MrMackeyMKayyy</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-139349" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The rcon.ip setting can be 0.0.0.0 or the IP of the server itself.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>That did the trick. Thanks so much for the support Wulf! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">MrMackeyMKayyy</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139351" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 28, 2015 at 6:12 PM">Oct 28, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139351" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139351/permalink">#3341</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139592" class="message" data-author="SeBL4RD 2">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="SeBL4RD 2" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">SeBL4RD 2</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Wulf you fucked server.cfg with latest oxide update... <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">SeBL4RD 2</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139592" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 10:32 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139592" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139592/permalink">#3342</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139599" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="SeBL4RD 2">
+                            <aside>
+                                <div class="attribution type">SeBL4RD 2 said: <a href="#post-139592" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Wulf you fucked server.cfg with latest oxide update...</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Oxide doesn&#039;t touch server.cfg. Read the Rust dev blog. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139599" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 10:39 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139599" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139599/permalink">#3343</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139602" class="message" data-author="SeBL4RD 2">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="SeBL4RD 2" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">SeBL4RD 2</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ahhhh ok, and now what folder it is? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">SeBL4RD 2</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139602" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 10:44 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139602" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139602/permalink">#3344</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139604" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="SeBL4RD 2">
+                            <aside>
+                                <div class="attribution type">SeBL4RD 2 said: <a href="#post-139602" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Ahhhh ok, and now what folder it is?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It&#039;s now where it was always supposed to have been, under server/identity/cfg. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139604" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 10:52 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139604" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139604/permalink">#3345</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139607" class="message" data-author="SeBL4RD 2">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="SeBL4RD 2" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">SeBL4RD 2</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ok <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                            title="Smile    :)" />. Thanks Wulf ! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">SeBL4RD 2</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139607" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 11:00 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139607" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139607/permalink">#3346</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139611" class="message" data-author="thedavenproject">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="thedavenproject" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">thedavenproject</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Can u tell me how to update my rust server that i pay for? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">thedavenproject</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139611" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 11:06 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139611" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139611/permalink">#3347</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139612" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="thedavenproject">
+                            <aside>
+                                <div class="attribution type">thedavenproject said: <a href="#post-139611" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Can u tell me how to update my rust server that i pay for?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>If your host has a control panel, it&#039;s generally done via that. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139612" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 29, 2015 at 11:11 PM">Oct 29, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139612" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139612/permalink">#3348</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139695" class="message" data-author="thedavenproject">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="thedavenproject" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">thedavenproject</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-139612" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">If your host has a control panel, it&#039;s generally done via that.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>ok thx <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">thedavenproject</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139695" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 30, 2015 at 12:29 PM">Oct 30, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139695" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139695/permalink">#3349</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139715" class="message" data-author="Loup-des-Neiges">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Loup-des-Neiges" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Loup-des-Neiges</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The &quot;+server.ip &quot; still does not work ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Loup-des-Neiges</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139715" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 30, 2015 at 1:44 PM">Oct 30, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139715" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139715/permalink">#3350</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139735" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Loup-des-Neiges">
+                            <aside>
+                                <div class="attribution type">Loup-des-Neiges said: <a href="#post-139715" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The &quot;+server.ip &quot; still does not work ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It has always worked, you just have to set it to a valid IP that your machine actually has assigned to it. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139735" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 30, 2015 at 2:47 PM">Oct 30, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139735" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139735/permalink">#3351</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139940" class="message" data-author="DikkatDeli">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DikkatDeli" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DikkatDeli</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a><br />
+                        <br /> i installed server file on my computer win10 x64 bit bur whjn i run the bat file console closes itself immediately<br /> i guess i have to install some Framworks ? or
+                        what sould i do <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DikkatDeli</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139940" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 1:38 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139940" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139940/permalink">#3352</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139943" class="message" data-author="Resistance">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Resistance" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Resistance</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DikkatDeli">
+                            <aside>
+                                <div class="attribution type">DikkatDeli said: <a href="#post-139940" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a><br />
+                                        <br /> i installed server file on my computer win10 x64 bit bur whjn i run the bat file console closes itself immediately<br /> i guess i have to install some
+                                        Framworks ? or what sould i do</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Looks like you never built it right or something in your bat file could be wrong <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139943" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 1:42 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139943" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139943/permalink">#3353</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139944" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DikkatDeli">
+                            <aside>
+                                <div class="attribution type">DikkatDeli said: <a href="#post-139940" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a><br />
+                                        <br /> i installed server file on my computer win10 x64 bit bur whjn i run the bat file console closes itself immediately<br /> i guess i have to install some
+                                        Framworks ? or what sould i do</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You are most likely not running if from the location in the .bat file. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139944" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 1:44 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139944" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139944/permalink">#3354</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139994" class="message" data-author="CadaO">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="CadaO" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">CadaO</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Please, HELP ME! <br />
+                        <br /> Win Server 2008 Standard <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="output_log.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/output_log-txt.13917/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/output_log-txt.13917/" target="_blank">output_log.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>10 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>10</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">CadaO</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139994" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 6:17 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139994" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139994/permalink">#3355</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-139996" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="CadaO">
+                            <aside>
+                                <div class="attribution type">CadaO said: <a href="#post-139994" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Please, HELP ME!<br />
+                                        <br /> Win Server 2008 Standard</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Does the server have a graphics card? Are you using -nographics in your startup script? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139996" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 6:22 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-139996" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/139996/permalink">#3356</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-140006" class="message" data-author="CadaO">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="CadaO" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">CadaO</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-139996" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Does the server have a graphics card? Are you using -nographics in your startup script?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Hi Wulf =D<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>@echo off
+cls
+:startRustDedicated -batchmode -nographics +server.ip 0.0.0.0 +rcon.ip 0.0.0.0 +server.port 28015 +rcon.port 28016 +rcon.password &quot;changeme&quot; +server.maxplayers 10 +server.hostname &quot;My Oxide Server&quot; +server.identity &quot;my_server_identity&quot; +server.level &quot;Procedural Map&quot; +server.seed 12345 +server.worldsize 4000 +server.saveinterval 300 +server.globalchat true +server.description &quot;Powered by Oxide&quot; +server.headerimage &quot;http://oxidemod.org/styles/oxide/logo.png&quot; +server.url &quot;http://oxidemod.org&quot;@echo.
+@echo Restarting server...
+@echo.
+goto start</pre>
+                        </div>[DOUBLEPOST=1446318055][/DOUBLEPOST]On my PC works.<br /> Windows Server 2008 UPDATE 100%<br />
+                        <br /> The server does not. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">CadaO</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140006" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 6:54 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140006" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140006/permalink">#3357</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-140011" class="message" data-author="Resistance">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Resistance" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Resistance</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="CadaO">
+                            <aside>
+                                <div class="attribution type">CadaO said: <a href="#post-140006" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hi Wulf =D<br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>@echo off
+cls
+:startRustDedicated -batchmode -nographics +server.ip 0.0.0.0 +rcon.ip 0.0.0.0 +server.port 28015 +rcon.port 28016 +rcon.password &quot;changeme&quot; +server.maxplayers 10 +server.hostname &quot;My Oxide Server&quot; +server.identity &quot;my_server_identity&quot; +server.level &quot;Procedural Map&quot; +server.seed 12345 +server.worldsize 4000 +server.saveinterval 300 +server.globalchat true +server.description &quot;Powered by Oxide&quot; +server.headerimage &quot;http://oxidemod.org/styles/oxide/logo.png&quot; +server.url &quot;http://oxidemod.org&quot;@echo.
+@echo Restarting server...
+@echo.
+goto start</pre>
+                                        </div>[DOUBLEPOST=1446318055][/DOUBLEPOST]On my PC works.<br /> Windows Server 2008 UPDATE 100%<br />
+                                        <br /> The server does not.
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Needs to be RustDedicated.exe<br /> remove<br /> -nographics<br /> +server.ip 0.0.0.0<br /> cls<br /> :start<br /> @echo.<br /> @echo Restarting server...<br /> @echo.
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140011" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 7:32 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140011" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140011/permalink">#3358</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-140014" class="message" data-author="CadaO">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="CadaO" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">CadaO</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Not work =&#039;(<br /> Server Manager<br />
+                        <a href="http://i.imgur.com/3RcYwtE.jpg" target="_blank" class="externalLink  rel=" nofollow">http://i.imgur.com/3RcYwtE.jpg</a><br /> Programs<br />
+                        <a href="http://i.imgur.com/yrZ3qpB.jpg" target="_blank" class="externalLink  rel=" nofollow">http://i.imgur.com/yrZ3qpB.jpg</a><br /> Server Not Work<br />
+                        <a href="http://i.imgur.com/i0IwNcw.jpg" target="_blank" class="externalLink  rel=" nofollow">http://i.imgur.com/i0IwNcw.jpg</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">CadaO</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140014" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 7:38 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140014" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140014/permalink">#3359</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-140017" class="message" data-author="Resistance">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Resistance" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Resistance</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> It take a little bit of time before it will show anything in the console but without seeing your files live its
+                        hard to know if you have them done right. I have seen many over skype and some people dont build it right<br /> This is the way I have my bat file with some info hiiden<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>@echo off
+RustDedicated.exe -batchmode +ai.move false +server.port 28015 +rcon.port 28016 +server.radiation true +rcon.ip 0.0.0.0 +rcon.password &quot;**hiddenpassword&quot;&quot;&quot; +server.maxplayers 200 +server.hostname &quot;Clan Wars |Stacks|FF|Remove|TP|Home|Kits|Clans&quot; +server.worldsize 6000 +server.seed 7 +server.headerimage &quot;http://www.mywebsite.net/war.jpg&quot; +server.url www.mywebsite.net +server.description &quot;Welcome to Clan Wars\nA huge map for your exploration needs.\nWhere you can build your base and combat your neighbours.\n\nPLUGINS\nAntiCheat - AutoDoorCloser - Clans - Compass - Teleport - Removertool - LiveMap - Friendly Fire - Trade - QuickSmelt - QuickSort -RankME - SignArtist - DayVote - StackSizes \nand many more&quot;</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+                        <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140017" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Oct 31, 2015 at 7:41 PM">Oct 31, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168#post-140017" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/140017/permalink">#3360</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+<div class="pageNavLinkGroup">
+    <div class="PageNav" data-page="168" data-range="2" data-start="166" data-end="170" data-last="221" data-sentinel=""
+        data-baseurl="threads/setting-up-a-rust-server-with-windows.5743/page-">
+        <nav>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-167" class="text">&lt; Prev</a>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/" class="" rel="start">1</a>
+            <a class="PageNavPrev ">&larr;</a> <span class="scrollable"><span class="items">
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-166" class="">166</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-167" class="">167</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-168" class="currentPage ">168</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-169" class="">169</a>
+                    <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-170" class="">170</a>
+                </span></span> <a class="PageNavNext ">&rarr;</a>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-221" class="">221</a>
+            <a href="/threads/setting-up-a-rust-server-with-windows.5743/page-169" class="text">Next &gt;</a>
+        </nav>
+    </div>
 </div>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1549030746,
-		today: 1548979200,
-		todayDow: 5
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true,"attached_files":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

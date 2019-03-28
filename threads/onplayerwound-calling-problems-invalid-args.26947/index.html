@@ -1,1914 +1,829 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Solved - OnPlayerWound calling problems (invalid args) | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/onplayerwound-calling-problems-invalid-args.26947/" />
-	<meta name="description" content="Hello!,
-
-I've been trying to create logging for certain things on my own, by editing the plugin &quot;Logger&quot; made by Wulf. One of which includes logging..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/onplayerwound-calling-problems-invalid-args.26947/" />
-	<meta property="og:title" content="Solved - OnPlayerWound calling problems (invalid args)" />
-	<meta property="og:description" content="Hello!,
-
-I've been trying to create logging for certain things on my own, by editing the plugin &quot;Logger&quot; made by Wulf. One of which includes logging..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Solved - OnPlayerWound calling problems (invalid args)</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - OnPlayerWound calling problems (invalid args)" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/onplayerwound-calling-problems-invalid-args.26947/">OnPlayerWound calling problems (invalid args)</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Tori1157</a>, <a href="threads/onplayerwound-calling-problems-invalid-args.26947/"><span class="DateTime" title="Aug 24, 2017 at 7:21 PM">Aug 24, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-346677" class="message   " data-author="Tori1157">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Tori1157" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Tori1157</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/">OnPlayerWound calling problems (invalid
+            args)</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">Tori1157</a>, <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/"><span class="DateTime" title="Aug 24, 2017 at 7:21 PM">Aug
+                24, 2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hello!,<br />
-<br />
-I&#039;ve been trying to create logging for certain things on my own, by editing the plugin &quot;Logger&quot; made by Wulf. One of which includes logging when a player is downed, with information regarding who did it as well. But i seem to come into a problem, i don&#039;t know why it happens, i&#039;m probably doing something wrong.<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>        void OnPlayerWound(BasePlayer victim, BasePlayer attacker)
+<ol class="messageList" id="messageList">
+    <li id="post-346677" class="message" data-author="Tori1157">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Tori1157" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Tori1157</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello!,<br />
+                        <br /> I&#039;ve been trying to create logging for certain things on my own, by editing the plugin &quot;Logger&quot; made by Wulf. One of which includes logging when a player
+                        is downed, with information regarding who did it as well. But i seem to come into a problem, i don&#039;t know why it happens, i&#039;m probably doing something wrong.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        void OnPlayerWound(BasePlayer victim, BasePlayer attacker)
         {
             Puts(victim.displayName + &quot; Downed by &quot; + attacker.displayName);
         }</pre>
-</div>Gives this error:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Failed to call hook 'OnPlayerWound' on plugin 'Logger v2.0.3' (NullReferenceException: Object reference not set to an instance of an object)
+                        </div>Gives this error:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Failed to call hook 'OnPlayerWound' on plugin 'Logger v2.0.3' (NullReferenceException: Object reference not set to an instance of an object)
   at Oxide.Plugins.Logger.OnPlayerWound (.BasePlayer victim, .BasePlayer attacker) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Plugins.Logger.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
-</div>I would appreciate any help i get <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:21 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346677/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346678" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I wouldn&#039;t assume that the attacker is always a player, or that they always have a displayName. Null checks.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346678" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:27 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346678" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346678/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346679" class="message   " data-author="Tori1157">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Tori1157" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Tori1157</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					So should i check with &quot;BaseEntity&quot; ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346679" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:31 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346679" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346679/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346681" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
-	<aside>
-		
-			<div class="attribution type">Tori1157 said:
-				
-					<a href="goto/post?id=346679#post-346679" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">So should i check with &quot;BaseEntity&quot; ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>No, the 2nd argument you are adding to the hook doesn&#039;t exist. See <a href="http://docs.oxidemod.org/rust/#onplayerwound" target="_blank" class="externalLink">Oxide API for Rust</a>.<br />
-<br />
-Basically the error is telling you that the &quot;attacker&quot; is null (hence the NullReferenceException), so you can&#039;t use that like that. If you want to log attacks, use OnEntityTakeDamage (also in the Docs) or OnPlayerAttack.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346681" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:33 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346681" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346681/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346682" class="message   " data-author="Tori1157">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Tori1157" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Tori1157</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Alright, so there is no way to get the player who wounds someone? Also where might i find these docs?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346682" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:34 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346682" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346682/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346684" class="message   " data-author="Ryan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ryan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Ryan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The big “docs” button at the top of the website
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Ryan</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346684" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:39 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346684" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346684/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346686" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
-	<aside>
-		
-			<div class="attribution type">Tori1157 said:
-				
-					<a href="goto/post?id=346682#post-346682" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Alright, so there is no way to get the player who wounds someone? Also where might i find these docs?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The other hooks I mentioned would be what you&#039;re looking for.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346686" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:40 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346686" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346686/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346689" class="message   " data-author="Tori1157">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Tori1157" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Tori1157</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Ryan">
-	<aside>
-		
-			<div class="attribution type">Ryan said:
-				
-					<a href="goto/post?id=346684#post-346684" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The big “docs” button at the top of the website</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>:| I&#039;m blind, haha.<br />
-<br />
-
-
-
-<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=346686#post-346686" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The other hooks I mentioned would be what you&#039;re looking for.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Alright, yeah i figured that out moments ago. Thanks for the help guy&#039;s!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346689" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2017 at 7:43 PM">Aug 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346689" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346689/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346925" class="message   " data-author="Tori1157">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Tori1157" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Tori1157</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hello,<br />
-<br />
-As to not make a new thread as this is in regards of what i asked before, i will continue here.<br />
-<br />
-I have managed to log when people shot people, with damage and weapons, so thanks again for the help regarding that! Now i created logging for kills too, which works very well, but one bug and another &quot;issue&quot;.<br />
-<br />
-This is for when a player dies<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>        void OnPlayerDie(BaseEntity entity, HitInfo info)
+                        </div>I would appreciate any help i get <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:21 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/346677/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346678" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I wouldn&#039;t assume that the attacker is always a player, or that they always have a displayName. Null checks.
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346678" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:27 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346678" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346678/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346679" class="message" data-author="Tori1157">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Tori1157" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Tori1157</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So should i check with &quot;BaseEntity&quot; ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346679" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:31 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346679" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346679/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346681" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
+                            <aside>
+                                <div class="attribution type">Tori1157 said: <a href="#post-346679" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">So should i check with &quot;BaseEntity&quot; ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>No, the 2nd argument you are adding to the hook doesn&#039;t exist. See <a href="http://docs.oxidemod.org/rust/#onplayerwound" target="_blank" class="externalLink">Oxide
+                            API for Rust</a>.<br />
+                        <br /> Basically the error is telling you that the &quot;attacker&quot; is null (hence the NullReferenceException), so you can&#039;t use that like that. If you want to log
+                        attacks, use OnEntityTakeDamage (also in the Docs) or OnPlayerAttack. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346681" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:33 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346681" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346681/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346682" class="message" data-author="Tori1157">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Tori1157" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Tori1157</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Alright, so there is no way to get the player who wounds someone? Also where might i find these docs? <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346682" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:34 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346682" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346682/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346684" class="message" data-author="Ryan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ryan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ryan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The big “docs” button at the top of the website <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ryan</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346684" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:39 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346684" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346684/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346686" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
+                            <aside>
+                                <div class="attribution type">Tori1157 said: <a href="#post-346682" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Alright, so there is no way to get the player who wounds someone? Also where might i find these docs?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The other hooks I mentioned would be what you&#039;re looking for. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346686" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:40 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346686" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346686/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346689" class="message" data-author="Tori1157">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Tori1157" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Tori1157</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Ryan">
+                            <aside>
+                                <div class="attribution type">Ryan said: <a href="#post-346684" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The big “docs” button at the top of the website</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>:| I&#039;m blind, haha.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-346686" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The other hooks I mentioned would be what you&#039;re looking for.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Alright, yeah i figured that out moments ago. Thanks for the help guy&#039;s! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346689" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2017 at 7:43 PM">Aug 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346689" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346689/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346925" class="message" data-author="Tori1157">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Tori1157" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Tori1157</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello,<br />
+                        <br /> As to not make a new thread as this is in regards of what i asked before, i will continue here.<br />
+                        <br /> I have managed to log when people shot people, with damage and weapons, so thanks again for the help regarding that! Now i created logging for kills too, which works
+                        very well, but one bug and another &quot;issue&quot;.<br />
+                        <br /> This is for when a player dies<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        void OnPlayerDie(BaseEntity entity, HitInfo info)
         {
             var target = entity as BasePlayer;
             var attacker = info.Initiator as BasePlayer;
             if (target == null) return;
-            if (attacker == null) return;
-
-            if (attacker == target)
+            if (attacker == null) return;            if (attacker == target)
             {
                 if (logDamage) Log(&quot;damage&quot;, Lang(target + &quot; Killed himself&quot;));
                 return;
-            }
-
-            if (logDamage) Log(&quot;damage&quot;, Lang(attacker + &quot;&quot; + attacker.transform.position + &quot;&quot; + &quot; has killed &quot; + target + &quot;&quot; + target.transform.position + &quot;&quot; + &quot; using &quot; + info.Weapon));
+            }            if (logDamage) Log(&quot;damage&quot;, Lang(attacker + &quot;&quot; + attacker.transform.position + &quot;&quot; + &quot; has killed &quot; + target + &quot;&quot; + target.transform.position + &quot;&quot; + &quot; using &quot; + info.Weapon));
            
         }</pre>
-</div>So the problem is that when someone is downed and that player dies, it gives this error:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Failed to call hook 'OnPlayerDie' on plugin 'Logger v2.0.4' (NullReferenceException: Object reference not set to an instance of an object)
+                        </div>So the problem is that when someone is downed and that player dies, it gives this error:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Failed to call hook 'OnPlayerDie' on plugin 'Logger v2.0.4' (NullReferenceException: Object reference not set to an instance of an object)
   at Oxide.Plugins.Logger.OnPlayerDie (.BaseEntity entity, .HitInfo info) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Plugins.Logger.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
   at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
-</div>Now i know that it&#039;s not getting what it&#039;s needed to call something properly, but i have no idea how to fix it.<br />
-<br />
-<br />
-Now to the other &quot;issue&quot;, i want to log when an animal kills a player, or when a player kills and animal. I know i am calling things under &quot;BasePlayer&quot; I&#039;ve tried other things but don&#039;t seem to get it to work.<br />
-<br />
-I would appreciate any help!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346925" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 25, 2017 at 2:45 PM">Aug 25, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346925" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346925/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346934" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
-	<aside>
-		
-			<div class="attribution type">Tori1157 said:
-				
-					<a href="goto/post?id=346925#post-346925" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Hello,<br />
-<br />
-As to not make a new thread as this is in regards of what i asked before, i will continue here.<br />
-<br />
-I have managed to log when people shot people, with damage and weapons, so thanks again for the help regarding that! Now i created logging for kills too, which works very well, but one bug and another &quot;issue&quot;.<br />
-<br />
-This is for when a player dies<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>        void OnPlayerDie(BaseEntity entity, HitInfo info)
-        {
-            var target = entity as BasePlayer;
-            var attacker = info.Initiator as BasePlayer;
-            if (target == null) return;
-            if (attacker == null) return;
-
-            if (attacker == target)
-            {
-                if (logDamage) Log(&quot;damage&quot;, Lang(target + &quot; Killed himself&quot;));
-                return;
-            }
-
-            if (logDamage) Log(&quot;damage&quot;, Lang(attacker + &quot;&quot; + attacker.transform.position + &quot;&quot; + &quot; has killed &quot; + target + &quot;&quot; + target.transform.position + &quot;&quot; + &quot; using &quot; + info.Weapon));
-          
-        }</pre>
-</div>So the problem is that when someone is downed and that player dies, it gives this error:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Failed to call hook 'OnPlayerDie' on plugin 'Logger v2.0.4' (NullReferenceException: Object reference not set to an instance of an object)
-  at Oxide.Plugins.Logger.OnPlayerDie (.BaseEntity entity, .HitInfo info) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Plugins.Logger.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
-</div>Now i know that it&#039;s not getting what it&#039;s needed to call something properly, but i have no idea how to fix it.<br />
-<br />
-<br />
-Now to the other &quot;issue&quot;, i want to log when an animal kills a player, or when a player kills and animal. I know i am calling things under &quot;BasePlayer&quot; I&#039;ve tried other things but don&#039;t seem to get it to work.<br />
-<br />
-I would appreciate any help!</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Null checks! Don&#039;t assume that info.Initiator is always there, so that&#039;s the first thing that needs a null check. You should also have one with *.transform.position, because they may not always have a position.<br />
-<br />
-An animal would be info.Initiator as BaseEntity.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346934" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 25, 2017 at 2:53 PM">Aug 25, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346934" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346934/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346935" class="message   " data-author="Ryan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ryan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Ryan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
-	<aside>
-		
-			<div class="attribution type">Tori1157 said:
-				
-					<a href="goto/post?id=346925#post-346925" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Hello,<br />
-<br />
-As to not make a new thread as this is in regards of what i asked before, i will continue here.<br />
-<br />
-I have managed to log when people shot people, with damage and weapons, so thanks again for the help regarding that! Now i created logging for kills too, which works very well, but one bug and another &quot;issue&quot;.<br />
-<br />
-This is for when a player dies<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>        void OnPlayerDie(BaseEntity entity, HitInfo info)
-        {
-            var target = entity as BasePlayer;
-            var attacker = info.Initiator as BasePlayer;
-            if (target == null) return;
-            if (attacker == null) return;
-
-            if (attacker == target)
-            {
-                if (logDamage) Log(&quot;damage&quot;, Lang(target + &quot; Killed himself&quot;));
-                return;
-            }
-
-            if (logDamage) Log(&quot;damage&quot;, Lang(attacker + &quot;&quot; + attacker.transform.position + &quot;&quot; + &quot; has killed &quot; + target + &quot;&quot; + target.transform.position + &quot;&quot; + &quot; using &quot; + info.Weapon));
-          
-        }</pre>
-</div>So the problem is that when someone is downed and that player dies, it gives this error:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Failed to call hook 'OnPlayerDie' on plugin 'Logger v2.0.4' (NullReferenceException: Object reference not set to an instance of an object)
-  at Oxide.Plugins.Logger.OnPlayerDie (.BaseEntity entity, .HitInfo info) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Plugins.Logger.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
-  at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
-</div>Now i know that it&#039;s not getting what it&#039;s needed to call something properly, but i have no idea how to fix it.<br />
-<br />
-<br />
-Now to the other &quot;issue&quot;, i want to log when an animal kills a player, or when a player kills and animal. I know i am calling things under &quot;BasePlayer&quot; I&#039;ve tried other things but don&#039;t seem to get it to work.<br />
-<br />
-I would appreciate any help!</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Your HitInfo is null, you can fix this via multiple ways. <br />
-<br />
-1 easy way is to add a ? to info.Initiator so info?.Initiator, the question mark basically makes the whole value null so it’d result as null in your check. What it’s doing now is trying to get a value from “info” but it’s null. <br />
-<br />
-2nd easy way is just to add a if(info == null) return; before anything at the top of the method. <br />
-<br />
-Presumably the player died from beig wounded too long. You could store the last attacker when the player is wounded in OnEntityTakeDamage. You can take a look into DeathNotes to see how this has been applied to work there.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Ryan</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346935" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 25, 2017 at 2:54 PM">Aug 25, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346935" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346935/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-346941" class="message   " data-author="Tori1157">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Tori1157" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Tori1157</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Thanks for the help guys! I&#039;ll make sure to look into deathnotes as tho how it&#039;s done there. I had put in &quot;if (info == null)&quot; but i hadn&#039;t put it first.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
-					<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346941" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 25, 2017 at 3:09 PM">Aug 25, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/onplayerwound-calling-problems-invalid-args.26947/#post-346941" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346941/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>Now i know that it&#039;s not getting what it&#039;s needed to call something properly, but i have no idea how to fix it.<br />
+                        <br />
+                        <br /> Now to the other &quot;issue&quot;, i want to log when an animal kills a player, or when a player kills and animal. I know i am calling things under
+                        &quot;BasePlayer&quot; I&#039;ve tried other things but don&#039;t seem to get it to work.<br />
+                        <br /> I would appreciate any help! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346925" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 25, 2017 at 2:45 PM">Aug 25, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346925" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346925/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346934" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
+                            <aside>
+                                <div class="attribution type">Tori1157 said: <a href="#post-346925" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hello,<br />
+                                        <br /> As to not make a new thread as this is in regards of what i asked before, i will continue here.<br />
+                                        <br /> I have managed to log when people shot people, with damage and weapons, so thanks again for the help regarding that! Now i created logging for kills too,
+                                        which works very well, but one bug and another &quot;issue&quot;.<br />
+                                        <br /> This is for when a player dies<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>        void OnPlayerDie(BaseEntity entity, HitInfo info)
+        {
+            var target = entity as BasePlayer;
+            var attacker = info.Initiator as BasePlayer;
+            if (target == null) return;
+            if (attacker == null) return;            if (attacker == target)
+            {
+                if (logDamage) Log(&quot;damage&quot;, Lang(target + &quot; Killed himself&quot;));
+                return;
+            }            if (logDamage) Log(&quot;damage&quot;, Lang(attacker + &quot;&quot; + attacker.transform.position + &quot;&quot; + &quot; has killed &quot; + target + &quot;&quot; + target.transform.position + &quot;&quot; + &quot; using &quot; + info.Weapon));
+          
+        }</pre>
+                                        </div>So the problem is that when someone is downed and that player dies, it gives this error:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>Failed to call hook 'OnPlayerDie' on plugin 'Logger v2.0.4' (NullReferenceException: Object reference not set to an instance of an object)
+  at Oxide.Plugins.Logger.OnPlayerDie (.BaseEntity entity, .HitInfo info) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Plugins.Logger.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
+                                        </div>Now i know that it&#039;s not getting what it&#039;s needed to call something properly, but i have no idea how to fix it.<br />
+                                        <br />
+                                        <br /> Now to the other &quot;issue&quot;, i want to log when an animal kills a player, or when a player kills and animal. I know i am calling things under
+                                        &quot;BasePlayer&quot; I&#039;ve tried other things but don&#039;t seem to get it to work.<br />
+                                        <br /> I would appreciate any help!
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Null checks! Don&#039;t assume that info.Initiator is always there, so that&#039;s the first thing that needs a null check. You should also have one with
+                        *.transform.position, because they may not always have a position.<br />
+                        <br /> An animal would be info.Initiator as BaseEntity. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346934" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 25, 2017 at 2:53 PM">Aug 25, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346934" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346934/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346935" class="message" data-author="Ryan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ryan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ryan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Tori1157">
+                            <aside>
+                                <div class="attribution type">Tori1157 said: <a href="#post-346925" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hello,<br />
+                                        <br /> As to not make a new thread as this is in regards of what i asked before, i will continue here.<br />
+                                        <br /> I have managed to log when people shot people, with damage and weapons, so thanks again for the help regarding that! Now i created logging for kills too,
+                                        which works very well, but one bug and another &quot;issue&quot;.<br />
+                                        <br /> This is for when a player dies<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>        void OnPlayerDie(BaseEntity entity, HitInfo info)
+        {
+            var target = entity as BasePlayer;
+            var attacker = info.Initiator as BasePlayer;
+            if (target == null) return;
+            if (attacker == null) return;            if (attacker == target)
+            {
+                if (logDamage) Log(&quot;damage&quot;, Lang(target + &quot; Killed himself&quot;));
+                return;
+            }            if (logDamage) Log(&quot;damage&quot;, Lang(attacker + &quot;&quot; + attacker.transform.position + &quot;&quot; + &quot; has killed &quot; + target + &quot;&quot; + target.transform.position + &quot;&quot; + &quot; using &quot; + info.Weapon));
+          
+        }</pre>
+                                        </div>So the problem is that when someone is downed and that player dies, it gives this error:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>Failed to call hook 'OnPlayerDie' on plugin 'Logger v2.0.4' (NullReferenceException: Object reference not set to an instance of an object)
+  at Oxide.Plugins.Logger.OnPlayerDie (.BaseEntity entity, .HitInfo info) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Plugins.Logger.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Plugins.CSharpPlugin.InvokeMethod (HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
+  at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
+                                        </div>Now i know that it&#039;s not getting what it&#039;s needed to call something properly, but i have no idea how to fix it.<br />
+                                        <br />
+                                        <br /> Now to the other &quot;issue&quot;, i want to log when an animal kills a player, or when a player kills and animal. I know i am calling things under
+                                        &quot;BasePlayer&quot; I&#039;ve tried other things but don&#039;t seem to get it to work.<br />
+                                        <br /> I would appreciate any help!
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Your HitInfo is null, you can fix this via multiple ways. <br />
+                        <br /> 1 easy way is to add a ? to info.Initiator so info?.Initiator, the question mark basically makes the whole value null so it’d result as null in your check. What it’s
+                        doing now is trying to get a value from “info” but it’s null. <br />
+                        <br /> 2nd easy way is just to add a if(info == null) return; before anything at the top of the method. <br />
+                        <br /> Presumably the player died from beig wounded too long. You could store the last attacker when the player is wounded in OnEntityTakeDamage. You can take a look into
+                        DeathNotes to see how this has been applied to work there. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ryan</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346935" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 25, 2017 at 2:54 PM">Aug 25, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346935" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346935/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-346941" class="message" data-author="Tori1157">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Tori1157" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Tori1157</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thanks for the help guys! I&#039;ll make sure to look into deathnotes as tho how it&#039;s done there. I had put
+                        in &quot;if (info == null)&quot; but i hadn&#039;t put it first. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Tori1157</a>,</span>
+                        <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346941" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 25, 2017 at 3:09 PM">Aug 25, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/onplayerwound-calling-problems-invalid-args.26947/#post-346941" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/346941/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548554415,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

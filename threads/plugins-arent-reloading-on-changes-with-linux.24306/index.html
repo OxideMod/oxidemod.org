@@ -1,2712 +1,1143 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Plugins aren&#039;t reloading on changes with Linux | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/plugins-arent-reloading-on-changes-with-linux.24306/" />
-	<meta name="description" content="Hi,
-
-We're having issues with plugins not auto-loading. Is this not supported anymore? Copying the plugin to the server used to auto load the plugin,..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/plugins-arent-reloading-on-changes-with-linux.24306/" />
-	<meta property="og:title" content="Plugins aren&#039;t reloading on changes with Linux" />
-	<meta property="og:description" content="Hi,
-
-We're having issues with plugins not auto-loading. Is this not supported anymore? Copying the plugin to the server used to auto load the plugin,..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Plugins aren&#039;t reloading on changes with Linux</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Plugins aren&#039;t reloading on changes with Linux" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node23 node1 node104 node106 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/plugins-arent-reloading-on-changes-with-linux.24306/">Plugins aren&#039;t reloading on changes with Linux</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">sNIP</a>, <a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/"><span class="DateTime" title="Mar 7, 2017 at 2:48 PM">Mar 7, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-304896" class="message   " data-author="sNIP">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sNIP" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sNIP</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/">Plugins aren&#039;t reloading on changes with Linux</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">sNIP</a>, <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/"><span class="DateTime" title="Mar 7, 2017 at 2:48 PM">Mar 7,
+                2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hi,<br />
-<br />
-We&#039;re having issues with plugins not auto-loading. Is this not supported anymore? Copying the plugin to the server used to auto load the plugin, right?<br />
-We&#039;re using Linux.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 7, 2017 at 2:48 PM">Mar 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304896/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-304910" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The filesystem watcher that handled this functionality is still there and hasn&#039;t changed. Which type of plugins are you trying to load?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304910" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 7, 2017 at 4:10 PM">Mar 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304910" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304910/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-304936" class="message   " data-author="sNIP">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sNIP" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sNIP</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hi,<br />
-<br />
-We&#039;ve tried with a bunch of *.cs and .*py, none of them are loading before restart.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304936" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 7, 2017 at 5:50 PM">Mar 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304936" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304936/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-304937" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sNIP">
-	<aside>
-		
-			<div class="attribution type">sNIP said:
-				
-					<a href="goto/post?id=304936#post-304936" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Hi,<br />
-<br />
-We&#039;ve tried with a bunch of *.cs and .*py, none of them are loading before restart.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Could you unload (not paste) your RustDedicated_Data/output_log.txt please? Also, .py plugins will not load unless you have the Python extension installed.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304937" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 7, 2017 at 5:57 PM">Mar 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304937" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304937/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305018" class="message   " data-author="Sir Eb">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Sir Eb" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Sir Eb</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Had a similar issue since last thursday with linux, switching back to windows. :/
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Sir Eb</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305018" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 7, 2017 at 10:47 PM">Mar 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305018" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305018/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305134" class="message   " data-author="sNIP">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sNIP" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sNIP</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=304937#post-304937" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Could you unload (not paste) your RustDedicated_Data/output_log.txt please? Also, .py plugins will not load unless you have the Python extension installed.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Unload? Not sure what you meant. I&#039;ve uploadet it to pastebin: <a href="http://pastebin.com/zzWeBqPu" target="_blank" class="externalLink  rel="nofollow">shared memfd open() failed: Function not implemented  XDG_RUNTIME_DIR (/run/user - Pastebin.com</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305134" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 8, 2017 at 9:30 AM">Mar 8, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305134" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305134/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305169" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sNIP">
-	<aside>
-		
-			<div class="attribution type">sNIP said:
-				
-					<a href="goto/post?id=305134#post-305134" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Unload? Not sure what you meant. I&#039;ve uploadet it to pastebin: <a href="http://pastebin.com/zzWeBqPu" target="_blank" class="externalLink">shared memfd open() failed: Function not implemented  XDG_RUNTIME_DIR (/run/user - Pastebin.com</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The &quot;Upload a File&quot; button that is shown in every thread for replying.<br />
-<br />
-And which plugins aren&#039;t loading exactly?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305169" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 8, 2017 at 2:32 PM">Mar 8, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305169" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305169/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305399" class="message   " data-author="Mafiux">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mafiux" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Mafiux</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I&#039;m having some issues with auto loading too.. i downloaded the last oxide version 2.0.3115<br />
-when paste plugins on plugin&#039;s folder<br />
-it doesn&#039;t load.<br />
-<br />
-Windows 2012 64 bits
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Mafiux</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305399" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 3:53 AM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305399" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305399/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305401" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Mafiux">
-	<aside>
-		
-			<div class="attribution type">Mafiux said:
-				
-					<a href="goto/post?id=305399#post-305399" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I&#039;m having some issues with auto loading too.. i downloaded the last oxide version 2.0.3115<br />
-when paste plugins on plugin&#039;s folder<br />
-it doesn&#039;t load.<br />
-<br />
-Windows 2012 64 bits</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Sounds like Oxide isn&#039;t loaded in that case. Check the oxide.version command.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305401" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 3:57 AM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305401" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305401/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305405" class="message   " data-author="Mafiux">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mafiux" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Mafiux</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=305401#post-305401" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Sounds like Oxide isn&#039;t loaded in that case. Check the oxide.version command.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>When startup server it shows  on red (Warning message)<br />
-Cannot Compile C# (cs.) plugins: unable to find Csharpcompiler.exe<br />
-[DOUBLEPOST=1489032110][/DOUBLEPOST]And this is my .oxide log<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>[03/09/2017 01:05:31] Generating terrain of size 4000 with seed 1234
-[03/09/2017 01:05:32] Loading Oxide Core v2.0.3115...
-[03/09/2017 01:05:32] Loading extensions...
-[03/09/2017 01:05:32] Loaded extension CSharp v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension MySql v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension SQLite v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension Unity v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension Rust v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Using Covalence provider for game 'Rust'
-[03/09/2017 01:05:32] Loading plugins...
-[03/09/2017 01:05:32] Loaded plugin Unity Core v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded plugin Rust v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] WebSocket RCon Started on 28016
-[03/09/2017 01:05:37] [4.5s] Height Map
-[03/09/2017 01:05:40] [2.9s] Mountains
-[03/09/2017 01:05:40] [1.0s] Biome Map
-[03/09/2017 01:05:46] [5.8s] Topology Map
-[03/09/2017 01:05:48] [2.0s] Splat Map
-[03/09/2017 01:05:50] [2.0s] Harbors
-[03/09/2017 01:05:56] [5.5s] Large Monuments
-[03/09/2017 01:05:56] [0.4s] Medium Monuments
-[03/09/2017 01:05:57] [0.6s] Small Monuments
-[03/09/2017 01:06:02] [5.2s] River Layout
-[03/09/2017 01:06:03] [0.7s] River Objects
-[03/09/2017 01:06:14] [11.6s] Road Layout
-[03/09/2017 01:06:15] [0.4s] Road Objects
-[03/09/2017 01:06:16] [0.6s] Powerline Layout
-[03/09/2017 01:06:21] [5.4s] Caves
-[03/09/2017 01:06:22] [0.4s] Field Rocks 1/2
-[03/09/2017 01:06:22] [0.3s] Forest Rocks 1/2
-[03/09/2017 01:06:22] [0.4s] Forest Rocks 2/2
-[03/09/2017 01:06:25] [1.8s] Micro Cliffs
-[03/09/2017 01:06:25] [0.3s] Formation Rocks 1/2
-[03/09/2017 01:06:27] [0.9s] Terrain Mesh
-[03/09/2017 01:06:29] [1.9s] Wire Meshes
-[03/09/2017 01:06:31] [2.2s] Cliff Splat
-[03/09/2017 01:06:32] [0.8s] Procedural Objects
-[03/09/2017 01:06:34] [2.5s] Cliff Topology
-[03/09/2017 01:06:35] [0.4s] Clutter Topology
-[03/09/2017 01:06:35] [62.7s] Procedural Generation
-[03/09/2017 01:06:36] [1.2s] Saving World
-[03/09/2017 01:06:58] Map Spawned 26515 entities
-[03/09/2017 01:06:59] Initializing 26536 entity links
-[03/09/2017 01:06:59] Initializing 159 stability supports
-[03/09/2017 01:07:00] Connected to Steam
-[03/09/2017 01:07:06] Server startup complete
-[03/09/2017 01:07:35] Schema download failed, retrying [URL]http://s3.amazonaws.com/s3.playrust.com/icons/inventory/rust/schema.json[/URL]</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Mafiux</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305405" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 4:01 AM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305405" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305405/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305406" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Mafiux">
-	<aside>
-		
-			<div class="attribution type">Mafiux said:
-				
-					<a href="goto/post?id=305405#post-305405" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">When startup server it shows  on red (Warning message)<br />
-Cannot Compile C# (cs.) plugins: unable to find Csharpcompiler.exe<br />
-[DOUBLEPOST=1489032110][/DOUBLEPOST]And this is my .oxide log<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>[03/09/2017 01:05:31] Generating terrain of size 4000 with seed 1234
-[03/09/2017 01:05:32] Loading Oxide Core v2.0.3115...
-[03/09/2017 01:05:32] Loading extensions...
-[03/09/2017 01:05:32] Loaded extension CSharp v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension MySql v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension SQLite v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension Unity v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded extension Rust v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Using Covalence provider for game 'Rust'
-[03/09/2017 01:05:32] Loading plugins...
-[03/09/2017 01:05:32] Loaded plugin Unity Core v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] Loaded plugin Rust v2.0.3115 by Oxide Team
-[03/09/2017 01:05:32] WebSocket RCon Started on 28016
-[03/09/2017 01:05:37] [4.5s] Height Map
-[03/09/2017 01:05:40] [2.9s] Mountains
-[03/09/2017 01:05:40] [1.0s] Biome Map
-[03/09/2017 01:05:46] [5.8s] Topology Map
-[03/09/2017 01:05:48] [2.0s] Splat Map
-[03/09/2017 01:05:50] [2.0s] Harbors
-[03/09/2017 01:05:56] [5.5s] Large Monuments
-[03/09/2017 01:05:56] [0.4s] Medium Monuments
-[03/09/2017 01:05:57] [0.6s] Small Monuments
-[03/09/2017 01:06:02] [5.2s] River Layout
-[03/09/2017 01:06:03] [0.7s] River Objects
-[03/09/2017 01:06:14] [11.6s] Road Layout
-[03/09/2017 01:06:15] [0.4s] Road Objects
-[03/09/2017 01:06:16] [0.6s] Powerline Layout
-[03/09/2017 01:06:21] [5.4s] Caves
-[03/09/2017 01:06:22] [0.4s] Field Rocks 1/2
-[03/09/2017 01:06:22] [0.3s] Forest Rocks 1/2
-[03/09/2017 01:06:22] [0.4s] Forest Rocks 2/2
-[03/09/2017 01:06:25] [1.8s] Micro Cliffs
-[03/09/2017 01:06:25] [0.3s] Formation Rocks 1/2
-[03/09/2017 01:06:27] [0.9s] Terrain Mesh
-[03/09/2017 01:06:29] [1.9s] Wire Meshes
-[03/09/2017 01:06:31] [2.2s] Cliff Splat
-[03/09/2017 01:06:32] [0.8s] Procedural Objects
-[03/09/2017 01:06:34] [2.5s] Cliff Topology
-[03/09/2017 01:06:35] [0.4s] Clutter Topology
-[03/09/2017 01:06:35] [62.7s] Procedural Generation
-[03/09/2017 01:06:36] [1.2s] Saving World
-[03/09/2017 01:06:58] Map Spawned 26515 entities
-[03/09/2017 01:06:59] Initializing 26536 entity links
-[03/09/2017 01:06:59] Initializing 159 stability supports
-[03/09/2017 01:07:00] Connected to Steam
-[03/09/2017 01:07:06] Server startup complete
-[03/09/2017 01:07:35] Schema download failed, retrying [URL]http://s3.amazonaws.com/s3.playrust.com/icons/inventory/rust/schema.json[/URL]</pre>
-</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The compiler is automatically downloaded on startup generally, but otherwise you can manually download it from <a href="https://dl.bintray.com/oxidemod/builds/CSharpCompiler.exe" target="_blank" class="externalLink">https://dl.bintray.com/oxidemod/builds/CSharpCompiler.exe</a> for windows.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305406" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 4:03 AM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305406" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305406/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305455" class="message   " data-author="sNIP">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sNIP" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sNIP</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=305169#post-305169" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The &quot;Upload a File&quot; button that is shown in every thread for replying.<br />
-<br />
-And which plugins aren&#039;t loading exactly?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Plugins are loading, they&#039;re just not auto-loaded when uploaded to the server. Does it require a restart?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305455" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 10:38 AM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305455" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305455/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305478" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sNIP">
-	<aside>
-		
-			<div class="attribution type">sNIP said:
-				
-					<a href="goto/post?id=305455#post-305455" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Plugins are loading, they&#039;re just not auto-loaded when uploaded to the server. Does it require a restart?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>No, plugins are loaded automatically if the system detects changes.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305478" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 3:02 PM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305478" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305478/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-305749" class="message   " data-author="yannick10012">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="yannick10012" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">yannick10012</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Wulf I have the same issue, I upload a file (Through composer or manually doesn&#039;t matter) and need to use te reload command in order to load it. Is a few days since this started occurring.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">yannick10012</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305749" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 9, 2017 at 10:18 PM">Mar 9, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305749" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305749/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-306383" class="message   " data-author="Riddle">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Riddle" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Riddle</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I installed a fresh Rust server on Linux with Oxide. Everything works out, except for automatic (re)loading of plugins. It doesn&#039;t. I have to reload them.<br />
-<br />
-There is another install on the same server that works correct.<br />
-<br />
-Is there something I miss or I can check?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Riddle</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306383" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 10, 2017 at 8:21 PM">Mar 10, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306383" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306383/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-306388" class="message   " data-author="yannick10012">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="yannick10012" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">yannick10012</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					How to fix it with linux?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">yannick10012</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306388" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 10, 2017 at 8:30 PM">Mar 10, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306388" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306388/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-306712" class="message   " data-author="sKilloWsky">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sKilloWsky" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sKilloWsky</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I have one problem after 2 last oxide updates, plugins not work when i upload new plugin and use /reload or /load<br />
-When i restart the server all work good.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sKilloWsky</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306712" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 11, 2017 at 2:48 PM">Mar 11, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306712" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306712/permalink">#17</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-306841" class="message   " data-author="maxaki">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="maxaki" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">maxaki</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Linux users are you using Docker or LGSM?<br />
-Do you have the problem or not?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">maxaki</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306841" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 11, 2017 at 9:46 PM">Mar 11, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306841" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306841/permalink">#18</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-306845" class="message   " data-author="yannick10012">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="yannick10012" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">yannick10012</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="maxaki">
-	<aside>
-		
-			<div class="attribution type">maxaki said:
-				
-					<a href="goto/post?id=306841#post-306841" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Linux users are you using Docker or LGSM?<br />
-Do you have the problem or not?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I am using LGSM and having the problem after last forced wipe
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">yannick10012</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306845" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 11, 2017 at 9:53 PM">Mar 11, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306845" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306845/permalink">#19</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-306851" class="message   " data-author="maxaki">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="maxaki" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">maxaki</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="yannick10012">
-	<aside>
-		
-			<div class="attribution type">yannick10012 said:
-				
-					<a href="goto/post?id=306845#post-306845" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I am using LGSM and having the problem after last forced wipe</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Same here<br />
-Not all owners on Linux have the same problem though. Not quite sure what it could be. I&#039;ll try get it working eventually but,<br />
-if you manage to find a solution before me please share in this thread and I&#039;ll do the same <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">maxaki</a>,</span>
-					<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306851" title="Permalink" class="datePermalink"><span class="DateTime" title="Mar 11, 2017 at 10:00 PM">Mar 11, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306851" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306851/permalink">#20</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-304896" class="message" data-author="sNIP">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sNIP" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sNIP</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi,<br />
+                        <br /> We&#039;re having issues with plugins not auto-loading. Is this not supported anymore? Copying the plugin to the server used to auto load the plugin, right?<br />
+                        We&#039;re using Linux. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Mar 7, 2017 at 2:48 PM">Mar 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/304896/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-304910" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The filesystem watcher that handled this functionality is still there and hasn&#039;t changed. Which type of
+                        plugins are you trying to load? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304910" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 7, 2017 at 4:10 PM">Mar 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304910" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304910/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-304936" class="message" data-author="sNIP">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sNIP" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sNIP</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi,<br />
+                        <br /> We&#039;ve tried with a bunch of *.cs and .*py, none of them are loading before restart. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304936" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 7, 2017 at 5:50 PM">Mar 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304936" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304936/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-304937" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sNIP">
+                            <aside>
+                                <div class="attribution type">sNIP said: <a href="#post-304936" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hi,<br />
+                                        <br /> We&#039;ve tried with a bunch of *.cs and .*py, none of them are loading before restart.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Could you unload (not paste) your RustDedicated_Data/output_log.txt please? Also, .py plugins will not load unless you have the Python extension installed. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304937" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 7, 2017 at 5:57 PM">Mar 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-304937" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/304937/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305018" class="message" data-author="Sir Eb">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Sir Eb" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Sir Eb</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Had a similar issue since last thursday with linux, switching back to windows. :/ <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Sir Eb</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305018" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 7, 2017 at 10:47 PM">Mar 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305018" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305018/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305134" class="message" data-author="sNIP">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sNIP" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sNIP</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-304937" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Could you unload (not paste) your RustDedicated_Data/output_log.txt please? Also, .py plugins will not load unless you have the Python extension
+                                        installed.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Unload? Not sure what you meant. I&#039;ve uploadet it to pastebin: <a href="http://pastebin.com/zzWeBqPu" target="_blank" class="externalLink  rel=" nofollow">shared
+                            memfd open() failed: Function not implemented XDG_RUNTIME_DIR (/run/user - Pastebin.com</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305134" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 8, 2017 at 9:30 AM">Mar 8, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305134" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305134/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305169" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sNIP">
+                            <aside>
+                                <div class="attribution type">sNIP said: <a href="#post-305134" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Unload? Not sure what you meant. I&#039;ve uploadet it to pastebin: <a href="http://pastebin.com/zzWeBqPu" target="_blank"
+                                            class="externalLink">shared memfd open() failed: Function not implemented XDG_RUNTIME_DIR (/run/user - Pastebin.com</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The &quot;Upload a File&quot; button that is shown in every thread for replying.<br />
+                        <br /> And which plugins aren&#039;t loading exactly? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305169" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 8, 2017 at 2:32 PM">Mar 8, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305169" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305169/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305399" class="message" data-author="Mafiux">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mafiux" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mafiux</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m having some issues with auto loading too.. i downloaded the last oxide version 2.0.3115<br /> when paste
+                        plugins on plugin&#039;s folder<br /> it doesn&#039;t load.<br />
+                        <br /> Windows 2012 64 bits <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mafiux</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305399" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 3:53 AM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305399" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305399/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305401" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Mafiux">
+                            <aside>
+                                <div class="attribution type">Mafiux said: <a href="#post-305399" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I&#039;m having some issues with auto loading too.. i downloaded the last oxide version 2.0.3115<br /> when paste plugins on plugin&#039;s
+                                        folder<br /> it doesn&#039;t load.<br />
+                                        <br /> Windows 2012 64 bits</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Sounds like Oxide isn&#039;t loaded in that case. Check the oxide.version command. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305401" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 3:57 AM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305401" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305401/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305405" class="message" data-author="Mafiux">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mafiux" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mafiux</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-305401" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Sounds like Oxide isn&#039;t loaded in that case. Check the oxide.version command.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>When startup server it shows on red (Warning message)<br /> Cannot Compile C# (cs.) plugins: unable to find Csharpcompiler.exe<br />
+                        [DOUBLEPOST=1489032110][/DOUBLEPOST]And this is my .oxide log<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[03/09/2017 01:05:31] Generating terrain of size 4000 with seed 1234
+[03/09/2017 01:05:32] Loading Oxide Core v2.0.3115...
+[03/09/2017 01:05:32] Loading extensions...
+[03/09/2017 01:05:32] Loaded extension CSharp v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension MySql v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension SQLite v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension Unity v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension Rust v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Using Covalence provider for game 'Rust'
+[03/09/2017 01:05:32] Loading plugins...
+[03/09/2017 01:05:32] Loaded plugin Unity Core v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded plugin Rust v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] WebSocket RCon Started on 28016
+[03/09/2017 01:05:37] [4.5s] Height Map
+[03/09/2017 01:05:40] [2.9s] Mountains
+[03/09/2017 01:05:40] [1.0s] Biome Map
+[03/09/2017 01:05:46] [5.8s] Topology Map
+[03/09/2017 01:05:48] [2.0s] Splat Map
+[03/09/2017 01:05:50] [2.0s] Harbors
+[03/09/2017 01:05:56] [5.5s] Large Monuments
+[03/09/2017 01:05:56] [0.4s] Medium Monuments
+[03/09/2017 01:05:57] [0.6s] Small Monuments
+[03/09/2017 01:06:02] [5.2s] River Layout
+[03/09/2017 01:06:03] [0.7s] River Objects
+[03/09/2017 01:06:14] [11.6s] Road Layout
+[03/09/2017 01:06:15] [0.4s] Road Objects
+[03/09/2017 01:06:16] [0.6s] Powerline Layout
+[03/09/2017 01:06:21] [5.4s] Caves
+[03/09/2017 01:06:22] [0.4s] Field Rocks 1/2
+[03/09/2017 01:06:22] [0.3s] Forest Rocks 1/2
+[03/09/2017 01:06:22] [0.4s] Forest Rocks 2/2
+[03/09/2017 01:06:25] [1.8s] Micro Cliffs
+[03/09/2017 01:06:25] [0.3s] Formation Rocks 1/2
+[03/09/2017 01:06:27] [0.9s] Terrain Mesh
+[03/09/2017 01:06:29] [1.9s] Wire Meshes
+[03/09/2017 01:06:31] [2.2s] Cliff Splat
+[03/09/2017 01:06:32] [0.8s] Procedural Objects
+[03/09/2017 01:06:34] [2.5s] Cliff Topology
+[03/09/2017 01:06:35] [0.4s] Clutter Topology
+[03/09/2017 01:06:35] [62.7s] Procedural Generation
+[03/09/2017 01:06:36] [1.2s] Saving World
+[03/09/2017 01:06:58] Map Spawned 26515 entities
+[03/09/2017 01:06:59] Initializing 26536 entity links
+[03/09/2017 01:06:59] Initializing 159 stability supports
+[03/09/2017 01:07:00] Connected to Steam
+[03/09/2017 01:07:06] Server startup complete
+[03/09/2017 01:07:35] Schema download failed, retrying [URL]http://s3.amazonaws.com/s3.playrust.com/icons/inventory/rust/schema.json[/URL]</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mafiux</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305405" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 4:01 AM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305405" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305405/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305406" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Mafiux">
+                            <aside>
+                                <div class="attribution type">Mafiux said: <a href="#post-305405" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">When startup server it shows on red (Warning message)<br /> Cannot Compile C# (cs.) plugins: unable to find Csharpcompiler.exe<br />
+                                        [DOUBLEPOST=1489032110][/DOUBLEPOST]And this is my .oxide log<br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>[03/09/2017 01:05:31] Generating terrain of size 4000 with seed 1234
+[03/09/2017 01:05:32] Loading Oxide Core v2.0.3115...
+[03/09/2017 01:05:32] Loading extensions...
+[03/09/2017 01:05:32] Loaded extension CSharp v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension MySql v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension SQLite v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension Unity v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded extension Rust v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Using Covalence provider for game 'Rust'
+[03/09/2017 01:05:32] Loading plugins...
+[03/09/2017 01:05:32] Loaded plugin Unity Core v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] Loaded plugin Rust v2.0.3115 by Oxide Team
+[03/09/2017 01:05:32] WebSocket RCon Started on 28016
+[03/09/2017 01:05:37] [4.5s] Height Map
+[03/09/2017 01:05:40] [2.9s] Mountains
+[03/09/2017 01:05:40] [1.0s] Biome Map
+[03/09/2017 01:05:46] [5.8s] Topology Map
+[03/09/2017 01:05:48] [2.0s] Splat Map
+[03/09/2017 01:05:50] [2.0s] Harbors
+[03/09/2017 01:05:56] [5.5s] Large Monuments
+[03/09/2017 01:05:56] [0.4s] Medium Monuments
+[03/09/2017 01:05:57] [0.6s] Small Monuments
+[03/09/2017 01:06:02] [5.2s] River Layout
+[03/09/2017 01:06:03] [0.7s] River Objects
+[03/09/2017 01:06:14] [11.6s] Road Layout
+[03/09/2017 01:06:15] [0.4s] Road Objects
+[03/09/2017 01:06:16] [0.6s] Powerline Layout
+[03/09/2017 01:06:21] [5.4s] Caves
+[03/09/2017 01:06:22] [0.4s] Field Rocks 1/2
+[03/09/2017 01:06:22] [0.3s] Forest Rocks 1/2
+[03/09/2017 01:06:22] [0.4s] Forest Rocks 2/2
+[03/09/2017 01:06:25] [1.8s] Micro Cliffs
+[03/09/2017 01:06:25] [0.3s] Formation Rocks 1/2
+[03/09/2017 01:06:27] [0.9s] Terrain Mesh
+[03/09/2017 01:06:29] [1.9s] Wire Meshes
+[03/09/2017 01:06:31] [2.2s] Cliff Splat
+[03/09/2017 01:06:32] [0.8s] Procedural Objects
+[03/09/2017 01:06:34] [2.5s] Cliff Topology
+[03/09/2017 01:06:35] [0.4s] Clutter Topology
+[03/09/2017 01:06:35] [62.7s] Procedural Generation
+[03/09/2017 01:06:36] [1.2s] Saving World
+[03/09/2017 01:06:58] Map Spawned 26515 entities
+[03/09/2017 01:06:59] Initializing 26536 entity links
+[03/09/2017 01:06:59] Initializing 159 stability supports
+[03/09/2017 01:07:00] Connected to Steam
+[03/09/2017 01:07:06] Server startup complete
+[03/09/2017 01:07:35] Schema download failed, retrying [URL]http://s3.amazonaws.com/s3.playrust.com/icons/inventory/rust/schema.json[/URL]</pre>
+                                        </div>
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The compiler is automatically downloaded on startup generally, but otherwise you can manually download it from <a
+                            href="https://dl.bintray.com/oxidemod/builds/CSharpCompiler.exe" target="_blank" class="externalLink">https://dl.bintray.com/oxidemod/builds/CSharpCompiler.exe</a> for
+                        windows. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305406" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 4:03 AM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305406" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305406/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305455" class="message" data-author="sNIP">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sNIP" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sNIP</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-305169" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The &quot;Upload a File&quot; button that is shown in every thread for replying.<br />
+                                        <br /> And which plugins aren&#039;t loading exactly?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Plugins are loading, they&#039;re just not auto-loaded when uploaded to the server. Does it require a restart? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sNIP</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305455" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 10:38 AM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305455" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305455/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305478" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sNIP">
+                            <aside>
+                                <div class="attribution type">sNIP said: <a href="#post-305455" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Plugins are loading, they&#039;re just not auto-loaded when uploaded to the server. Does it require a restart?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>No, plugins are loaded automatically if the system detects changes. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305478" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 3:02 PM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305478" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305478/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-305749" class="message" data-author="yannick10012">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="yannick10012" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">yannick10012</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Wulf I have the same issue, I upload a file (Through composer or manually doesn&#039;t matter) and need to use te
+                        reload command in order to load it. Is a few days since this started occurring. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">yannick10012</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305749" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 9, 2017 at 10:18 PM">Mar 9, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-305749" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/305749/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-306383" class="message" data-author="Riddle">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Riddle" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Riddle</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I installed a fresh Rust server on Linux with Oxide. Everything works out, except for automatic (re)loading of
+                        plugins. It doesn&#039;t. I have to reload them.<br />
+                        <br /> There is another install on the same server that works correct.<br />
+                        <br /> Is there something I miss or I can check? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Riddle</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306383" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 10, 2017 at 8:21 PM">Mar 10, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306383" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306383/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-306388" class="message" data-author="yannick10012">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="yannick10012" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">yannick10012</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> How to fix it with linux? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">yannick10012</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306388" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 10, 2017 at 8:30 PM">Mar 10, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306388" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306388/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-306712" class="message" data-author="sKilloWsky">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sKilloWsky" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sKilloWsky</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I have one problem after 2 last oxide updates, plugins not work when i upload new plugin and use /reload or
+                        /load<br /> When i restart the server all work good. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sKilloWsky</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306712" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 11, 2017 at 2:48 PM">Mar 11, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306712" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306712/permalink">#17</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-306841" class="message" data-author="maxaki">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="maxaki" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">maxaki</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Linux users are you using Docker or LGSM?<br /> Do you have the problem or not? <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">maxaki</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306841" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 11, 2017 at 9:46 PM">Mar 11, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306841" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306841/permalink">#18</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-306845" class="message" data-author="yannick10012">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="yannick10012" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">yannick10012</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="maxaki">
+                            <aside>
+                                <div class="attribution type">maxaki said: <a href="#post-306841" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Linux users are you using Docker or LGSM?<br /> Do you have the problem or not?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I am using LGSM and having the problem after last forced wipe <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">yannick10012</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306845" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 11, 2017 at 9:53 PM">Mar 11, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306845" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306845/permalink">#19</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-306851" class="message" data-author="maxaki">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="maxaki" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">maxaki</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="yannick10012">
+                            <aside>
+                                <div class="attribution type">yannick10012 said: <a href="#post-306845" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I am using LGSM and having the problem after last forced wipe</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Same here<br /> Not all owners on Linux have the same problem though. Not quite sure what it could be. I&#039;ll try get it working eventually but,<br /> if you manage to
+                        find a solution before me please share in this thread and I&#039;ll do the same <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                            title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">maxaki</a>,</span>
+                        <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306851" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Mar 11, 2017 at 10:00 PM">Mar 11, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/plugins-arent-reloading-on-changes-with-linux.24306/#post-306851" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/306851/permalink">#20</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548827194,
-		today: 1548806400,
-		todayDow: 3
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

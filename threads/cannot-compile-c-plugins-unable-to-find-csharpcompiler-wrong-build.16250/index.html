@@ -1,432 +1,427 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Solved - Cannot compile C# plugins. Unable to find CSharpCompiler (wrong build) | Oxide</title>
+    <base href="" />
+    <title>Oxide - Solved - Cannot compile C# plugins. Unable to find CSharpCompiler (wrong build)</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-    <link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/" />
-    <meta name="description" content="Hello,
-
-I have installed Rust server using gamemanager on Ubuntu 14.04 (rustserver: Rust |). Vanilla works fine, then i installed Oxide. Works kinda..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/" />
-    <meta property="og:title" content="Solved - Cannot compile C# plugins. Unable to find CSharpCompiler (wrong build)" />
-    <meta property="og:description" content="Hello,
-
-I have installed Rust server using gamemanager on Ubuntu 14.04 (rustserver: Rust |). Vanilla works fine, then i installed Oxide. Works kinda..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Cannot compile C# plugins. Unable to find CSharpCompiler (wrong build)" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node23 node1 node104 node106 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/">Cannot
-                                compile C# plugins. Unable to find CSharpCompiler (wrong build)</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">Ghost555</a>, <a
-                                href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/"><span class="DateTime" title="Feb 29, 2016 at 5:09 PM">Feb 29, 2016</span></a>.
-                        </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-182718" class="message   " data-author="Ghost555">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ghost555" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ghost555</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/">Cannot compile C#
+            plugins. Unable to find CSharpCompiler (wrong build)</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">Ghost555</a>, <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/"><span class="DateTime"
+                title="Feb 29, 2016 at 5:09 PM">Feb 29, 2016</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-182718" class="message" data-author="Ghost555">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ghost555" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ghost555</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hello,<br />
+                        <br /> I have installed Rust server using gamemanager on Ubuntu 14.04 (<a href="http://gameservermanagers.com/lgsm/rustserver/" target="_blank" class="externalLink  rel="
+                            nofollow">rustserver: Rust |</a>). Vanilla works fine, then i installed Oxide. Works kinda fine.<br /> It doesn&#039;t want to load CSharpCompiler and any of the .cs
+                        plugins. I also have a problem using Rust:IO.<br /> Does anybody know a solution to this?<br />
+                        <br /> I added the whole log down below. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="oxide_29-02-2016.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/oxide_29-02-2016-txt.18743/" target="_blank" class="genericAttachment"></a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello,<br />
-                                                <br /> I have installed Rust server using gamemanager on Ubuntu 14.04 (<a href="http://gameservermanagers.com/lgsm/rustserver/" target="_blank" class="externalLink  rel="
-                                                    nofollow">rustserver: Rust |</a>). Vanilla works fine, then i installed Oxide. Works kinda fine.<br /> It doesn&#039;t want to load CSharpCompiler
-                                                and any of the .cs plugins. I also have a problem using Rust:IO.<br /> Does anybody know a solution to this?<br />
-                                                <br /> I added the whole log down below. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                        <div class="attachedFiles">
-                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
-                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
-                                                <li class="attachment" title="oxide_29-02-2016.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/oxide_29-02-2016-txt.18743/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/oxide_29-02-2016-txt.18743/" target="_blank">oxide_29-02-2016.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>30.8 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>16</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Feb 29, 2016 at 5:09 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182718/permalink">#1</a>
-                                        </div>
-                                    </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/oxide_29-02-2016-txt.18743/" target="_blank">oxide_29-02-2016.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>30.8 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>16</dd>
+                                    </dl>
                                 </div>
-                            </li>
-                            <li id="post-182729" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Feb 29, 2016 at 5:09 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182718/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182729" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">You need to use the Linux build, not the normal build that is only meant for Windows.<br />
+                        <br />
+                        <a href="https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip" target="_blank"
+                            class="externalLink">https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip</a><br />
+                        <br /> I&#039;d also recommend reading <a href="http://oxidemod.org/threads/rust-server-on-linux-natively.16255/" class="internalLink">Solved - Rust server on Linux natively |
+                            Oxide</a>. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182729" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 5:42 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182729" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182729/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182731" class="message" data-author="Ghost555">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ghost555" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ghost555</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-182729" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> You need to use the Linux build, not the normal build that is only meant for Windows.<br />
-                                                <br />
-                                                <a href="https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip" target="_blank" class="externalLink">https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip</a><br />
-                                                <br /> I&#039;d also recommend reading <a href="http://oxidemod.org/threads/rust-server-on-linux-natively.16255/" class="internalLink">Solved - Rust
-                                                    server on Linux natively | Oxide</a>. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182729" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 5:42 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182729" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182729/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-182731" class="message   " data-author="Ghost555">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ghost555" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ghost555</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=182729#post-182729" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">You need to use the Linux build, not the normal build that is only meant for Windows.<br />
-                                                                <br />
-                                                                <a href="https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip" target="_blank" class="externalLink  rel=" nofollow">https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip</a><br />
-                                                                <br /> I&#039;d also recommend reading <a href="http://oxidemod.org/threads/rust-server-on-linux-natively.16255/" class="internalLink">Solved
-                                                                    - Rust server on Linux natively | Oxide</a>.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Oh my god i didn&#039;t even check that. Thanks! I&#039;ll try it now and let you know.<br /> [DOUBLEPOST=1456771187][/DOUBLEPOST] <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>Set current directory to /home/rustserver/serverfiles
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">You need to use the Linux build, not the normal build that is only meant for Windows.<br />
+                                        <br />
+                                        <a href="https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip" target="_blank" class="externalLink  rel="
+                                            nofollow">https://github.com/OxideMod/Snapshots/raw/master/Oxide-Rust_Linux.zip</a><br />
+                                        <br /> I&#039;d also recommend reading <a href="http://oxidemod.org/threads/rust-server-on-linux-natively.16255/" class="internalLink">Solved - Rust server on
+                                            Linux natively | Oxide</a>.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Oh my god i didn&#039;t even check that. Thanks! I&#039;ll try it now and let you know.<br /> [DOUBLEPOST=1456771187][/DOUBLEPOST] <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Set current directory to /home/rustserver/serverfiles
 Found path: /home/rustserver/serverfiles/RustDedicated
 Mono path[0] = '/home/rustserver/serverfiles/RustDedicated_Data/Managed'
 Mono path[1] = '/home/rustserver/serverfiles/RustDedicated_Data/Mono'
-Mono config path = '/home/rustserver/serverfiles/RustDedicated_Data/Mono/etc'
-
-Aborted</pre>
-                                                </div>This is the error i get. I am not sure what to do here.<br /> Any help would be apreciated <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182731" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 5:46 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182731" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182731/permalink">#3</a>
-                                        </div>
-                                    </div>
+Mono config path = '/home/rustserver/serverfiles/RustDedicated_Data/Mono/etc'Aborted</pre>
+                        </div>This is the error i get. I am not sure what to do here.<br /> Any help would be apreciated <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182731" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 5:46 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182731" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182731/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182777" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Ghost555">
+                            <aside>
+                                <div class="attribution type">Ghost555 said: <a href="#post-182731" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-182777" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Ghost555">
-                                                    <aside>
-                                                        <div class="attribution type">Ghost555 said: <a href="goto/post?id=182731#post-182731" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Oh my god i didn&#039;t even check that. Thanks! I&#039;ll try it now and let you know.<br />
-                                                                [DOUBLEPOST=1456771187][/DOUBLEPOST] <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>Set current directory to /home/rustserver/serverfiles
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Oh my god i didn&#039;t even check that. Thanks! I&#039;ll try it now and let you know.<br /> [DOUBLEPOST=1456771187][/DOUBLEPOST] <div
+                                            class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>Set current directory to /home/rustserver/serverfiles
 Found path: /home/rustserver/serverfiles/RustDedicated
 Mono path[0] = '/home/rustserver/serverfiles/RustDedicated_Data/Managed'
 Mono path[1] = '/home/rustserver/serverfiles/RustDedicated_Data/Mono'
-Mono config path = '/home/rustserver/serverfiles/RustDedicated_Data/Mono/etc'
-
-Aborted</pre>
-                                                                </div>This is the error i get. I am not sure what to do here.<br /> Any help would be apreciated</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Could you provide your full logs? I don&#039;t see any error in that snippet. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182777" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 6:50 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182777" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182777/permalink">#4</a>
-                                        </div>
-                                    </div>
+Mono config path = '/home/rustserver/serverfiles/RustDedicated_Data/Mono/etc'Aborted</pre>
+                                        </div>This is the error i get. I am not sure what to do here.<br /> Any help would be apreciated</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Could you provide your full logs? I don&#039;t see any error in that snippet. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182777" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 6:50 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182777" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182777/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182780" class="message" data-author="Ghost555">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ghost555" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ghost555</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Sorry, should have posted it before.<br /> Also, is there a console on the linux version? <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="oxide_29-02-2016.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/oxide_29-02-2016-txt.18747/" target="_blank" class="genericAttachment"></a>
                                 </div>
-                            </li>
-                            <li id="post-182780" class="message   " data-author="Ghost555">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ghost555" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ghost555</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/oxide_29-02-2016-txt.18747/" target="_blank">oxide_29-02-2016.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>4.4 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>17</dd>
+                                    </dl>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Sorry, should have posted it before.<br /> Also, is there a console on the linux
-                                                version? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                        <div class="attachedFiles">
-                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
-                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
-                                                <li class="attachment" title="oxide_29-02-2016.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/oxide_29-02-2016-txt.18747/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/oxide_29-02-2016-txt.18747/" target="_blank">oxide_29-02-2016.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>4.4 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>17</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182780" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 6:53 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182780" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182780/permalink">#5</a>
-                                        </div>
-                                    </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182780" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 6:53 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182780" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182780/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182781" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Ghost555">
+                            <aside>
+                                <div class="attribution type">Ghost555 said: <a href="#post-182780" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-182781" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Ghost555">
-                                                    <aside>
-                                                        <div class="attribution type">Ghost555 said: <a href="goto/post?id=182780#post-182780" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Sorry, should have posted it before.<br /> Also, is there a console on the linux version?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Nope, no console for the Linux version of Rust or Oxide yet.<br />
-                                                <br /> Your previous errors are gone now, but your current issue now is that you need to make CSharpCompiler executable. You can do so using chmod +x
-                                                on it. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182781" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 6:54 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182781" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182781/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-182789" class="message   " data-author="Ghost555">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ghost555" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ghost555</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I don&#039;t even get a log file now. <br /> This is all i get after i start the script<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>loft11196:/home/rustserver# ./rustserver
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Sorry, should have posted it before.<br /> Also, is there a console on the linux version?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Nope, no console for the Linux version of Rust or Oxide yet.<br />
+                        <br /> Your previous errors are gone now, but your current issue now is that you need to make CSharpCompiler executable. You can do so using chmod +x on it. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182781" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 6:54 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182781" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182781/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182789" class="message" data-author="Ghost555">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ghost555" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ghost555</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I don&#039;t even get a log file now. <br /> This is all i get after i start the script<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>loft11196:/home/rustserver# ./rustserver
 Usage: ./rustserver [option]
 Rust - Linux Game Server Manager - Version 230215
 Set current directory to /home/rustserver/serverfiles
@@ -435,53 +430,53 @@ Mono path[0] = '/home/rustserver/serverfiles/RustDedicated_Data/Managed'
 Mono path[1] = '/home/rustserver/serverfiles/RustDedicated_Data/Mono'
 Mono config path = '/home/rustserver/serverfiles/RustDedicated_Data/Mono/etc'
 loft11196:/home/rustserver/serverfiles#</pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182789" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 7:02 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182789" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182789/permalink">#7</a>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182789" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 7:02 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182789" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182789/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182791" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Ghost555">
+                            <aside>
+                                <div class="attribution type">Ghost555 said: <a href="#post-182789" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-182791" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Ghost555">
-                                                    <aside>
-                                                        <div class="attribution type">Ghost555 said: <a href="goto/post?id=182789#post-182789" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I don&#039;t even get a log file now.<br /> This is all i get after i start the script<br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>loft11196:/home/rustserver# ./rustserver
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I don&#039;t even get a log file now.<br /> This is all i get after i start the script<br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>loft11196:/home/rustserver# ./rustserver
 Usage: ./rustserver [option]
 Rust - Linux Game Server Manager - Version 230215
 Set current directory to /home/rustserver/serverfiles
@@ -490,133 +485,128 @@ Mono path[0] = '/home/rustserver/serverfiles/RustDedicated_Data/Managed'
 Mono path[1] = '/home/rustserver/serverfiles/RustDedicated_Data/Mono'
 Mono config path = '/home/rustserver/serverfiles/RustDedicated_Data/Mono/etc'
 loft11196:/home/rustserver/serverfiles#</pre>
-                                                                </div>
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You likely won&#039;t get a log with Rust for Linux, not sure why. The Oxide logs should still be there though unless it was uninstalled. <div
-                                                    class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182791" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 7:04 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182791" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182791/permalink">#8</a>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li id="post-182792" class="message   " data-author="Ghost555">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ghost555" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ghost555</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;ll perform a clean install of rust and oxide and tell you how it is. Thank you
-                                                for staying with me <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /><br />
-                                                [DOUBLEPOST=1456775514][/DOUBLEPOST]I made a clean install with the new Oxide files you provided and later on ran the chmod command. It works. I cannot
-                                                thank you enough.<br /> (Sent you a small donation) <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Feb 29, 2016 at 7:53 PM">Feb 29, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
-                                                <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182792" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Feb 29, 2016 at 7:05 PM">Feb 29, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182792" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/182792/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You likely won&#039;t get a log with Rust for Linux, not sure why. The Oxide logs should still be there though unless it was uninstalled. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182791" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 7:04 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182791" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182791/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-182792" class="message" data-author="Ghost555">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ghost555" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ghost555</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I&#039;ll perform a clean install of rust and oxide and tell you how it is. Thank you for staying with me <img
+                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /><br /> [DOUBLEPOST=1456775514][/DOUBLEPOST]I made a clean
+                        install with the new Oxide files you provided and later on ran the chmod command. It works. I cannot thank you enough.<br /> (Sent you a small donation) <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Feb 29, 2016 at 7:53 PM">Feb 29, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ghost555</a>,</span>
+                        <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182792" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Feb 29, 2016 at 7:05 PM">Feb 29, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/cannot-compile-c-plugins-unable-to-find-csharpcompiler-wrong-build.16250/#post-182792" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/182792/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -624,9 +614,9 @@ loft11196:/home/rustserver/serverfiles#</pre>
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548875907,
-                today: 1548806400,
-                todayDow: 3
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -644,19 +634,17 @@ loft11196:/home/rustserver/serverfiles#</pre>
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "attached_files": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -682,8 +670,6 @@ loft11196:/home/rustserver/serverfiles#</pre>
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

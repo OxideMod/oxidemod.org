@@ -1,2390 +1,984 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Rust - Steal balance on kill by % with tax | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/steal-balance-on-kill-by-with-tax.21145/" />
-	<meta name="description" content="Looking for a plugin that would enable players to steal another players balance by a % on killing them, but instead of giving them the full %, they..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/steal-balance-on-kill-by-with-tax.21145/" />
-	<meta property="og:title" content="Rust - Steal balance on kill by % with tax" />
-	<meta property="og:description" content="Looking for a plugin that would enable players to steal another players balance by a % on killing them, but instead of giving them the full %, they..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Rust - Steal balance on kill by % with tax</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Rust - Steal balance on kill by % with tax" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node10 node1 node104 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Requests</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixRed">Rust</span> <a href="https://oxidemod.org/threads/steal-balance-on-kill-by-with-tax.21145/">Steal balance on kill by % with tax</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">Savage ✔</a>, <a href="threads/steal-balance-on-kill-by-with-tax.21145/"><span class="DateTime" title="Sep 23, 2016 at 3:39 PM">Sep 23, 2016</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Requests</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-254129" class="message   " data-author="Savage ✔">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Savage ✔" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Savage ✔</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixRed">Rust</span> <a href="/threads/steal-balance-on-kill-by-with-tax.21145/">Steal balance on kill by % with tax</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">Savage
+            ✔</a>, <a href="/threads/steal-balance-on-kill-by-with-tax.21145/"><span class="DateTime" title="Sep 23, 2016 at 3:39 PM">Sep 23, 2016</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Looking for a plugin that would enable players to steal another players balance by a % on killing them, but instead of giving them the full %, they will be taxed a % on that, so players cant farm each other for cash as they will also be losing a % to the tax. <br />
-<br />
-Player A kills Players B, Player B loses 100 cash, Player A gains 50 cash.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 3:39 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254129/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254130" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					How could they farm each other for cash if the entirety of the gained money is from the account of the killed player?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254130" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 3:40 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254130" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254130/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254131" class="message   " data-author="Savage ✔">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Savage ✔" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Savage ✔</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					We have transfer disabled, so bigger clans cant mass transfer all the cash to 1 player, to buy X amount of item from shop, with out a tax system from killing somebody, clans would just kill each other till 1 person had all the money, with a tax added, atleast they would lose X amount making it less worth doing.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254131" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 3:50 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254131" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254131/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254153" class="message   " data-author="Brko™">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Brko™" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Brko™</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Savage ✔">
-	<aside>
-		
-			<div class="attribution type">Savage ✔ said:
-				
-					<a href="goto/post?id=254131#post-254131" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">We have transfer disabled, so bigger clans cant mass transfer all the cash to 1 player, to buy X amount of item from shop, with out a tax system from killing somebody, clans would just kill each other till 1 person had all the money, with a tax added, atleast they would lose X amount making it less worth doing.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Would not be better to ask for clans support and friendsAPI support? then there is no tax needed <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /> btw look for Robbery plugin <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /> it haves it - not need taxes cause clans/friends support <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254153" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 4:59 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254153" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254153/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254182" class="message   " data-author="Savage ✔">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Savage ✔" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Savage ✔</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					People can just remove each other, leave clan, that was my only issue with that plugin or it would of been my go to for this
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254182" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 6:52 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254182" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254182/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254193" class="message   " data-author="Brko™">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Brko™" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Brko™</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Savage ✔">
-	<aside>
-		
-			<div class="attribution type">Savage ✔ said:
-				
-					<a href="goto/post?id=254182#post-254182" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">People can just remove each other, leave clan, that was my only issue with that plugin or it would of been my go to for this</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>So ask <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> in the Robbery plugin support thread to add maybe function to keep few hrs maybe data where the guy was (clan/friends with) to ensure they cannot grief it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254193" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 7:14 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254193" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254193/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254194" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Brko™">
-	<aside>
-		
-			<div class="attribution type">Brko™ said:
-				
-					<a href="goto/post?id=254193#post-254193" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">So ask <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> in the Robbery plugin support thread to add maybe function to keep few hrs maybe data where the guy was (clan/friends with) to ensure they cannot grief it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I agree with Savage, taxes are a way better solution to this particular problem than tracking clans / friends.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254194" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 7:16 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254194" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254194/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254195" class="message   " data-author="Brko™">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Brko™" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Brko™</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
-	<aside>
-		
-			<div class="attribution type">sqroot said:
-				
-					<a href="goto/post?id=254194#post-254194" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I agree with Savage, taxes are a way better solution to this particular problem than tracking clans / friends.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Maybe its better true, still would be good to ask Wulf for taxes sollution with option config true/false <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /> my 2 cents on this <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254195" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 23, 2016 at 7:18 PM">Sep 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254195" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254195/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254399" class="message   " data-author="Savage ✔">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Savage ✔" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Savage ✔</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Thoughts on this <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>  ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254399" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 24, 2016 at 2:45 PM">Sep 24, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254399" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254399/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254427" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Savage ✔">
-	<aside>
-		
-			<div class="attribution type">Savage ✔ said:
-				
-					<a href="goto/post?id=254399#post-254399" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Thoughts on this <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>  ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Tax usually implies that it goes somewhere, not just disappear, but I can probably add some sort of feature like that, already added a death option back to Robbery that I&#039;ll be putting out soon.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254427" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 24, 2016 at 4:40 PM">Sep 24, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254427" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254427/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254430" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=254427#post-254427" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Tax usually implies that it goes somewhere, not just disappear, but I can probably add some sort of feature like that, already added a death option back to Robbery that I&#039;ll be putting out soon.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Even in the real world there are lots of taxes that have the primary purpose to regulate things, not to support the government, so it going nowhere is roughly the equivalent of that <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254430" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 24, 2016 at 4:50 PM">Sep 24, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254430" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254430/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254431" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
-	<aside>
-		
-			<div class="attribution type">sqroot said:
-				
-					<a href="goto/post?id=254430#post-254430" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Even in the real world there are lots of taxes that have the primary purpose to regulate things, not to support the government, so it going nowhere is roughly the equivalent of that <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It still goes somewhere, someone&#039;s pocket. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254431" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 24, 2016 at 4:52 PM">Sep 24, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254431" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254431/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254449" class="message   " data-author="Savage ✔">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Savage ✔" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Savage ✔</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Direct the tax to the owners ID maybe, least then its going somewere haha.  anything really to stop bigger clans just farming each other till 1 guy has everything, rather they lost some sort of % if they did try farming each other, so overall they would lose out
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254449" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 24, 2016 at 6:06 PM">Sep 24, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254449" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254449/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254562" class="message   " data-author="OfficerJAKE">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="OfficerJAKE" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">OfficerJAKE</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=254431#post-254431" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">It still goes somewhere, someone&#039;s pocket. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Can this be made so the player has to loot the $$ from the body?<br />
-Like an extra inventory slot, and only the % was avaliable to steal, but you have to drag it off the corpse.<br />
-Is this possible?? <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>  ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">OfficerJAKE</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254562" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 25, 2016 at 3:12 AM">Sep 25, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254562" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254562/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254563" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="OfficerJAKE">
-	<aside>
-		
-			<div class="attribution type">OfficerJAKE said:
-				
-					<a href="goto/post?id=254562#post-254562" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Can this be made so the player has to loot the $$ from the body?<br />
-Like an extra inventory slot, and only the % was avaliable to steal, but you have to drag it off the corpse.<br />
-Is this possible?? <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>  ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Mmm, what would the money be? You can&#039;t really add new items.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254563" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 25, 2016 at 3:35 AM">Sep 25, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254563" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254563/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254587" class="message   " data-author="OfficerJAKE">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="OfficerJAKE" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">OfficerJAKE</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=254563#post-254563" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Mmm, what would the money be? You can&#039;t really add new items.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>The money would be Economics and RP(ServerRewards) - Configurable..<br />
-I was thinking an extra place in dead players inventory to drag from.<br />
-And an extra slot on your own inventory that you drag $$ to..
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">OfficerJAKE</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254587" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 25, 2016 at 7:17 AM">Sep 25, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254587" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254587/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254596" class="message   " data-author="Brko™">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Brko™" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Brko™</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="OfficerJAKE">
-	<aside>
-		
-			<div class="attribution type">OfficerJAKE said:
-				
-					<a href="goto/post?id=254587#post-254587" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">The money would be Economics and RP(ServerRewards) - Configurable..<br />
-I was thinking an extra place in dead players inventory to drag from.<br />
-And an extra slot on your own inventory that you drag $$ to..</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>would be cool but as Wulf said you cannot add to game a new item to be flaged as a money/server reward <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
-<br />
-Also <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> the Taxes goes to someone pocket thats true, mainly it goes to the state &quot;tresure box&quot; from wherer the money is used to run the state, so How about the money would go in to a large Tresure box, all would be like once a hour informed by global chat that: XX amount of money was added to tax tresure box and currently haves xx amount of money inside. This would be awesome, and ofcourse, server owner or a guy with permission (the Tax manager) would be able to withdraw the money  and give it to someone or buy some sort of things (would be announced in chat). would be great for villagers <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-<br />
-This is just a morning though, did had just a coffee and did not smoke so ....
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254596" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 25, 2016 at 9:44 AM">Sep 25, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254596" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254596/permalink">#17</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-254618" class="message   " data-author="Savage ✔">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Savage ✔" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Savage ✔</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Could run it as a daily event , like the random box event with loot in, but again to loot balance form box, would require something to be in it i guess. unless a trigger was used when the box was opened? im not up to par with any of this stuff, just thought it would be a nice idea to stop players from abusing balance trading by death
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
-					<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254618" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 25, 2016 at 12:18 PM">Sep 25, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/steal-balance-on-kill-by-with-tax.21145/#post-254618" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/254618/permalink">#18</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-254129" class="message" data-author="Savage ✔">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Savage ✔" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Savage ✔</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Looking for a plugin that would enable players to steal another players balance by a % on killing them, but
+                        instead of giving them the full %, they will be taxed a % on that, so players cant farm each other for cash as they will also be losing a % to the tax. <br />
+                        <br /> Player A kills Players B, Player B loses 100 cash, Player A gains 50 cash. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 3:39 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254129/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254130" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> How could they farm each other for cash if the entirety of the gained money is from the account of the killed
+                        player? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254130" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 3:40 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254130" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254130/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254131" class="message" data-author="Savage ✔">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Savage ✔" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Savage ✔</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> We have transfer disabled, so bigger clans cant mass transfer all the cash to 1 player, to buy X amount of item
+                        from shop, with out a tax system from killing somebody, clans would just kill each other till 1 person had all the money, with a tax added, atleast they would lose X amount
+                        making it less worth doing. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254131" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 3:50 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254131" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254131/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254153" class="message" data-author="Brko™">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Brko™" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Brko™</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Savage ✔">
+                            <aside>
+                                <div class="attribution type">Savage ✔ said: <a href="#post-254131" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">We have transfer disabled, so bigger clans cant mass transfer all the cash to 1 player, to buy X amount of item from shop, with out a tax system
+                                        from killing somebody, clans would just kill each other till 1 person had all the money, with a tax added, atleast they would lose X amount making it less worth
+                                        doing.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Would not be better to ask for clans support and friendsAPI support? then there is no tax needed <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /> btw look for Robbery plugin <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2"
+                            alt=";)" title="Wink    ;)" /> it haves it - not need taxes cause clans/friends support <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2"
+                            alt=";)" title="Wink    ;)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254153" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 4:59 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254153" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254153/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254182" class="message" data-author="Savage ✔">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Savage ✔" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Savage ✔</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> People can just remove each other, leave clan, that was my only issue with that plugin or it would of been my go
+                        to for this <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254182" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 6:52 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254182" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254182/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254193" class="message" data-author="Brko™">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Brko™" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Brko™</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Savage ✔">
+                            <aside>
+                                <div class="attribution type">Savage ✔ said: <a href="#post-254182" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">People can just remove each other, leave clan, that was my only issue with that plugin or it would of been my go to for this</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>So ask <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> in the Robbery plugin support thread to add maybe function to keep
+                        few hrs maybe data where the guy was (clan/friends with) to ensure they cannot grief it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)"
+                            title="Wink    ;)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254193" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 7:14 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254193" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254193/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254194" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Brko™">
+                            <aside>
+                                <div class="attribution type">Brko™ said: <a href="#post-254193" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">So ask <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> in the Robbery plugin support thread to
+                                        add maybe function to keep few hrs maybe data where the guy was (clan/friends with) to ensure they cannot grief it <img src="styles/default/xenforo/clear.png"
+                                            class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I agree with Savage, taxes are a way better solution to this particular problem than tracking clans / friends. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254194" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 7:16 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254194" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254194/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254195" class="message" data-author="Brko™">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Brko™" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Brko™</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
+                            <aside>
+                                <div class="attribution type">sqroot said: <a href="#post-254194" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I agree with Savage, taxes are a way better solution to this particular problem than tracking clans / friends.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Maybe its better true, still would be good to ask Wulf for taxes sollution with option config true/false <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /> my 2 cents on this <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)"
+                            title="Wink    ;)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254195" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 23, 2016 at 7:18 PM">Sep 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254195" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254195/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254399" class="message" data-author="Savage ✔">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Savage ✔" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Savage ✔</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thoughts on this <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>
+                        ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254399" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 24, 2016 at 2:45 PM">Sep 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254399" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254399/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254427" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Savage ✔">
+                            <aside>
+                                <div class="attribution type">Savage ✔ said: <a href="#post-254399" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Thoughts on this <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Tax usually implies that it goes somewhere, not just disappear, but I can probably add some sort of feature like that, already added a death option back to Robbery that
+                        I&#039;ll be putting out soon. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254427" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 24, 2016 at 4:40 PM">Sep 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254427" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254427/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254430" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-254427" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Tax usually implies that it goes somewhere, not just disappear, but I can probably add some sort of feature like that, already added a death
+                                        option back to Robbery that I&#039;ll be putting out soon.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Even in the real world there are lots of taxes that have the primary purpose to regulate things, not to support the government, so it going nowhere is roughly the
+                        equivalent of that <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254430" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 24, 2016 at 4:50 PM">Sep 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254430" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254430/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254431" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
+                            <aside>
+                                <div class="attribution type">sqroot said: <a href="#post-254430" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Even in the real world there are lots of taxes that have the primary purpose to regulate things, not to support the government, so it going
+                                        nowhere is roughly the equivalent of that <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                                            title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It still goes somewhere, someone&#039;s pocket. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254431" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 24, 2016 at 4:52 PM">Sep 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254431" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254431/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254449" class="message" data-author="Savage ✔">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Savage ✔" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Savage ✔</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Direct the tax to the owners ID maybe, least then its going somewere haha. anything really to stop bigger clans
+                        just farming each other till 1 guy has everything, rather they lost some sort of % if they did try farming each other, so overall they would lose out <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254449" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 24, 2016 at 6:06 PM">Sep 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254449" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254449/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254562" class="message" data-author="OfficerJAKE">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="OfficerJAKE" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">OfficerJAKE</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-254431" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It still goes somewhere, someone&#039;s pocket. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)"
+                                            title="Wink    ;)" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Can this be made so the player has to loot the $$ from the body?<br /> Like an extra inventory slot, and only the % was avaliable to steal, but you have to drag it off
+                        the corpse.<br /> Is this possible?? <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> ? <div class="messageTextEndMarker">&nbsp;
+                        </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">OfficerJAKE</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254562" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 25, 2016 at 3:12 AM">Sep 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254562" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254562/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254563" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="OfficerJAKE">
+                            <aside>
+                                <div class="attribution type">OfficerJAKE said: <a href="#post-254562" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Can this be made so the player has to loot the $$ from the body?<br /> Like an extra inventory slot, and only the % was avaliable to steal, but
+                                        you have to drag it off the corpse.<br /> Is this possible?? <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> ?
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Mmm, what would the money be? You can&#039;t really add new items. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254563" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 25, 2016 at 3:35 AM">Sep 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254563" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254563/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254587" class="message" data-author="OfficerJAKE">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="OfficerJAKE" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">OfficerJAKE</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-254563" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Mmm, what would the money be? You can&#039;t really add new items.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The money would be Economics and RP(ServerRewards) - Configurable..<br /> I was thinking an extra place in dead players inventory to drag from.<br /> And an extra slot on
+                        your own inventory that you drag $$ to.. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">OfficerJAKE</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254587" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 25, 2016 at 7:17 AM">Sep 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254587" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254587/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254596" class="message" data-author="Brko™">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Brko™" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Brko™</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="OfficerJAKE">
+                            <aside>
+                                <div class="attribution type">OfficerJAKE said: <a href="#post-254587" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">The money would be Economics and RP(ServerRewards) - Configurable..<br /> I was thinking an extra place in dead players inventory to drag
+                                        from.<br /> And an extra slot on your own inventory that you drag $$ to..</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>would be cool but as Wulf said you cannot add to game a new item to be flaged as a money/server reward <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" /><br />
+                        <br /> Also <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> the Taxes goes to someone pocket thats true, mainly it goes to the
+                        state &quot;tresure box&quot; from wherer the money is used to run the state, so How about the money would go in to a large Tresure box, all would be like once a hour informed
+                        by global chat that: XX amount of money was added to tax tresure box and currently haves xx amount of money inside. This would be awesome, and ofcourse, server owner or a guy
+                        with permission (the Tax manager) would be able to withdraw the money and give it to someone or buy some sort of things (would be announced in chat). would be great for
+                        villagers <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+                        <br /> This is just a morning though, did had just a coffee and did not smoke so .... <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Brko™</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254596" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 25, 2016 at 9:44 AM">Sep 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254596" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254596/permalink">#17</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-254618" class="message" data-author="Savage ✔">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Savage ✔" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Savage ✔</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Could run it as a daily event , like the random box event with loot in, but again to loot balance form box, would
+                        require something to be in it i guess. unless a trigger was used when the box was opened? im not up to par with any of this stuff, just thought it would be a nice idea to stop
+                        players from abusing balance trading by death <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Savage ✔</a>,</span>
+                        <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254618" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 25, 2016 at 12:18 PM">Sep 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/steal-balance-on-kill-by-with-tax.21145/#post-254618" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/254618/permalink">#18</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548551129,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

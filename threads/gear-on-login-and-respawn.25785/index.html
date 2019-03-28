@@ -1,2024 +1,827 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Rust - Gear on login and respawn | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/gear-on-login-and-respawn.25785/" />
-	<meta name="description" content="Hey all, I'm looking for a plugin that gives you gear when you login and every time you respawn, Currently using  starter packs but everytime I login I..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/gear-on-login-and-respawn.25785/" />
-	<meta property="og:title" content="Rust - Gear on login and respawn" />
-	<meta property="og:description" content="Hey all, I'm looking for a plugin that gives you gear when you login and every time you respawn, Currently using  starter packs but everytime I login I..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Rust - Gear on login and respawn</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Rust - Gear on login and respawn" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node10 node1 node104 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Requests</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixRed">Rust</span> <a href="https://oxidemod.org/threads/gear-on-login-and-respawn.25785/">Gear on login and respawn</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">iDan</a>, <a href="threads/gear-on-login-and-respawn.25785/"><span class="DateTime" title="Jun 5, 2017 at 5:35 PM">Jun 5, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Requests</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-329417" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixRed">Rust</span> <a href="/threads/gear-on-login-and-respawn.25785/">Gear on login and respawn</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username"
+            dir="auto">iDan</a>, <a href="/threads/gear-on-login-and-respawn.25785/"><span class="DateTime" title="Jun 5, 2017 at 5:35 PM">Jun 5, 2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hey all, I&#039;m looking for a plugin that gives you gear when you login and every time you respawn, Currently using  starter packs but everytime I login I keep getting loads of crap that i dont need as a admin, what other options are there?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 5:35 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329417/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329419" class="message   " data-author="jensolaf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="jensolaf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">jensolaf</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<a href="http://oxidemod.org/plugins/kits.668/" class="internalLink">Kits for Rust | Oxide</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">jensolaf</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329419" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 5:48 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329419" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329419/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329433" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="jensolaf">
-	<aside>
-		
-			<div class="attribution type">jensolaf said:
-				
-					<a href="goto/post?id=329419#post-329419" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote"><a href="http://oxidemod.org/plugins/kits.668/" class="internalLink">Kits for Rust | Oxide</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>This allows you to spawn with a gun in hotbar?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329433" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 6:43 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329433" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329433/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329434" class="message   " data-author="jensolaf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="jensolaf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">jensolaf</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="iDan">
-	<aside>
-		
-			<div class="attribution type">iDan said:
-				
-					<a href="goto/post?id=329433#post-329433" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">This allows you to spawn with a gun in hotbar?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Well yeah, you can also have gear on yourself.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">jensolaf</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329434" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 6:44 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329434" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329434/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329435" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					So how do I set this up? When each player logins in I want them to already have gear without having to do /kit &quot; &quot; <br />
-and each time they die and spawn the same.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329435" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 6:46 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329435" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329435/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329436" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="iDan">
-	<aside>
-		
-			<div class="attribution type">iDan said:
-				
-					<a href="goto/post?id=329435#post-329435" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">So how do I set this up? When each player logins in I want them to already have gear without having to do /kit &quot; &quot;<br />
-and each time they die and spawn the same.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Read overview
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329436" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 6:47 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329436" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329436/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329437" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sami37">
-	<aside>
-		
-			<div class="attribution type">sami37 said:
-				
-					<a href="goto/post?id=329436#post-329436" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Read overview</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I have it makes no scene to me, Why dont people explain rather than giving short answers, I&#039;ve googled it, search the forums hence why Im on here.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329437" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 6:48 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329437" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329437/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329438" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="iDan">
-	<aside>
-		
-			<div class="attribution type">iDan said:
-				
-					<a href="goto/post?id=329437#post-329437" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I have it makes no scene to me, Why dont people explain rather than giving short answers, I&#039;ve googled it, search the forums hence why Im on here.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Because some people like you &quot;won&#039;t understand&quot;<br />
-<br />
-What you don&#039;t understand while reading this part ?<br />
-<br />
-<b>How to create kits:</b><br />
-1) Empty your inventory<br />
-2) Add in your inventory the kit that you want players to have (blueprints, weapons in the belt, armors in the clothing, etc)<br />
-3) use /kit add &quot;kitname&quot;<br />
-4) set the options via: /kit option1 value1 option2 value2 etc<br />
-ex:<br />
-/kit items max 10 cooldown 3600 description &quot;Every hour kit, max usage: 10&quot;
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329438" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 6:53 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329438" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329438/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329471" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sami37">
-	<aside>
-		
-			<div class="attribution type">sami37 said:
-				
-					<a href="goto/post?id=329438#post-329438" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Because some people like you &quot;won&#039;t understand&quot;<br />
-<br />
-What you don&#039;t understand while reading this part ?<br />
-<br />
-<b>How to create kits:</b><br />
-1) Empty your inventory<br />
-2) Add in your inventory the kit that you want players to have (blueprints, weapons in the belt, armors in the clothing, etc)<br />
-3) use /kit add &quot;kitname&quot;<br />
-4) set the options via: /kit option1 value1 option2 value2 etc<br />
-ex:<br />
-/kit items max 10 cooldown 3600 description &quot;Every hour kit, max usage: 10&quot;</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>That makes no scene for your short answers, Its clear i don&#039;t understand which is why i&#039;m asking for help, thats what the forum is for right?<br />
-I fully understand thanks, I think you misunderstand what I am asking you.<br />
-I already have kits in place, I want the player to start with a kit when they spawn, and have a fresh kit when they respawn.<br />
-What don&#039;t you understand while reading my question? or would you like it in a more condescending manner?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329471" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 9:33 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329471" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329471/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329472" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="iDan">
-	<aside>
-		
-			<div class="attribution type">iDan said:
-				
-					<a href="goto/post?id=329471#post-329471" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">That makes no scene for your short answers, Its clear i don&#039;t understand which is why i&#039;m asking for help, thats what the forum is for right?<br />
-I fully understand thanks, I think you misunderstand what I am asking you.<br />
-I already have kits in place, I want the player to start with a kit when they spawn, and have a fresh kit when they respawn.<br />
-What don&#039;t you understand while reading my question? or would you like it in a more condescending manner?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I understand your question but you don&#039;t understand how this plugin work.<br />
-What about autokit part ?!<br />
-Also I think you can find what you want by searching in the official plugin overview
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329472" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 9:36 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329472" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329472/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329474" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sami37">
-	<aside>
-		
-			<div class="attribution type">sami37 said:
-				
-					<a href="goto/post?id=329472#post-329472" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I understand your question but you don&#039;t understand how this plugin work.<br />
-What about autokit part ?!<br />
-Also I think you can find what you want by searching in the official plugin overview</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I think were getting somewhere, why not explain that wayyyyy before? Still dont get it lol
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329474" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 9:43 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329474" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329474/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329476" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					God assisted guy spotted...<br />
-Use the fucking command on the default kit named autokit...
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329476" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 5, 2017 at 9:49 PM">Jun 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329476" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329476/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329856" class="message   " data-author="iDan">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="iDan" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">iDan</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sami37">
-	<aside>
-		
-			<div class="attribution type">sami37 said:
-				
-					<a href="goto/post?id=329476#post-329476" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">God assisted guy spotted...<br />
-Use the fucking command on the default kit named autokit...</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Why do you even go on this forum if you have no people skills and are just rude.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329856" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 7, 2017 at 8:27 PM">Jun 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329856" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329856/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-329859" class="message   " data-author="jensolaf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="jensolaf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">jensolaf</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<b>autokit:</b><br />
-1) /kit add &quot;autokit&quot;<br />
-2) /kit authlevel 2 hide true =&gt; this will set the kit only manually redeemable for admins, and hide will hide it from the list in /kit.<br />
-3) /kit items =&gt; this will copy the items in your inventory to set it as the new kit. you don&#039;t need to do it seperatly you can do it in the previous line: /kit authlevel 2 items hide true<br />
-<br />
-Is it really that hard?<br />
-<br />
-It goes on.<br />
-<br />
-<b>Custom AutoKits:</b><br />
-***Will only work if autokit^^ isn&#039;t configured***<br />
---&gt;If you have an autokit, delete it &#039;/kit remove autokit&#039;<br />
-<br />
-The nice benefit to using Custom AutoKits over the traditional autokit is a few things...<br />
-<br />
-1. Priority Kit Giving ... so kits configured in the Config File (kits.json in config folder) are given a &quot;number index&quot;.<br />
-<br />
-<b>Example Code: </b><br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>&quot;Custom AutoKits&quot;: {
+<ol class="messageList" id="messageList">
+    <li id="post-329417" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hey all, I&#039;m looking for a plugin that gives you gear when you login and every time you respawn, Currently
+                        using starter packs but everytime I login I keep getting loads of crap that i dont need as a admin, what other options are there? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 5:35 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329417/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329419" class="message" data-author="jensolaf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="jensolaf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">jensolaf</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="http://oxidemod.org/plugins/kits.668/" class="internalLink">Kits for Rust | Oxide</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">jensolaf</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329419" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 5:48 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329419" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329419/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329433" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="jensolaf">
+                            <aside>
+                                <div class="attribution type">jensolaf said: <a href="#post-329419" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="http://oxidemod.org/plugins/kits.668/" class="internalLink">Kits for Rust | Oxide</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>This allows you to spawn with a gun in hotbar? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329433" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 6:43 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329433" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329433/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329434" class="message" data-author="jensolaf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="jensolaf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">jensolaf</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="iDan">
+                            <aside>
+                                <div class="attribution type">iDan said: <a href="#post-329433" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">This allows you to spawn with a gun in hotbar?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Well yeah, you can also have gear on yourself. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">jensolaf</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329434" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 6:44 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329434" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329434/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329435" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So how do I set this up? When each player logins in I want them to already have gear without having to do /kit
+                        &quot; &quot; <br /> and each time they die and spawn the same. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329435" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 6:46 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329435" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329435/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329436" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="iDan">
+                            <aside>
+                                <div class="attribution type">iDan said: <a href="#post-329435" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">So how do I set this up? When each player logins in I want them to already have gear without having to do /kit &quot; &quot;<br /> and each time
+                                        they die and spawn the same.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Read overview <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329436" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 6:47 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329436" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329436/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329437" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sami37">
+                            <aside>
+                                <div class="attribution type">sami37 said: <a href="#post-329436" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Read overview</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I have it makes no scene to me, Why dont people explain rather than giving short answers, I&#039;ve googled it, search the forums hence why Im on here. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329437" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 6:48 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329437" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329437/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329438" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="iDan">
+                            <aside>
+                                <div class="attribution type">iDan said: <a href="#post-329437" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I have it makes no scene to me, Why dont people explain rather than giving short answers, I&#039;ve googled it, search the forums hence why Im on
+                                        here.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Because some people like you &quot;won&#039;t understand&quot;<br />
+                        <br /> What you don&#039;t understand while reading this part ?<br />
+                        <br />
+                        <b>How to create kits:</b><br /> 1) Empty your inventory<br /> 2) Add in your inventory the kit that you want players to have (blueprints, weapons in the belt, armors in the
+                        clothing, etc)<br /> 3) use /kit add &quot;kitname&quot;<br /> 4) set the options via: /kit option1 value1 option2 value2 etc<br /> ex:<br /> /kit items max 10 cooldown 3600
+                        description &quot;Every hour kit, max usage: 10&quot; <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329438" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 6:53 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329438" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329438/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329471" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sami37">
+                            <aside>
+                                <div class="attribution type">sami37 said: <a href="#post-329438" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Because some people like you &quot;won&#039;t understand&quot;<br />
+                                        <br /> What you don&#039;t understand while reading this part ?<br />
+                                        <br />
+                                        <b>How to create kits:</b><br /> 1) Empty your inventory<br /> 2) Add in your inventory the kit that you want players to have (blueprints, weapons in the belt,
+                                        armors in the clothing, etc)<br /> 3) use /kit add &quot;kitname&quot;<br /> 4) set the options via: /kit option1 value1 option2 value2 etc<br /> ex:<br /> /kit
+                                        items max 10 cooldown 3600 description &quot;Every hour kit, max usage: 10&quot;</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>That makes no scene for your short answers, Its clear i don&#039;t understand which is why i&#039;m asking for help, thats what the forum is for right?<br /> I fully
+                        understand thanks, I think you misunderstand what I am asking you.<br /> I already have kits in place, I want the player to start with a kit when they spawn, and have a fresh
+                        kit when they respawn.<br /> What don&#039;t you understand while reading my question? or would you like it in a more condescending manner? <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329471" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 9:33 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329471" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329471/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329472" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="iDan">
+                            <aside>
+                                <div class="attribution type">iDan said: <a href="#post-329471" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">That makes no scene for your short answers, Its clear i don&#039;t understand which is why i&#039;m asking for help, thats what the forum is for
+                                        right?<br /> I fully understand thanks, I think you misunderstand what I am asking you.<br /> I already have kits in place, I want the player to start with a
+                                        kit when they spawn, and have a fresh kit when they respawn.<br /> What don&#039;t you understand while reading my question? or would you like it in a more
+                                        condescending manner?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I understand your question but you don&#039;t understand how this plugin work.<br /> What about autokit part ?!<br /> Also I think you can find what you want by searching
+                        in the official plugin overview <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329472" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 9:36 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329472" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329472/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329474" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sami37">
+                            <aside>
+                                <div class="attribution type">sami37 said: <a href="#post-329472" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I understand your question but you don&#039;t understand how this plugin work.<br /> What about autokit part ?!<br /> Also I think you can find
+                                        what you want by searching in the official plugin overview</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I think were getting somewhere, why not explain that wayyyyy before? Still dont get it lol <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329474" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 9:43 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329474" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329474/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329476" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> God assisted guy spotted...<br /> Use the fucking command on the default kit named autokit... <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329476" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 5, 2017 at 9:49 PM">Jun 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329476" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329476/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329856" class="message" data-author="iDan">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="iDan" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">iDan</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sami37">
+                            <aside>
+                                <div class="attribution type">sami37 said: <a href="#post-329476" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">God assisted guy spotted...<br /> Use the fucking command on the default kit named autokit...</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Why do you even go on this forum if you have no people skills and are just rude. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">iDan</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329856" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 7, 2017 at 8:27 PM">Jun 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329856" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329856/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-329859" class="message" data-author="jensolaf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="jensolaf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">jensolaf</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <b>autokit:</b><br /> 1) /kit add &quot;autokit&quot;<br /> 2) /kit authlevel 2 hide true =&gt; this will set the kit only manually redeemable for admins, and hide will hide it
+                        from the list in /kit.<br /> 3) /kit items =&gt; this will copy the items in your inventory to set it as the new kit. you don&#039;t need to do it seperatly you can do it in
+                        the previous line: /kit authlevel 2 items hide true<br />
+                        <br /> Is it really that hard?<br />
+                        <br /> It goes on.<br />
+                        <br />
+                        <b>Custom AutoKits:</b><br /> ***Will only work if autokit^^ isn&#039;t configured***<br /> --&gt;If you have an autokit, delete it &#039;/kit remove autokit&#039;<br />
+                        <br /> The nice benefit to using Custom AutoKits over the traditional autokit is a few things...<br />
+                        <br /> 1. Priority Kit Giving ... so kits configured in the Config File (kits.json in config folder) are given a &quot;number index&quot;.<br />
+                        <br />
+                        <b>Example Code: </b><br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>&quot;Custom AutoKits&quot;: {
    &quot;0&quot;: &quot;VipSpawn&quot;,
    &quot;1&quot;: &quot;VeteranSpawn&quot;,
    &quot;2&quot;: &quot;BasicSpawn&quot;
 },</pre>
-</div>This index means Custom AutoKits will be attempted to be given in the order of 0 - on. So 0 is highest priority for trying. In the example above on player respawn an attempt will be made to give the player VipSpawn, if not then VeteranSpawn, and finally BasicSpawn.. again to reiterate; if you have an &quot;autokit&quot; in your kits.json in the data folder none of this will happen as the &quot;autokit&quot; will be given and that will be it.<br />
-<br />
-2. I added checks for permissions, uses, and cooldown. So this means, if a player has permission Kits.VipSpawn and Kits.VeteranSpawn and Kits.BasicSpawn he or she will be eligible for all (3) Custom AutoKits. So if the player respawns and gets the VipSpawn and it has a 5 minute cooldown, then if that same player dies within 5 minutes he or she will instead be given the VeteranSpawn... this same logic works with uses..<br />
-So taking the same example if VipSpawn has a 3 use max, after the 3rd respawn the player will then be given the VeteranSpawn instead because there are no &quot;uses&quot; left for the VipSpawn.<br />
-<br />
-This should really add some customization to the &quot;Respawn Kit&quot; feel people are looking for.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">jensolaf</a>,</span>
-					<a href="threads/gear-on-login-and-respawn.25785/#post-329859" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 7, 2017 at 8:46 PM">Jun 7, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/gear-on-login-and-respawn.25785/#post-329859" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/329859/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>This index means Custom AutoKits will be attempted to be given in the order of 0 - on. So 0 is highest priority for trying. In the example above on player respawn an
+                        attempt will be made to give the player VipSpawn, if not then VeteranSpawn, and finally BasicSpawn.. again to reiterate; if you have an &quot;autokit&quot; in your kits.json in
+                        the data folder none of this will happen as the &quot;autokit&quot; will be given and that will be it.<br />
+                        <br /> 2. I added checks for permissions, uses, and cooldown. So this means, if a player has permission Kits.VipSpawn and Kits.VeteranSpawn and Kits.BasicSpawn he or she will
+                        be eligible for all (3) Custom AutoKits. So if the player respawns and gets the VipSpawn and it has a 5 minute cooldown, then if that same player dies within 5 minutes he or
+                        she will instead be given the VeteranSpawn... this same logic works with uses..<br /> So taking the same example if VipSpawn has a 3 use max, after the 3rd respawn the player
+                        will then be given the VeteranSpawn instead because there are no &quot;uses&quot; left for the VipSpawn.<br />
+                        <br /> This should really add some customization to the &quot;Respawn Kit&quot; feel people are looking for. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
-
-			</footer>
-		</div>
-	</div>
-</div>
-
-<header>
-	
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">jensolaf</a>,</span>
+                        <a href="/threads/gear-on-login-and-respawn.25785/#post-329859" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 7, 2017 at 8:46 PM">Jun 7, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/gear-on-login-and-respawn.25785/#post-329859" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/329859/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548551139,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

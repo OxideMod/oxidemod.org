@@ -1,752 +1,295 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Server crashing when players connect | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/server-crashing-when-players-connect.23101/" />
-	<meta name="description" content="my server crashes when anybody try to connect, why?" />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/server-crashing-when-players-connect.23101/" />
-	<meta property="og:title" content="Server crashing when players connect" />
-	<meta property="og:description" content="my server crashes when anybody try to connect, why?" />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Server crashing when players connect</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Server crashing when players connect" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node23 node1 node104 node106 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/server-crashing-when-players-connect.23101/">Server crashing when players connect</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">Hider</a>, <a href="threads/server-crashing-when-players-connect.23101/"><span class="DateTime" title="Jan 18, 2017 at 3:37 PM">Jan 18, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-286095" class="message   " data-author="Hider">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hider" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Hider</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/server-crashing-when-players-connect.23101/">Server crashing when players connect</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">Hider</a>, <a href="/threads/server-crashing-when-players-connect.23101/"><span class="DateTime" title="Jan 18, 2017 at 3:37 PM">Jan 18,
+                2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					my server crashes when anybody try to connect, why?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Hider</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 18, 2017 at 3:37 PM">Jan 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286095/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286097" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Hider">
-	<aside>
-		
-			<div class="attribution type">Hider said:
-				
-					<a href="goto/post?id=286095#post-286095" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">my server crashes when anybody try to connect, why?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>My PC is slow, why?<br />
-Can you provide some more information?<br />
-What does error\warning logs says?<br />
-What plugins you are using?<br />
-Does this problem remain with no plugins at all?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286097" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 18, 2017 at 3:39 PM">Jan 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286097" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286097/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286102" class="message   " data-author="Hider">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hider" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Hider</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Vlad-00003">
-	<aside>
-		
-			<div class="attribution type">Vlad-00003 said:
-				
-					<a href="goto/post?id=286097#post-286097" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">My PC is slow, why?<br />
-Can you provide some more information?<br />
-What does error\warning logs says?<br />
-What plugins you are using?<br />
-Does this problem remain with no plugins at all?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>plugins cleaned and return - independent<br />
-i just reload 1 and 2-d my servers and they down after firts connected player, but the third server work normal - because not reloaded.<br />
-All servers run yesterday, but now this happed after restart
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Hider</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286102" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 18, 2017 at 4:03 PM">Jan 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286102" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286102/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286103" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Hider">
-	<aside>
-		
-			<div class="attribution type">Hider said:
-				
-					<a href="goto/post?id=286102#post-286102" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">plugins cleaned and return - independent<br />
-i just reload 1 and 2-d my servers and they down after firts connected player, but the third server work normal - because not reloaded.<br />
-All servers run yesterday, but now this happed after restart</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Check <b><i><a href="http://oxidemod.org/threads/about-server-crashes-when-loading-saves.23020/" class="internalLink">this thread</a> </i></b>- may be this solution will work for you.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286103" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 18, 2017 at 4:11 PM">Jan 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286103" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286103/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286151" class="message   " data-author="Hider">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Hider" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Hider</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					After crashed server i got this error.log<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Unity Player [version: Unity 5.4.4f1_5a3967d8c55d]
-
-KERNELBASE.dll caused an Access Violation (0xc0000005)
-  in module KERNELBASE.dll at 0033:fda6a49d.
-
-Error occurred at 2017-01-19_021616.
+<ol class="messageList" id="messageList">
+    <li id="post-286095" class="message" data-author="Hider">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Hider" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Hider</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> my server crashes when anybody try to connect, why? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Hider</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 18, 2017 at 3:37 PM">Jan 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/286095/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286097" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Hider">
+                            <aside>
+                                <div class="attribution type">Hider said: <a href="#post-286095" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">my server crashes when anybody try to connect, why?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>My PC is slow, why?<br /> Can you provide some more information?<br /> What does error\warning logs says?<br /> What plugins you are using?<br /> Does this problem remain
+                        with no plugins at all? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286097" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 18, 2017 at 3:39 PM">Jan 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286097" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286097/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286102" class="message" data-author="Hider">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Hider" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Hider</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Vlad-00003">
+                            <aside>
+                                <div class="attribution type">Vlad-00003 said: <a href="#post-286097" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">My PC is slow, why?<br /> Can you provide some more information?<br /> What does error\warning logs says?<br /> What plugins you are using?<br />
+                                        Does this problem remain with no plugins at all?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>plugins cleaned and return - independent<br /> i just reload 1 and 2-d my servers and they down after firts connected player, but the third server work normal - because
+                        not reloaded.<br /> All servers run yesterday, but now this happed after restart <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Hider</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286102" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 18, 2017 at 4:03 PM">Jan 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286102" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286102/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286103" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Hider">
+                            <aside>
+                                <div class="attribution type">Hider said: <a href="#post-286102" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">plugins cleaned and return - independent<br /> i just reload 1 and 2-d my servers and they down after firts connected player, but the third
+                                        server work normal - because not reloaded.<br /> All servers run yesterday, but now this happed after restart</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Check <b><i><a href="http://oxidemod.org/threads/about-server-crashes-when-loading-saves.23020/" class="internalLink">this thread</a> </i></b>- may be this solution will
+                        work for you. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286103" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 18, 2017 at 4:11 PM">Jan 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286103" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286103/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286151" class="message" data-author="Hider">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Hider" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Hider</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> After crashed server i got this error.log<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Unity Player [version: Unity 5.4.4f1_5a3967d8c55d]KERNELBASE.dll caused an Access Violation (0xc0000005)
+  in module KERNELBASE.dll at 0033:fda6a49d.Error occurred at 2017-01-19_021616.
 C:\Users\Allexter\Documents\RustExperimental\RustDedicated.exe, run by Allexter.
 57% memory in use.
 32723 MB physical memory [14005 MB free].
 32721 MB paging file [13068 MB free].
 8388608 MB user address space [8387093 MB free].
-Read from location 4c690000 caused an access violation.
-
-Context:
+Read from location 4c690000 caused an access violation.Context:
 RDI:    0x412ad810  RSI: 0x412aec70  RAX:   0x36241eb5
 RBX:    0x412ae780  RCX: 0x412ac400  RDX:   0x00002240
 RIP:    0xfda6a49d  RBP: 0x412ad0b0  SegCs: 0x00000033
 EFlags: 0x00000202  RSP: 0x412aca10  SegSs: 0x0000002b
 R8:    0x00000000  R9: 0x00000000  R10:   0x0003b090
 R11:    0x412aca50  R12: 0x412acb58  R13:   0x00000000
-R14:    0x412ade28  R15: 0x00000000
-
-Bytes at CS:EIP:
-48 81 c4 c8 00 00 00 c3 48 85 f6 74 08 83 3b 00
-
-Stack:
+R14:    0x412ade28  R15: 0x00000000Bytes at CS:EIP:
+48 81 c4 c8 00 00 00 c3 48 85 f6 74 08 83 3b 00Stack:
 0x412aca10: 412ae780 00000000 412aec70 00000000 ..*A....p.*A....
 0x412aca20: 412ad810 00000000 00000000 00000000 ..*A............
 0x412aca30: c0000005 00000000 00000000 00000000 ................
@@ -1258,9 +801,7 @@ Stack:
 0x412ae9d0: 00000000 00000000 00000000 00000000 ................
 0x412ae9e0: 00000000 00000000 00000000 00000000 ................
 0x412ae9f0: 00000000 00000000 00000000 00000000 ................
-0x412aea00: 00000000 00000000 00000000 00000000 ................
-
-Module 1
+0x412aea00: 00000000 00000000 00000000 00000000 ................Module 1
 C:\Windows\system32\CLBCatQ.DLL
 Image Base: 0xff020000  Image Size: 0x00099000
 File Size:  607744      File Time:  2009-07-14_074016
@@ -1269,9 +810,7 @@ Version:
    Product:    Microsoft® Windows® Operating System
    FileDesc:   COM+ Configuration Catalog
    FileVer:    2001.12.8530.16385
-   ProdVer:    6.1.7600.16385
-
-Module 2
+   ProdVer:    6.1.7600.16385Module 2
 C:\Windows\system32\imagehlp.dll
 Image Base: 0xfef60000  Image Size: 0x00017000
 File Size:  76800       File Time:  2010-11-21_092402
@@ -1280,9 +819,7 @@ Version:
    Product:    Microsoft® Windows® Operating System
    FileDesc:   Windows NT Image Helper
    FileVer:    6.1.7601.17514
-   ProdVer:    6.1.7601.17514
-
-Module 3
+   ProdVer:    6.1.7601.17514Module 3
 C:\Windows\system32\SSPICLI.DLL
 Image Base: 0xfd550000  Image Size: 0x00025000
 File Size:  136192      File Time:  2010-11-21_092410
@@ -1291,9 +828,7 @@ Version:
    Product:    Microsoft® Windows® Operating System
    FileDesc:   Security Support Provider Interface
    FileVer:    6.1.7601.17514
-   ProdVer:    6.1.7601.17514
-
-Module 4
+   ProdVer:    6.1.7601.17514Module 4
 C:\Windows\system32\WLDAP32.dll
 Image Base: 0xfdce0000  Image Size: 0x00052000
 File Size:  312832      File Time:  2010-11-21_092408
@@ -1302,9 +837,7 @@ Version:
    Product:    Операционная система Microsoft® Windows®
    FileDesc:   Win32 LDAP API DLL
    FileVer:    6.1.7601.17514
-   ProdVer:    6.1.7601.17514
-
-Module 5
+   ProdVer:    6.1.7601.17514Module 5
 C:\Windows\system32\iertutil.dll
 Image Base: 0xff410000  Image Size: 0x00259000
 File Size:  2444288     File Time:  2010-11-21_092354
@@ -1313,9 +846,7 @@ Version:
    Product:    Windows® Internet Explorer
    FileDesc:   Run time utility for Internet Explorer
    FileVer:    8.0.7601.17514
-   ProdVer:    8.0.7601.17514
-
-Module 6
+   ProdVer:    8.0.7601.17514Module 6
 C:\Users\Allexter\Documents\RustExperimental\steam_api64.dll
 Image Base: 0x5cba0000  Image Size: 0x0003f000
 File Size:  239392      File Time:  2017-01-12_215942
@@ -1324,9 +855,7 @@ Version:
    Product:    Steam Client API
    FileDesc:   Steam Client API
    FileVer:    3.62.82.82
-   ProdVer:    1.0.0.1
-
-Module 7
+   ProdVer:    1.0.0.1Module 7
 D:\Games\Steam\vstdlib_s64.dll
 Image Base: 0x66a20000  Image Size: 0x0006c000
 File Size:  349984      File Time:  2017-01-18_030946
@@ -1335,9 +864,7 @@ Version:
    Product:    Steam
    FileDesc:   vstdlib_ s.dll
    FileVer:    3.78.24.33
-   ProdVer:    3.0.0.1
-
-Module 8
+   ProdVer:    3.0.0.1Module 8
 D:\Games\Steam\tier0_s64.dll
 Image Base: 0x66a90000  Image Size: 0x0036d000
 File Size:  336672      File Time:  2017-01-18_030946
@@ -1346,9 +873,7 @@ Version:
    Product:     tier0_s Dynamic Link Library
    FileDesc:   tier0_s Dynamic Link Library
    FileVer:    3.78.24.33
-   ProdVer:    1.0.0.1
-
-Module 9
+   ProdVer:    1.0.0.1Module 9
 D:\Games\Steam\steamclient64.dll
 Image Base: 0x66e00000  Image Size: 0x00c9e000
 File Size:  13009472    File Time:  2017-01-18_030944
@@ -1357,9 +882,7 @@ Version:
    Product:    Steam
    FileDesc:   Steamclient.dll
    FileVer:    3.78.24.33
-   ProdVer:    3.0.0.1
-
-Module 10
+   ProdVer:    3.0.0.1Module 10
 C:\Windows\system32\ksuser.dll
 Image Base: 0x73e20000  Image Size: 0x00006000
 File Size:  5120        File Time:  2009-07-14_074114
@@ -1368,9 +891,7 @@ Version:
    Product:    Microsoft® Windows® Operating System
    FileDesc:   User CSA Library
    FileVer:    6.1.7600.16385
-   ProdVer:    6.1.7600.16385
-
-Module 11
+   ProdVer:    6.1.7600.16385Module 11
 C:\Windows\system32\USER32.dll
 Image Base: 0x77590000  Image Size: 0x000fa000
 File Size:  1008128     File Time:  2010-11-21_092410
@@ -1379,9 +900,7 @@ Version:
    Product:    Операционная система Microsoft® Windows®
    FileDesc:   Многопользовательская библиотека клиента USER API Windows
    FileVer:    6.1.7601.17514
-   ProdVer:    6.1.7601.17514
-
-Module 12
+   ProdVer:    6.1.7601.17514Module 12
 C:\Windows\system32\kernel32.dll
 Image Base: 0x77690000  Image Size: 0x0011f000
 File Size:  1161216     File Time:  2010-11-21_092408
@@ -1390,9 +909,7 @@ Version:
    Product:    Операционная система Microsoft® Windows®
    FileDesc:   Библиотека клиента Windows NT BASE API
    FileVer:    6.1.7601.17514
-   ProdVer:    6.1.7601.17514
-
-Module 13
+   ProdVer:    6.1.7601.17514Module 13
 C:\Windows\SYSTEM32\ntdll.dll
 Image Base: 0x777b0000  Image Size: 0x001a9000
 File Size:  1731936     File Time:  2010-11-21_092352
@@ -1401,9 +918,7 @@ Version:
    Product:    Операционная система Microsoft® Windows®
    FileDesc:   Системная библиотека NT
    FileVer:    6.1.7601.17514
-   ProdVer:    6.1.7601.17514
-
-Module 14
+   ProdVer:    6.1.7601.17514Module 14
 C:\Windows\system32\PSAPI.DLL
 Image Base: 0x77980000  Image Size: 0x00007000
 File Size:  9216        File Time:  2009-07-14_074154
@@ -1412,258 +927,114 @@ Version:
    Product:    Microsoft® Windows® Operating System
    FileDesc:   Process Status Helper
    FileVer:    6.1.7600.16385
-   ProdVer:    6.1.7600.16385
-
-
-== [end of error.log] ==
+   ProdVer:    6.1.7600.16385== [end of error.log] ==
 </pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Hider</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286151" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 18, 2017 at 7:16 PM">Jan 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286151" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286151/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286167" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Hider">
-	<aside>
-		
-			<div class="attribution type">Hider said:
-				
-					<a href="goto/post?id=286151#post-286151" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">After crashed server i got this error.log</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Hm... Interesting... It seems that for some reason server unable to read something from your hard drive. Try to reinstall server into the different folder(don&#039;t forget to save oxide folder and map) May be this could help. Overwise? I have no idea....
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286167" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 18, 2017 at 8:06 PM">Jan 18, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286167" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286167/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286255" class="message   " data-author="SilverlightPony">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="SilverlightPony" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">SilverlightPony</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Just started getting this problem myself.<br />
-<br />
-Server running on local machine (Win10).  2 players attempted join, one from local machine, one from LAN.  The latter causes the crash, but the former does not.<br />
-<br />
-Local machine specs:  <a href="https://dl.dropboxusercontent.com/u/1540965/temp/speccyspecs.PNG" target="_blank" class="externalLink  rel="nofollow">https://dl.dropboxusercontent.com/u/1540965/temp/speccyspecs.PNG</a><br />
-<br />
-Crash error.log:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Unity Player [version: Unity 5.4.4f1_5a3967d8c55d]
-
-KERNELBASE.dll caused an Access Violation (0xc0000005)
-  in module KERNELBASE.dll at 0033:16e97788.
-
-Error occurred at 2017-01-18_215632.
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Hider</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286151" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 18, 2017 at 7:16 PM">Jan 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286151" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286151/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286167" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Hider">
+                            <aside>
+                                <div class="attribution type">Hider said: <a href="#post-286151" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">After crashed server i got this error.log</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Hm... Interesting... It seems that for some reason server unable to read something from your hard drive. Try to reinstall server into the different folder(don&#039;t
+                        forget to save oxide folder and map) May be this could help. Overwise? I have no idea.... <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286167" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 18, 2017 at 8:06 PM">Jan 18, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286167" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286167/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286255" class="message" data-author="SilverlightPony">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="SilverlightPony" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">SilverlightPony</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Just started getting this problem myself.<br />
+                        <br /> Server running on local machine (Win10). 2 players attempted join, one from local machine, one from LAN. The latter causes the crash, but the former does not.<br />
+                        <br /> Local machine specs: <a href="https://dl.dropboxusercontent.com/u/1540965/temp/speccyspecs.PNG" target="_blank" class="externalLink  rel="
+                            nofollow">https://dl.dropboxusercontent.com/u/1540965/temp/speccyspecs.PNG</a><br />
+                        <br /> Crash error.log:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Unity Player [version: Unity 5.4.4f1_5a3967d8c55d]KERNELBASE.dll caused an Access Violation (0xc0000005)
+  in module KERNELBASE.dll at 0033:16e97788.Error occurred at 2017-01-18_215632.
 D:\Games\rustserver\RustDedicated.exe, run by silve.
 37% memory in use.
 32668 MB physical memory [20445 MB free].
 37532 MB paging file [19248 MB free].
 134217728 MB user address space [134215909 MB free].
-Read from location 66cf0000 caused an access violation.
-
-Context:
+Read from location 66cf0000 caused an access violation.Context:
 RDI:    0x5287d870  RSI: 0x5287ecf0  RAX:   0x2108d3fa
 RBX:    0x5287e800  RCX: 0x00000000  RDX:   0x02000002
 RIP:    0x16e97788  RBP: 0x5287d110  SegCs: 0x00000033
 EFlags: 0x00000206  RSP: 0x5287ca60  SegSs: 0x0000002b
 R8:    0x00000000  R9: 0x00001010  R10:   0x0000002f
 R11:    0x00000001  R12: 0x5287cbb8  R13:   0x00000000
-R14:    0x5287de88  R15: 0x00000000
-
-Bytes at CS:EIP:
-48 8b 8c 24 c0 00 00 00 48 33 cc e8 98 1a 06 00
-
-Stack:
+R14:    0x5287de88  R15: 0x00000000Bytes at CS:EIP:
+48 8b 8c 24 c0 00 00 00 48 33 cc e8 98 1a 06 00Stack:
 0x5287ca60: 00000000 00000000 5287e800 00000000 ...........R....
 0x5287ca70: 5287ecf0 00000000 5287d870 00000000 ...R....p..R....
 0x5287ca80: c0000005 00000000 00000000 00000000 ................
@@ -2175,9 +1546,7 @@ Stack:
 0x5287ea20: 00000000 00000000 00000000 00000000 ................
 0x5287ea30: 00000000 00000000 00000000 00000000 ................
 0x5287ea40: 00000000 00000000 00000000 00000000 ................
-0x5287ea50: 00000000 00000000 00000000 00000000 ................
-
-Module 1
+0x5287ea50: 00000000 00000000 00000000 00000000 ................Module 1
 C:\WINDOWS\SYSTEM32\WINMMBASE.dll
 Image Base: 0x01230000  Image Size: 0x0002b000
 File Size:  164264      File Time:  2016-07-16_064224
@@ -2186,9 +1555,7 @@ Version:
    Product:    Microsoft® Windows® Operating System
    FileDesc:   Base Multimedia Extension API DLL
    FileVer:    10.0.14393.0
-   ProdVer:    10.0.14393.0
-
-Module 2
+   ProdVer:    10.0.14393.0Module 2
 D:\Games\Steam\vstdlib_s64.dll
 Image Base: 0x1c2f0000  Image Size: 0x0006c000
 File Size:  349984      File Time:  2017-01-17_160946
@@ -2197,9 +1564,7 @@ Version:
    Product:    Steam
    FileDesc:   vstdlib_ s.dll
    FileVer:    3.78.24.33
-   ProdVer:    3.0.0.1
-
-Module 3
+   ProdVer:    3.0.0.1Module 3
 D:\Games\Steam\steamclient64.dll
 Image Base: 0x63fd0000  Image Size: 0x00c9e000
 File Size:  13009472    File Time:  2017-01-17_160944
@@ -2208,9 +1573,7 @@ Version:
    Product:    Steam
    FileDesc:   Steamclient.dll
    FileVer:    3.78.24.33
-   ProdVer:    3.0.0.1
-
-Module 4
+   ProdVer:    3.0.0.1Module 4
 D:\Games\Steam\tier0_s64.dll
 Image Base: 0x64c70000  Image Size: 0x0036d000
 File Size:  336672      File Time:  2017-01-17_160946
@@ -2219,9 +1582,7 @@ Version:
    Product:     tier0_s Dynamic Link Library
    FileDesc:   tier0_s Dynamic Link Library
    FileVer:    3.78.24.33
-   ProdVer:    1.0.0.1
-
-Module 5
+   ProdVer:    1.0.0.1Module 5
 D:\Games\rustserver\steam_api64.dll
 Image Base: 0x65580000  Image Size: 0x0003f000
 File Size:  239392      File Time:  2017-01-13_013408
@@ -2230,9 +1591,7 @@ Version:
    Product:    Steam Client API
    FileDesc:   Steam Client API
    FileVer:    3.62.82.82
-   ProdVer:    1.0.0.1
-
-Module 6
+   ProdVer:    1.0.0.1Module 6
 C:\Program Files\Bonjour\mdnsNSP.dll
 Image Base: 0x66980000  Image Size: 0x00026000
 File Size:  132968      File Time:  2011-08-30_220532
@@ -2241,515 +1600,221 @@ Version:
    Product:    Bonjour
    FileDesc:   Bonjour Namespace Provider
    FileVer:    3.0.0.10
-   ProdVer:    3.0.0.10
-
-
-== [end of error.log] ==</pre>
-</div>We were playing last night with no problems, and neither the server, active mods, nor client have had updates since then.  I did try running my update script on the server and reinstalling Oxide, as well as removing a couple of mods we weren&#039;t actually using, neither of which helped.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Jan 19, 2017 at 3:17 AM">Jan 19, 2017</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">SilverlightPony</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286255" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 19, 2017 at 3:10 AM">Jan 19, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286255" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286255/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-286290" class="message   " data-author="neO 13">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="neO 13" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">neO 13</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The same problem on the local machine. I tried to reinstall the server and run without oxide. Did not help.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">neO 13</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-286290" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 19, 2017 at 6:35 AM">Jan 19, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-286290" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286290/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-288560" class="message   " data-author="SilverlightPony">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="SilverlightPony" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">SilverlightPony</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Update:  Not sure whether it was updating the server or reinstalling one of the mods I&#039;d removed, but one of the two fixed the problem for me.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">SilverlightPony</a>,</span>
-					<a href="threads/server-crashing-when-players-connect.23101/#post-288560" title="Permalink" class="datePermalink"><span class="DateTime" title="Jan 24, 2017 at 11:07 PM">Jan 24, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-crashing-when-players-connect.23101/#post-288560" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/288560/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+   ProdVer:    3.0.0.10== [end of error.log] ==</pre>
+                        </div>We were playing last night with no problems, and neither the server, active mods, nor client have had updates since then. I did try running my update script on the server
+                        and reinstalling Oxide, as well as removing a couple of mods we weren&#039;t actually using, neither of which helped. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
-
-			</footer>
-		</div>
-	</div>
-</div>
-
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jan 19, 2017 at 3:17 AM">Jan 19, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">SilverlightPony</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286255" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 19, 2017 at 3:10 AM">Jan 19, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286255" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286255/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-286290" class="message" data-author="neO 13">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="neO 13" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">neO 13</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The same problem on the local machine. I tried to reinstall the server and run without oxide. Did not help. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">neO 13</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-286290" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 19, 2017 at 6:35 AM">Jan 19, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-286290" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/286290/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-288560" class="message" data-author="SilverlightPony">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="SilverlightPony" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">SilverlightPony</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Update: Not sure whether it was updating the server or reinstalling one of the mods I&#039;d removed, but one of
+                        the two fixed the problem for me. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">SilverlightPony</a>,</span>
+                        <a href="/threads/server-crashing-when-players-connect.23101/#post-288560" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jan 24, 2017 at 11:07 PM">Jan 24, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-crashing-when-players-connect.23101/#post-288560" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/288560/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548989484,
-		today: 1548979200,
-		todayDow: 5
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

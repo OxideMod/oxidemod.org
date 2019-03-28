@@ -1,532 +1,254 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar RunDeferred Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Saving and reading dictionaries and custom classes from config | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/" />
-	<meta name="description" content="Hello everyone!
-I've run into a strange problem - I can't proparly save and ready dictionaries and my own custom classes form the Config.
-Here is what..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/" />
-	<meta property="og:title" content="Saving and reading dictionaries and custom classes from config" />
-	<meta property="og:description" content="Hello everyone!
-I've run into a strange problem - I can't proparly save and ready dictionaries and my own custom classes form the Config.
-Here is what..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Saving and reading dictionaries and custom classes from config</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Saving and reading dictionaries and custom classes from config" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/">Saving and reading dictionaries and custom classes from config</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Vlad-00003</a>, <a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/"><span class="DateTime" title="Apr 14, 2017 at 6:56 PM">Apr 14, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-314956" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/">Saving and reading dictionaries and custom classes from config</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">Vlad-00003</a>, <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/"><span class="DateTime"
+                title="Apr 14, 2017 at 6:56 PM">Apr 14, 2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hello everyone!<br />
-I&#039;ve run into a strange problem - I can&#039;t proparly save and ready dictionaries and my own custom classes form the Config.<br />
-Here is what I&#039;m trying to do:<br />
-I have something like this:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
-        private Dictionary&lt;string, string&gt; dict1;
-        private Dictionary&lt;string, string&gt; dict2;</pre>
-</div>And what I wanted is to save it to the config and read it back.<br />
-This is the code I&#039;m using to get data in\out of config:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>private void GetConfig&lt;T&gt;(string Key, ref T var)
-
+<ol class="messageList" id="messageList">
+    <li id="post-314956" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello everyone!<br /> I&#039;ve run into a strange problem - I can&#039;t proparly save and ready
+                        dictionaries and my own custom classes form the Config.<br /> Here is what I&#039;m trying to do:<br /> I have something like this:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
+    private Dictionary&lt;string, string&gt; dict1;
+    private Dictionary&lt;string, string&gt; dict2;</pre>
+                        </div>And what I wanted is to save it to the config and read it back.<br /> This is the code I&#039;m using to get data in\out of config:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>private void GetConfig&lt;T&gt;(string Key, ref T var)        {
+        if (Config[Key] != null)
         {
-            if (Config[Key] != null)
-            {
-                var = (T)Convert.ChangeType(Config[Key], typeof(T));
-            }
-            Config[Key] = var;
-        }</pre>
-</div>Fill dicts with something and trying to get it to config, and I expect it to work:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+            var = (T)Convert.ChangeType(Config[Key], typeof(T));
+        }
+        Config[Key] = var;
+    }</pre>
+                        </div>Fill dicts with something and trying to get it to config, and I expect it to work:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
 private void LoadConfigValues()
 {
-     dict1 = new Dictionary&lt;string, string&gt;()
-     {
-          [&quot;Test1&quot;] = &quot;test1&quot;,
-          [&quot;Test2&quot;] = &quot;test2&quot;    
-     }
-     dict2 = new Dictionary&lt;string, string&gt;()
-     {
-          [&quot;Test3&quot;] = &quot;test3&quot;,
-          [&quot;Test4&quot;] = &quot;test4&quot;
-     }
-     GetConfig(&quot;Dictionary 1&quot;, ref dict1);
-     Getconfig(&quot;Dictionary 2&quot;, ref dict2);
-     SaveConfig();
+    dict1 = new Dictionary&lt;string, string&gt;()
+    {
+        [&quot;Test1&quot;] = &quot;test1&quot;,
+        [&quot;Test2&quot;] = &quot;test2&quot;    
+    }
+    dict2 = new Dictionary&lt;string, string&gt;()
+    {
+        [&quot;Test3&quot;] = &quot;test3&quot;,
+        [&quot;Test4&quot;] = &quot;test4&quot;
+    }
+    GetConfig(&quot;Dictionary 1&quot;, ref dict1);
+    Getconfig(&quot;Dictionary 2&quot;, ref dict2);
+    SaveConfig();
 }
 </pre>
-</div>But here comes an error- 
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>Failed to initialize plugin 'test v1.0.0' (InvalidCastException: Value is not a convertible object: System.Collections.Generic.Dictionary`2[System.String,System.Object] to System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]])</pre>
-</div>So the problem is - Config[Key] returns me not Dictionary&lt;string,string&gt;, but Dictionary&lt;string,object&gt;<br />
-How can I avoid it?<br />
-<br />
-The only solution I&#039;ve found so far is doing something creepy like that:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+                        </div>But here comes an error- <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Failed to initialize plugin 'test v1.0.0' (InvalidCastException: Value is not a convertible object: System.Collections.Generic.Dictionary`2[System.String,System.Object] to System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]])</pre>
+                        </div>So the problem is - Config[Key] returns me not Dictionary&lt;string,string&gt;, but Dictionary&lt;string,object&gt;<br /> How can I avoid it?<br />
+                        <br /> The only solution I&#039;ve found so far is doing something creepy like that:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
 private Dictionary&lt;string, string&gt; Dict1;
-private Dictionary&lt;string, string&gt; Dict2;
-
-private void LoadConfigValues()
+private Dictionary&lt;string, string&gt; Dict2;private void LoadConfigValues()
 {
-     Dictionary&lt;string, object&gt; dict1 = new Dictionary&lt;string, object&gt;()
-     {
-          [&quot;Test1&quot;] = &quot;test1&quot;,
-          [&quot;Test2&quot;] = &quot;test2&quot;    
-     }
-     Dictionary&lt;string, object&gt; dict2 = new Dictionary&lt;string, object&gt;()
-     {
-          [&quot;Test3&quot;] = &quot;test3&quot;,
-          [&quot;Test4&quot;] = &quot;test4&quot;
-     }
-     GetConfig(&quot;Dictionary 1&quot;, ref dict1);
-     Getconfig(&quot;Dictionary 2&quot;, ref dict2);
-     foreach(var item in dict1)
-     {
-          Dict1.Add(item.Key, item.Value.ToString());
-      }
-     foreach(var item in dict2)
-     {
-          Dict2.Add(item.Key, item.Value.ToString());
-     }
-     SaveConfig();
-
-}
+    Dictionary&lt;string, object&gt; dict1 = new Dictionary&lt;string, object&gt;()
+    {
+        [&quot;Test1&quot;] = &quot;test1&quot;,
+        [&quot;Test2&quot;] = &quot;test2&quot;    
+    }
+    Dictionary&lt;string, object&gt; dict2 = new Dictionary&lt;string, object&gt;()
+    {
+        [&quot;Test3&quot;] = &quot;test3&quot;,
+        [&quot;Test4&quot;] = &quot;test4&quot;
+    }
+    GetConfig(&quot;Dictionary 1&quot;, ref dict1);
+    Getconfig(&quot;Dictionary 2&quot;, ref dict2);
+    foreach(var item in dict1)
+    {
+        Dict1.Add(item.Key, item.Value.ToString());
+    }
+    foreach(var item in dict2)
+    {
+        Dict2.Add(item.Key, item.Value.ToString());
+    }
+    SaveConfig();}
 </pre>
-</div>And that&#039;s creepy.<br />
-<br />
-<br />
-<br />
-About classes - that&#039;s the over question.<br />
-Let&#039;s say I have a class:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>       class DnN
+                        </div>And that&#039;s creepy.<br />
+                        <br />
+                        <br />
+                        <br /> About classes - that&#039;s the over question.<br /> Let&#039;s say I have a class:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>       class DnN
+    {
+        public Dictionary&lt;string, object&gt; Day { get; set; }
+        public Dictionary&lt;string, object&gt; Night { get; set; }
+        public DnN()
         {
-            public Dictionary&lt;string, object&gt; Day { get; set; }
-            public Dictionary&lt;string, object&gt; Night { get; set; }
-            public DnN()
-            {
-                Day = new Dictionary&lt;string, object&gt;(); //Same problem as above, so this time I decided to just 
-                Night = new Dictionary&lt;string, object&gt;(); // Change Dictionaty&lt;string,float&gt; to &lt;string,object&gt;
-            }
-        }</pre>
-</div>Is there any way to store it?<br />
-[DOUBLEPOST=1492192679][/DOUBLEPOST]Also - if anyone would be able to tell me why this code works:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>private void GetConfig&lt;T&gt;(string Key, ref T var)
+            Day = new Dictionary&lt;string, object&gt;(); //Same problem as above, so this time I decided to just 
+            Night = new Dictionary&lt;string, object&gt;(); // Change Dictionaty&lt;string,float&gt; to &lt;string,object&gt;
+        }
+    }</pre>
+                        </div>Is there any way to store it?<br /> [DOUBLEPOST=1492192679][/DOUBLEPOST]Also - if anyone would be able to tell me why this code works:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>private void GetConfig&lt;T&gt;(string Key, ref T var)
+    {
+        if (Config[Key] != null)
         {
-            if (Config[Key] != null)
-            {
-                var = (T)Convert.ChangeType(Config[Key], typeof(T));
-            }
-            Config[Key] = var;
-        }</pre>
-</div>While this(just to be able to save config into the sub directories) gives me cast error:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>        private void GetConfig&lt;T&gt;(ref T value, params object[] args)
+            var = (T)Convert.ChangeType(Config[Key], typeof(T));
+        }
+        Config[Key] = var;
+    }</pre>
+                        </div>While this(just to be able to save config into the sub directories) gives me cast error:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        private void GetConfig&lt;T&gt;(ref T value, params object[] args)
+    {
+        List&lt;string&gt; stringArgs = (from arg in args select arg.ToString()).ToList&lt;string&gt;();
+        if (Config.Get(stringArgs.ToArray()) != null)
         {
-            List&lt;string&gt; stringArgs = (from arg in args select arg.ToString()).ToList&lt;string&gt;();
-            if (Config.Get(stringArgs.ToArray()) != null)
-            {
-                value = (T)Convert.ChangeType(Config.Get(stringArgs.ToArray()), typeof(T));
-            }
-            Config.Set(args, value);
-        }</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 14, 2017 at 6:56 PM">Apr 14, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/314956/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-343048" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Ooook.... for thoses who would got here - here is an example how to do so - classes.<br />
-So, here is an example of saving classes to the DynamicConfigFile:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+            value = (T)Convert.ChangeType(Config.Get(stringArgs.ToArray()), typeof(T));
+        }
+        Config.Set(args, value);
+    }</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Apr 14, 2017 at 6:56 PM">Apr 14, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/314956/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-343048" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ooook.... for thoses who would got here - here is an example how to do so - classes.<br /> So, here is an
+                        example of saving classes to the DynamicConfigFile:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
 using Newtonsoft.Json;
 //Code
 private PluginConfig config; //notice that my var starts from lower case. Config - in-build var of type DynamicConfigFile with the name of the plugin.
@@ -534,613 +256,318 @@ private PluginConfig config; //notice that my var starts from lower case. Config
 #region Config
 private class PluginConfig
 {
-  [JsonProperty(&quot;This is the text, that would be assossiated with the config line&quot;)]
-  public string Permission;
-  [JsonProperty(&quot;Is it working?&quot;)]
-  public bool IsIt;
-  [JsonProperty(&quot;Here is some description of this variable&quot;)]
-  public DealWithIt DoYou;
-  public static PluginConfig DefaultConfig()
-  {
-    Permission = &quot;coolplugin.use&quot;,
-    IsIt = true,
-    DoYou = new DealWithIt(){
-    {
-      Yeah = true,
-      Nope = false
-    }
-  };
+[JsonProperty(&quot;This is the text, that would be assossiated with the config line&quot;)]
+public string Permission;
+[JsonProperty(&quot;Is it working?&quot;)]
+public bool IsIt;
+[JsonProperty(&quot;Here is some description of this variable&quot;)]
+public DealWithIt DoYou;
+public static PluginConfig DefaultConfig()
+{
+Permission = &quot;coolplugin.use&quot;,
+IsIt = true,
+DoYou = new DealWithIt(){
+{
+    Yeah = true,
+    Nope = false
+}
+};
 }
 private class DealWithIt
 {  
-  [JsonProperty(&quot;Description of sub var 1&quot;)]
-  public bool Yeah;
-  [JsonProperty(&quot;Description of sub var 2&quot;)]
-  public bool Nope;
+[JsonProperty(&quot;Description of sub var 1&quot;)]
+public bool Yeah;
+[JsonProperty(&quot;Description of sub var 2&quot;)]
+public bool Nope;
 }
-#endregion
-
-#region Config init
+#endregion#region Config init
 protected override void LoadDefaultConfig()
 {
-  PrintWarning(&quot;Generating default config file&quot;);
-  config = PluginConfig.DefaultConfig();
-  //we don't have to save config to the file yet - due to override SaveConfig function
+PrintWarning(&quot;Generating default config file&quot;);
+config = PluginConfig.DefaultConfig();
+//we don't have to save config to the file yet - due to override SaveConfig function
 }
 protected override void LoadConfig()
 {
-  base.LoadConfig();
-  //we have loaded config file, now - reading it as the object and doing what we want wile loading config file.
-  config = Config.ReadObject&lt;PluginConfig&gt;();
-  permission.RegisterPermission(config.Permission, this);
+base.LoadConfig();
+//we have loaded config file, now - reading it as the object and doing what we want wile loading config file.
+config = Config.ReadObject&lt;PluginConfig&gt;();
+permission.RegisterPermission(config.Permission, this);
 }
 protected override void SaveConfig()
 {
-  //Using WriteObject to store out object to the file.
-  Config.WriteObject(config);
+//Using WriteObject to store out object to the file.
+Config.WriteObject(config);
 }
-#endregion
-
-</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343048" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 6, 2017 at 10:50 PM">Aug 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343048" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/343048/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-343059" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					If you want to save just a dictionary, or list, or any over build-in classes and objects - you can use this construction:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>private Dictionary&lt;string,List&lt;string&gt;&gt; mydict;
+#endregion</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343048" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Aug 6, 2017 at 10:50 PM">Aug 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343048" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/343048/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-343059" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> If you want to save just a dictionary, or list, or any over build-in classes and objects - you can use this
+                        construction:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>private Dictionary&lt;string,List&lt;string&gt;&gt; mydict;
 #region Config Initialization
 protected override void LoadDefaultConfig()
 {
-  PrintWarning(&quot;New config file created&quot;);
-  mydict = new Dictionary&lt;string,List&lt;string&gt;&gt;()
-  {
-    [&quot;string 1&quot;] = new List&lt;string&gt;()
-    {
-      &quot;substring 1_1&quot;,&quot;substring 1_2&quot;,&quot;substring 1_3&quot;
-    },
-    [&quot;string 2&quot;] = new List&lt;string&gt;()
-    {
-      &quot;substring 2_1&quot;,&quot;substring 2_2&quot;,&quot;substring 2_3&quot;
-    },
-  }
+PrintWarning(&quot;New config file created&quot;);
+mydict = new Dictionary&lt;string,List&lt;string&gt;&gt;()
+{
+[&quot;string 1&quot;] = new List&lt;string&gt;()
+{
+    &quot;substring 1_1&quot;,&quot;substring 1_2&quot;,&quot;substring 1_3&quot;
+},
+[&quot;string 2&quot;] = new List&lt;string&gt;()
+{
+    &quot;substring 2_1&quot;,&quot;substring 2_2&quot;,&quot;substring 2_3&quot;
+},
+}
 }
 protected override void LoadConfig()
 {
-  base.LoadConfig();
-  mydict = Config.ReadObject&lt;Dictionary&lt;string,List&lt;string&gt;&gt;&gt;();
-  foreach(var str in mydict.Keys)
-    permission.RegisterPermission(str, this);
+base.LoadConfig();
+mydict = Config.ReadObject&lt;Dictionary&lt;string,List&lt;string&gt;&gt;&gt;();
+foreach(var str in mydict.Keys)
+permission.RegisterPermission(str, this);
 }
 protected override void SaveConfig()
 {
-  Config.WriteObject(config);
+Config.WriteObject(config);
 }
 #endregion</pre>
-</div>For saving data you can use this:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>private Dictionary&lt;string, bool&gt; MyDict = new Dictionary&lt;string, bool&gt;();
+                        </div>For saving data you can use this:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>private Dictionary&lt;string, bool&gt; MyDict = new Dictionary&lt;string, bool&gt;();
 private void SaveData()
 {
-  Interface.Oxide.DataFileSystem.WriteObject(Title, MyDict);
+Interface.Oxide.DataFileSystem.WriteObject(Title, MyDict);
 }
 void LoadData()
 {
-  try
-  {
-    MyDict = Interface.Oxide.DataFileSystem.ReadObject&lt;Dictionary&lt;string, bool&gt;&gt;(Title);
-  }
-  catch (Exception ex)
-  {
-    PrintError($&quot;Failed to load data file (is the file corrupt?) ({ex.Message})&quot;);
-    MyDict = new Dictionary&lt;string, bool&gt;();
-  }
+try
+{
+MyDict = Interface.Oxide.DataFileSystem.ReadObject&lt;Dictionary&lt;string, bool&gt;&gt;(Title);
+}
+catch (Exception ex)
+{
+PrintError($&quot;Failed to load data file (is the file corrupt?) ({ex.Message})&quot;);
+MyDict = new Dictionary&lt;string, bool&gt;();
+}
 }</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343059" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 6, 2017 at 11:18 PM">Aug 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343059" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/343059/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-343061" class="message   " data-author="Vlad-00003">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Vlad-00003" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Vlad-00003</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hey, <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> , why my post is awaiting for the approval? there is no even a links in there....<br />
-Also - maybe you can add this to the docs? As well as the chat\console commands? Cos there is only covalence [Command] Listed there....<br />
-And JsonProperty - this is something not much people know =)<br />
-P.S. Ok, my mistake. link removed. Didn&#039;t notice it. This was just a copy-paste from one of my plugin)<br />
-P.P.S - I didn&#039;t see the thread tools for some reason, and can&#039;t put prefix on it, so...
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
-					<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343061" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 6, 2017 at 11:21 PM">Aug 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343061" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/343061/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
-
-			</footer>
-		</div>
-	</div>
-</div>
-
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343059" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Aug 6, 2017 at 11:18 PM">Aug 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343059" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/343059/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-343061" class="message" data-author="Vlad-00003">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Vlad-00003" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Vlad-00003</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hey, <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a> , why my
+                        post is awaiting for the approval? there is no even a links in there....<br /> Also - maybe you can add this to the docs? As well as the chat\console commands? Cos there is
+                        only covalence [Command] Listed there....<br /> And JsonProperty - this is something not much people know =)<br /> P.S. Ok, my mistake. link removed. Didn&#039;t notice it.
+                        This was just a copy-paste from one of my plugin)<br /> P.P.S - I didn&#039;t see the thread tools for some reason, and can&#039;t put prefix on it, so... <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Vlad-00003</a>,</span>
+                        <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343061" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Aug 6, 2017 at 11:21 PM">Aug 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/saving-and-reading-dictionaries-and-custom-classes-from-config.24953/#post-343061" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/343061/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548899018,
-		today: 1548892800,
-		todayDow: 4
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

@@ -1,117 +1,112 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>C#: BroadcastChat &#039;the name rust does not exist in the current context&#039; | Oxide</title>
+    <base href="" />
+    <title>Oxide - C#: BroadcastChat &#039;the name rust does not exist in the current context&#039;</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/" />
-    <meta name="description" content="I have tried to make an example plugin that checks authLevel and broadcasts a message.
-In python, lua and javascript, I can 'just' call the..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/" />
-    <meta property="og:title" content="C#: BroadcastChat &#039;the name rust does not exist in the current context&#039;" />
-    <meta property="og:description" content="I have tried to make an example plugin that checks authLevel and broadcasts a message.
-In python, lua and javascript, I can 'just' call the..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - C#: BroadcastChat &#039;the name rust does not exist in the current context&#039;" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/">C#: BroadcastChat &#039;the name rust does not exist in
-                                the current context&#039;</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">BasKoning</a>, <a
-                                href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/"><span class="DateTime" title="Apr 24, 2015 at 6:37 PM">Apr 24, 2015</span></a>.
-                        </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-82143" class="message   " data-author="BasKoning">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="BasKoning" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">BasKoning</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I have tried to make an example plugin that checks authLevel and broadcasts a message.<br />
-                                                In python, lua and javascript, I can &#039;just&#039; call the rust.BroadcastChat function, and it works.<br /> In c#, I get an error &#039;the name
-                                                rust does not exist in the current context&#039;<br />
-                                                <br /> I do know it is located in &#039;Oxide.Rust.Libraries.Rust.BroadcastChat()&#039; which in itself is &#039;part of&#039; Oxide.Ext.Rust..?<br />
-                                                <br /> I have tried several &#039;using&#039;, like &#039;using Oxide.Rust;&#039; and &#039;using Oxide.Ext.Rust&#039; but that did not work..<br /> So
-                                                how does one approach &#039;rust.BroadcastChat&#039; in c#?<br />
-                                                <br /> LuaAdminBroadcast.lua<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>PLUGIN.Title = &quot;LuaAdminBroadcast&quot;
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/">C#: BroadcastChat &#039;the name rust does not exist in the current
+            context&#039;</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">BasKoning</a>, <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/"><span class="DateTime"
+                title="Apr 24, 2015 at 6:37 PM">Apr 24, 2015</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-82143" class="message" data-author="BasKoning">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="BasKoning" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">BasKoning</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I have tried to make an example plugin that checks authLevel and broadcasts a message.<br /> In python, lua and
+                        javascript, I can &#039;just&#039; call the rust.BroadcastChat function, and it works.<br /> In c#, I get an error &#039;the name rust does not exist in the current
+                        context&#039;<br />
+                        <br /> I do know it is located in &#039;Oxide.Rust.Libraries.Rust.BroadcastChat()&#039; which in itself is &#039;part of&#039; Oxide.Ext.Rust..?<br />
+                        <br /> I have tried several &#039;using&#039;, like &#039;using Oxide.Rust;&#039; and &#039;using Oxide.Ext.Rust&#039; but that did not work..<br /> So how does one approach
+                        &#039;rust.BroadcastChat&#039; in c#?<br />
+                        <br /> LuaAdminBroadcast.lua<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>PLUGIN.Title = &quot;LuaAdminBroadcast&quot;
 PLUGIN.Author = &quot;Bas&quot;
 PLUGIN.Version = V(0, 1, 0)
 function PLUGIN:Init()
@@ -128,10 +123,10 @@ function PLUGIN:chat_broadcast(player, cmd, args)
         rust.BroadcastChat(&quot;LuaAdminBroadcast&quot;,msg)     
     end   
 end</pre>
-                                                </div>JsAdminBroadcast.js<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>var JsAdminBroadcast = {
+                        </div>JsAdminBroadcast.js<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>var JsAdminBroadcast = {
     Title : &quot;JsAdminBroadcast&quot;,
     Version : V(0, 1, 0),
     Author : &quot;Bas&quot;,
@@ -150,10 +145,10 @@ end</pre>
         }
     }
 }</pre>
-                                                </div>PyAdminBroadcast.py<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>class PyAdminBroadcast:
+                        </div>PyAdminBroadcast.py<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>class PyAdminBroadcast:
     def __init__(self):
         self.Title = 'PyAdminBroadcast'
         self.Version = V(0, 0, 1)
@@ -165,11 +160,11 @@ end</pre>
         if args:
             msg=msg+' '.join(args)
         rust.BroadcastChat(&quot;PyAdminBroadcast&quot;,msg)  </pre>
-                                                </div>These 3 above all work fine, but the c# one below gives the error:<br />
-                                                <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> CsAdminBroadcast.py<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>namespace Oxide.Plugins
+                        </div>These 3 above all work fine, but the c# one below gives the error:<br />
+                        <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> CsAdminBroadcast.py<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>namespace Oxide.Plugins
 {
     [Info(&quot;CsAdminBroadcast&quot;, &quot;Bas&quot;, &quot;0.1.0&quot;)]
     class CsAdminBroadcast : RustPlugin
@@ -188,396 +183,391 @@ end</pre>
         }           
     }
 }</pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">BasKoning</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="Apr 24, 2015 at 6:37 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82143/permalink">#1</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-82145" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <a href="https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.Rust/Libraries/Rust.cs#L81" target="_blank" class="externalLink">https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.Rust/Libraries/Rust.cs#L81</a>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82145" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Apr 24, 2015 at 6:40 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82145" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82145/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-82146" class="message   " data-author="Domestos">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Domestos" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Domestos</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <a href="https://github.com/OxideMod/Oxide/blob/6a392d55bd6b3486677747ba9bb43c4d76423f7e/Oxide.Ext.Rust/RustPlugin.cs#L156" target="_blank" class="externalLink  rel="
-                                                    nofollow">https://github.com/OxideMod/Oxide/b...c4d76423f7e/Oxide.Ext.Rust/RustPlugin.cs#L156</a>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Domestos</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82146" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Apr 24, 2015 at 6:41 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82146" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82146/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-82174" class="message   " data-author="BasKoning">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="BasKoning" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">BasKoning</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Yes, I know where they are, but I dont know how to approach them in c#<br />
-                                                <br /> using Oxide.Rust.Libraries;<br />
-                                                <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> using Rust;<br />
-                                                <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> So I tried calling Rust.BroadcastChat<br />
-                                                <i>&quot;BroadcastChat does not exist in Oxide.Rust</i>&quot;<br />
-                                                <br /> I just dont get it... (feels dumm) <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">BasKoning</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82174" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Apr 24, 2015 at 7:34 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82174" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82174/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-82177" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="BasKoning">
-                                                    <aside>
-                                                        <div class="attribution type">BasKoning said: <a href="goto/post?id=82174#post-82174" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Yes, I know where they are, but I dont know how to approach them in c#<br />
-                                                                <br /> using Oxide.Rust.Libraries;<br />
-                                                                <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> using Rust;<br />
-                                                                <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> So I tried calling Rust.BroadcastChat<br />
-                                                                <i>&quot;BroadcastChat does not exist in Oxide.Rust</i>&quot;<br />
-                                                                <br /> I just dont get it... (feels dumm)</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>The rust library is only there to make it easier for plugins written in JavaScript, Python and Lua. For C# there are a few helper methods that
-                                                can be called directly (PrintToChat, PrintToConsole, SendReply, ...) as you can see in the file on github linked by Domestos above your post. <div
-                                                    class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82177" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Apr 24, 2015 at 7:37 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82177" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82177/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-82189" class="message   " data-author="BasKoning">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="BasKoning" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">BasKoning</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ah ok, I see. So c# just cannot use them, and has to use equivalents.<br /> Thats ok, I
-                                                will use the equivalents:<br />
-                                                <br /> CsAdminBroadcast.cs<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>namespace Oxide.Plugins
-{
-    [Info(&quot;CsAdminBroadcast&quot;, &quot;Bas&quot;, &quot;0.1.0&quot;)]
-    class CsAdminBroadcast : RustPlugin
-    {
-        [ChatCommand(&quot;broadcastcs&quot;)]
-        void chat_broadcast(BasePlayer player, string cmd, string[] args) {
-            if (player.net.connection.authLevel &gt; 0) {
-                string name = &quot;CsAdminBroadcast&quot;;
-                string msg=&quot;Broadcast Message&quot;;
-                if (args.Length&gt;0) {
-                    foreach (string arg in args) {
-                        msg=msg+&quot; &quot;+arg;
-                    }                  
-                }
-                string userID = &quot;0&quot;;
-                PrintToChat(name+&quot; &quot;+msg, userID);
-            }
-        }          
-    }
-}</pre>
-                                                </div>I presumed this library would be exposed to all four supported languages. Does that not make more sense?<br /> Not that I really care, the
-                                                equivalents work just as well I guess.<br />
-                                                <br /> Tx all! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 25, 2015 at 8:29 AM">Apr 25, 2015</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">BasKoning</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82189" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Apr 24, 2015 at 7:52 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82189" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82189/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-82190" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="BasKoning">
-                                                    <aside>
-                                                        <div class="attribution type">BasKoning said: <a href="goto/post?id=82189#post-82189" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Ah ok, I see. So c# just cannot use them, and has to use equivalents.<br /> Thats ok, I will use the equivalents:<br />
-                                                                <br /> CsAdminBroadcast.cs<br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>namespace Oxide.Plugins
-{
-    [Info(&quot;CsAdminBroadcast&quot;, &quot;Bas&quot;, &quot;0.1.0&quot;)]
-    class CsAdminBroadcast : RustPlugin
-    {
-        [ChatCommand(&quot;broadcastcs&quot;)]
-        void chat_broadcast(BasePlayer player, string cmd, string[] args) {
-            if (player.net.connection.authLevel &gt; 0) {
-                string name = &quot;CsAdminBroadcast&quot;;
-                string msg=&quot;Broadcast Message&quot;;
-                if (args.Length&gt;0) {
-                    foreach (string arg in args) {
-                        msg=msg+&quot; &quot;+arg;
-                    }                  
-                }
-                string userID = &quot;0&quot;;
-                PrintToChat(name+&quot; &quot;+msg, userID);
-            }
-        }          
-    }
-}</pre>
-                                                                </div>I presumed this library would be exposed to all four supported languages. Does that not make more sense?<br /> Not that I really
-                                                                care, the equivalents work just as well I guess.<br />
-                                                                <br /> Tx all!
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Well, it is possible to use that library in C# plugins but it&#039;s just not required as that would require an additional imported namespace and
-                                                there is an alternate method for C# plugins available <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82190" title="Permalink" class="datePermalink"><span
-                                                        class="DateTime" title="Apr 24, 2015 at 7:59 PM">Apr 24, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82190" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/82190/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
                         </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">BasKoning</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="Apr 24, 2015 at 6:37 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82143/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-82145" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.Rust/Libraries/Rust.cs#L81" target="_blank"
+                            class="externalLink">https://github.com/OxideMod/Oxide/blob/master/Oxide.Ext.Rust/Libraries/Rust.cs#L81</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82145" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Apr 24, 2015 at 6:40 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82145" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82145/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-82146" class="message" data-author="Domestos">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Domestos" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Domestos</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="https://github.com/OxideMod/Oxide/blob/6a392d55bd6b3486677747ba9bb43c4d76423f7e/Oxide.Ext.Rust/RustPlugin.cs#L156" target="_blank" class="externalLink  rel="
+                            nofollow">https://github.com/OxideMod/Oxide/b...c4d76423f7e/Oxide.Ext.Rust/RustPlugin.cs#L156</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Domestos</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82146" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Apr 24, 2015 at 6:41 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82146" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82146/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-82174" class="message" data-author="BasKoning">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="BasKoning" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">BasKoning</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Yes, I know where they are, but I dont know how to approach them in c#<br />
+                        <br /> using Oxide.Rust.Libraries;<br />
+                        <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> using Rust;<br />
+                        <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> So I tried calling Rust.BroadcastChat<br />
+                        <i>&quot;BroadcastChat does not exist in Oxide.Rust</i>&quot;<br />
+                        <br /> I just dont get it... (feels dumm) <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">BasKoning</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82174" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Apr 24, 2015 at 7:34 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82174" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82174/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-82177" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="BasKoning">
+                            <aside>
+                                <div class="attribution type">BasKoning said: <a href="#post-82174" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yes, I know where they are, but I dont know how to approach them in c#<br />
+                                        <br /> using Oxide.Rust.Libraries;<br />
+                                        <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> using Rust;<br />
+                                        <i>&quot;the name &#039;rust&#039; does not exist in the current context&quot;</i><br /> So I tried calling Rust.BroadcastChat<br />
+                                        <i>&quot;BroadcastChat does not exist in Oxide.Rust</i>&quot;<br />
+                                        <br /> I just dont get it... (feels dumm)</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The rust library is only there to make it easier for plugins written in JavaScript, Python and Lua. For C# there are a few helper methods that can be called directly
+                        (PrintToChat, PrintToConsole, SendReply, ...) as you can see in the file on github linked by Domestos above your post. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82177" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Apr 24, 2015 at 7:37 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82177" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82177/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-82189" class="message" data-author="BasKoning">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="BasKoning" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">BasKoning</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Ah ok, I see. So c# just cannot use them, and has to use equivalents.<br /> Thats ok, I will use the
+                        equivalents:<br />
+                        <br /> CsAdminBroadcast.cs<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>namespace Oxide.Plugins
+{
+    [Info(&quot;CsAdminBroadcast&quot;, &quot;Bas&quot;, &quot;0.1.0&quot;)]
+    class CsAdminBroadcast : RustPlugin
+    {
+        [ChatCommand(&quot;broadcastcs&quot;)]
+        void chat_broadcast(BasePlayer player, string cmd, string[] args) {
+            if (player.net.connection.authLevel &gt; 0) {
+                string name = &quot;CsAdminBroadcast&quot;;
+                string msg=&quot;Broadcast Message&quot;;
+                if (args.Length&gt;0) {
+                    foreach (string arg in args) {
+                        msg=msg+&quot; &quot;+arg;
+                    }                  
+                }
+                string userID = &quot;0&quot;;
+                PrintToChat(name+&quot; &quot;+msg, userID);
+            }
+        }          
+    }
+}</pre>
+                        </div>I presumed this library would be exposed to all four supported languages. Does that not make more sense?<br /> Not that I really care, the equivalents work just as well I
+                        guess.<br />
+                        <br /> Tx all! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Apr 25, 2015 at 8:29 AM">Apr 25, 2015</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">BasKoning</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82189" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Apr 24, 2015 at 7:52 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82189" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82189/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-82190" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="BasKoning">
+                            <aside>
+                                <div class="attribution type">BasKoning said: <a href="#post-82189" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Ah ok, I see. So c# just cannot use them, and has to use equivalents.<br /> Thats ok, I will use the equivalents:<br />
+                                        <br /> CsAdminBroadcast.cs<br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>namespace Oxide.Plugins
+{
+    [Info(&quot;CsAdminBroadcast&quot;, &quot;Bas&quot;, &quot;0.1.0&quot;)]
+    class CsAdminBroadcast : RustPlugin
+    {
+        [ChatCommand(&quot;broadcastcs&quot;)]
+        void chat_broadcast(BasePlayer player, string cmd, string[] args) {
+            if (player.net.connection.authLevel &gt; 0) {
+                string name = &quot;CsAdminBroadcast&quot;;
+                string msg=&quot;Broadcast Message&quot;;
+                if (args.Length&gt;0) {
+                    foreach (string arg in args) {
+                        msg=msg+&quot; &quot;+arg;
+                    }                  
+                }
+                string userID = &quot;0&quot;;
+                PrintToChat(name+&quot; &quot;+msg, userID);
+            }
+        }          
+    }
+}</pre>
+                                        </div>I presumed this library would be exposed to all four supported languages. Does that not make more sense?<br /> Not that I really care, the equivalents
+                                        work just as well I guess.<br />
+                                        <br /> Tx all!
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Well, it is possible to use that library in C# plugins but it&#039;s just not required as that would require an additional imported namespace and there is an alternate
+                        method for C# plugins available <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82190" title="Permalink"
+                            class="datePermalink"><span class="DateTime" title="Apr 24, 2015 at 7:59 PM">Apr 24, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/c-broadcastchat-the-name-rust-does-not-exist-in-the-current-context.7958/#post-82190" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/82190/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -585,9 +575,9 @@ end</pre>
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548599375,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -605,18 +595,17 @@ end</pre>
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -642,8 +631,6 @@ end</pre>
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

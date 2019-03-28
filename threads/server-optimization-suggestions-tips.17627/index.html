@@ -1,1765 +1,725 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Server optimization suggestions/tips? | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/server-optimization-suggestions-tips.17627/" />
-	<meta name="description" content="So I wanted to find out if any of the regulars have any tips for a clean fast server. I've started getting max pop on a regular basis, and even though..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/server-optimization-suggestions-tips.17627/" />
-	<meta property="og:title" content="Server optimization suggestions/tips?" />
-	<meta property="og:description" content="So I wanted to find out if any of the regulars have any tips for a clean fast server. I've started getting max pop on a regular basis, and even though..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Server optimization suggestions/tips?</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Server optimization suggestions/tips?" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node23 node1 node104 node106 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/server-optimization-suggestions-tips.17627/">Server optimization suggestions/tips?</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">Diseasedcrow</a>, <a href="threads/server-optimization-suggestions-tips.17627/"><span class="DateTime" title="Apr 26, 2016 at 7:05 PM">Apr 26, 2016</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-200322" class="message   " data-author="Diseasedcrow">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Diseasedcrow" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Diseasedcrow</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/server-optimization-suggestions-tips.17627/">Server optimization suggestions/tips?</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">Diseasedcrow</a>, <a href="/threads/server-optimization-suggestions-tips.17627/"><span class="DateTime" title="Apr 26, 2016 at 7:05 PM">Apr 26,
+                2016</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					So I wanted to find out if any of the regulars have any tips for a clean fast server. I&#039;ve started getting max pop on a regular basis, and even though I have 32GB RAM and a 4790K running the server, I&#039;m still lagging, I know that rust doesn&#039;t use enough cores, I already purge unused bases and uncupboarded blocks, but I wanted to know if you guys have any tips?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Diseasedcrow</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 7:05 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200322/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200326" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Anything to reduce the entity count.<br />
-Slow down the server gameplay by reducing gathering rates, speed up decay, wipe more regularly, stuff like that.<br />
-I&#039;ve found that Rust&#039;s decay iteration can cause lots of lag and this is primarily caused by a huge entity count.<br />
-The same goes for the garbage collector iteration roughly every three minutes. This doesn&#039;t just slow down the server, it even halts it for a couple of seconds. Entities are one thing which affect this, a large player pop alone can increase the duration of the pause by a lot as well, though.<br />
-<br />
-I&#039;ve also noticed an incredible amount of page misses caused by Rust. Not sure if disabling swap actually helps here, I&#039;ve never tested it, but theoretically it should help a great deal with lag (only do this as long as you&#039;ve got lots of RAM left, though, because otherwise things will start to crash when your RAM limit is reached!).<br />
-<br />
-If you&#039;re using Windows, disable power saving mode. This can bump up your server performance by a good 20%.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200326" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 7:19 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200326" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200326/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200329" class="message   " data-author="Diseasedcrow">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Diseasedcrow" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Diseasedcrow</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Yeah I&#039;m running in High Performance Mode, I&#039;m not gunna be even close to 30% of my RAM which is why I bought that much, I don&#039;t really like tick mods which is why I purge at low pop times. I often find us getting to 260k Entities way before the week is over but I&#039;m reluctant to change the gather rate due to it being a risk to population.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Diseasedcrow</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200329" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 7:24 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200329" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200329/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200335" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Diseasedcrow">
-	<aside>
-		
-			<div class="attribution type">Diseasedcrow said:
-				
-					<a href="goto/post?id=200329#post-200329" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah I&#039;m running in High Performance Mode, I&#039;m not gunna be even close to 30% of my RAM which is why I bought that much, I don&#039;t really like tick mods which is why I purge at low pop times. I often find us getting to 260k Entities way before the week is over but I&#039;m reluctant to change the gather rate due to it being a risk to population.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I know that situation just too well.<br />
-Having a large playerbase on a fast-paced server is a pain.<br />
-Especially scheduling wipes is annoying. If you decide to wipe, people complain about the wipe, if you don&#039;t, player population decreases because people get bored since they quickly own everything due to the fast pace and/or people complain because of lag.<br />
-<br />
-I wish I could help you with this, but I didn&#039;t manage to find a proper solution to balance these issues either before the server population eventually died down.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200335" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 7:30 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200335" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200335/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200429" class="message   " data-author="Rusty">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Rusty" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Rusty</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					sqroot is right on the money, but, do we know if there is a way to stop those decay iterations? i am not sure if decay.scale stops those or if it still cycles and it just applies nothing.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Rusty</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200429" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 10:36 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200429" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200429/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200436" class="message   " data-author="RustyForest">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="RustyForest" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">RustyForest</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					thanks for posting your specs I almost was going to buy a overclocked server 4790k but yeah entities I hit over 200k in 2 days then server lags, already have it to restart twice a day. Ive lowered gather hasn&#039;t helped much because the amount of players coming in and out. AutoPurge doesn&#039;t start to help until Saturday night and by then its already over the lag limit <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">RustyForest</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200436" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 10:56 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200436" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200436/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200438" class="message   " data-author="Rusty">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Rusty" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Rusty</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The thing about AutoPurge and why i dont use it is because of clans, just because the clan member who built hasnt been around for a few days that doesnt mean the whole clan has to pay the price. (base gone)
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Rusty</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200438" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 10:59 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200438" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200438/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200439" class="message   " data-author="RustyForest">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="RustyForest" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">RustyForest</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Yeah we need someone to add clan support to it
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">RustyForest</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200439" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 11:01 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200439" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200439/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200455" class="message   " data-author="Rusty">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Rusty" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Rusty</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Still looking for answer tho, is there a way to fully stop Rust from cycling from entity to entity to apply decay??<br />
-[DOUBLEPOST=1461710867][/DOUBLEPOST]
-
-
-<div class="bbCodeBlock bbCodeQuote" data-author="RustyForest">
-	<aside>
-		
-			<div class="attribution type">RustyForest said:
-				
-					<a href="goto/post?id=200439#post-200439" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah we need someone to add clan support to it</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Have you had any issues with players RPC error cant connect because of sign artist?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Rusty</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200455" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 26, 2016 at 11:44 PM">Apr 26, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200455" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200455/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200853" class="message   " data-author="Diseasedcrow">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Diseasedcrow" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Diseasedcrow</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
-	<aside>
-		
-			<div class="attribution type">sqroot said:
-				
-					<a href="goto/post?id=200335#post-200335" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I know that situation just too well.<br />
-Having a large playerbase on a fast-paced server is a pain.<br />
-Especially scheduling wipes is annoying. If you decide to wipe, people complain about the wipe, if you don&#039;t, player population decreases because people get bored since they quickly own everything due to the fast pace and/or people complain because of lag.<br />
-<br />
-I wish I could help you with this, but I didn&#039;t manage to find a proper solution to balance these issues either before the server population eventually died down.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I wipe weekly, and everyone knows how it is so I don&#039;t get many complaints, with autopurge and a few other removing tools I do stay close to the limit but it works.<br />
-[DOUBLEPOST=1461850176][/DOUBLEPOST]I think we need to petition gary to do something about how many cores it uses. this isn&#039;t right, half our money is sitting there doing nothing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Diseasedcrow</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200853" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 28, 2016 at 2:28 PM">Apr 28, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200853" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200853/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200858" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Diseasedcrow">
-	<aside>
-		
-			<div class="attribution type">Diseasedcrow said:
-				
-					<a href="goto/post?id=200853#post-200853" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I wipe weekly, and everyone knows how it is so I don&#039;t get many complaints, with autopurge and a few other removing tools I do stay close to the limit but it works.<br />
-[DOUBLEPOST=1461850176][/DOUBLEPOST]I think we need to petition gary to do something about how many cores it uses. this isn&#039;t right, half our money is sitting there doing nothing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Rust uses what the Unity game engine has available, which I believe is now 2 cores.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200858" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 28, 2016 at 2:37 PM">Apr 28, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200858" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200858/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-200859" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Diseasedcrow">
-	<aside>
-		
-			<div class="attribution type">Diseasedcrow said:
-				
-					<a href="goto/post?id=200853#post-200853" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I wipe weekly, and everyone knows how it is so I don&#039;t get many complaints, with autopurge and a few other removing tools I do stay close to the limit but it works.<br />
-[DOUBLEPOST=1461850176][/DOUBLEPOST]I think we need to petition gary to do something about how many cores it uses. this isn&#039;t right, half our money is sitting there doing nothing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Scaling a single threaded application to be multithreaded is incredibly difficult.<br />
-There usually have to be parts that can largely run independently from each other, which I don&#039;t think is the case in many areas of the server.<br />
-Also, unity makes this even more difficult.<br />
-<br />
-
-
-
-<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=200858#post-200858" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Rust uses what the Unity game engine has available, which I believe is now 2 cores.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Yeah, but for the most part it still only uses a single core. They&#039;re doing some stuff on the second core, but most of the load is handled by the first core and when that one is at its limit the server will start throttling.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/server-optimization-suggestions-tips.17627/#post-200859" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 28, 2016 at 2:43 PM">Apr 28, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/server-optimization-suggestions-tips.17627/#post-200859" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200859/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-200322" class="message" data-author="Diseasedcrow">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Diseasedcrow" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Diseasedcrow</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> So I wanted to find out if any of the regulars have any tips for a clean fast server. I&#039;ve started getting
+                        max pop on a regular basis, and even though I have 32GB RAM and a 4790K running the server, I&#039;m still lagging, I know that rust doesn&#039;t use enough cores, I already
+                        purge unused bases and uncupboarded blocks, but I wanted to know if you guys have any tips? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Diseasedcrow</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 7:05 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/200322/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200326" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Anything to reduce the entity count.<br /> Slow down the server gameplay by reducing gathering rates, speed up
+                        decay, wipe more regularly, stuff like that.<br /> I&#039;ve found that Rust&#039;s decay iteration can cause lots of lag and this is primarily caused by a huge entity
+                        count.<br /> The same goes for the garbage collector iteration roughly every three minutes. This doesn&#039;t just slow down the server, it even halts it for a couple of
+                        seconds. Entities are one thing which affect this, a large player pop alone can increase the duration of the pause by a lot as well, though.<br />
+                        <br /> I&#039;ve also noticed an incredible amount of page misses caused by Rust. Not sure if disabling swap actually helps here, I&#039;ve never tested it, but theoretically
+                        it should help a great deal with lag (only do this as long as you&#039;ve got lots of RAM left, though, because otherwise things will start to crash when your RAM limit is
+                        reached!).<br />
+                        <br /> If you&#039;re using Windows, disable power saving mode. This can bump up your server performance by a good 20%. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200326" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 7:19 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200326" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200326/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200329" class="message" data-author="Diseasedcrow">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Diseasedcrow" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Diseasedcrow</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Yeah I&#039;m running in High Performance Mode, I&#039;m not gunna be even close to 30% of my RAM which is why I
+                        bought that much, I don&#039;t really like tick mods which is why I purge at low pop times. I often find us getting to 260k Entities way before the week is over but I&#039;m
+                        reluctant to change the gather rate due to it being a risk to population. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Diseasedcrow</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200329" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 7:24 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200329" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200329/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200335" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Diseasedcrow">
+                            <aside>
+                                <div class="attribution type">Diseasedcrow said: <a href="#post-200329" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah I&#039;m running in High Performance Mode, I&#039;m not gunna be even close to 30% of my RAM which is why I bought that much, I don&#039;t
+                                        really like tick mods which is why I purge at low pop times. I often find us getting to 260k Entities way before the week is over but I&#039;m reluctant to
+                                        change the gather rate due to it being a risk to population.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I know that situation just too well.<br /> Having a large playerbase on a fast-paced server is a pain.<br /> Especially scheduling wipes is annoying. If you decide to
+                        wipe, people complain about the wipe, if you don&#039;t, player population decreases because people get bored since they quickly own everything due to the fast pace and/or
+                        people complain because of lag.<br />
+                        <br /> I wish I could help you with this, but I didn&#039;t manage to find a proper solution to balance these issues either before the server population eventually died down.
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200335" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 7:30 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200335" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200335/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200429" class="message" data-author="Rusty">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Rusty" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Rusty</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> sqroot is right on the money, but, do we know if there is a way to stop those decay iterations? i am not sure if
+                        decay.scale stops those or if it still cycles and it just applies nothing. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Rusty</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200429" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 10:36 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200429" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200429/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200436" class="message" data-author="RustyForest">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="RustyForest" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">RustyForest</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> thanks for posting your specs I almost was going to buy a overclocked server 4790k but yeah entities I hit over
+                        200k in 2 days then server lags, already have it to restart twice a day. Ive lowered gather hasn&#039;t helped much because the amount of players coming in and out. AutoPurge
+                        doesn&#039;t start to help until Saturday night and by then its already over the lag limit <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8"
+                            alt=":D" title="Big Grin    :D" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">RustyForest</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200436" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 10:56 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200436" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200436/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200438" class="message" data-author="Rusty">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Rusty" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Rusty</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The thing about AutoPurge and why i dont use it is because of clans, just because the clan member who built hasnt
+                        been around for a few days that doesnt mean the whole clan has to pay the price. (base gone) <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Rusty</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200438" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 10:59 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200438" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200438/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200439" class="message" data-author="RustyForest">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="RustyForest" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">RustyForest</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Yeah we need someone to add clan support to it <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">RustyForest</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200439" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 11:01 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200439" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200439/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200455" class="message" data-author="Rusty">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Rusty" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Rusty</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Still looking for answer tho, is there a way to fully stop Rust from cycling from entity to entity to apply
+                        decay??<br /> [DOUBLEPOST=1461710867][/DOUBLEPOST] <div class="bbCodeBlock bbCodeQuote" data-author="RustyForest">
+                            <aside>
+                                <div class="attribution type">RustyForest said: <a href="#post-200439" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah we need someone to add clan support to it</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Have you had any issues with players RPC error cant connect because of sign artist? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Rusty</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200455" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 26, 2016 at 11:44 PM">Apr 26, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200455" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200455/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200853" class="message" data-author="Diseasedcrow">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Diseasedcrow" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Diseasedcrow</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
+                            <aside>
+                                <div class="attribution type">sqroot said: <a href="#post-200335" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I know that situation just too well.<br /> Having a large playerbase on a fast-paced server is a pain.<br /> Especially scheduling wipes is
+                                        annoying. If you decide to wipe, people complain about the wipe, if you don&#039;t, player population decreases because people get bored since they quickly own
+                                        everything due to the fast pace and/or people complain because of lag.<br />
+                                        <br /> I wish I could help you with this, but I didn&#039;t manage to find a proper solution to balance these issues either before the server population
+                                        eventually died down.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I wipe weekly, and everyone knows how it is so I don&#039;t get many complaints, with autopurge and a few other removing tools I do stay close to the limit but it
+                        works.<br /> [DOUBLEPOST=1461850176][/DOUBLEPOST]I think we need to petition gary to do something about how many cores it uses. this isn&#039;t right, half our money is sitting
+                        there doing nothing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Diseasedcrow</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200853" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 28, 2016 at 2:28 PM">Apr 28, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200853" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200853/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200858" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Diseasedcrow">
+                            <aside>
+                                <div class="attribution type">Diseasedcrow said: <a href="#post-200853" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I wipe weekly, and everyone knows how it is so I don&#039;t get many complaints, with autopurge and a few other removing tools I do stay close to
+                                        the limit but it works.<br /> [DOUBLEPOST=1461850176][/DOUBLEPOST]I think we need to petition gary to do something about how many cores it uses. this isn&#039;t
+                                        right, half our money is sitting there doing nothing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                                            title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Rust uses what the Unity game engine has available, which I believe is now 2 cores. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200858" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 28, 2016 at 2:37 PM">Apr 28, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200858" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200858/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-200859" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Diseasedcrow">
+                            <aside>
+                                <div class="attribution type">Diseasedcrow said: <a href="#post-200853" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I wipe weekly, and everyone knows how it is so I don&#039;t get many complaints, with autopurge and a few other removing tools I do stay close to
+                                        the limit but it works.<br /> [DOUBLEPOST=1461850176][/DOUBLEPOST]I think we need to petition gary to do something about how many cores it uses. this isn&#039;t
+                                        right, half our money is sitting there doing nothing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                                            title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Scaling a single threaded application to be multithreaded is incredibly difficult.<br /> There usually have to be parts that can largely run independently from each
+                        other, which I don&#039;t think is the case in many areas of the server.<br /> Also, unity makes this even more difficult.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-200858" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Rust uses what the Unity game engine has available, which I believe is now 2 cores.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Yeah, but for the most part it still only uses a single core. They&#039;re doing some stuff on the second core, but most of the load is handled by the first core and when
+                        that one is at its limit the server will start throttling. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/server-optimization-suggestions-tips.17627/#post-200859" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 28, 2016 at 2:43 PM">Apr 28, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/server-optimization-suggestions-tips.17627/#post-200859" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/200859/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1549032705,
-		today: 1548979200,
-		todayDow: 5
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

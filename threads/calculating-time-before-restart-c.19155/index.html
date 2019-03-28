@@ -1,128 +1,120 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Solved - Calculating time before restart? (C#) | Oxide</title>
+    <base href="" />
+    <title>Oxide - Solved - Calculating time before restart? (C#)</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/calculating-time-before-restart-c.19155/" />
-    <meta name="description" content="Hi!
-
-So in my GUIAnnouncements plugin I am currently in the process of adding a feature to support automatic restart announcements, via restart times..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/calculating-time-before-restart-c.19155/" />
-    <meta property="og:title" content="Solved - Calculating time before restart? (C#)" />
-    <meta property="og:description" content="Hi!
-
-So in my GUIAnnouncements plugin I am currently in the process of adding a feature to support automatic restart announcements, via restart times..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Calculating time before restart? (C#)" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/calculating-time-before-restart-c.19155/">Calculating time before restart? (C#)</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">JoeSheep</a>, <a
-                                href="threads/calculating-time-before-restart-c.19155/"><span class="DateTime" title="Jul 3, 2016 at 7:39 PM">Jul 3, 2016</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-221887" class="message   " data-author="JoeSheep">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">JoeSheep</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi!<br />
-                                                <br /> So in my GUIAnnouncements plugin I am currently in the process of adding a feature to support automatic restart announcements, via restart times
-                                                added to the config for example:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>    &quot;RestartTimes&quot;: [
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/calculating-time-before-restart-c.19155/">Calculating time before restart? (C#)</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">JoeSheep</a>, <a href="/threads/calculating-time-before-restart-c.19155/"><span class="DateTime" title="Jul 3, 2016 at 7:39 PM">Jul 3,
+                2016</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-221887" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hi!<br />
+                        <br /> So in my GUIAnnouncements plugin I am currently in the process of adding a feature to support automatic restart announcements, via restart times added to the config for
+                        example:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>    &quot;RestartTimes&quot;: [
       &quot;20:00:00&quot;,
       &quot;08:00:00&quot;
     ],</pre>
-                                                </div>What I will need to do is when the plugin is loaded, determine which of these times is next and store that in a global variable such as
-                                                &quot;DateTime NextRestart;&quot;. Then I need to check every second what the time is and how much time is left until the next restart and broadcast
-                                                the time left every hour until 30 minutes are left, 15 then 10 then 5 then 60 seconds at which point it will countdown from 60.<br />
-                                                <br /> The main obstacle I am having is figuring out which restart time is next and how to get the difference if say it is 21:00:00 and the next
-                                                restart is the next day at 08:00:00 (baring in mind the date is never specified so it would be viewed that, that time is already gone).<br />
-                                                <br /> This is kind of what I have worked up already on the path to working something out (some of it obviously won&#039;t work how I want it to):<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        DateTime NextRestart;
-
-        void OnServerInitialized() //Convert config restart time list into DateTime type then call RestartAnnouncements() to check every second what if anything needs to be announced
+                        </div>What I will need to do is when the plugin is loaded, determine which of these times is next and store that in a global variable such as &quot;DateTime NextRestart;&quot;.
+                        Then I need to check every second what the time is and how much time is left until the next restart and broadcast the time left every hour until 30 minutes are left, 15 then 10
+                        then 5 then 60 seconds at which point it will countdown from 60.<br />
+                        <br /> The main obstacle I am having is figuring out which restart time is next and how to get the difference if say it is 21:00:00 and the next restart is the next day at
+                        08:00:00 (baring in mind the date is never specified so it would be viewed that, that time is already gone).<br />
+                        <br /> This is kind of what I have worked up already on the path to working something out (some of it obviously won&#039;t work how I want it to):<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        DateTime NextRestart;        void OnServerInitialized() //Convert config restart time list into DateTime type then call RestartAnnouncements() to check every second what if anything needs to be announced
         {
             if (restartAnnouncements)
             {
@@ -134,9 +126,7 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
                         RestartAnnouncements();
                 });
             }
-        }
-
-        void CompareDateTimes(List&lt;DateTime&gt; DateTimes) //Find out when the next restart is here
+        }        void CompareDateTimes(List&lt;DateTime&gt; DateTimes) //Find out when the next restart is here
         {
             var e = DateTimes.GetEnumerator();
             for (var i = 0; e.MoveNext(); i++)
@@ -161,9 +151,7 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
                     return;
                 }
             }
-        }
-
-        void RestartAnnouncements() //Check here if anything needs to be announced, if so figure out what and announce it
+        }        void RestartAnnouncements() //Check here if anything needs to be announced, if so figure out what and announce it
         {
             if (NextRestart == DateTime.Now)
                 return;
@@ -193,59 +181,57 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
                 CreateMsgGUI(Lang(&quot;RestartAnnouncementsFormat&quot;).Replace(&quot;{time}&quot;, timeLeftString), bannerTintGrey, textWhite);
             }
         }</pre>
-                                                </div>So I was just wandering if any one might be able to help with coming up with a strategy of doing this? I&#039;m stuck at the moment trying to
-                                                figure out a way to work out what time is next and getting the time left.<br />
-                                                <br />
-                                                <br /> Cheers! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 3, 2016 at 8:44 PM">Jul 3, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 3, 2016 at 7:39 PM">Jul
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/221887/permalink">#1</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-221949" class="message   " data-author="DylanSMR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">DylanSMR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> In my timer plugin you can see a example of this. Every second it saves the time left on
-                                                the timer to a variable which is accessed throughout the plugin. When it detects it is at zero then it ends the timer. I simply just made a timer
-                                                repeat for (x) times(the amount of seconds)and had it repeat every second<br /> [DOUBLEPOST=1467586085][/DOUBLEPOST]So you could do like if
-                                                (currenttime) == 2100 do stuff. Or if that time is in a list then do stuff. So like if TimeAnnounce.Contains(time) then do stuff.<br />
-                                                [DOUBLEPOST=1467586605][/DOUBLEPOST]So for example:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        void Test()
+                        </div>So I was just wandering if any one might be able to help with coming up with a strategy of doing this? I&#039;m stuck at the moment trying to figure out a way to work out
+                        what time is next and getting the time left.<br />
+                        <br />
+                        <br /> Cheers! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Jul 3, 2016 at 8:44 PM">Jul 3, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 3, 2016 at 7:39 PM">Jul 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/221887/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-221949" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">In my timer plugin you can see a example of this. Every second it saves the time left on the timer to a variable
+                        which is accessed throughout the plugin. When it detects it is at zero then it ends the timer. I simply just made a timer repeat for (x) times(the amount of seconds)and had it
+                        repeat every second<br /> [DOUBLEPOST=1467586085][/DOUBLEPOST]So you could do like if (currenttime) == 2100 do stuff. Or if that time is in a list then do stuff. So like if
+                        TimeAnnounce.Contains(time) then do stuff.<br /> [DOUBLEPOST=1467586605][/DOUBLEPOST]So for example:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        void Test()
         {
             var time1 = 2100
             var time2 = 800
-            var activetime = 0;
-
-            timer.Repeat(1, 2400, () =&gt;
+            var activetime = 0;            timer.Repeat(1, 2400, () =&gt;
             {
                 activetime = activetime + 1;
                 if(activetime == 2100)
@@ -276,237 +262,232 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
                 }           
             });
         }</pre>
-                                                </div>Im sure there is a different way not using timer.repeat or timer.once however. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 3, 2016 at 11:57 PM">Jul 3, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-221949" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 3, 2016 at 11:46 PM">Jul
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-221949" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/221949/permalink">#2</a>
-                                        </div>
-                                    </div>
+                        </div>Im sure there is a different way not using timer.repeat or timer.once however. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Jul 3, 2016 at 11:57 PM">Jul 3, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-221949" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 3, 2016 at 11:46 PM">Jul 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-221949" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/221949/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222071" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Cheers <a href="https://oxidemod.org/members/53846/" class="username" data-user="53846, @DylanSMR">@DylanSMR</a>
+                        <br /> The thing is that the plugin may not always be loaded as well as reloaded during the server&#039;s up time. While I can quite easily just check every second if the time
+                        is currently one in the config then do a restart, figuring out the time left before a restart at any point is what I can&#039;t figure out. If I knew a way of checking how much
+                        time is left, then I could just create a bunch of if statements telling it what to do. So if I was to give the option to restart every xxx seconds in the config it would lead
+                        to inconsistent restart times where people prefer to have it restarting at a specific time, every time. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222071" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 9:13 AM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222071" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222071/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222179" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Ah ok. I think ive seen someone use the datetime.now.subtract. I cannot remember however have you checked the
+                        restart plugin that exists currently? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222179" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 3:30 PM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222179" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222179/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222223" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                            <aside>
+                                <div class="attribution type">DylanSMR said: <a href="#post-222179" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-222071" class="message   " data-author="JoeSheep">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">JoeSheep</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Ah ok. I think ive seen someone use the datetime.now.subtract. I cannot remember however have you checked the restart plugin that exists
+                                        currently?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I have looked at them, but unfortunately none do quite what I am looking for. DateTime.Now.Subtract is kind of what I thought could do it, but it doesn&#039;t help when
+                        the date it not known because then everything is viewed to be the same date.<br />
+                        <br /> I was just thinking of a strategy perhaps something like this:<br /> Find if a restart is later than current time, find difference then add to new DateTime TimeSpan
+                        dictionary.<br /> Find if a restart is earlier than current time and add 1 day, find difference then add to the new DateTime TimeSpan dictionary.<br /> Find the closest
+                        DateTime to DateTime.Now by finding the lowest TimeSpan value in dictionary.<br /> Use that DateTime key as NextRestartTime?<br />
+                        <br /> I should only have to do that once in OnServerInitialized then every second calculate the difference between the found NextRestartTime and announce how long is left when
+                        appropriate. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Jul 4, 2016 at 6:35 PM">Jul 4, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222223" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 6:16 PM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222223" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222223/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222229" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
+                            <aside>
+                                <div class="attribution type">JoeSheep said: <a href="#post-222223" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Cheers <a href="https://oxidemod.org/members/53846/" class="username" data-user="53846, @DylanSMR">@DylanSMR</a>
-                                                <br /> The thing is that the plugin may not always be loaded as well as reloaded during the server&#039;s up time. While I can quite easily just check
-                                                every second if the time is currently one in the config then do a restart, figuring out the time left before a restart at any point is what I
-                                                can&#039;t figure out. If I knew a way of checking how much time is left, then I could just create a bunch of if statements telling it what to do. So
-                                                if I was to give the option to restart every xxx seconds in the config it would lead to inconsistent restart times where people prefer to have it
-                                                restarting at a specific time, every time. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222071" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 9:13 AM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222071" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222071/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-222179" class="message   " data-author="DylanSMR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">DylanSMR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ah ok. I think ive seen someone use the datetime.now.subtract. I cannot remember however
-                                                have you checked the restart plugin that exists currently? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222179" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 3:30 PM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222179" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222179/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-222223" class="message   " data-author="JoeSheep">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">JoeSheep</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
-                                                    <aside>
-                                                        <div class="attribution type">DylanSMR said: <a href="goto/post?id=222179#post-222179" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Ah ok. I think ive seen someone use the datetime.now.subtract. I cannot remember however have you checked the restart
-                                                                plugin that exists currently?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>I have looked at them, but unfortunately none do quite what I am looking for. DateTime.Now.Subtract is kind of what I thought could do it, but it
-                                                doesn&#039;t help when the date it not known because then everything is viewed to be the same date.<br />
-                                                <br /> I was just thinking of a strategy perhaps something like this:<br /> Find if a restart is later than current time, find difference then add to
-                                                new DateTime TimeSpan dictionary.<br /> Find if a restart is earlier than current time and add 1 day, find difference then add to the new DateTime
-                                                TimeSpan dictionary.<br /> Find the closest DateTime to DateTime.Now by finding the lowest TimeSpan value in dictionary.<br /> Use that DateTime key as
-                                                NextRestartTime?<br />
-                                                <br /> I should only have to do that once in OnServerInitialized then every second calculate the difference between the found NextRestartTime and
-                                                announce how long is left when appropriate. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 4, 2016 at 6:35 PM">Jul 4, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222223" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 6:16 PM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222223" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222223/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-222229" class="message   " data-author="DylanSMR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">DylanSMR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
-                                                    <aside>
-                                                        <div class="attribution type">JoeSheep said: <a href="goto/post?id=222223#post-222223" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I have looked at them, but unfortunately none do quite what I am looking for. DateTime.Now.Subtract is kind of what I
-                                                                thought could do it, but it doesn&#039;t help when the date it not known because then everything is viewed to be the same date.<br />
-                                                                <br /> I was just thinking of a strategy perhaps something like this:<br /> Find if a restart is later than current time, find
-                                                                difference then add to new DateTime TimeSpan dictionary.<br /> Find if a restart is earlier than current time and add 1 day, find
-                                                                difference then add to new DateTime TimeSpan dictionary.<br /> Find the closest DateTime to DateTime.Now by finding the lowest TimeSpan
-                                                                value in dictionary.<br /> Use that as NextRestartTime?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Sounds like it could work. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222229" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 6:33 PM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222229" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222229/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-222237" class="message   " data-author="JoeSheep">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">JoeSheep</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Got it!<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>[Oxide] 19:18 [Info] [GUIAnnouncements] Next restart is at 5.08:00:00
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I have looked at them, but unfortunately none do quite what I am looking for. DateTime.Now.Subtract is kind of what I thought could do it, but it
+                                        doesn&#039;t help when the date it not known because then everything is viewed to be the same date.<br />
+                                        <br /> I was just thinking of a strategy perhaps something like this:<br /> Find if a restart is later than current time, find difference then add to new
+                                        DateTime TimeSpan dictionary.<br /> Find if a restart is earlier than current time and add 1 day, find difference then add to new DateTime TimeSpan
+                                        dictionary.<br /> Find the closest DateTime to DateTime.Now by finding the lowest TimeSpan value in dictionary.<br /> Use that as NextRestartTime?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Sounds like it could work. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222229" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 6:33 PM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222229" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222229/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222237" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Got it!<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[Oxide] 19:18 [Info] [GUIAnnouncements] Next restart is at 5.08:00:00
 [Oxide] 19:18 [Info] [GUIAnnouncements] Time until next restart is 12:41:15.0904160</pre>
-                                                </div><br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        private Dictionary&lt;DateTime, TimeSpan&gt; CalcNextRestartDict = new Dictionary&lt;DateTime, TimeSpan&gt;();
-        private DateTime NextRestart;
-
-        void GetNextRestart(List&lt;DateTime&gt; DateTimes)
+                        </div><br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        private Dictionary&lt;DateTime, TimeSpan&gt; CalcNextRestartDict = new Dictionary&lt;DateTime, TimeSpan&gt;();
+        private DateTime NextRestart;        void GetNextRestart(List&lt;DateTime&gt; DateTimes)
         {
             var e = DateTimes.GetEnumerator();
             for (var i = 0; e.MoveNext(); i++)
@@ -525,160 +506,155 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
             Puts(&quot;Time until next restart is &quot; + NextRestart.Subtract(DateTime.Now).ToString());
         }
 </pre>
-                                                </div>Once I get it all working I can clean up the code. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 4, 2016 at 7:39 PM">Jul 4, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222237" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 7:21 PM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222237" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222237/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-222241" class="message   " data-author="DylanSMR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">DylanSMR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Nice job! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222241" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 7:32 PM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222241" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222241/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-222303" class="message   " data-author="JoeSheep">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">JoeSheep</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Yep I got it working pretty darn spot on. With all the announcements happening only when
-                                                they are supposed to and with the correct time left. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-                                                <a href="threads/calculating-time-before-restart-c.19155/#post-222303" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 4, 2016 at 11:09 PM">Jul
-                                                        4, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calculating-time-before-restart-c.19155/#post-222303" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/222303/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                        </div>Once I get it all working I can clean up the code. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Jul 4, 2016 at 7:39 PM">Jul 4, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222237" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 7:21 PM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222237" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222237/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222241" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Nice job! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222241" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 7:32 PM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222241" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222241/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-222303" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Yep I got it working pretty darn spot on. With all the announcements happening only when they are supposed to and
+                        with the correct time left. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/calculating-time-before-restart-c.19155/#post-222303" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 4, 2016 at 11:09 PM">Jul 4, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calculating-time-before-restart-c.19155/#post-222303" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/222303/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -686,9 +662,9 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548597375,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -706,18 +682,17 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -743,8 +718,6 @@ So in my GUIAnnouncements plugin I am currently in the process of adding a featu
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

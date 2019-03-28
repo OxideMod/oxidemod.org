@@ -1,557 +1,552 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Dynamic networked rigidbodies? | Oxide</title>
+    <base href="" />
+    <title>Oxide - Dynamic networked rigidbodies?</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/dynamic-networked-rigidbodies.18853/" />
-    <meta name="description" content="I also have been working on getting basic networked entities into the SDK. At this point, you’ll be able to spawn dynamic objects into the world, but..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/dynamic-networked-rigidbodies.18853/" />
-    <meta property="og:title" content="Dynamic networked rigidbodies?" />
-    <meta property="og:description" content="I also have been working on getting basic networked entities into the SDK. At this point, you’ll be able to spawn dynamic objects into the world, but..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Dynamic networked rigidbodies?" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node82 node1 node104 node106 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/hurtworld-discussion.82/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Hurtworld Discussion</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/dynamic-networked-rigidbodies.18853/">Dynamic networked rigidbodies?</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/hurtworld-discussion.82/">Hurtworld Discussion</a>' started by <a class="username" dir="auto">ZTIF</a>,
-                            <a href="threads/dynamic-networked-rigidbodies.18853/"><span class="DateTime" title="Jun 20, 2016 at 2:14 PM">Jun 20, 2016</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/hurtworld-discussion.82/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Hurtworld Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <a href="/threads/dynamic-networked-rigidbodies.18853/">Dynamic networked rigidbodies?</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/hurtworld-discussion.82/">Hurtworld Discussion</a>' started by <a class="username"
+            dir="auto">ZTIF</a>, <a href="/threads/dynamic-networked-rigidbodies.18853/"><span class="DateTime" title="Jun 20, 2016 at 2:14 PM">Jun 20, 2016</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-217536" class="message" data-author="ZTIF">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="ZTIF" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">ZTIF</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="cowtrix">
+                            <aside>
+                                <div class="attribution type">cowtrix said: <a href="#post-0" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I also have been working on getting basic networked entities into the SDK. At this point, you’ll be able to spawn dynamic objects into the world,
+                                        but they won’t be able to do much. As of the next patch, we’ll probably support dynamic networked rigidbodies, which will sync their positions. Which, I reckon,
+                                        you’ll be able to do some very, very cool stuff with, when combined with Oxide! This will be a huge boon for those mods, which will now be able to use custom
+                                        assets as well as in-built ones.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div> - From the latest devblog #36<br />
+                        <br /> I don&#039;t really understand what Cowtrix is saying here, or what it means if he says what I think he is.<br /> After fridays patch we&#039;ll be able to spawn in
+                        <i>dynamic objects</i> - as in new objects to work as mineable Nodes? new AIs? Vehicles??<br />
+                        <br /> Would love a discussion and brainstorming around what this means, and what we can use it for.<br />
+                        <br /> Will these &quot;dynamic objects&quot; have to be spawned in trough custom made Oxide scripts? Meaning I can&#039;t make a level that has &quot;new minable nodes&quot;
+                        without either learning to Oxide script a function that spawns them in, or get someone here to do it for me.. And the server that runs a level will need to run oxide and the
+                        same script in order for the level to work as intended..?<br />
+                        <br /> PS. <a href="https://oxidemod.org/members/93398/" class="username" data-user="93398, @cowtrix">@cowtrix</a> How about getting a handfull of standard CS scripts added to
+                        the sdk? Some to control movement of objects, some to act as boolean triggers (aka player in area x play animation Y on object Z) - It should (as far as I understand) be a
+                        possible to do some sort of basic eventscripting from inside Unity without opening the core game up to be hackers paradise.<br /> Also I would love to be able to play sounds.
+                        And trigger them!<br />
+                        <br /> Last but not least, I&#039;m not sure I agree with you about &quot;I also brought all the other modding documentation up to date&quot;... I&#039;ve been messing around
+                        on making a map for several months now, and I&#039;m still so much just shooting in the dark when it comes to what is possible, what is not, and how to achieve different things
+                        that I think a PVE game level should be able to do.. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Jun 20, 2016 at 11:36 PM">Jun 20, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">ZTIF</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 20, 2016 at 2:14 PM">Jun 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/217536/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-217694" class="message" data-author="Smoke 6">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Smoke 6" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Smoke 6</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Do we have the hurtworld-sdk reddit sub? We really need a place to share . <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Smoke 6</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217694" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 21, 2016 at 2:59 AM">Jun 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217694" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/217694/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-217695" class="message" data-author="cowtrix">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="cowtrix" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">cowtrix</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hey ZTIF - simply put, it&#039;s the beginnings of these things. Mineable nodes, Ais, vehicles, are all networked
+                        objects.<br />
+                        <br /> A simple use case - say I wanted a mod that spawned purple cubes all around the map. This would be pretty much impossible right now. You can make a bunch of cubes on the
+                        server through scripting, sure, but the client has no way to know about them. It&#039;ll just run into invisible colliders. This is because both the server and the client need
+                        to<i> know and agree</i> what things are, where they are, and what state they are in. Now, with these changes, you can make a mod for the Steam Workshop with a purple cube in
+                        it, add that mod to a server, and you&#039;ll be able to spawn purple cubes all over the place. All clients will be able to see them and agree what/where they are, collision
+                        will work properly, and nice things like that.<br />
+                        <br /> Now, we&#039;re slowly rolling out more functionality with these networked objects, but we can&#039;t rush it. When we push something out into the SDK, we&#039;re
+                        locking ourselves into a structure for that thing. We need to start thinking about things like backwards compatibility, and that&#039;s a whole ordeal. We&#039;re happy to do
+                        that with Construction stuff right now, because that&#039;s a system that&#039;s close to maturity. But things like vehicles, machines, minerals, all stuff which might be
+                        fundamentally changing in the near future, well there&#039;s not much point putting that into the SDK yet.<br />
+                        <br /> The first functionality, which should be good to go for this next patch and is probably the most general one, is what you refer to. Networked rigidbodies! This is a
+                        <i>type</i> of networked object, not all networked objects that you make have to be rigidbodies. But Networked Rigidbodies will do stuff like sync their position between server
+                        and client, and simulate physics if you want them to. You can make a big stack of purple cubes in your server and have them fall over! <div class="messageTextEndMarker">&nbsp;
                         </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-217536" class="message   " data-author="ZTIF">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ZTIF" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">ZTIF</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">cowtrix</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217695" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 21, 2016 at 3:02 AM">Jun 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217695" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/217695/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-217697" class="message" data-author="Smoke 6">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Smoke 6" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Smoke 6</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hi cowtrix .So We can make a soccer ball and the players can kick it ,right ? <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Smoke 6</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217697" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 21, 2016 at 3:10 AM">Jun 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217697" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/217697/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-217700" class="message" data-author="cowtrix">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="cowtrix" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">cowtrix</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Smoke 6">
+                            <aside>
+                                <div class="attribution type">Smoke 6 said: <a href="#post-217697" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="cowtrix">
-                                                    <aside>
-                                                        <div class="attribution type">cowtrix said: <a href="goto/post?id=0#post-0" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I also have been working on getting basic networked entities into the SDK. At this point, you’ll be able to spawn
-                                                                dynamic objects into the world, but they won’t be able to do much. As of the next patch, we’ll probably support dynamic networked
-                                                                rigidbodies, which will sync their positions. Which, I reckon, you’ll be able to do some very, very cool stuff with, when combined with
-                                                                Oxide! This will be a huge boon for those mods, which will now be able to use custom assets as well as in-built ones.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div> - From the latest devblog #36<br />
-                                                <br /> I don&#039;t really understand what Cowtrix is saying here, or what it means if he says what I think he is.<br /> After fridays patch we&#039;ll
-                                                be able to spawn in <i>dynamic objects</i> - as in new objects to work as mineable Nodes? new AIs? Vehicles??<br />
-                                                <br /> Would love a discussion and brainstorming around what this means, and what we can use it for.<br />
-                                                <br /> Will these &quot;dynamic objects&quot; have to be spawned in trough custom made Oxide scripts? Meaning I can&#039;t make a level that has
-                                                &quot;new minable nodes&quot; without either learning to Oxide script a function that spawns them in, or get someone here to do it for me.. And the
-                                                server that runs a level will need to run oxide and the same script in order for the level to work as intended..?<br />
-                                                <br /> PS. <a href="https://oxidemod.org/members/93398/" class="username" data-user="93398, @cowtrix">@cowtrix</a> How about getting a handfull of
-                                                standard CS scripts added to the sdk? Some to control movement of objects, some to act as boolean triggers (aka player in area x play animation Y on
-                                                object Z) - It should (as far as I understand) be a possible to do some sort of basic eventscripting from inside Unity without opening the core game up
-                                                to be hackers paradise.<br /> Also I would love to be able to play sounds. And trigger them!<br />
-                                                <br /> Last but not least, I&#039;m not sure I agree with you about &quot;I also brought all the other modding documentation up to date&quot;...
-                                                I&#039;ve been messing around on making a map for several months now, and I&#039;m still so much just shooting in the dark when it comes to what is
-                                                possible, what is not, and how to achieve different things that I think a PVE game level should be able to do.. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jun 20, 2016 at 11:36 PM">Jun 20, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">ZTIF</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 20, 2016 at 2:14 PM">Jun
-                                                        20, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/217536/permalink">#1</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hi cowtrix .So We can make a soccer ball and the players can kick it ,right ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Heya smoke - something like that would be possible, yes. Not <i>quite</i> out of the box though, as players don&#039;t collide with rigidbodies. You&#039;d need to
+                        manually calculate if players are overlapping the ball, and apply a depenetration force yourself. Totally doable though. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">cowtrix</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217700" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 21, 2016 at 3:30 AM">Jun 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217700" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/217700/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-217749" class="message" data-author="ZTIF">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="ZTIF" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">ZTIF</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Thanks for clearing that somewhat up.. I guess the avalanche I&#039;ve been wanting is getting closer to reality
+                        on friday. But it still seems to me like you&#039;re taking the long approach to things, and I&#039;m sure with good reason. <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+                        <br /> I have some animated objects in the level I&#039;m currently building, as these object currently aren&#039;t <i>networked, </i>what you&#039;re saying is that players
+                        joining the level at different times will get an animation that is de-synced from one another (they&#039;ll all see it, but not see the exact same). And if this object has a
+                        collider, it&#039;ll be acting weird. apparently stopping players with invisible colliders, and letting others pass through what seems static.. So now what I&#039;ll have to do
+                        instead is create a steam mod with this object, then use oxide to place it in the map at the coordinates where I need them?? There can&#039;t just be a checkbox in unity saying
+                        &#039;shigisync&#039;..?<br />
+                        <br /> I can manage to &quot;spawn&quot; a bunch of snowball rigidbodies in c# that moves the player around and kills him after x force has been applied - if I&#039;m using a
+                        player object with rigidbody and a collider - and I don&#039;t have to worry about this whole networked deal, which is a bit confusing.<br /> Simply put, I am nowhere close to
+                        &quot;manually calculate if players are overlapping the ball, and apply a depenetration force yourself&quot;. So I hope you are going to give this out with a set of
+                        <b>presets</b> for the poor people like me, who just want to make cool things happen, but aren&#039;t hardcore coders.<br />
+                        <br /> What I want to be able to do as a mapmaker is a lot of the times to &#039;script events&#039; that either deals with player stats/or the enviroment.<br /> - Open doors
+                        if player is in area x / object y is destroyed / interacted with. (press E)<br /> - Give player x amount of item y, if player is in area z (and t time has passed since last
+                        time..)<br /> - Give player x amount of wetness, dryness, coldness, radiation, poison, etc if player is colliding with y<br /> - Make bridge/iceflake/ledge unstable if player
+                        is on it. (aka play animation on trigger, like the door)<br />
+                        <br /> ..And I really, really just want to be able to do this from within Unity. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Jun 21, 2016 at 8:49 AM">Jun 21, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">ZTIF</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217749" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 21, 2016 at 8:39 AM">Jun 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-217749" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/217749/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-218044" class="message" data-author="cowtrix">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="cowtrix" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">cowtrix</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="ZTIF">
+                            <aside>
+                                <div class="attribution type">ZTIF said: <a href="#post-217749" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-217694" class="message   " data-author="Smoke 6">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Smoke 6" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Smoke 6</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I have some animated objects in the level I&#039;m currently building, as these object currently aren&#039;t <i>networked, </i>what you&#039;re
+                                        saying is that players joining the level at different times will get an animation that is de-synced from one another (they&#039;ll all see it, but not see the
+                                        exact same). And if this object has a collider, it&#039;ll be acting weird. apparently stopping players with invisible colliders, and letting others pass
+                                        through what seems static.. So now what I&#039;ll have to do instead is create a steam mod with this object, then use oxide to place it in the map at the
+                                        coordinates where I need them?? There can&#039;t just be a checkbox in unity saying &#039;shigisync&#039;..?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Basically, yes, that is what you&#039;ll have to do. The thing about multiplayer games is that movement is not trivial. There&#039;s a whole lot of stuff happening under
+                        the hood whenever an object moves. It&#039;s all necessary - so things feel consistent, solid and predictable.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeQuote" data-author="ZTIF">
+                            <aside>
+                                <div class="attribution type">ZTIF said: <a href="#post-217749" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Do we have the hurtworld-sdk reddit sub? We really need a place to share . <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Smoke 6</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-217694" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 21, 2016 at 2:59 AM">Jun
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-217694" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/217694/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-217695" class="message   " data-author="cowtrix">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="cowtrix" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">cowtrix</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hey ZTIF - simply put, it&#039;s the beginnings of these things. Mineable nodes, Ais,
-                                                vehicles, are all networked objects.<br />
-                                                <br /> A simple use case - say I wanted a mod that spawned purple cubes all around the map. This would be pretty much impossible right now. You can
-                                                make a bunch of cubes on the server through scripting, sure, but the client has no way to know about them. It&#039;ll just run into invisible
-                                                colliders. This is because both the server and the client need to<i> know and agree</i> what things are, where they are, and what state they are in.
-                                                Now, with these changes, you can make a mod for the Steam Workshop with a purple cube in it, add that mod to a server, and you&#039;ll be able to spawn
-                                                purple cubes all over the place. All clients will be able to see them and agree what/where they are, collision will work properly, and nice things like
-                                                that.<br />
-                                                <br /> Now, we&#039;re slowly rolling out more functionality with these networked objects, but we can&#039;t rush it. When we push something out into
-                                                the SDK, we&#039;re locking ourselves into a structure for that thing. We need to start thinking about things like backwards compatibility, and
-                                                that&#039;s a whole ordeal. We&#039;re happy to do that with Construction stuff right now, because that&#039;s a system that&#039;s close to maturity.
-                                                But things like vehicles, machines, minerals, all stuff which might be fundamentally changing in the near future, well there&#039;s not much point
-                                                putting that into the SDK yet.<br />
-                                                <br /> The first functionality, which should be good to go for this next patch and is probably the most general one, is what you refer to. Networked
-                                                rigidbodies! This is a <i>type</i> of networked object, not all networked objects that you make have to be rigidbodies. But Networked Rigidbodies will
-                                                do stuff like sync their position between server and client, and simulate physics if you want them to. You can make a big stack of purple cubes in your
-                                                server and have them fall over! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">cowtrix</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-217695" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 21, 2016 at 3:02 AM">Jun
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-217695" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/217695/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-217697" class="message   " data-author="Smoke 6">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Smoke 6" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Smoke 6</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi cowtrix .So We can make a soccer ball and the players can kick it ,right ? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Smoke 6</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-217697" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 21, 2016 at 3:10 AM">Jun
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-217697" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/217697/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-217700" class="message   " data-author="cowtrix">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="cowtrix" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">cowtrix</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Smoke 6">
-                                                    <aside>
-                                                        <div class="attribution type">Smoke 6 said: <a href="goto/post?id=217697#post-217697" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Hi cowtrix .So We can make a soccer ball and the players can kick it ,right ?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Heya smoke - something like that would be possible, yes. Not <i>quite</i> out of the box though, as players don&#039;t collide with rigidbodies.
-                                                You&#039;d need to manually calculate if players are overlapping the ball, and apply a depenetration force yourself. Totally doable though. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">cowtrix</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-217700" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 21, 2016 at 3:30 AM">Jun
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-217700" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/217700/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-217749" class="message   " data-author="ZTIF">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ZTIF" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">ZTIF</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thanks for clearing that somewhat up.. I guess the avalanche I&#039;ve been wanting is
-                                                getting closer to reality on friday. But it still seems to me like you&#039;re taking the long approach to things, and I&#039;m sure with good reason.
-                                                <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-                                                <br /> I have some animated objects in the level I&#039;m currently building, as these object currently aren&#039;t <i>networked, </i>what you&#039;re
-                                                saying is that players joining the level at different times will get an animation that is de-synced from one another (they&#039;ll all see it, but not
-                                                see the exact same). And if this object has a collider, it&#039;ll be acting weird. apparently stopping players with invisible colliders, and letting
-                                                others pass through what seems static.. So now what I&#039;ll have to do instead is create a steam mod with this object, then use oxide to place it in
-                                                the map at the coordinates where I need them?? There can&#039;t just be a checkbox in unity saying &#039;shigisync&#039;..?<br />
-                                                <br /> I can manage to &quot;spawn&quot; a bunch of snowball rigidbodies in c# that moves the player around and kills him after x force has been
-                                                applied - if I&#039;m using a player object with rigidbody and a collider - and I don&#039;t have to worry about this whole networked deal, which is a
-                                                bit confusing.<br /> Simply put, I am nowhere close to &quot;manually calculate if players are overlapping the ball, and apply a depenetration force
-                                                yourself&quot;. So I hope you are going to give this out with a set of <b>presets</b> for the poor people like me, who just want to make cool things
-                                                happen, but aren&#039;t hardcore coders.<br />
-                                                <br /> What I want to be able to do as a mapmaker is a lot of the times to &#039;script events&#039; that either deals with player stats/or the
-                                                enviroment.<br /> - Open doors if player is in area x / object y is destroyed / interacted with. (press E)<br /> - Give player x amount of item y, if
-                                                player is in area z (and t time has passed since last time..)<br /> - Give player x amount of wetness, dryness, coldness, radiation, poison, etc if
-                                                player is colliding with y<br /> - Make bridge/iceflake/ledge unstable if player is on it. (aka play animation on trigger, like the door)<br />
-                                                <br /> ..And I really, really just want to be able to do this from within Unity. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jun 21, 2016 at 8:49 AM">Jun 21, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">ZTIF</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-217749" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 21, 2016 at 8:39 AM">Jun
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-217749" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/217749/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-218044" class="message   " data-author="cowtrix">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="cowtrix" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">cowtrix</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="ZTIF">
-                                                    <aside>
-                                                        <div class="attribution type">ZTIF said: <a href="goto/post?id=217749#post-217749" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I have some animated objects in the level I&#039;m currently building, as these object currently aren&#039;t <i>networked,
-                                                                </i>what you&#039;re saying is that players joining the level at different times will get an animation that is de-synced from one
-                                                                another (they&#039;ll all see it, but not see the exact same). And if this object has a collider, it&#039;ll be acting weird.
-                                                                apparently stopping players with invisible colliders, and letting others pass through what seems static.. So now what I&#039;ll have to
-                                                                do instead is create a steam mod with this object, then use oxide to place it in the map at the coordinates where I need them?? There
-                                                                can&#039;t just be a checkbox in unity saying &#039;shigisync&#039;..?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Basically, yes, that is what you&#039;ll have to do. The thing about multiplayer games is that movement is not trivial. There&#039;s a whole lot
-                                                of stuff happening under the hood whenever an object moves. It&#039;s all necessary - so things feel consistent, solid and predictable.<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="ZTIF">
-                                                    <aside>
-                                                        <div class="attribution type">ZTIF said: <a href="goto/post?id=217749#post-217749" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I can manage to &quot;spawn&quot; a bunch of snowball rigidbodies in c# that moves the player around and kills him after
-                                                                x force has been applied - if I&#039;m using a player object with rigidbody and a collider - and I don&#039;t have to worry about this
-                                                                whole networked deal, which is a bit confusing.<br /> Simply put, I am nowhere close to &quot;manually calculate if players are
-                                                                overlapping the ball, and apply a depenetration force yourself&quot;. So I hope you are going to give this out with a set of <b>presets</b>
-                                                                for the poor people like me, who just want to make cool things happen, but aren&#039;t hardcore coders.<br />
-                                                                <br /> What I want to be able to do as a mapmaker is a lot of the times to &#039;script events&#039; that either deals with player
-                                                                stats/or the enviroment.<br /> - Open doors if player is in area x / object y is destroyed / interacted with. (press E)<br /> - Give
-                                                                player x amount of item y, if player is in area z (and t time has passed since last time..)<br /> - Give player x amount of wetness,
-                                                                dryness, coldness, radiation, poison, etc if player is colliding with y<br /> - Make bridge/iceflake/ledge unstable if player is on it.
-                                                                (aka play animation on trigger, like the door)<br />
-                                                                <br /> ..And I really, really just want to be able to do this from within Unity.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>While we are going to try and make the SDK as easy to use as possible, we&#039;re not hand holding. It&#039;s much easier and better that people
-                                                learn some coding, than we try and cater with prebuilt stuff to every possible use case. I would call the coding required for any of this to be
-                                                beginner to intermediate, we are definitely no where near &#039;hardcore&#039; land. All items on your list are entirely possible, and not particularly
-                                                difficult, but will require some learning to code. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">cowtrix</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-218044" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 22, 2016 at 6:37 AM">Jun
-                                                        22, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-218044" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/218044/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-218122" class="message   " data-author="ZTIF">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ZTIF" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">ZTIF</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> My two cents are that you&#039;ll get better levels on steam if you keep a few things in
-                                                mind.. For you at Bankroll making a level is a shared project - you have different people to do textures, models and code. You are all good at
-                                                different things. For us it&#039;ll primarily be a solo thing, and we can&#039;t be expected to be good at all the aspects, so having the tools ready
-                                                for some of the (for you) basic coding-things would enable a person who&#039;s more visually oriented to still create a level with some basic
-                                                interesting events happening. You shouldn&#039;t expect or hope that every curious or creative community member has the time or skillsets required to
-                                                spend weeks learning C# and .Net to just open a door in his level. And at least at this point where you don&#039;t really have an established community
-                                                to help itself out - some handholding should be expected unless you want to flood the workshop with more terrible levels that&#039;ll actually hurt the
-                                                game.<br />
-                                                <br /> I&#039;m a photographer, I really enjoy setting up a theme for a level. I&#039;m happy to sit in photoshop, and have even learned a bit of
-                                                modelling so far. I&#039;m not really fond of code though, I accept it as a necessary evil that I sometimes have to go through in order to push
-                                                boundaries idea wise. But I don&#039;t want to pain myself through it to do even the most basic of stuff.. Prebuilt eventhandlers to do the things I
-                                                listed in the previous post should give <i>everyone</i> the tools to make pretty interactive and exciting levels, even us that has to spend three days
-                                                just making a computer say &quot;hello world&quot; because we have to learn a brand new language to do so.<br /> A decent library of different default
-                                                materials and textures packed into the sdk will make sure the scriptkids who do miracles with variables, but can&#039;t draw a straight line in
-                                                ms.paint can make levels that still<i> look and feel</i> like hurtworld. <br /> ..And if you top it off by making a system that can create LOD groups
-                                                and set up object culling for us, man.. You&#039;ll have some great looking, exciting AND well running optimized levels flooding the Workshop in no
-                                                time! <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> <br />
-                                                <br /> Kind Regards, <br /> Jack-of-all-trades-master-of-none <br />
-                                                <br />
-                                                <br /> PS. <br /> I&#039;m currently spending my nights now testing out the two effect-zone scripts in the sdk - trying to figure out how they work,
-                                                what they do and what the hell equilibrium coefficient means.. Not to mention which of the 270 different effect-types actually work. (For every build,
-                                                windows boot and ftp upload takes about 2-2.5 hours..) You have this knowledge already, making a chapter about it in the gamepedia might take you
-                                                thirty minutes.. And will save every new modder that gets into this hours of learning it first hand. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">ZTIF</a>,</span>
-                                                <a href="threads/dynamic-networked-rigidbodies.18853/#post-218122" title="Permalink" class="datePermalink"><span class="DateTime" title="Jun 22, 2016 at 2:03 PM">Jun
-                                                        22, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/dynamic-networked-rigidbodies.18853/#post-218122" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/218122/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I can manage to &quot;spawn&quot; a bunch of snowball rigidbodies in c# that moves the player around and kills him after x force has been applied
+                                        - if I&#039;m using a player object with rigidbody and a collider - and I don&#039;t have to worry about this whole networked deal, which is a bit
+                                        confusing.<br /> Simply put, I am nowhere close to &quot;manually calculate if players are overlapping the ball, and apply a depenetration force yourself&quot;.
+                                        So I hope you are going to give this out with a set of <b>presets</b> for the poor people like me, who just want to make cool things happen, but aren&#039;t
+                                        hardcore coders.<br />
+                                        <br /> What I want to be able to do as a mapmaker is a lot of the times to &#039;script events&#039; that either deals with player stats/or the
+                                        enviroment.<br /> - Open doors if player is in area x / object y is destroyed / interacted with. (press E)<br /> - Give player x amount of item y, if player is
+                                        in area z (and t time has passed since last time..)<br /> - Give player x amount of wetness, dryness, coldness, radiation, poison, etc if player is colliding
+                                        with y<br /> - Make bridge/iceflake/ledge unstable if player is on it. (aka play animation on trigger, like the door)<br />
+                                        <br /> ..And I really, really just want to be able to do this from within Unity.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>While we are going to try and make the SDK as easy to use as possible, we&#039;re not hand holding. It&#039;s much easier and better that people learn some coding, than
+                        we try and cater with prebuilt stuff to every possible use case. I would call the coding required for any of this to be beginner to intermediate, we are definitely no where
+                        near &#039;hardcore&#039; land. All items on your list are entirely possible, and not particularly difficult, but will require some learning to code. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">cowtrix</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-218044" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 22, 2016 at 6:37 AM">Jun 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-218044" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/218044/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-218122" class="message" data-author="ZTIF">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="ZTIF" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">ZTIF</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">My two cents are that you&#039;ll get better levels on steam if you keep a few things in mind.. For you at
+                        Bankroll making a level is a shared project - you have different people to do textures, models and code. You are all good at different things. For us it&#039;ll primarily be a
+                        solo thing, and we can&#039;t be expected to be good at all the aspects, so having the tools ready for some of the (for you) basic coding-things would enable a person
+                        who&#039;s more visually oriented to still create a level with some basic interesting events happening. You shouldn&#039;t expect or hope that every curious or creative
+                        community member has the time or skillsets required to spend weeks learning C# and .Net to just open a door in his level. And at least at this point where you don&#039;t really
+                        have an established community to help itself out - some handholding should be expected unless you want to flood the workshop with more terrible levels that&#039;ll actually
+                        hurt the game.<br />
+                        <br /> I&#039;m a photographer, I really enjoy setting up a theme for a level. I&#039;m happy to sit in photoshop, and have even learned a bit of modelling so far. I&#039;m not
+                        really fond of code though, I accept it as a necessary evil that I sometimes have to go through in order to push boundaries idea wise. But I don&#039;t want to pain myself
+                        through it to do even the most basic of stuff.. Prebuilt eventhandlers to do the things I listed in the previous post should give <i>everyone</i> the tools to make pretty
+                        interactive and exciting levels, even us that has to spend three days just making a computer say &quot;hello world&quot; because we have to learn a brand new language to do
+                        so.<br /> A decent library of different default materials and textures packed into the sdk will make sure the scriptkids who do miracles with variables, but can&#039;t draw a
+                        straight line in ms.paint can make levels that still<i> look and feel</i> like hurtworld. <br /> ..And if you top it off by making a system that can create LOD groups and set
+                        up object culling for us, man.. You&#039;ll have some great looking, exciting AND well running optimized levels flooding the Workshop in no time! <img
+                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> <br />
+                        <br /> Kind Regards, <br /> Jack-of-all-trades-master-of-none <br />
+                        <br />
+                        <br /> PS. <br /> I&#039;m currently spending my nights now testing out the two effect-zone scripts in the sdk - trying to figure out how they work, what they do and what the
+                        hell equilibrium coefficient means.. Not to mention which of the 270 different effect-types actually work. (For every build, windows boot and ftp upload takes about 2-2.5
+                        hours..) You have this knowledge already, making a chapter about it in the gamepedia might take you thirty minutes.. And will save every new modder that gets into this hours of
+                        learning it first hand. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">ZTIF</a>,</span>
+                        <a href="/threads/dynamic-networked-rigidbodies.18853/#post-218122" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jun 22, 2016 at 2:03 PM">Jun 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/dynamic-networked-rigidbodies.18853/#post-218122" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/218122/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -559,9 +554,9 @@
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548548857,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -579,18 +574,17 @@
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -616,8 +610,6 @@
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

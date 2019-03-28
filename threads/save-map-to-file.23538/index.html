@@ -1,1108 +1,423 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Rust - Save map to file | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/save-map-to-file.23538/" />
-	<meta name="description" content="I would like to make a plugin that saves the in game map as a png file. Is the code for generating the in game map client side? Has anyone tried this?..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/save-map-to-file.23538/" />
-	<meta property="og:title" content="Rust - Save map to file" />
-	<meta property="og:description" content="I would like to make a plugin that saves the in game map as a png file. Is the code for generating the in game map client side? Has anyone tried this?..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Rust - Save map to file</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Rust - Save map to file" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node10 node1 node104 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Requests</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixRed">Rust</span> <a href="https://oxidemod.org/threads/save-map-to-file.23538/">Save map to file</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">Zhahaman2001</a>, <a href="threads/save-map-to-file.23538/"><span class="DateTime" title="Feb 5, 2017 at 9:17 AM">Feb 5, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Requests</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-293673" class="message   " data-author="Zhahaman2001">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zhahaman2001" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Zhahaman2001</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixRed">Rust</span> <a href="/threads/save-map-to-file.23538/">Save map to file</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username"
+            dir="auto">Zhahaman2001</a>, <a href="/threads/save-map-to-file.23538/"><span class="DateTime" title="Feb 5, 2017 at 9:17 AM">Feb 5, 2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I would like to make a plugin that saves the in game map as a png file. Is the code for generating the in game map client side? Has anyone tried this? The saving the image to a png is the easy part with the file storage class, my problem is finding the image and or the code to generate the image.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
-					<a href="threads/save-map-to-file.23538/" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 5, 2017 at 9:17 AM">Feb 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/293673/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-293876" class="message   " data-author="DylanSMR">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DylanSMR</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					This is indeed possible as rust.io did this if I am correct. Maybe dig into their .dll file (from their plugin using something like dotPeek)  and see if you can find anything. They might even have a open-source github somewhere <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-293876" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 5, 2017 at 6:49 PM">Feb 5, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-293876" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/293876/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294132" class="message   " data-author="Squire">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Squire" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Squire</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					hmm would be a great idea for lustymap
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Squire</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294132" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 6:20 AM">Feb 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294132" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294132/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294266" class="message   " data-author="StreetDog">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="StreetDog" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">StreetDog</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					its great idea, I think at least you can take luck looking for the map inside the game, I mean the Map that is showed on PaperMap when you press the G.<br />
-<br />
-Save it on a PNG will be great for some servers that want not use External generators as Rustio or Beacanio
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">StreetDog</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294266" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 3:45 PM">Feb 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294266" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294266/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294391" class="message   " data-author="Zhahaman2001">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zhahaman2001" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Zhahaman2001</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Thanks I cant seem to find a Rust IO github with open-source, there is a Rust IO github but I do no think its what I am looking for. I also cant seem to decompile the dll as all the function/variable names are a,A,b,B ect... idk its my decompile (ILSpy) or if they have some anti decompile thing going on.<br />
-<br />
-Either way I always thought rust.io generated their own map image with their own code based off of the hightmap, road nodes, ect where I am looking for the image generated by the game for the in game paper map. So idk if poking around rust.io is even the right way to go about this.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294391" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 8:44 PM">Feb 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294391" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294391/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294393" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Zhahaman2001">
-	<aside>
-		
-			<div class="attribution type">Zhahaman2001 said:
-				
-					<a href="goto/post?id=294391#post-294391" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Thanks I cant seem to find a Rust IO github with open-source, there is a Rust IO github but I do no think its what I am looking for. I also cant seem to decompile the dll as all the function/variable names are a,A,b,B ect... idk its my decompile (ILSpy) or if they have some anti decompile thing going on.<br />
-<br />
-Either way I always thought rust.io generated their own map image with their own code based off of the hightmap, road nodes, ect where I am looking for the image generated by the game for the in game paper map. So idk if poking around rust.io is even the right way to go about this.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Rust:IO isn&#039;t open source, and he is fairly protective of it, hence the obfuscation. He&#039;s seen it copied before without permission or credit given.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294393" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 8:46 PM">Feb 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294393" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294393/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294396" class="message   " data-author="Zhahaman2001">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zhahaman2001" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Zhahaman2001</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					That&#039;s what it looked like to me, thanks Wulf. Let it be known that I am not after copying his map image (which he did a wonderful job with) I am after copying the in game map generated by the paper map item. XD<br />
-<br />
-Guess I will just keep looking client side
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294396" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 8:55 PM">Feb 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294396" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294396/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294444" class="message   " data-author="StreetDog">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="StreetDog" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">StreetDog</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Zhahaman2001">
-	<aside>
-		
-			<div class="attribution type">Zhahaman2001 said:
-				
-					<a href="goto/post?id=294391#post-294391" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Thanks I cant seem to find a Rust IO github with open-source, there is a Rust IO github but I do no think its what I am looking for. I also cant seem to decompile the dll as all the function/variable names are a,A,b,B ect... idk its my decompile (ILSpy) or if they have some anti decompile thing going on.<br />
-<br />
-Either way I always thought rust.io generated their own map image with their own code based off of the hightmap, road nodes, ect where I am looking for the image generated by the game for the in game paper map. So idk if poking around rust.io is even the right way to go about this.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Forget RUST IO, they have done half the process in the server side.<br />
-<br />
-Create your own code for all of this, and try to do it all server side. Will be the best.<br />
-<br />
-If you need help recreating new images for the map tell me, I can help, I already create maps for older games.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">StreetDog</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294444" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 6, 2017 at 10:55 PM">Feb 6, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294444" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294444/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-294820" class="message   " data-author="Zhahaman2001">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Zhahaman2001" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Zhahaman2001</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Well this is what I got so far, not what I am looking for but still cool.<br />
-<br />
-<a href="http://i.imgur.com/GOpywxv.jpg" target="_blank" class="externalLink  rel="nofollow">http://i.imgur.com/GOpywxv.jpg</a><br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>using UnityEngine;
+<ol class="messageList" id="messageList">
+    <li id="post-293673" class="message" data-author="Zhahaman2001">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Zhahaman2001" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Zhahaman2001</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I would like to make a plugin that saves the in game map as a png file. Is the code for generating the in game
+                        map client side? Has anyone tried this? The saving the image to a png is the easy part with the file storage class, my problem is finding the image and or the code to generate
+                        the image. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 5, 2017 at 9:17 AM">Feb 5,
+                                2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/293673/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-293876" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> This is indeed possible as rust.io did this if I am correct. Maybe dig into their .dll file (from their plugin
+                        using something like dotPeek) and see if you can find anything. They might even have a open-source github somewhere <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-293876" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 5, 2017 at 6:49 PM">Feb 5, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-293876" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/293876/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294132" class="message" data-author="Squire">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Squire" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Squire</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> hmm would be a great idea for lustymap <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Squire</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294132" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 6, 2017 at 6:20 AM">Feb 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294132" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294132/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294266" class="message" data-author="StreetDog">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="StreetDog" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">StreetDog</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> its great idea, I think at least you can take luck looking for the map inside the game, I mean the Map that is
+                        showed on PaperMap when you press the G.<br />
+                        <br /> Save it on a PNG will be great for some servers that want not use External generators as Rustio or Beacanio <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">StreetDog</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294266" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 6, 2017 at 3:45 PM">Feb 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294266" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294266/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294391" class="message" data-author="Zhahaman2001">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Zhahaman2001" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Zhahaman2001</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thanks I cant seem to find a Rust IO github with open-source, there is a Rust IO github but I do no think its
+                        what I am looking for. I also cant seem to decompile the dll as all the function/variable names are a,A,b,B ect... idk its my decompile (ILSpy) or if they have some anti
+                        decompile thing going on.<br />
+                        <br /> Either way I always thought rust.io generated their own map image with their own code based off of the hightmap, road nodes, ect where I am looking for the image
+                        generated by the game for the in game paper map. So idk if poking around rust.io is even the right way to go about this. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294391" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 6, 2017 at 8:44 PM">Feb 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294391" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294391/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294393" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Zhahaman2001">
+                            <aside>
+                                <div class="attribution type">Zhahaman2001 said: <a href="#post-294391" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Thanks I cant seem to find a Rust IO github with open-source, there is a Rust IO github but I do no think its what I am looking for. I also cant
+                                        seem to decompile the dll as all the function/variable names are a,A,b,B ect... idk its my decompile (ILSpy) or if they have some anti decompile thing going
+                                        on.<br />
+                                        <br /> Either way I always thought rust.io generated their own map image with their own code based off of the hightmap, road nodes, ect where I am looking for
+                                        the image generated by the game for the in game paper map. So idk if poking around rust.io is even the right way to go about this.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Rust:IO isn&#039;t open source, and he is fairly protective of it, hence the obfuscation. He&#039;s seen it copied before without permission or credit given. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294393" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 6, 2017 at 8:46 PM">Feb 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294393" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294393/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294396" class="message" data-author="Zhahaman2001">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Zhahaman2001" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Zhahaman2001</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> That&#039;s what it looked like to me, thanks Wulf. Let it be known that I am not after copying his map image
+                        (which he did a wonderful job with) I am after copying the in game map generated by the paper map item. XD<br />
+                        <br /> Guess I will just keep looking client side <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294396" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 6, 2017 at 8:55 PM">Feb 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294396" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294396/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294444" class="message" data-author="StreetDog">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="StreetDog" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">StreetDog</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Zhahaman2001">
+                            <aside>
+                                <div class="attribution type">Zhahaman2001 said: <a href="#post-294391" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Thanks I cant seem to find a Rust IO github with open-source, there is a Rust IO github but I do no think its what I am looking for. I also cant
+                                        seem to decompile the dll as all the function/variable names are a,A,b,B ect... idk its my decompile (ILSpy) or if they have some anti decompile thing going
+                                        on.<br />
+                                        <br /> Either way I always thought rust.io generated their own map image with their own code based off of the hightmap, road nodes, ect where I am looking for
+                                        the image generated by the game for the in game paper map. So idk if poking around rust.io is even the right way to go about this.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Forget RUST IO, they have done half the process in the server side.<br />
+                        <br /> Create your own code for all of this, and try to do it all server side. Will be the best.<br />
+                        <br /> If you need help recreating new images for the map tell me, I can help, I already create maps for older games. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">StreetDog</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294444" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 6, 2017 at 10:55 PM">Feb 6, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294444" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294444/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-294820" class="message" data-author="Zhahaman2001">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Zhahaman2001" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Zhahaman2001</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Well this is what I got so far, not what I am looking for but still cool.<br />
+                        <br />
+                        <a href="http://i.imgur.com/GOpywxv.jpg" target="_blank" class="externalLink  rel=" nofollow">http://i.imgur.com/GOpywxv.jpg</a><br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>using UnityEngine;
 using System.IO;
 namespace Oxide.Plugins
 {
@@ -1150,421 +465,194 @@ namespace Oxide.Plugins
         }
     }
 }</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-294820" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 8, 2017 at 12:52 AM">Feb 8, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-294820" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/294820/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-299944" class="message   " data-author="JAG0991">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JAG0991" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JAG0991</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Zhahaman2001">
-	<aside>
-		
-			<div class="attribution type">Zhahaman2001 said:
-				
-					<a href="goto/post?id=294820#post-294820" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Well this is what I got so far, not what I am looking for but still cool.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I&#039;ve got your code snippet working but I&#039;m struggling to find out how you knew there was a game object called &quot;Terrain&quot; and knew it had a TerrainHightMap component?<br />
-<br />
-These are broken references for me in Visual Studio within the oxide project at the moment, but it all works when run on the server. <br />
-<br />
-I would also like to have a go at generating a high quality map.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JAG0991</a>,</span>
-					<a href="threads/save-map-to-file.23538/#post-299944" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 21, 2017 at 1:39 PM">Feb 21, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/save-map-to-file.23538/#post-299944" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/299944/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
-
-			</footer>
-		</div>
-	</div>
-</div>
-
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Zhahaman2001</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-294820" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 8, 2017 at 12:52 AM">Feb 8, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-294820" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/294820/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-299944" class="message" data-author="JAG0991">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JAG0991" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JAG0991</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Zhahaman2001">
+                            <aside>
+                                <div class="attribution type">Zhahaman2001 said: <a href="#post-294820" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Well this is what I got so far, not what I am looking for but still cool.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I&#039;ve got your code snippet working but I&#039;m struggling to find out how you knew there was a game object called &quot;Terrain&quot; and knew it had a
+                        TerrainHightMap component?<br />
+                        <br /> These are broken references for me in Visual Studio within the oxide project at the moment, but it all works when run on the server. <br />
+                        <br /> I would also like to have a go at generating a high quality map. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JAG0991</a>,</span>
+                        <a href="/threads/save-map-to-file.23538/#post-299944" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 21, 2017 at 1:39 PM">Feb 21, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/save-map-to-file.23538/#post-299944" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/299944/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
 
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548551165,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

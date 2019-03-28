@@ -1,396 +1,390 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Creating entities without a prefab? | Oxide</title>
+    <base href="" />
+    <title>Oxide - Creating entities without a prefab?</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-    <link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/creating-entities-without-a-prefab.27058/" />
-    <meta name="description" content="I've run into a need to spawn entities that are there, (so I can do stuff with them and move them around and stuff) but don't have a prefab. Sorta like..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/creating-entities-without-a-prefab.27058/" />
-    <meta property="og:title" content="Creating entities without a prefab?" />
-    <meta property="og:description" content="I've run into a need to spawn entities that are there, (so I can do stuff with them and move them around and stuff) but don't have a prefab. Sorta like..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Creating entities without a prefab?" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/creating-entities-without-a-prefab.27058/">Creating entities without a prefab?</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">rotten</a>, <a href="threads/creating-entities-without-a-prefab.27058/"><span
-                                    class="DateTime" title="Sep 1, 2017 at 4:43 AM">Sep 1, 2017</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-348414" class="message   " data-author="rotten">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="rotten" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">rotten</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <a href="/threads/creating-entities-without-a-prefab.27058/">Creating entities without a prefab?</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">rotten</a>, <a href="/threads/creating-entities-without-a-prefab.27058/"><span class="DateTime" title="Sep 1, 2017 at 4:43 AM">Sep 1,
+                2017</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-348414" class="message" data-author="rotten">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="rotten" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">rotten</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I&#039;ve run into a need to spawn entities that are there, (so I can do stuff with them and move them around and
+                        stuff) but don&#039;t have a prefab. Sorta like an empty standin for a prefab.<br />
+                        <br /> Is this possible? Am I misunderstanding the process?<br />
+                        <br /> Thank you in advance! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">rotten</a>,</span>
+                        <a href="/threads/creating-entities-without-a-prefab.27058/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 1, 2017 at 4:43 AM">Sep 1, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/creating-entities-without-a-prefab.27058/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/348414/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-348450" class="message" data-author="redBDGR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="redBDGR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">redBDGR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Every &quot;entity&quot; generally has a prefab. maybe if you describe what your trying to do a bit more i could
+                        help as i don&#039;t really understand your goal <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">redBDGR</a>,</span>
+                        <a href="/threads/creating-entities-without-a-prefab.27058/#post-348450" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 1, 2017 at 9:31 AM">Sep 1, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/creating-entities-without-a-prefab.27058/#post-348450" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/348450/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-348466" class="message" data-author="rotten">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="rotten" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">rotten</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="redBDGR">
+                            <aside>
+                                <div class="attribution type">redBDGR said: <a href="#post-348450" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;ve run into a need to spawn entities that are there, (so I can do stuff with them
-                                                and move them around and stuff) but don&#039;t have a prefab. Sorta like an empty standin for a prefab.<br />
-                                                <br /> Is this possible? Am I misunderstanding the process?<br />
-                                                <br /> Thank you in advance! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">rotten</a>,</span>
-                                                <a href="threads/creating-entities-without-a-prefab.27058/" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 1, 2017 at 4:43 AM">Sep
-                                                        1, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/creating-entities-without-a-prefab.27058/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/348414/permalink">#1</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Every &quot;entity&quot; generally has a prefab. maybe if you describe what your trying to do a bit more i could help as i don&#039;t really
+                                        understand your goal <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I&#039;m writing a plugin to implement Caretakers from an old Rust concept. Every body part of the Caretaker will be it&#039;s own entity to allow them to be procedurally
+                        generated and modular. I need an entity to act as a blank point in space without any behavior attached to it, so that I can access it&#039;s FixedUpdate method and do stuff
+                        like allowing the legs to align themselves on terrain, for example (without a preset configuration - meaning that no matter whether the Caretaker has 3 legs or 6 - they will
+                        act in tandem).<br />
+                        <br /> Thus far I&#039;ve constructed the center mass part of the Caretaker, attached it to a dummy player (players have a nice looping &quot;breathing&quot; animation) and
+                        wrote some basic physics for it. I need to figure out the modularity now. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment image" title="Ns1R4Zw.jpg">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/ns1r4zw-jpg.40297/" target="_blank" class="LbTrigger" data-href="misc/lightbox"><img
+                                            src="data/attachments/40/40298-bf78afd7abd5b1e0a18ef2ed804a3516.jpg" alt="Ns1R4Zw.jpg" class="LbImage" /></a>
                                 </div>
-                            </li>
-                            <li id="post-348450" class="message   " data-author="redBDGR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="redBDGR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">redBDGR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/ns1r4zw-jpg.40297/" target="_blank">Ns1R4Zw.jpg</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>209 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>37</dd>
+                                    </dl>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Every &quot;entity&quot; generally has a prefab. maybe if you describe what your trying
-                                                to do a bit more i could help as i don&#039;t really understand your goal <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7"
-                                                    alt=":p" title="Stick Out Tongue    :p" />
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">redBDGR</a>,</span>
-                                                <a href="threads/creating-entities-without-a-prefab.27058/#post-348450" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 1, 2017 at 9:31 AM">Sep
-                                                        1, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/creating-entities-without-a-prefab.27058/#post-348450" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/348450/permalink">#2</a>
-                                        </div>
-                                    </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">rotten</a>,</span>
+                        <a href="/threads/creating-entities-without-a-prefab.27058/#post-348466" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 1, 2017 at 12:40 PM">Sep 1, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/creating-entities-without-a-prefab.27058/#post-348466" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/348466/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-348482" class="message" data-author="redBDGR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="redBDGR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">redBDGR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="rotten">
+                            <aside>
+                                <div class="attribution type">rotten said: <a href="#post-348466" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-348466" class="message   " data-author="rotten">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="rotten" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">rotten</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I&#039;m writing a plugin to implement Caretakers from an old Rust concept. Every body part of the Caretaker will be it&#039;s own entity to
+                                        allow them to be procedurally generated and modular. I need an entity to act as a blank point in space without any behavior attached to it, so that I can access
+                                        it&#039;s FixedUpdate method and do stuff like allowing the legs to align themselves on terrain, for example (without a preset configuration - meaning that no
+                                        matter whether the Caretaker has 3 legs or 6 - they will act in tandem).<br />
+                                        <br /> Thus far I&#039;ve constructed the center mass part of the Caretaker, attached it to a dummy player (players have a nice looping &quot;breathing&quot;
+                                        animation) and wrote some basic physics for it. I need to figure out the modularity now.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>hmm, idk, in the past I have had a short try at trying to use an empty gameobject but was unable to do so. You could just spawn a small entity like a lantern or something
+                        and use that <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">redBDGR</a>,</span>
+                        <a href="/threads/creating-entities-without-a-prefab.27058/#post-348482" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 1, 2017 at 1:30 PM">Sep 1, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/creating-entities-without-a-prefab.27058/#post-348482" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/348482/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-348484" class="message" data-author="rotten">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="rotten" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">rotten</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="redBDGR">
+                            <aside>
+                                <div class="attribution type">redBDGR said: <a href="#post-348482" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="redBDGR">
-                                                    <aside>
-                                                        <div class="attribution type">redBDGR said: <a href="goto/post?id=348450#post-348450" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Every &quot;entity&quot; generally has a prefab. maybe if you describe what your trying to do a bit more i could help as
-                                                                i don&#039;t really understand your goal <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>I&#039;m writing a plugin to implement Caretakers from an old Rust concept. Every body part of the Caretaker will be it&#039;s own entity to
-                                                allow them to be procedurally generated and modular. I need an entity to act as a blank point in space without any behavior attached to it, so that I
-                                                can access it&#039;s FixedUpdate method and do stuff like allowing the legs to align themselves on terrain, for example (without a preset configuration
-                                                - meaning that no matter whether the Caretaker has 3 legs or 6 - they will act in tandem).<br />
-                                                <br /> Thus far I&#039;ve constructed the center mass part of the Caretaker, attached it to a dummy player (players have a nice looping
-                                                &quot;breathing&quot; animation) and wrote some basic physics for it. I need to figure out the modularity now. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                        <div class="attachedFiles">
-                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
-                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
-                                                <li class="attachment image" title="Ns1R4Zw.jpg">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/ns1r4zw-jpg.40297/" target="_blank" class="LbTrigger" data-href="misc/lightbox"><img src="data/attachments/40/40298-bf78afd7abd5b1e0a18ef2ed804a3516.jpg"
-                                                                    alt="Ns1R4Zw.jpg" class="LbImage" /></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/ns1r4zw-jpg.40297/" target="_blank">Ns1R4Zw.jpg</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>209 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>37</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">rotten</a>,</span>
-                                                <a href="threads/creating-entities-without-a-prefab.27058/#post-348466" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 1, 2017 at 12:40 PM">Sep
-                                                        1, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/creating-entities-without-a-prefab.27058/#post-348466" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/348466/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-348482" class="message   " data-author="redBDGR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="redBDGR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">redBDGR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="rotten">
-                                                    <aside>
-                                                        <div class="attribution type">rotten said: <a href="goto/post?id=348466#post-348466" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I&#039;m writing a plugin to implement Caretakers from an old Rust concept. Every body part of the Caretaker will be
-                                                                it&#039;s own entity to allow them to be procedurally generated and modular. I need an entity to act as a blank point in space without
-                                                                any behavior attached to it, so that I can access it&#039;s FixedUpdate method and do stuff like allowing the legs to align themselves
-                                                                on terrain, for example (without a preset configuration - meaning that no matter whether the Caretaker has 3 legs or 6 - they will act
-                                                                in tandem).<br />
-                                                                <br /> Thus far I&#039;ve constructed the center mass part of the Caretaker, attached it to a dummy player (players have a nice looping
-                                                                &quot;breathing&quot; animation) and wrote some basic physics for it. I need to figure out the modularity now.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>hmm, idk, in the past I have had a short try at trying to use an empty gameobject but was unable to do so. You could just spawn a small entity
-                                                like a lantern or something and use that <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">redBDGR</a>,</span>
-                                                <a href="threads/creating-entities-without-a-prefab.27058/#post-348482" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 1, 2017 at 1:30 PM">Sep
-                                                        1, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/creating-entities-without-a-prefab.27058/#post-348482" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/348482/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-348484" class="message   " data-author="rotten">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="rotten" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">rotten</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="redBDGR">
-                                                    <aside>
-                                                        <div class="attribution type">redBDGR said: <a href="goto/post?id=348482#post-348482" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">hmm, idk, in the past I have had a short try at trying to use an empty gameobject but was unable to do so. You could
-                                                                just spawn a small entity like a lantern or something and use that</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Thanks, I&#039;ll do that, I guess. Any idea what&#039;s the smallest entity (without disruptive behavior) that I can spawn?<br />
-                                                [DOUBLEPOST=1504270843][/DOUBLEPOST]Figured it out! A flair! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">rotten</a>,</span>
-                                                <a href="threads/creating-entities-without-a-prefab.27058/#post-348484" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 1, 2017 at 1:43 PM">Sep
-                                                        1, 2017</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/creating-entities-without-a-prefab.27058/#post-348484" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/348484/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">hmm, idk, in the past I have had a short try at trying to use an empty gameobject but was unable to do so. You could just spawn a small entity
+                                        like a lantern or something and use that</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Thanks, I&#039;ll do that, I guess. Any idea what&#039;s the smallest entity (without disruptive behavior) that I can spawn?<br />
+                        [DOUBLEPOST=1504270843][/DOUBLEPOST]Figured it out! A flair! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">rotten</a>,</span>
+                        <a href="/threads/creating-entities-without-a-prefab.27058/#post-348484" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 1, 2017 at 1:43 PM">Sep 1, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/creating-entities-without-a-prefab.27058/#post-348484" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/348484/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -398,9 +392,9 @@
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548915241,
-                today: 1548892800,
-                todayDow: 4
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -418,19 +412,17 @@
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true,
-                "attached_files": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -456,8 +448,6 @@
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

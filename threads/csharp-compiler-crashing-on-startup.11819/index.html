@@ -1,680 +1,683 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Fixed - CSharp compiler crashing on startup | Oxide</title>
+    <base href="" />
+    <title>Oxide - Fixed - CSharp compiler crashing on startup</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-    <link rel="stylesheet" href="css.php?css=attached_files,bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="next" href="threads/csharp-compiler-crashing-on-startup.11819/page-2" />
-    <link rel="canonical" href="https://oxidemod.org/threads/csharp-compiler-crashing-on-startup.11819/" />
-    <meta name="description" content="After updating server and oxide (3 times now) all I get is plugin failed to compile errors.  What am I missing?  Thanks." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/csharp-compiler-crashing-on-startup.11819/" />
-    <meta property="og:title" content="Fixed - CSharp compiler crashing on startup" />
-    <meta property="og:description" content="After updating server and oxide (3 times now) all I get is plugin failed to compile errors.  What am I missing?  Thanks." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Fixed - CSharp compiler crashing on startup" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node23 node1 node104 node106 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <span class="prefix prefixLightGreen">Fixed</span> <a href="https://oxidemod.org/threads/csharp-compiler-crashing-on-startup.11819/">CSharp compiler crashing on startup</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">insane8472</a>, <a
-                                href="threads/csharp-compiler-crashing-on-startup.11819/"><span class="DateTime" title="Sep 18, 2015 at 1:19 AM">Sep 18, 2015</span></a>. </p>
-                    </div>
-                    <dl class="threadAlerts secondaryContent">
-                        <dt>Thread Status:</dt>
-                        <dd class="lockedAlert">
-                            <span class="icon Tooltip" title="Locked" data-tipclass="iconTip"></span> Not open for further replies.</dd>
-                    </dl>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixLightGreen">Fixed</span> <a href="/threads/csharp-compiler-crashing-on-startup.11819/">CSharp compiler crashing on startup</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">insane8472</a>, <a href="/threads/csharp-compiler-crashing-on-startup.11819/"><span class="DateTime" title="Sep 18, 2015 at 1:19 AM">Sep 18,
+                2015</span></a>.
+    </p>
+</div>
+<div class="pageNavLinkGroup">
+    <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="3" data-last="4" data-sentinel=""
+        data-baseurl="threads/csharp-compiler-crashing-on-startup.11819/page-">
+        <nav>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/" class="currentPage " rel="start">1</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-2" class="">2</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-3" class="">3</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-4" class="">4</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-2" class="text">Next &gt;</a>
+        </nav>
+    </div>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-129352" class="message" data-author="insane8472">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="insane8472" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">insane8472</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">After updating server and oxide (3 times now) all I get is plugin failed to compile errors. What am I missing?
+                        Thanks. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="Log.Error.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/log-error-txt.12725/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/log-error-txt.12725/" target="_blank">Log.Error.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>5.8 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>100</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:19 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/129352/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129359" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Did you fully update it, including all DLLs and CSharpCompiler.exe? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129359" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:35 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129359" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129359/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129362" class="message" data-author="insane8472">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="insane8472" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">insane8472</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Yes, fully updated like i&#039;ve done dozens of times. Three times now. All files are there. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129362" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:38 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129362" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129362/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129366" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Could you provide your oxide/logs/compiler_ log file(s), as well as your oxide_ log files for the past few
+                        days?<br />
+                        <br /> We suspect a plugin is causing the compiler to crash, just a matter of finding which one and fixing the issue. You could also try reloading plugins individually or in
+                        small batches until you find the one that crashes the compiler. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129366" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:49 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129366" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129366/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129368" class="message" data-author="insane8472">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="insane8472" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">insane8472</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Unfortunately, I only have the logs from the most recent server start. Here they are anyway. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="compiler_18-09-2015.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/compiler_18-09-2015-txt.12728/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/compiler_18-09-2015-txt.12728/" target="_blank">compiler_18-09-2015.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>118 bytes</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>61</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="attachment" title="oxide_17-09-2015.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/oxide_17-09-2015-txt.12729/" target="_blank" class="genericAttachment"></a>
+                                </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/oxide_17-09-2015-txt.12729/" target="_blank">oxide_17-09-2015.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>8 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>51</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129368" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:53 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129368" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129368/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129375" class="message" data-author="ϟϟStürmbannführer RaZ">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="ϟϟStürmbannführer RaZ" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">ϟϟStürmbannführer RaZ</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I&#039;m having the same issue. Waiting for the fix as well... <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">ϟϟStürmbannführer RaZ</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129375" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 2:07 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129375" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129375/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129377" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="ϟϟStürmbannführer RaZ">
+                            <aside>
+                                <div class="attribution type">ϟϟStürmbannführer RaZ said: <a href="#post-129375" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I&#039;m having the same issue. Waiting for the fix as well...</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You&#039;ll need to follow the above steps too. We can&#039;t fix it without information. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129377" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 2:08 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129377" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129377/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129378" class="message" data-author="ϟϟStürmbannführer RaZ">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="ϟϟStürmbannführer RaZ" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">ϟϟStürmbannführer RaZ</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I&#039;m using the laptop from work atm. I will get back on you soon with the files. I also hope that you&#039;ll
+                        find insane&#039;s problem. <br />
+                        <br /> Cheers <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">ϟϟStürmbannführer RaZ</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129378" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 2:11 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129378" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129378/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129380" class="message" data-author="insane8472">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="insane8472" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">insane8472</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I started deleting cs plugins one by one, after deleting a few, everything loaded. I replaced the ones I deleted
+                        one by one and they all loaded. Did a full restart once all plugins were back in the plugins folder and all is well. Don&#039;t know what the problem was or how it was fixed by
+                        doing that, but maybe it will help you troubleshoot why it happened. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129380" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 2:15 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129380" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129380/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129381" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="insane8472">
+                            <aside>
+                                <div class="attribution type">insane8472 said: <a href="#post-129380" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I started deleting cs plugins one by one, after deleting a few, everything loaded. I replaced the ones I deleted one by one and they all loaded.
+                                        Did a full restart once all plugins were back in the plugins folder and all is well. Don&#039;t know what the problem was or how it was fixed by doing that, but
+                                        maybe it will help you troubleshoot why it happened.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Well, we have a feeling that it&#039;s somehow failing with a certain batch of plugins. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129381" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 2:23 AM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129381" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129381/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129382" class="message" data-author="insane8472">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="insane8472" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">insane8472</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Whatever the problem, I hope you can solve it solve it quickly. <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> Thanks for the help.<br /> [DOUBLEPOST=1442577941,1442539614][/DOUBLEPOST]Just to note, problem returned
+                        during daily auto restart. I&#039;ll have to babysit the restarts until fixed. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129382" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:05 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129382" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129382/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129513" class="message" data-author="JohnRU">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JohnRU" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JohnRU</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Remove plugins then when server is online load them back in and ta dar it all works. Worked for me i had same
+                        issue.<br /> [DOUBLEPOST=1442579764][/DOUBLEPOST]Also seems to be issue with Kits plugin. It didnt auto compile on start i had to manually do oxide.reload Kits for it to be
+                        compiled.<br /> [DOUBLEPOST=1442579822][/DOUBLEPOST]seems to be all the .cs plugins dont compile normally and have to manually do ^. <div class="messageTextEndMarker">&nbsp;
                         </div>
-                        <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="3" data-last="4" data-sentinel="{{sentinel}}" data-baseurl="threads/csharp-compiler-crashing-on-startup.11819/page-{{sentinel}}">
-                            <nav>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/" class="currentPage " rel="start">1</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-2" class="">2</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-3" class="">3</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-4" class="">4</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-2" class="text">Next &gt;</a>
-                            </nav>
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-129352" class="message   " data-author="insane8472">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">insane8472</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> After updating server and oxide (3 times now) all I get is plugin failed to compile
-                                                errors. What am I missing? Thanks. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                        <div class="attachedFiles">
-                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
-                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
-                                                <li class="attachment" title="Log.Error.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/log-error-txt.12725/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/log-error-txt.12725/" target="_blank">Log.Error.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>5.8 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>100</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:19 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129352/permalink">#1</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129359" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Did you fully update it, including all DLLs and CSharpCompiler.exe? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129359" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:35 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129359" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129359/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129362" class="message   " data-author="insane8472">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">insane8472</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Yes, fully updated like i&#039;ve done dozens of times. Three times now. All files are
-                                                there. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129362" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:38 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129362" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129362/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129366" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Could you provide your oxide/logs/compiler_ log file(s), as well as your oxide_ log
-                                                files for the past few days?<br />
-                                                <br /> We suspect a plugin is causing the compiler to crash, just a matter of finding which one and fixing the issue. You could also try reloading
-                                                plugins individually or in small batches until you find the one that crashes the compiler. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129366" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:49 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129366" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129366/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129368" class="message   " data-author="insane8472">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">insane8472</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Unfortunately, I only have the logs from the most recent server start. Here they are
-                                                anyway. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                        <div class="attachedFiles">
-                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
-                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
-                                                <li class="attachment" title="compiler_18-09-2015.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/compiler_18-09-2015-txt.12728/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/compiler_18-09-2015-txt.12728/" target="_blank">compiler_18-09-2015.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>118 bytes</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>61</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="attachment" title="oxide_17-09-2015.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/oxide_17-09-2015-txt.12729/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/oxide_17-09-2015-txt.12729/" target="_blank">oxide_17-09-2015.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>8 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>51</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129368" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:53 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129368" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129368/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129375" class="message   " data-author="ϟϟStürmbannführer RaZ">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ϟϟStürmbannführer RaZ" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">ϟϟStürmbannführer RaZ</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m having the same issue. Waiting for the fix as well... <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">ϟϟStürmbannführer RaZ</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129375" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 2:07 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129375" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129375/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129377" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="ϟϟStürmbannführer RaZ">
-                                                    <aside>
-                                                        <div class="attribution type">ϟϟStürmbannführer RaZ said: <a href="goto/post?id=129375#post-129375" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I&#039;m having the same issue. Waiting for the fix as well...</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You&#039;ll need to follow the above steps too. We can&#039;t fix it without information. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129377" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 2:08 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129377" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129377/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129378" class="message   " data-author="ϟϟStürmbannführer RaZ">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ϟϟStürmbannführer RaZ" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">ϟϟStürmbannführer RaZ</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m using the laptop from work atm. I will get back on you soon with the files. I
-                                                also hope that you&#039;ll find insane&#039;s problem. <br />
-                                                <br /> Cheers <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">ϟϟStürmbannführer RaZ</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129378" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 2:11 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129378" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129378/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129380" class="message   " data-author="insane8472">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">insane8472</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I started deleting cs plugins one by one, after deleting a few, everything loaded. I
-                                                replaced the ones I deleted one by one and they all loaded. Did a full restart once all plugins were back in the plugins folder and all is well.
-                                                Don&#039;t know what the problem was or how it was fixed by doing that, but maybe it will help you troubleshoot why it happened. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129380" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 2:15 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129380" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129380/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129381" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="insane8472">
-                                                    <aside>
-                                                        <div class="attribution type">insane8472 said: <a href="goto/post?id=129380#post-129380" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I started deleting cs plugins one by one, after deleting a few, everything loaded. I replaced the ones I deleted one by
-                                                                one and they all loaded. Did a full restart once all plugins were back in the plugins folder and all is well. Don&#039;t know what the
-                                                                problem was or how it was fixed by doing that, but maybe it will help you troubleshoot why it happened.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Well, we have a feeling that it&#039;s somehow failing with a certain batch of plugins. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129381" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 2:23 AM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129381" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129381/permalink">#10</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129382" class="message   " data-author="insane8472">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="insane8472" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">insane8472</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Whatever the problem, I hope you can solve it solve it quickly. <img src="styles/default/xenforo/clear.png"
-                                                    class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> Thanks for the help.<br /> [DOUBLEPOST=1442577941,1442539614][/DOUBLEPOST]Just
-                                                to note, problem returned during daily auto restart. I&#039;ll have to babysit the restarts until fixed. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">insane8472</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129382" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:05 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129382" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129382/permalink">#11</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129513" class="message   " data-author="JohnRU">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JohnRU" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">JohnRU</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Remove plugins then when server is online load them back in and ta dar it all works.
-                                                Worked for me i had same issue.<br /> [DOUBLEPOST=1442579764][/DOUBLEPOST]Also seems to be issue with Kits plugin. It didnt auto compile on start i had
-                                                to manually do oxide.reload Kits for it to be compiled.<br /> [DOUBLEPOST=1442579822][/DOUBLEPOST]seems to be all the .cs plugins dont compile normally
-                                                and have to manually do ^. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">JohnRU</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129513" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:25 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129513" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129513/permalink">#12</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129517" class="message   " data-author="Mughisi">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Mughisi" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Mughisi</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Try using the latest snapshot available on GitHub: <a href="https://github.com/OxideMod/Snapshots/blob/master/Oxide-Rust.zip?raw=true"
-                                                    target="_blank" class="externalLink  rel=" nofollow">https://github.com/OxideMod/Snapshots/blob/master/Oxide-Rust.zip?raw=true</a>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129517" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 1:39 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129517" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129517/permalink">#13</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129544" class="message   " data-author="Anti-Logic">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Anti-Logic" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Anti-Logic</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m having a few issues aswell, when server restarts sometimes not every plugin
-                                                loads. Heres my oxide logs so it provide a bit extra information what plugins failed or not. Hope it helps <img src="styles/default/xenforo/clear.png"
-                                                    class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>10:53 AM [Info] Loading Oxide core v2.0.1374...
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JohnRU</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129513" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:25 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129513" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129513/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129517" class="message" data-author="Mughisi">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Mughisi" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Mughisi</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Try using the latest snapshot available on GitHub: <a
+                            href="https://github.com/OxideMod/Snapshots/blob/master/Oxide-Rust.zip?raw=true" target="_blank" class="externalLink  rel="
+                            nofollow">https://github.com/OxideMod/Snapshots/blob/master/Oxide-Rust.zip?raw=true</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Mughisi</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129517" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 1:39 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129517" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129517/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129544" class="message" data-author="Anti-Logic">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Anti-Logic" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Anti-Logic</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I&#039;m having a few issues aswell, when server restarts sometimes not every plugin loads. Heres my oxide logs so
+                        it provide a bit extra information what plugins failed or not. Hope it helps <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                            title="Smile    :)" /><br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>10:53 AM [Info] Loading Oxide core v2.0.1374...
 10:53 AM [Info] Loading extensions...
 10:53 AM [Info] Loaded extension CSharp v1.0.1374 by Oxide Team
 10:53 AM [Info] Loaded extension JavaScript v1.0.1374 by Oxide Team
@@ -782,46 +785,46 @@
 10:53 AM [Error] ZoneManager plugin failed to compile!
 10:53 AM [Error] Compiler disconnected.
 10:53 AM [Error] Failed to load plugin '1' (no source found)</pre>
-                                                </div>Ps: Failed to load plugin &#039;1&#039; (no source found) this is a bit weird, I have no idea why its appearing :O <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Anti-Logic</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129544" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 3:51 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129544" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129544/permalink">#14</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129548" class="message   " data-author="Kutzooi_NL 2">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Kutzooi_NL 2" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Kutzooi_NL 2</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Fresh install of Rust + oxide shows me this in the errorlogs ;<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>[9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] AdminProtection plugin failed to compile!
+                        </div>Ps: Failed to load plugin &#039;1&#039; (no source found) this is a bit weird, I have no idea why its appearing :O <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Anti-Logic</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129544" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 3:51 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129544" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129544/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129548" class="message" data-author="Kutzooi_NL 2">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Kutzooi_NL 2" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Kutzooi_NL 2</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Fresh install of Rust + oxide shows me this in the errorlogs ;<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] AdminProtection plugin failed to compile!
 [9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] Compiler disconnected.
 [9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] AutoDoorCloser plugin failed to compile!
 [9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] Compiler disconnected.
@@ -878,112 +881,110 @@
 [9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] ZoneManager plugin failed to compile!
 [9/18/2015 5:01:15 PM] [Oxide] 5:01 PM [Error] Compiler disconnected.
 </pre>
-                                                </div>None of my plugins exept Notifier &amp; RustIO launches <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":("
-                                                    title="Frown    :(" />
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Kutzooi_NL 2</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129548" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 4:06 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129548" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129548/permalink">#15</a>
-                                        </div>
-                                    </div>
+                        </div>None of my plugins exept Notifier &amp; RustIO launches <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Kutzooi_NL 2</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129548" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 4:06 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129548" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129548/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129563" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Anti-Logic">
+                            <aside>
+                                <div class="attribution type">Anti-Logic said: <a href="#post-129544" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-129563" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I&#039;m having a few issues aswell, when server restarts sometimes not every plugin loads. Heres my oxide logs so it provide a bit extra
+                                        information what plugins failed or not. Hope it helps <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                                            title="Smile    :)" /><br />
+                                        <br /> Ps: Failed to load plugin &#039;1&#039; (no source found) this is a bit weird, I have no idea why its appearing :O</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Update to the snapshot that Mughisi linked previously.<br />
+                        <br /> For the -load issue, just remove it from your command-line, it isn&#039;t used. There are threads about it if you&#039;d like more details though.<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Kutzooi_NL 2">
+                            <aside>
+                                <div class="attribution type">Kutzooi_NL 2 said: <a href="#post-129548" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Anti-Logic">
-                                                    <aside>
-                                                        <div class="attribution type">Anti-Logic said: <a href="goto/post?id=129544#post-129544" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I&#039;m having a few issues aswell, when server restarts sometimes not every plugin loads. Heres my oxide logs so it
-                                                                provide a bit extra information what plugins failed or not. Hope it helps <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1"
-                                                                    alt=":)" title="Smile    :)" /><br />
-                                                                <br /> Ps: Failed to load plugin &#039;1&#039; (no source found) this is a bit weird, I have no idea why its appearing :O</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Update to the snapshot that Mughisi linked previously.<br />
-                                                <br /> For the -load issue, just remove it from your command-line, it isn&#039;t used. There are threads about it if you&#039;d like more details
-                                                though.<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Kutzooi_NL 2">
-                                                    <aside>
-                                                        <div class="attribution type">Kutzooi_NL 2 said: <a href="goto/post?id=129548#post-129548" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Fresh install of Rust + oxide shows me this in the errorlogs ;<br />
-                                                                <br /> None of my plugins exept Notifier &amp; RustIO launches <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3"
-                                                                    alt=":(" title="Frown    :(" /></div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Update to the snapshot that Mughisi provided above please. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129563" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 4:58 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129563" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129563/permalink">#16</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-129193" class="message   " data-author="ViTaliY_VS">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="ViTaliY_VS" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">ViTaliY_VS</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> New version detected<br /> [DOUBLEPOST=1442603386,1442523071][/DOUBLEPOST]After last
-                                                update (server restart):<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>[9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] AirdropOrganizer plugin failed to compile!
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Fresh install of Rust + oxide shows me this in the errorlogs ;<br />
+                                        <br /> None of my plugins exept Notifier &amp; RustIO launches <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":("
+                                            title="Frown    :(" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Update to the snapshot that Mughisi provided above please. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129563" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 4:58 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129563" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129563/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129193" class="message" data-author="ViTaliY_VS">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="ViTaliY_VS" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">ViTaliY_VS</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">New version detected<br /> [DOUBLEPOST=1442603386,1442523071][/DOUBLEPOST]After last update (server
+                        restart):<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>[9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] AirdropOrganizer plugin failed to compile!
 [9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] Compiler disconnected.
 [9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] AntiCheat plugin failed to compile!
 [9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] Compiler disconnected.
@@ -1046,263 +1047,258 @@
 [9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] ZoneManager plugin failed to compile!
 [9/18/2015 10:08:34 PM] [Oxide] 10:08 PM [Error] Compiler disconnected.
 </pre>
-                                                </div>[DOUBLEPOST=1442603689][/DOUBLEPOST]Every time. All plugins are unloaded (except RustIO)<br /> [DOUBLEPOST=1442604086][/DOUBLEPOST] <div class="bbCodeBlock bbCodeQuote"
-                                                    data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=129563#post-129563" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Update to the snapshot that Mughisi linked previously.<br />
-                                                                <br /> For the -load issue, just remove it from your command-line, it isn&#039;t used. There are threads about it if you&#039;d like
-                                                                more details though.<br />
-                                                                <br />
-                                                                <br /> Update to the snapshot that Mughisi provided above please.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>I can&#039;t do that. Because my control panel is updating from the last source without any configuration and my hoster hides all oxide source in
-                                                FTP server.<br /> [DOUBLEPOST=1442604145][/DOUBLEPOST]Can you release fix ?<br /> [DOUBLEPOST=1442606046][/DOUBLEPOST]Players can&#039;t connect to the
-                                                server.<br />
-                                                <br /> kicked: Wrong Connection Protocol: Client update required!<br />
-                                                <br /> Server is up to date<br /> Client too. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">ViTaliY_VS</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129193" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 18, 2015 at 8:09 PM">Sep
-                                                        18, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129193" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129193/permalink">#17</a>
-                                        </div>
-                                    </div>
+                        </div>[DOUBLEPOST=1442603689][/DOUBLEPOST]Every time. All plugins are unloaded (except RustIO)<br /> [DOUBLEPOST=1442604086][/DOUBLEPOST] <div class="bbCodeBlock bbCodeQuote"
+                            data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-129563" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-129694" class="message   " data-author="Gibson">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Gibson" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Gibson</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Update to the snapshot that Mughisi linked previously.<br />
+                                        <br /> For the -load issue, just remove it from your command-line, it isn&#039;t used. There are threads about it if you&#039;d like more details though.<br />
+                                        <br />
+                                        <br /> Update to the snapshot that Mughisi provided above please.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I can&#039;t do that. Because my control panel is updating from the last source without any configuration and my hoster hides all oxide source in FTP server.<br />
+                        [DOUBLEPOST=1442604145][/DOUBLEPOST]Can you release fix ?<br /> [DOUBLEPOST=1442606046][/DOUBLEPOST]Players can&#039;t connect to the server.<br />
+                        <br /> kicked: Wrong Connection Protocol: Client update required!<br />
+                        <br /> Server is up to date<br /> Client too. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">ViTaliY_VS</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129193" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 18, 2015 at 8:09 PM">Sep 18, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129193" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129193/permalink">#17</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129694" class="message" data-author="Gibson">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Gibson" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Gibson</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">After updating to the last version at server startup compiler crashes preventing part of the plugins to load. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Gibson</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129694" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 19, 2015 at 12:05 AM">Sep 19, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129694" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129694/permalink">#18</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129695" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Please provide your latest oxide/logs. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129695" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 19, 2015 at 12:06 AM">Sep 19, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129695" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129695/permalink">#19</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-129696" class="message" data-author="Gibson">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Gibson" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Gibson</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Latest logs. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+                <div class="attachedFiles">
+                    <h4 class="attachedFilesHeader">Attached Files:</h4>
+                    <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
+                        <li class="attachment" title="compiler_18-09-2015.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/compiler_18-09-2015-txt.12773/" target="_blank" class="genericAttachment"></a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> After updating to the last version at server startup compiler crashes preventing part of
-                                                the plugins to load. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Gibson</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129694" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 19, 2015 at 12:05 AM">Sep
-                                                        19, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129694" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129694/permalink">#18</a>
-                                        </div>
-                                    </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/compiler_18-09-2015-txt.12773/" target="_blank">compiler_18-09-2015.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>7.9 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>39</dd>
+                                    </dl>
                                 </div>
-                            </li>
-                            <li id="post-129695" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                            </div>
+                        </li>
+                        <li class="attachment" title="oxide_19-09-2015.txt">
+                            <div class="boxModelFixer primaryContent">
+                                <div class="thumbnail">
+                                    <a href="attachments/oxide_19-09-2015-txt.12774/" target="_blank" class="genericAttachment"></a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Please provide your latest oxide/logs. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129695" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 19, 2015 at 12:06 AM">Sep
-                                                        19, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129695" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129695/permalink">#19</a>
-                                        </div>
-                                    </div>
+                                <div class="attachmentInfo pairsJustified">
+                                    <h6 class="filename"><a href="attachments/oxide_19-09-2015-txt.12774/" target="_blank">oxide_19-09-2015.txt</a></h6>
+                                    <dl>
+                                        <dt>File size:</dt>
+                                        <dd>88.3 KB</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Views:</dt>
+                                        <dd>44</dd>
+                                    </dl>
                                 </div>
-                            </li>
-                            <li id="post-129696" class="message   " data-author="Gibson">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Gibson" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Gibson</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Latest logs. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                        <div class="attachedFiles">
-                                            <h4 class="attachedFilesHeader">Attached Files:</h4>
-                                            <ul class="attachmentList SquareThumbs" data-thumb-height="50" data-thumb-selector="div.thumbnail > a">
-                                                <li class="attachment" title="compiler_18-09-2015.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/compiler_18-09-2015-txt.12773/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/compiler_18-09-2015-txt.12773/" target="_blank">compiler_18-09-2015.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>7.9 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>39</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="attachment" title="oxide_19-09-2015.txt">
-                                                    <div class="boxModelFixer primaryContent">
-                                                        <div class="thumbnail">
-                                                            <a href="attachments/oxide_19-09-2015-txt.12774/" target="_blank" class="genericAttachment"></a>
-                                                        </div>
-                                                        <div class="attachmentInfo pairsJustified">
-                                                            <h6 class="filename"><a href="attachments/oxide_19-09-2015-txt.12774/" target="_blank">oxide_19-09-2015.txt</a></h6>
-                                                            <dl><dt>File size:</dt>
-                                                                <dd>88.3 KB</dd>
-                                                            </dl>
-                                                            <dl><dt>Views:</dt>
-                                                                <dd>44</dd>
-                                                            </dl>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Gibson</a>,</span>
-                                                <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129696" title="Permalink" class="datePermalink"><span class="DateTime" title="Sep 19, 2015 at 12:08 AM">Sep
-                                                        19, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/csharp-compiler-crashing-on-startup.11819/#post-129696" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/129696/permalink">#20</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                        <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="3" data-last="4" data-sentinel="{{sentinel}}" data-baseurl="threads/csharp-compiler-crashing-on-startup.11819/page-{{sentinel}}">
-                            <nav>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/" class="currentPage " rel="start">1</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-2" class="">2</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-3" class="">3</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-4" class="">4</a>
-                                <a href="threads/csharp-compiler-crashing-on-startup.11819/page-2" class="text">Next &gt;</a>
-                            </nav>
-                        </div>
-                    </div>
-                    <dl class="threadAlerts secondaryContent">
-                        <dt>Thread Status:</dt>
-                        <dd class="lockedAlert">
-                            <span class="icon Tooltip" title="Locked" data-tipclass="iconTip"></span> Not open for further replies.</dd>
-                    </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Gibson</a>,</span>
+                        <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129696" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Sep 19, 2015 at 12:08 AM">Sep 19, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/csharp-compiler-crashing-on-startup.11819/#post-129696" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/129696/permalink">#20</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+<div class="pageNavLinkGroup">
+    <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="3" data-last="4" data-sentinel=""
+        data-baseurl="threads/csharp-compiler-crashing-on-startup.11819/page-">
+        <nav>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/" class="currentPage " rel="start">1</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-2" class="">2</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-3" class="">3</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-4" class="">4</a>
+            <a href="/threads/csharp-compiler-crashing-on-startup.11819/page-2" class="text">Next &gt;</a>
+        </nav>
+    </div>
+</div>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -1310,7 +1306,7 @@
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548534639,
+                now: 1548531785,
                 today: 1548460800,
                 todayDow: 6
             },
@@ -1330,19 +1326,17 @@
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "attached_files": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -1368,8 +1362,6 @@
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

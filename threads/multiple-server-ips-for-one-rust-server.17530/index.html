@@ -1,1543 +1,621 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Multiple server IPs for one Rust server? | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/multiple-server-ips-for-one-rust-server.17530/" />
-	<meta name="description" content="How to use multiple IPs to host 1 RUST server?
-It's would be cool for DDoS mitigation." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/multiple-server-ips-for-one-rust-server.17530/" />
-	<meta property="og:title" content="Multiple server IPs for one Rust server?" />
-	<meta property="og:description" content="How to use multiple IPs to host 1 RUST server?
-It's would be cool for DDoS mitigation." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Multiple server IPs for one Rust server?</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Multiple server IPs for one Rust server?" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node23 node1 node104 node106 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Game Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Discussion</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/multiple-server-ips-for-one-rust-server.17530/">Multiple server IPs for one Rust server?</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username" dir="auto">not777</a>, <a href="threads/multiple-server-ips-for-one-rust-server.17530/"><span class="DateTime" title="Apr 22, 2016 at 3:21 PM">Apr 22, 2016</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/categories/game-discussion.106/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Game Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-discussion.23/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Discussion</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-198917" class="message   " data-author="not777">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="not777" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">not777</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/">Multiple server IPs for one Rust server?</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-discussion.23/">Rust Discussion</a>' started by <a class="username"
+            dir="auto">not777</a>, <a href="/threads/multiple-server-ips-for-one-rust-server.17530/"><span class="DateTime" title="Apr 22, 2016 at 3:21 PM">Apr 22,
+                2016</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					How to use multiple IPs to host 1 RUST server?<br />
-It&#039;s would be cool for DDoS mitigation.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 3:21 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198917/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-198924" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Assuming you&#039;ll have multiple IPs redirecting to the same server, attacking any of those IPs would attack the main server, so there would be no mitigation.<br />
-Switching between IPs would require you to kick all of your users, which is obviously not desirable either. It&#039;s pretty much impossible for the Rust devs to make it possible to distribute Rust using multiple servers in an LBC because there&#039;s too much realtime state involved.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198924" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 4:09 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198924" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198924/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-198925" class="message   " data-author="not777">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="not777" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">not777</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					No, I can send answer from other IPs to client IP/Port with next TCP packet sequence number and Rust client use another IP for communication.<br />
-So, I can dissable IP and reuse another IP without players disconnect.<br />
-It&#039;s checked.<br />
-<br />
-How to setup the server to listen on multiple IPs, to receive new connections ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Apr 22, 2016 at 4:25 PM">Apr 22, 2016</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198925" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 4:19 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198925" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198925/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-198927" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I&#039;ve explained that part.<br />
-&quot;It&#039;s pretty much impossible for the Rust devs to make it possible to distribute Rust using multiple servers in an LBC because there&#039;s too much realtime state involved.&quot;<br />
-There is currently no way to do what you want to do and it is pretty much impossible to do as there&#039;s too much realtime state involved to sync between multiple servers.<br />
-The only other approach I can think of would be to sync all the state right before the server dies, but this is not implemented and a smooth transition is almost impossible as the server would have to halt and then sync 6GB+ of state with your other server. Even then, there&#039;s nothing that keeps people from just directly attacking the other server as well, rendering this useless.<br />
-[DOUBLEPOST=1461339375][/DOUBLEPOST]Also, assuming you only have a single server, your approach is pretty pointless.<br />
-To change IPs during execution you have to inform any connected client about the new IP, so what keeps me from just grabbing that IP and then attacking the new IP?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Apr 22, 2016 at 4:36 PM">Apr 22, 2016</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198927" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 4:29 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198927" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198927/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-198929" class="message   " data-author="not777">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="not777" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">not777</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<a href="http://oxidemod.org/members/sqroot.81111/" class="internalLink"><b>sqroot</b></a>, cool, impossible...<br />
-so check that <a href="http://oxidemod.org/threads/anti-ddos-solution-for-rust.15802/" class="internalLink">Anti-DDoS solution for Rust | Oxide</a><br />
-I use 2 gateways in parallel on Windows Hyper-V to split RUST server traffic on 2 IPs
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198929" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 4:39 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198929" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198929/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-198931" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="not777">
-	<aside>
-		
-			<div class="attribution type">not777 said:
-				
-					<a href="goto/post?id=198929#post-198929" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote"><a href="http://oxidemod.org/members/sqroot.81111/" class="internalLink"><b>sqroot</b></a>, cool, impossible...<br />
-so check that <a href="http://oxidemod.org/threads/anti-ddos-solution-for-rust.15802/" class="internalLink">Anti-DDoS solution for Rust | Oxide</a><br />
-I use 2 gateways in parallel on Windows Hyper-V to split RUST server traffic on 2 IPs</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>You&#039;re accepting connections on one server and after accepting the connection you&#039;re redirecting players to a different server.<br />
-This kind of distribution is possible because it&#039;s mostly stateless. This however does not work for packets involved after a player is connected, since from that point onwards, a lot of realtime state is involved.<br />
-<br />
-What I&#039;m saying is that you cannot easily split up the actual game communication onto multiple servers, because that would require you to synchronize both servers.<br />
-<br />
-If I wanted to attack your current setup I could do a couple of things:<br />
-<ul>
-<li>Attack your redirection server. This will keep new players from joining, players already ingame will be able to play flawlessly.</li>
-<li>Overload your actual game server. This server will discard packets by clients that aren&#039;t connected, so more force is required to take down the server, but it&#039;s still possible.</li>
-</ul>I am sure there are other ways as well, even if it&#039;s just overloading your router.<br />
-Handling DDoS attacks close to the host is usually not a good idea. Your approach reduces the effectiveness of conventional steam server DDoS attacks but definetly doesn&#039;t entirely get rid of the issue, and the main reason why it works so well is because the people attacking your server are likely people that don&#039;t really have a clue about what they are doing and are just using prebuilt tools.<br />
-[DOUBLEPOST=1461342092][/DOUBLEPOST]Okay, I&#039;ll approach one more possibility of what you&#039;re trying to do.<br />
-If what you&#039;re asking is that you want to be able to host multiple connection establishment servers, redirecting to a single game server, then that would be possible if the Rust master server allowed you to distinguish between connection establishment servers and the actual game server, which isn&#039;t possible afaik. If this is what you meant in your OP then this would indeed be cool, but probably something way overkill for most servers.<br />
-You could also configure your router (or a host used solely for distribution) to distribute connection establishment packets to several other servers. This seems like a valid approach to reduce conventional attacks, but if you&#039;re going so far already, I&#039;d consider using an IPS to block attackers, even before any of your connection establishment servers is reached.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198931" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 4:59 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198931" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198931/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-198991" class="message   " data-author="not777">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="not777" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">not777</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					You badly know simple things: network stack and windows sockets.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198991" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 7:02 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-198991" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198991/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-199032" class="message   " data-author="sqroot">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sqroot" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sqroot</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Then educate me by pointing out false assumptions, I&#039;m eager to learn <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-199032" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 7:57 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-199032" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/199032/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-199119" class="message   " data-author="Freaksn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Freaksn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Freaksn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
-	<aside>
-		
-			<div class="attribution type">sqroot said:
-				
-					<a href="goto/post?id=198931#post-198931" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I am sure there are other ways as well, even if it&#039;s just overloading your router.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>2. Add VyOS router VIRTUAL MASHINE on the same with game server IP network.<br />
-<br />
-virtual mashine still uses the lan port on your server to handle traffic<br />
-<br />
-(porblaby iam dumb and understand it wrong <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" />)
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Freaksn</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-199119" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 22, 2016 at 11:24 PM">Apr 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-199119" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/199119/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-199142" class="message   " data-author="not777">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="not777" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">not777</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Virtual LAN it is like LAN switch and can take DDoS traffic that more than can take one physical computer directly.<br />
-Yes, after massive DDoS you will lose some network performance.<br />
-<br />
-This topic seems deadlocked =(
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
-					<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-199142" title="Permalink" class="datePermalink"><span class="DateTime" title="Apr 23, 2016 at 2:18 AM">Apr 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/multiple-server-ips-for-one-rust-server.17530/#post-199142" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/199142/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-198917" class="message" data-author="not777">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="not777" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">not777</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> How to use multiple IPs to host 1 RUST server?<br /> It&#039;s would be cool for DDoS mitigation. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 3:21 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/198917/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-198924" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Assuming you&#039;ll have multiple IPs redirecting to the same server, attacking any of those IPs would attack
+                        the main server, so there would be no mitigation.<br /> Switching between IPs would require you to kick all of your users, which is obviously not desirable either. It&#039;s
+                        pretty much impossible for the Rust devs to make it possible to distribute Rust using multiple servers in an LBC because there&#039;s too much realtime state involved. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198924" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 4:09 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198924" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198924/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-198925" class="message" data-author="not777">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="not777" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">not777</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> No, I can send answer from other IPs to client IP/Port with next TCP packet sequence number and Rust client use
+                        another IP for communication.<br /> So, I can dissable IP and reuse another IP without players disconnect.<br /> It&#039;s checked.<br />
+                        <br /> How to setup the server to listen on multiple IPs, to receive new connections ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 22, 2016 at 4:25 PM">Apr 22, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198925" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 4:19 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198925" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198925/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-198927" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;ve explained that part.<br /> &quot;It&#039;s pretty much impossible for the Rust devs to make it possible
+                        to distribute Rust using multiple servers in an LBC because there&#039;s too much realtime state involved.&quot;<br /> There is currently no way to do what you want to do and
+                        it is pretty much impossible to do as there&#039;s too much realtime state involved to sync between multiple servers.<br /> The only other approach I can think of would be to
+                        sync all the state right before the server dies, but this is not implemented and a smooth transition is almost impossible as the server would have to halt and then sync 6GB+ of
+                        state with your other server. Even then, there&#039;s nothing that keeps people from just directly attacking the other server as well, rendering this useless.<br />
+                        [DOUBLEPOST=1461339375][/DOUBLEPOST]Also, assuming you only have a single server, your approach is pretty pointless.<br /> To change IPs during execution you have to inform any
+                        connected client about the new IP, so what keeps me from just grabbing that IP and then attacking the new IP? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Apr 22, 2016 at 4:36 PM">Apr 22, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198927" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 4:29 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198927" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198927/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-198929" class="message" data-author="not777">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="not777" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">not777</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="http://oxidemod.org/members/sqroot.81111/" class="internalLink"><b>sqroot</b></a>, cool, impossible...<br /> so check that <a
+                            href="http://oxidemod.org/threads/anti-ddos-solution-for-rust.15802/" class="internalLink">Anti-DDoS solution for Rust | Oxide</a><br /> I use 2 gateways in parallel on
+                        Windows Hyper-V to split RUST server traffic on 2 IPs <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198929" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 4:39 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198929" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198929/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-198931" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="not777">
+                            <aside>
+                                <div class="attribution type">not777 said: <a href="#post-198929" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="http://oxidemod.org/members/sqroot.81111/" class="internalLink"><b>sqroot</b></a>, cool, impossible...<br /> so check that <a
+                                            href="http://oxidemod.org/threads/anti-ddos-solution-for-rust.15802/" class="internalLink">Anti-DDoS solution for Rust | Oxide</a><br /> I use 2 gateways in
+                                        parallel on Windows Hyper-V to split RUST server traffic on 2 IPs</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You&#039;re accepting connections on one server and after accepting the connection you&#039;re redirecting players to a different server.<br /> This kind of distribution
+                        is possible because it&#039;s mostly stateless. This however does not work for packets involved after a player is connected, since from that point onwards, a lot of realtime
+                        state is involved.<br />
+                        <br /> What I&#039;m saying is that you cannot easily split up the actual game communication onto multiple servers, because that would require you to synchronize both
+                        servers.<br />
+                        <br /> If I wanted to attack your current setup I could do a couple of things:<br />
+                        <ul>
+                            <li>Attack your redirection server. This will keep new players from joining, players already ingame will be able to play flawlessly.</li>
+                            <li>Overload your actual game server. This server will discard packets by clients that aren&#039;t connected, so more force is required to take down the server, but
+                                it&#039;s still possible.</li>
+                        </ul>I am sure there are other ways as well, even if it&#039;s just overloading your router.<br /> Handling DDoS attacks close to the host is usually not a good idea. Your
+                        approach reduces the effectiveness of conventional steam server DDoS attacks but definetly doesn&#039;t entirely get rid of the issue, and the main reason why it works so well
+                        is because the people attacking your server are likely people that don&#039;t really have a clue about what they are doing and are just using prebuilt tools.<br />
+                        [DOUBLEPOST=1461342092][/DOUBLEPOST]Okay, I&#039;ll approach one more possibility of what you&#039;re trying to do.<br /> If what you&#039;re asking is that you want to be able
+                        to host multiple connection establishment servers, redirecting to a single game server, then that would be possible if the Rust master server allowed you to distinguish between
+                        connection establishment servers and the actual game server, which isn&#039;t possible afaik. If this is what you meant in your OP then this would indeed be cool, but probably
+                        something way overkill for most servers.<br /> You could also configure your router (or a host used solely for distribution) to distribute connection establishment packets to
+                        several other servers. This seems like a valid approach to reduce conventional attacks, but if you&#039;re going so far already, I&#039;d consider using an IPS to block
+                        attackers, even before any of your connection establishment servers is reached. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198931" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 4:59 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198931" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198931/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-198991" class="message" data-author="not777">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="not777" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">not777</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> You badly know simple things: network stack and windows sockets. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198991" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 7:02 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-198991" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/198991/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-199032" class="message" data-author="sqroot">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sqroot" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sqroot</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Then educate me by pointing out false assumptions, I&#039;m eager to learn <img
+                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sqroot</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-199032" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 7:57 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-199032" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/199032/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-199119" class="message" data-author="Freaksn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Freaksn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Freaksn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sqroot">
+                            <aside>
+                                <div class="attribution type">sqroot said: <a href="#post-198931" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I am sure there are other ways as well, even if it&#039;s just overloading your router.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>2. Add VyOS router VIRTUAL MASHINE on the same with game server IP network.<br />
+                        <br /> virtual mashine still uses the lan port on your server to handle traffic<br />
+                        <br /> (porblaby iam dumb and understand it wrong <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" />) <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Freaksn</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-199119" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 22, 2016 at 11:24 PM">Apr 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-199119" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/199119/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-199142" class="message" data-author="not777">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="not777" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">not777</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Virtual LAN it is like LAN switch and can take DDoS traffic that more than can take one physical computer
+                        directly.<br /> Yes, after massive DDoS you will lose some network performance.<br />
+                        <br /> This topic seems deadlocked =( <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">not777</a>,</span>
+                        <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-199142" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Apr 23, 2016 at 2:18 AM">Apr 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/multiple-server-ips-for-one-rust-server.17530/#post-199142" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/199142/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1549063064,
-		today: 1548979200,
-		todayDow: 5
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

@@ -1,385 +1,352 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Solved - Calling function from another plugin? | Oxide</title>
+    <base href="" />
+    <title>Oxide - Solved - Calling function from another plugin?</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/calling-function-from-another-plugin.22542/" />
-    <meta name="description" content="I'm pretty sure this a common question and has been answered many times but this just isn't working for me.
-
-I'm just starting out with C# so go easy..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/calling-function-from-another-plugin.22542/" />
-    <meta property="og:title" content="Solved - Calling function from another plugin?" />
-    <meta property="og:description" content="I'm pretty sure this a common question and has been answered many times but this just isn't working for me.
-
-I'm just starting out with C# so go easy..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Calling function from another plugin?" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/calling-function-from-another-plugin.22542/">Calling function from another plugin?</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Rebajas</a>, <a
-                                href="threads/calling-function-from-another-plugin.22542/"><span class="DateTime" title="Dec 18, 2016 at 5:27 PM">Dec 18, 2016</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-277426" class="message   " data-author="Rebajas">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Rebajas" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Rebajas</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/calling-function-from-another-plugin.22542/">Calling function from another plugin?</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">Rebajas</a>, <a href="/threads/calling-function-from-another-plugin.22542/"><span class="DateTime" title="Dec 18, 2016 at 5:27 PM">Dec 18,
+                2016</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-277426" class="message" data-author="Rebajas">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Rebajas" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Rebajas</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I&#039;m pretty sure this a common question and has been answered many times but this just isn&#039;t working for
+                        me.<br />
+                        <br /> I&#039;m just starting out with C# so go easy if I ask something stoopid please <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                            title="Smile    :)" /><br />
+                        <br /> I have created two basic plugins, the first plugin is below:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>using System;
+using System.Linq;using Rust;using Oxide.Plugins;
+using Oxide.Core.Plugins;namespace Oxide.Plugins {    [Info(&quot;Something&quot;, &quot;Rebajas&quot;, &quot;2016.12.17&quot;)]
+    [Description(&quot;Something&quot;)]    public class EventLogger : RustPlugin {        public void AppendToLog() {            Puts(&quot;AppendToLog function called&quot;);        }    }}</pre>
+                        </div>Additional plugins feed data into the first:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        ...
+        [PluginReference] Plugin EventLogger;        void OnLootPlayer(BasePlayer player, BasePlayer target) {            EventLogger?.Call(&quot;AppendToLog&quot;);        }</pre>
+                        </div>My problem at the moment is that I&#039;m not seeing the AppendToLog Puts fire when the OnLootPlayer event triggers. Every example I&#039;ve seen so far seems the same so
+                        I don&#039;t really know what else to change.<br />
+                        <br /> Thanks in advance for any help.<br />
+                        <br />
+                        <br /> Tony. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate">Last edited by a moderator: <span class="DateTime" title="Dec 18, 2016 at 5:47 PM">Dec 18, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Rebajas</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 18, 2016 at 5:27 PM">Dec 18, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/277426/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-277434" class="message" data-author="Rebajas">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Rebajas" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Rebajas</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Got it working!<br />
+                        <br /> Had a public class then a public method - didn&#039;t like it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                            title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Rebajas</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-277434" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 18, 2016 at 6:00 PM">Dec 18, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-277434" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/277434/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-277438" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Rebajas">
+                            <aside>
+                                <div class="attribution type">Rebajas said: <a href="#post-277434" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I&#039;m pretty sure this a common question and has been answered many times but this
-                                                just isn&#039;t working for me.<br />
-                                                <br /> I&#039;m just starting out with C# so go easy if I ask something stoopid please <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1"
-                                                    alt=":)" title="Smile    :)" /><br />
-                                                <br /> I have created two basic plugins, the first plugin is below:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>using System;
-using System.Linq;
-
-using Rust;
-
-using Oxide.Plugins;
-using Oxide.Core.Plugins;
-
-namespace Oxide.Plugins {
-
-    [Info(&quot;Something&quot;, &quot;Rebajas&quot;, &quot;2016.12.17&quot;)]
-    [Description(&quot;Something&quot;)]
-
-    public class EventLogger : RustPlugin {
-
-        public void AppendToLog() {
-
-            Puts(&quot;AppendToLog function called&quot;);
-
-        }
-
-    }
-
-}</pre>
-                                                </div>Additional plugins feed data into the first:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        ...
-        [PluginReference] Plugin EventLogger;
-
-        void OnLootPlayer(BasePlayer player, BasePlayer target) {
-
-            EventLogger?.Call(&quot;AppendToLog&quot;);
-
-        }</pre>
-                                                </div>My problem at the moment is that I&#039;m not seeing the AppendToLog Puts fire when the OnLootPlayer event triggers. Every example I&#039;ve seen
-                                                so far seems the same so I don&#039;t really know what else to change.<br />
-                                                <br /> Thanks in advance for any help.<br />
-                                                <br />
-                                                <br /> Tony. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Dec 18, 2016 at 5:47 PM">Dec 18, 2016</span>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Rebajas</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 18, 2016 at 5:27 PM">Dec
-                                                        18, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/277426/permalink">#1</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Got it working!<br />
+                                        <br /> Had a public class then a public method - didn&#039;t like it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
+                                            title="Smile    :)" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>If using // Requires, they&#039;d need to be public. If using [PluginReference] and .Call, they&#039;d need to be private. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-277438" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 18, 2016 at 6:06 PM">Dec 18, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-277438" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/277438/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278019" class="message" data-author="EinTime">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="EinTime" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">EinTime</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hey Wulf,<br />
+                        <br /> Can you expand upon this a bit?<br />
+                        <br /> I want to reference another plugin directly, without having to use [PluginReference]. I want to be able to call public methods from that class as well as use the public
+                        data classes inside of it.<br />
+                        <br /> How can I go about reference the instance of this plugin?<br />
+                        <br /> Thanks!<br />
+                        <br /> Adam<br /> [DOUBLEPOST=1482280005][/DOUBLEPOST]Bah, right as i posted this i figured it out.<br />
+                        <br /> // Requires: ClassType<br />
+                        <br /> at the top.<br />
+                        <br /> I&#039;m leaving all this here incase anyone else has the same problem! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278019" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:17 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278019" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278019/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278023" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="EinTime">
+                            <aside>
+                                <div class="attribution type">EinTime said: <a href="#post-278019" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-277434" class="message   " data-author="Rebajas">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Rebajas" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Rebajas</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Got it working!<br />
-                                                <br /> Had a public class then a public method - didn&#039;t like it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)"
-                                                    title="Smile    :)" />
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Rebajas</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-277434" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 18, 2016 at 6:00 PM">Dec
-                                                        18, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-277434" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/277434/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-277438" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Rebajas">
-                                                    <aside>
-                                                        <div class="attribution type">Rebajas said: <a href="goto/post?id=277434#post-277434" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Got it working!<br />
-                                                                <br /> Had a public class then a public method - didn&#039;t like it <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1"
-                                                                    alt=":)" title="Smile    :)" /></div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>If using // Requires, they&#039;d need to be public. If using [PluginReference] and .Call, they&#039;d need to be private. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-277438" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 18, 2016 at 6:06 PM">Dec
-                                                        18, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-277438" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/277438/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-278019" class="message   " data-author="EinTime">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="EinTime" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">EinTime</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hey Wulf,<br />
-                                                <br /> Can you expand upon this a bit?<br />
-                                                <br /> I want to reference another plugin directly, without having to use [PluginReference]. I want to be able to call public methods from that class
-                                                as well as use the public data classes inside of it.<br />
-                                                <br /> How can I go about reference the instance of this plugin?<br />
-                                                <br /> Thanks!<br />
-                                                <br /> Adam<br /> [DOUBLEPOST=1482280005][/DOUBLEPOST]Bah, right as i posted this i figured it out.<br />
-                                                <br /> // Requires: ClassType<br />
-                                                <br /> at the top.<br />
-                                                <br /> I&#039;m leaving all this here incase anyone else has the same problem! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278019" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:17 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278019" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278019/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-278023" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="EinTime">
-                                                    <aside>
-                                                        <div class="attribution type">EinTime said: <a href="goto/post?id=278019#post-278019" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Hey Wulf,<br />
-                                                                <br /> Can you expand upon this a bit?<br />
-                                                                <br /> I want to reference another plugin directly, without having to use [PluginReference]. I want to be able to call public methods
-                                                                from that class as well as use the public data classes inside of it.<br />
-                                                                <br /> How can I go about reference the instance of this plugin?<br />
-                                                                <br /> Thanks!<br />
-                                                                <br /> Adam<br /> [DOUBLEPOST=1482280005][/DOUBLEPOST]Bah, right as i posted this i figured it out.<br />
-                                                                <br /> // Requires: ClassType<br />
-                                                                <br /> at the top.<br />
-                                                                <br /> I&#039;m leaving all this here incase anyone else has the same problem!</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>It actually goes by the file name, which the class usually has to match. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278023" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:30 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278023" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278023/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-278026" class="message   " data-author="EinTime">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="EinTime" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">EinTime</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hey Wulf,<br />
-                                                <br /> I&#039;m still having some issues.<br />
-                                                <br /> My script looks like this:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>// Requires: OtherClass
-
-namespace Oxide.Plugins
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hey Wulf,<br />
+                                        <br /> Can you expand upon this a bit?<br />
+                                        <br /> I want to reference another plugin directly, without having to use [PluginReference]. I want to be able to call public methods from that class as well as
+                                        use the public data classes inside of it.<br />
+                                        <br /> How can I go about reference the instance of this plugin?<br />
+                                        <br /> Thanks!<br />
+                                        <br /> Adam<br /> [DOUBLEPOST=1482280005][/DOUBLEPOST]Bah, right as i posted this i figured it out.<br />
+                                        <br /> // Requires: ClassType<br />
+                                        <br /> at the top.<br />
+                                        <br /> I&#039;m leaving all this here incase anyone else has the same problem!</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It actually goes by the file name, which the class usually has to match. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278023" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:30 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278023" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278023/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278026" class="message" data-author="EinTime">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="EinTime" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">EinTime</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hey Wulf,<br />
+                        <br /> I&#039;m still having some issues.<br />
+                        <br /> My script looks like this:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>// Requires: OtherClassnamespace Oxide.Plugins
 {
     [Info(&quot;MyClass&quot;, &quot;EinTime&quot;, &quot;1.1.1&quot;)]
     class MyClass : RustPlugin
@@ -391,59 +358,57 @@ namespace Oxide.Plugins
         }
     }
 }</pre>
-                                                </div>However, whenever i try to access a member: otherClass.DoMethod(); I get a null reference exception<br />
-                                                <br />
-                                                <br /> Could this be a compilation order issue? Or an issue with getting the OtherClass reference from inside Loaded() ? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278026" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:38 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278026" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278026/permalink">#6</a>
-                                        </div>
-                                    </div>
+                        </div>However, whenever i try to access a member: otherClass.DoMethod(); I get a null reference exception<br />
+                        <br />
+                        <br /> Could this be a compilation order issue? Or an issue with getting the OtherClass reference from inside Loaded() ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278026" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:38 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278026" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278026/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278027" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="EinTime">
+                            <aside>
+                                <div class="attribution type">EinTime said: <a href="#post-278026" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-278027" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="EinTime">
-                                                    <aside>
-                                                        <div class="attribution type">EinTime said: <a href="goto/post?id=278026#post-278026" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Hey Wulf,<br />
-                                                                <br /> I&#039;m still having some issues.<br />
-                                                                <br /> My script looks like this:<br />
-                                                                <br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>// Requires: OtherClass
-
-namespace Oxide.Plugins
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hey Wulf,<br />
+                                        <br /> I&#039;m still having some issues.<br />
+                                        <br /> My script looks like this:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>// Requires: OtherClassnamespace Oxide.Plugins
 {
     [Info(&quot;MyClass&quot;, &quot;EinTime&quot;, &quot;1.1.1&quot;)]
     class MyClass : RustPlugin
@@ -455,212 +420,207 @@ namespace Oxide.Plugins
         }
     }
 }</pre>
-                                                                </div>However, whenever i try to access a member: otherClass.DoMethod(); I get a null reference exception<br />
-                                                                <br />
-                                                                <br /> Could this be a compilation order issue? Or an issue with getting the OtherClass reference from inside Loaded() ?
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>If using // Requires, you do not need to use plugins.Find. If you do use // Requires though, the methods in your other plugin need to be public,
-                                                not private. I&#039;m not sure why you&#039;re trying to cast though? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
+                                        </div>However, whenever i try to access a member: otherClass.DoMethod(); I get a null reference exception<br />
+                                        <br />
+                                        <br /> Could this be a compilation order issue? Or an issue with getting the OtherClass reference from inside Loaded() ?
                                     </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278027" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:42 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278027" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278027/permalink">#7</a>
-                                        </div>
-                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>If using // Requires, you do not need to use plugins.Find. If you do use // Requires though, the methods in your other plugin need to be public, not private. I&#039;m not
+                        sure why you&#039;re trying to cast though? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278027" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:42 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278027" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278027/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278028" class="message" data-author="EinTime">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="EinTime" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">EinTime</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">If using // Requires, and not using plugins.Find or a cast how do I get a reference to the instance of OtherClass?
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278028" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:44 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278028" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278028/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278029" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="EinTime">
+                            <aside>
+                                <div class="attribution type">EinTime said: <a href="#post-278028" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-278028" class="message   " data-author="EinTime">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="EinTime" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">EinTime</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> If using // Requires, and not using plugins.Find or a cast how do I get a reference to
-                                                the instance of OtherClass? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278028" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:44 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278028" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278028/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-278029" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="EinTime">
-                                                    <aside>
-                                                        <div class="attribution type">EinTime said: <a href="goto/post?id=278028#post-278028" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">If using // Requires, and not using plugins.Find or a cast how do I get a reference to the instance of OtherClass?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You can call methods directly if using // Requires, just make sure to add the using statements as necessary. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278029" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:46 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278029" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278029/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-278030" class="message   " data-author="EinTime">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="EinTime" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">EinTime</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Awesome. Thanks so much for your time Wulf! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
-                                                <a href="threads/calling-function-from-another-plugin.22542/#post-278030" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 21, 2016 at 12:47 AM">Dec
-                                                        21, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/calling-function-from-another-plugin.22542/#post-278030" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/278030/permalink">#10</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">If using // Requires, and not using plugins.Find or a cast how do I get a reference to the instance of OtherClass?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You can call methods directly if using // Requires, just make sure to add the using statements as necessary. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278029" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:46 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278029" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278029/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-278030" class="message" data-author="EinTime">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="EinTime" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">EinTime</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Awesome. Thanks so much for your time Wulf! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">EinTime</a>,</span>
+                        <a href="/threads/calling-function-from-another-plugin.22542/#post-278030" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 21, 2016 at 12:47 AM">Dec 21, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/calling-function-from-another-plugin.22542/#post-278030" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/278030/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -668,9 +628,9 @@ namespace Oxide.Plugins
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548596843,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -688,18 +648,17 @@ namespace Oxide.Plugins
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -725,8 +684,6 @@ namespace Oxide.Plugins
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

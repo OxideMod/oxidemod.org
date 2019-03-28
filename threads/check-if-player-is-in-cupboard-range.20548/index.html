@@ -1,289 +1,276 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Check if player is in cupboard range | Oxide</title>
+    <base href="" />
+    <title>Oxide - Check if player is in cupboard range</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548698830" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/check-if-player-is-in-cupboard-range.20548/" />
-    <meta name="description" content="Hey
-
-I'm trying to figure out how to check if a player is in range of their cupboard.
-
-I have a list called ProtectedCupboard which contains the player..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/check-if-player-is-in-cupboard-range.20548/" />
-    <meta property="og:title" content="Check if player is in cupboard range" />
-    <meta property="og:description" content="Hey
-
-I'm trying to figure out how to check if a player is in range of their cupboard.
-
-I have a list called ProtectedCupboard which contains the player..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Check if player is in cupboard range" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/check-if-player-is-in-cupboard-range.20548/">Check if player is in cupboard range</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">PsychoTea</a>, <a
-                                href="threads/check-if-player-is-in-cupboard-range.20548/"><span class="DateTime" title="Aug 24, 2016 at 8:58 PM">Aug 24, 2016</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-244986" class="message   " data-author="PsychoTea">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">PsychoTea</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hey<br />
-                                                <br /> I&#039;m trying to figure out how to check if a player is in range of their cupboard.<br />
-                                                <br /> I have a list called ProtectedCupboard which contains the player as type BasePlayer and the cupboard as type BaseEntity. Is there a way I can
-                                                check if the player is within the range of that cupboard?<br />
-                                                <br /> Something like: <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>if (ProtectedCupboard[player].GetComponent&lt;BuildingPriviledge&gt;.PlayersInRange.Contains(player)</pre>
-                                                </div>Thanks! <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 8:58 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/244986/permalink">#1</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-244988" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> You can check if they are in a building privilege zone, but not sure if that would help
-                                                get who the main user for that cupboard is. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-244988" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 9:00 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-244988" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/244988/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-244989" class="message   " data-author="PsychoTea">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">PsychoTea</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I already have a system in place to track the Tool Cupboards and who owns them, I just
-                                                need to find a way to check if a player is in Tool Cupboard range and get the Tool Cupboard that they&#039;re in range of as a BaseEntity. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-244989" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 9:02 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-244989" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/244989/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-244998" class="message   " data-author="FuJiCuRa">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="FuJiCuRa" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">FuJiCuRa</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
-                                                    <aside>
-                                                        <div class="attribution type">PsychoTea said: <a href="goto/post?id=244989#post-244989" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I already have a system in place to track the Tool Cupboards and who owns them, I just need to find a way to check if a
-                                                                player is in Tool Cupboard range and get the Tool Cupboard that they&#039;re in range of as a BaseEntity.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>This snippets should show you the path...<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>FieldInfo _buildingPrivilege = typeof(BasePlayer).GetField(&quot;buildingPrivilege&quot;, (BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic));
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
 
-List&lt;BuildingPrivlidge&gt; buildingPrivilege = (List&lt;BuildingPrivlidge&gt;)_buildingPrivilege.GetValue(entity as BasePlayer);
+<div class="titleBar">
+    <h1>
+        <a href="/threads/check-if-player-is-in-cupboard-range.20548/">Check if player is in cupboard range</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">PsychoTea</a>, <a href="/threads/check-if-player-is-in-cupboard-range.20548/"><span class="DateTime" title="Aug 24, 2016 at 8:58 PM">Aug 24,
+                2016</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-244986" class="message" data-author="PsychoTea">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PsychoTea" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PsychoTea</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hey<br />
+                        <br /> I&#039;m trying to figure out how to check if a player is in range of their cupboard.<br />
+                        <br /> I have a list called ProtectedCupboard which contains the player as type BasePlayer and the cupboard as type BaseEntity. Is there a way I can check if the player is
+                        within the range of that cupboard?<br />
+                        <br /> Something like: <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>if (ProtectedCupboard[player].GetComponent&lt;BuildingPriviledge&gt;.PlayersInRange.Contains(player)</pre>
+                        </div>Thanks! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 8:58 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/244986/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-244988" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">You can check if they are in a building privilege zone, but not sure if that would help get who the main user for
+                        that cupboard is. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-244988" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 9:00 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-244988" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/244988/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-244989" class="message" data-author="PsychoTea">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PsychoTea" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PsychoTea</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I already have a system in place to track the Tool Cupboards and who owns them, I just need to find a way to check
+                        if a player is in Tool Cupboard range and get the Tool Cupboard that they&#039;re in range of as a BaseEntity. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-244989" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 9:02 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-244989" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/244989/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-244998" class="message" data-author="FuJiCuRa">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="FuJiCuRa" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">FuJiCuRa</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+                            <aside>
+                                <div class="attribution type">PsychoTea said: <a href="#post-244989" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I already have a system in place to track the Tool Cupboards and who owns them, I just need to find a way to check if a player is in Tool
+                                        Cupboard range and get the Tool Cupboard that they&#039;re in range of as a BaseEntity.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>This snippets should show you the path...<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>FieldInfo _buildingPrivilege = typeof(BasePlayer).GetField(&quot;buildingPrivilege&quot;, (BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic));List&lt;BuildingPrivlidge&gt; buildingPrivilege = (List&lt;BuildingPrivlidge&gt;)_buildingPrivilege.GetValue(entity as BasePlayer);
 foreach (var cup in buildingPrivilege)
     Debug.Log(cup as BaseEntity);</pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-244998" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 9:39 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-244998" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/244998/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-245014" class="message   " data-author="PsychoTea">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">PsychoTea</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thankyou! I&#039;m now using this code which (I hope) should work:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>if (ProtectedCupboard.ContainsKey(HitPlayer))
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-244998" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 9:39 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-244998" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/244998/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-245014" class="message" data-author="PsychoTea">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PsychoTea" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PsychoTea</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Thankyou! I&#039;m now using this code which (I hope) should work:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>if (ProtectedCupboard.ContainsKey(HitPlayer))
                 {
-                    FieldInfo _buildingPrivilege = typeof(BasePlayer).GetField(&quot;buildingPrivilege&quot;, (BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic));
-
-                    List&lt;BuildingPrivlidge&gt; buildingPrivilege = (List&lt;BuildingPrivlidge&gt;)_buildingPrivilege.GetValue(entity as BasePlayer);
+                    FieldInfo _buildingPrivilege = typeof(BasePlayer).GetField(&quot;buildingPrivilege&quot;, (BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic));                    List&lt;BuildingPrivlidge&gt; buildingPrivilege = (List&lt;BuildingPrivlidge&gt;)_buildingPrivilege.GetValue(entity as BasePlayer);
                     foreach (var cup in buildingPrivilege)
                     {
                         BaseEntity c = cup as BaseEntity;
@@ -298,57 +285,55 @@ foreach (var cup in buildingPrivilege)
                         }
                     }
                 }</pre>
-                                                </div>[DOUBLEPOST=1472073616][/DOUBLEPOST]Is there a way I could check if a building/BuildingBlock is in the tool cupboard range? Would a better way be
-                                                to create a sphere around the TC and then check if the position of the BuildingBlock is within the sphere? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245014" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 10:16 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245014" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/245014/permalink">#5</a>
-                                        </div>
-                                    </div>
+                        </div>[DOUBLEPOST=1472073616][/DOUBLEPOST]Is there a way I could check if a building/BuildingBlock is in the tool cupboard range? Would a better way be to create a sphere
+                        around the TC and then check if the position of the BuildingBlock is within the sphere? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245014" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 10:16 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245014" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/245014/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-245017" class="message" data-author="FuJiCuRa">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="FuJiCuRa" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">FuJiCuRa</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
+                            <aside>
+                                <div class="attribution type">PsychoTea said: <a href="#post-245014" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-245017" class="message   " data-author="FuJiCuRa">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="FuJiCuRa" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">FuJiCuRa</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="PsychoTea">
-                                                    <aside>
-                                                        <div class="attribution type">PsychoTea said: <a href="goto/post?id=245014#post-245014" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Thankyou! I&#039;m now using this code which (I hope) should work:<br />
-                                                                <br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>if (ProtectedCupboard.ContainsKey(HitPlayer))
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Thankyou! I&#039;m now using this code which (I hope) should work:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>if (ProtectedCupboard.ContainsKey(HitPlayer))
                 {
-                    FieldInfo _buildingPrivilege = typeof(BasePlayer).GetField(&quot;buildingPrivilege&quot;, (BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic));
-
-                    List&lt;BuildingPrivlidge&gt; buildingPrivilege = (List&lt;BuildingPrivlidge&gt;)_buildingPrivilege.GetValue(entity as BasePlayer);
+                    FieldInfo _buildingPrivilege = typeof(BasePlayer).GetField(&quot;buildingPrivilege&quot;, (BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.NonPublic));                    List&lt;BuildingPrivlidge&gt; buildingPrivilege = (List&lt;BuildingPrivlidge&gt;)_buildingPrivilege.GetValue(entity as BasePlayer);
                     foreach (var cup in buildingPrivilege)
                     {
                         BaseEntity c = cup as BaseEntity;
@@ -363,17 +348,17 @@ foreach (var cup in buildingPrivilege)
                         }
                     }
                 }</pre>
-                                                                </div>[DOUBLEPOST=1472073616][/DOUBLEPOST]Is there a way I could check if a building/BuildingBlock is in the tool cupboard range? Would
-                                                                a better way be to create a sphere around the TC and then check if the position of the BuildingBlock is within the sphere?
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Physics.OverlapSphereNonAlloc would be a good way to achieve such lookups...<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>// UnityEngine.Physics
+                                        </div>[DOUBLEPOST=1472073616][/DOUBLEPOST]Is there a way I could check if a building/BuildingBlock is in the tool cupboard range? Would a better way be to
+                                        create a sphere around the TC and then check if the position of the BuildingBlock is within the sphere?
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Physics.OverlapSphereNonAlloc would be a good way to achieve such lookups...<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>// UnityEngine.Physics
 /// &lt;summary&gt;
 ///   &lt;para&gt;Computes and stores colliders touching or inside the sphere into the provided buffer.&lt;/para&gt;
 /// &lt;/summary&gt;
@@ -390,178 +375,171 @@ public static int OverlapSphereNonAlloc(Vector3 position, float radius, Collider
     return Physics.INTERNAL_CALL_OverlapSphereNonAlloc(ref position, radius, results, layerMask, queryTriggerInteraction);
 }
 </pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245017" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 10:27 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245017" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/245017/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-245019" class="message   " data-author="PsychoTea">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">PsychoTea</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I got this error in console when adding that function to my plugin:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>error CS0117: 'UnityEngine.Physics' does not contain a definition for 'INTERNAL_CALL_OverlapSphereNonAlloc'</pre>
-                                                </div>[DOUBLEPOST=1472075279][/DOUBLEPOST]Would using Physics.OverlapSphere work?<br /> I&#039;ve written this code:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>if (entity is BuildingBlock &amp;&amp; info.Initiator is BasePlayer)
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245017" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 10:27 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245017" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/245017/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-245019" class="message" data-author="PsychoTea">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PsychoTea" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PsychoTea</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I got this error in console when adding that function to my plugin:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>error CS0117: 'UnityEngine.Physics' does not contain a definition for 'INTERNAL_CALL_OverlapSphereNonAlloc'</pre>
+                        </div>[DOUBLEPOST=1472075279][/DOUBLEPOST]Would using Physics.OverlapSphere work?<br /> I&#039;ve written this code:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>if (entity is BuildingBlock &amp;&amp; info.Initiator is BasePlayer)
             {
                 BasePlayer AttackingPlayer = info.Initator as BasePlayer;
                 BuildingBlock AttackedBuildingBlock = entity as BuildingBlock;
                
-                List&lt;Collider&gt; hitColliders = Physics.OverlapSphere(entity.CenterPoint(), 25f).ToList();
-
-                if (hitColliders.Contains(AttackedBuildingBlock.GetComponent&lt;Collider&gt;))
+                List&lt;Collider&gt; hitColliders = Physics.OverlapSphere(entity.CenterPoint(), 25f).ToList();                if (hitColliders.Contains(AttackedBuildingBlock.GetComponent&lt;Collider&gt;))
                 {
                     SendReply(AttackingPlayer, &quot;This building is protected by starter protection for x hours.&quot;);
                 }
             }</pre>
-                                                </div>One thing I can&#039;t figure out is how to get the building block&#039;s (AttackedBuildingBlock) collider. Any ideas? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245019" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 24, 2016 at 10:37 PM">Aug
-                                                        24, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245019" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/245019/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-245060" class="message   " data-author="PsychoTea">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="PsychoTea" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">PsychoTea</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Nevermind - I fixed it.<br /> I ended up just getting the position of the cabinet and
-                                                the position of the building block, and then checking if they were within a radius of 25 (the TC radius) using Vector3.Distance. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
-                                                <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245060" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 25, 2016 at 2:18 AM">Aug
-                                                        25, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/check-if-player-is-in-cupboard-range.20548/#post-245060" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/245060/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                        </div>One thing I can&#039;t figure out is how to get the building block&#039;s (AttackedBuildingBlock) collider. Any ideas? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245019" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 24, 2016 at 10:37 PM">Aug 24, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245019" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/245019/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-245060" class="message" data-author="PsychoTea">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="PsychoTea" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">PsychoTea</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Nevermind - I fixed it.<br /> I ended up just getting the position of the cabinet and the position of the building
+                        block, and then checking if they were within a radius of 25 (the TC radius) using Vector3.Distance. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">PsychoTea</a>,</span>
+                        <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245060" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 25, 2016 at 2:18 AM">Aug 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/check-if-player-is-in-cupboard-range.20548/#post-245060" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/245060/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -569,9 +547,9 @@ public static int OverlapSphereNonAlloc(Vector3 position, float radius, Collider
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548898921,
-                today: 1548892800,
-                todayDow: 4
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -589,18 +567,17 @@ public static int OverlapSphereNonAlloc(Vector3 position, float radius, Collider
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -626,8 +603,6 @@ public static int OverlapSphereNonAlloc(Vector3 position, float radius, Collider
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

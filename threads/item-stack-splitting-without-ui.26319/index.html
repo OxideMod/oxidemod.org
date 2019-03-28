@@ -1,2145 +1,869 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Solved - Item stack splitting without UI | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/item-stack-splitting-without-ui.26319/" />
-	<meta name="description" content="Hi everybody ! 
-
-I'm boring to search in forums and other way ! 
-
-So I asking right here. Sorry for the english.
-
-I see on somes servers. When you drop..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/item-stack-splitting-without-ui.26319/" />
-	<meta property="og:title" content="Solved - Item stack splitting without UI" />
-	<meta property="og:description" content="Hi everybody ! 
-
-I'm boring to search in forums and other way ! 
-
-So I asking right here. Sorry for the english.
-
-I see on somes servers. When you drop..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Solved - Item stack splitting without UI</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Item stack splitting without UI" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node10 node1 node104 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Requests</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/item-stack-splitting-without-ui.26319/">Item stack splitting without UI</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">Кatenn</a>, <a href="threads/item-stack-splitting-without-ui.26319/"><span class="DateTime" title="Jul 12, 2017 at 5:03 PM">Jul 12, 2017</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Requests</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-337376" class="message   " data-author="Кatenn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Кatenn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Кatenn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/item-stack-splitting-without-ui.26319/">Item stack splitting without UI</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username"
+            dir="auto">Кatenn</a>, <a href="/threads/item-stack-splitting-without-ui.26319/"><span class="DateTime" title="Jul 12, 2017 at 5:03 PM">Jul 12,
+                2017</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hi everybody ! <br />
-<br />
-I&#039;m boring to search in forums and other way ! <br />
-<br />
-So I asking right here. Sorry for the english.<br />
-<br />
-I see on somes servers. When you drop ore, it&#039;s splitt on equal stack. Like the Furnace Splitter do. <br />
-But without the UI of the plugin Furnace Splitter. <br />
-<br />
-So my question is this one : How can I do this ? <br />
-Splitt ore, meats, becan and what ever I want in oven or camp fire with auto stack without UI ? <br />
-<br />
-Thank you for your time ! <br />
-Good day ! <br />
-<br />
-Katenn
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 5:03 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337376/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337390" class="message   " data-author="UnicornWeed">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="UnicornWeed" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">UnicornWeed</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					The one you&#039;re looking for is a paid plugin FurnaceSorter<br />
-Has 1 small UI button for turning on/ off but that&#039;s all. I&#039;m not sure there are any others besides that and the <a href="http://oxidemod.org/plugins/furnace-splitter.2406/" class="internalLink">Furnace Splitter for Rust | Oxide</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337390" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 5:47 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337390" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337390/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337394" class="message   " data-author="Кatenn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Кatenn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Кatenn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Thank you for your answer !<br />
-<br />
-Where I can find a paid plugin like this ?<br />
-<br />
-Edit : Ok just find it, on google, for 9.99$. <br />
-It&#039;s pretty little too much for my creditcard I guess ^^ <br />
-<br />
-No way to find another plugin do that ? or FurnaceSplitter with modification ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Jul 12, 2017 at 6:32 PM">Jul 12, 2017</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337394" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 6:17 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337394" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337394/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337401" class="message   " data-author="UnicornWeed">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="UnicornWeed" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">UnicornWeed</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Sorry I cant help you my posts keep being removed. If I explain why, this will also be removed so good luck with your search <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> I&#039;m sure you&#039;ll find something out there.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337401" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 6:54 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337401" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337401/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337402" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="UnicornWeed">
-	<aside>
-		
-			<div class="attribution type">UnicornWeed said:
-				
-					<a href="goto/post?id=337401#post-337401" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Sorry I cant help you my posts keep being removed. If I explain why, this will also be removed so good luck with your search <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> I&#039;m sure you&#039;ll find something out there.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>use PM instead ?^^
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337402" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 6:55 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337402" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337402/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337405" class="message   " data-author="UnicornWeed">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="UnicornWeed" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">UnicornWeed</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Yea I was going to, kinda pisses you off being silenced like that but I can definitely understand the circumstances behind it all. You wouldn&#039;t see advertisements for Tesco inside of Sainsburys now would you <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337405" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 7:06 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337405" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337405/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337426" class="message   " data-author="FuJiCuRa">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="FuJiCuRa" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">FuJiCuRa</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="UnicornWeed">
-	<aside>
-		
-			<div class="attribution type">UnicornWeed said:
-				
-					<a href="goto/post?id=337405#post-337405" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yea I was going to, kinda pisses you off being silenced like that but I can definitely understand the circumstances behind it all. You wouldn&#039;t see advertisements for Tesco inside of Sainsburys now would you <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I might feel bad for sure, and i can understand that, but since Oxidemod is an open framework and the idea behind is to provide everyone access to the plugins, it&#039;s needed to keep any dicscussion about paid plugins and or direct plugin advertisements about paid plugins out of the forums.<br />
-That did lead in the past and does still lead from time to time into trouble between those being satisfied and those not having the money or being/willing able to spent that money on these.<br />
-<br />
-Any developer who is providing paid plugins, is for sure thankful about some indirect ads by customers, but telling short names of these plugins should be still enough. Any further informations, like direct links or deeper discussions about pro&#039;s and con&#039;s are more contraproductive than it does help, for each site of the whole thing <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-<br />
-So don&#039;t feel bad about some of your content being removed here, it was done to keep the peace and harmony alive...<br />
-<br />
-Kind Regards
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337426" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 9:15 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337426" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337426/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337428" class="message   " data-author="UnicornWeed">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="UnicornWeed" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">UnicornWeed</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I understood this before you kindly took the time to explain it anyway, but thanks for clearing that up Fuji <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> There is sure some bad blood between certain developers, after all Oxide is free to use and is the backbone of these paid plugins. They require Oxide to run and I can understand the backlash this will cause when players feel they are denied access to something all because of money. Either way, I can see both sides of the story. A lot of time and effort is spent creating these plugins why should they be free, for some this is not just a hobby or interest, instead a business. We all have to make that paper right? <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> Have a good day sir!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337428" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 12, 2017 at 9:27 PM">Jul 12, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337428" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337428/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337455" class="message   " data-author="UnicornWeed">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="UnicornWeed" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">UnicornWeed</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
-	<aside>
-		
-			<div class="attribution type">Кatenn said:
-				
-					<a href="goto/post?id=337394#post-337394" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Thank you for your answer !<br />
-<br />
-Where I can find a paid plugin like this ?<br />
-No way to find another plugin do that ? or FurnaceSplitter with modification ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I may have found what you was originally looking for <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /> Try this --&gt; <a href="http://oxidemod.org/plugins/easyfurnace.1191/" class="internalLink">EasyFurnace for Rust | Oxide</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337455" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 13, 2017 at 12:15 AM">Jul 13, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337455" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337455/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-337565" class="message   " data-author="Кatenn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Кatenn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Кatenn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Wow... Just see what happend on the thread and it&#039;s like &quot;John Wick thing&#039;s&quot; : &quot;Don&#039;t talk about you don&#039;t know&quot; xD<br />
-<br />
-I really don&#039;t want make a mess in Oxide forum, appologies for that but I really don&#039;t know somes plugins are existing for money so !<br />
-<br />
-Thank you for your answer UnicornWeed, going to try this one.<br />
-<br />
-Hi Fuji ! We have long discussion long times ago like 2 years earlier, I hope u r ok <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-<br />
-Anyway thank you again <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-Good day !<br />
-<br />
-EDIT : I try the EasyFurnace but it&#039;s weird, all going in to the oven. Going to find dev of FurnaceSplitter and ask request ! We will see !
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Jul 13, 2017 at 11:56 AM">Jul 13, 2017</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-337565" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 13, 2017 at 11:39 AM">Jul 13, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-337565" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/337565/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-339147" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
-	<aside>
-		
-			<div class="attribution type">Кatenn said:
-				
-					<a href="goto/post?id=337565#post-337565" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Wow... Just see what happend on the thread and it&#039;s like &quot;John Wick thing&#039;s&quot; : &quot;Don&#039;t talk about you don&#039;t know&quot; xD<br />
-<br />
-I really don&#039;t want make a mess in Oxide forum, appologies for that but I really don&#039;t know somes plugins are existing for money so !<br />
-<br />
-Thank you for your answer UnicornWeed, going to try this one.<br />
-<br />
-Hi Fuji ! We have long discussion long times ago like 2 years earlier, I hope u r ok <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-<br />
-Anyway thank you again <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
-Good day !<br />
-<br />
-EDIT : I try the EasyFurnace but it&#039;s weird, all going in to the oven. Going to find dev of FurnaceSplitter and ask request ! We will see !</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Let me release a plugin for what you want xD<br />
-Is in approval<br />
-<a href="http://oxidemod.org/plugins/itemsplitter.2566/" class="internalLink">http://oxidemod.org/plugins/itemsplitter.2566/</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Jul 21, 2017 at 11:35 PM">Jul 21, 2017</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-339147" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 21, 2017 at 11:02 PM">Jul 21, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-339147" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/339147/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-339270" class="message   " data-author="Кatenn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Кatenn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Кatenn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="sami37">
-	<aside>
-		
-			<div class="attribution type">sami37 said:
-				
-					<a href="goto/post?id=339147#post-339147" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Let me release a plugin for what you want xD<br />
-Is in approval<br />
-<a href="http://oxidemod.org/plugins/itemsplitter.2566/" class="internalLink">http://oxidemod.org/plugins/itemsplitter.2566/</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Hey sami ! <br />
-<br />
-I appreciate but I have this : &quot;You do not have permission to view this page or perform this action.&quot;
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-339270" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 22, 2017 at 3:28 PM">Jul 22, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-339270" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/339270/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-339272" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
-	<aside>
-		
-			<div class="attribution type">Кatenn said:
-				
-					<a href="goto/post?id=339270#post-339270" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Hey sami !<br />
-<br />
-I appreciate but I have this : &quot;You do not have permission to view this page or perform this action.&quot;</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It hasn&#039;t been approved yet.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-339272" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 22, 2017 at 3:33 PM">Jul 22, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-339272" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/339272/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-339274" class="message   " data-author="Кatenn">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Кatenn" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Кatenn</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=339272#post-339272" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">It hasn&#039;t been approved yet.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Hi Wolf ! Hope you&#039;r ok ! <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /> <br />
-Thank you for you&#039;r answer ! <br />
-Regards,<br />
-Katenn
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-339274" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 22, 2017 at 3:35 PM">Jul 22, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-339274" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/339274/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-339298" class="message   " data-author="sami37">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="sami37" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">sami37</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
-	<aside>
-		
-			<div class="attribution type">Кatenn said:
-				
-					<a href="goto/post?id=339274#post-339274" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Hi Wolf ! Hope you&#039;r ok ! <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /><br />
-Thank you for you&#039;r answer !<br />
-Regards,<br />
-Katenn</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It&#039;s approved <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
-					<a href="threads/item-stack-splitting-without-ui.26319/#post-339298" title="Permalink" class="datePermalink"><span class="DateTime" title="Jul 22, 2017 at 5:23 PM">Jul 22, 2017</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/item-stack-splitting-without-ui.26319/#post-339298" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/339298/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+<ol class="messageList" id="messageList">
+    <li id="post-337376" class="message" data-author="Кatenn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Кatenn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Кatenn</a>
+                </h3>
+                <span class="arrow"></span>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi everybody ! <br />
+                        <br /> I&#039;m boring to search in forums and other way ! <br />
+                        <br /> So I asking right here. Sorry for the english.<br />
+                        <br /> I see on somes servers. When you drop ore, it&#039;s splitt on equal stack. Like the Furnace Splitter do. <br /> But without the UI of the plugin Furnace Splitter.
+                        <br />
+                        <br /> So my question is this one : How can I do this ? <br /> Splitt ore, meats, becan and what ever I want in oven or camp fire with auto stack without UI ? <br />
+                        <br /> Thank you for your time ! <br /> Good day ! <br />
+                        <br /> Katenn <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 5:03 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337376/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337390" class="message" data-author="UnicornWeed">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="UnicornWeed" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">UnicornWeed</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> The one you&#039;re looking for is a paid plugin FurnaceSorter<br /> Has 1 small UI button for turning on/ off
+                        but that&#039;s all. I&#039;m not sure there are any others besides that and the <a href="http://oxidemod.org/plugins/furnace-splitter.2406/" class="internalLink">Furnace
+                            Splitter for Rust | Oxide</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337390" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 5:47 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337390" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337390/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337394" class="message" data-author="Кatenn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Кatenn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Кatenn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Thank you for your answer !<br />
+                        <br /> Where I can find a paid plugin like this ?<br />
+                        <br /> Edit : Ok just find it, on google, for 9.99$. <br /> It&#039;s pretty little too much for my creditcard I guess ^^ <br />
+                        <br /> No way to find another plugin do that ? or FurnaceSplitter with modification ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 12, 2017 at 6:32 PM">Jul 12, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337394" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 6:17 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337394" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337394/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337401" class="message" data-author="UnicornWeed">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="UnicornWeed" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">UnicornWeed</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Sorry I cant help you my posts keep being removed. If I explain why, this will also be removed so good luck with
+                        your search <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> I&#039;m sure you&#039;ll find something
+                        out there. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337401" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 6:54 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337401" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337401/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337402" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="UnicornWeed">
+                            <aside>
+                                <div class="attribution type">UnicornWeed said: <a href="#post-337401" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Sorry I cant help you my posts keep being removed. If I explain why, this will also be removed so good luck with your search <img
+                                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> I&#039;m sure you&#039;ll find
+                                        something out there.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>use PM instead ?^^ <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337402" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 6:55 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337402" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337402/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337405" class="message" data-author="UnicornWeed">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="UnicornWeed" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">UnicornWeed</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Yea I was going to, kinda pisses you off being silenced like that but I can definitely understand the
+                        circumstances behind it all. You wouldn&#039;t see advertisements for Tesco inside of Sainsburys now would you <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337405" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 7:06 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337405" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337405/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337426" class="message" data-author="FuJiCuRa">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="FuJiCuRa" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">FuJiCuRa</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="UnicornWeed">
+                            <aside>
+                                <div class="attribution type">UnicornWeed said: <a href="#post-337405" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yea I was going to, kinda pisses you off being silenced like that but I can definitely understand the circumstances behind it all. You
+                                        wouldn&#039;t see advertisements for Tesco inside of Sainsburys now would you <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7"
+                                            alt=":p" title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I might feel bad for sure, and i can understand that, but since Oxidemod is an open framework and the idea behind is to provide everyone access to the plugins, it&#039;s
+                        needed to keep any dicscussion about paid plugins and or direct plugin advertisements about paid plugins out of the forums.<br /> That did lead in the past and does still lead
+                        from time to time into trouble between those being satisfied and those not having the money or being/willing able to spent that money on these.<br />
+                        <br /> Any developer who is providing paid plugins, is for sure thankful about some indirect ads by customers, but telling short names of these plugins should be still enough.
+                        Any further informations, like direct links or deeper discussions about pro&#039;s and con&#039;s are more contraproductive than it does help, for each site of the whole thing
+                        <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+                        <br /> So don&#039;t feel bad about some of your content being removed here, it was done to keep the peace and harmony alive...<br />
+                        <br /> Kind Regards <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">FuJiCuRa</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337426" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 9:15 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337426" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337426/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337428" class="message" data-author="UnicornWeed">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="UnicornWeed" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">UnicornWeed</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I understood this before you kindly took the time to explain it anyway, but thanks for clearing that up Fuji <img
+                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> There is sure some bad blood between certain developers, after all
+                        Oxide is free to use and is the backbone of these paid plugins. They require Oxide to run and I can understand the backlash this will cause when players feel they are denied
+                        access to something all because of money. Either way, I can see both sides of the story. A lot of time and effort is spent creating these plugins why should they be free, for
+                        some this is not just a hobby or interest, instead a business. We all have to make that paper right? <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /> Have a good day sir! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337428" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 12, 2017 at 9:27 PM">Jul 12, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337428" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337428/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337455" class="message" data-author="UnicornWeed">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="UnicornWeed" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">UnicornWeed</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
+                            <aside>
+                                <div class="attribution type">Кatenn said: <a href="#post-337394" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Thank you for your answer !<br />
+                                        <br /> Where I can find a paid plugin like this ?<br /> No way to find another plugin do that ? or FurnaceSplitter with modification ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I may have found what you was originally looking for <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" /> Try
+                        this --&gt; <a href="http://oxidemod.org/plugins/easyfurnace.1191/" class="internalLink">EasyFurnace for Rust | Oxide</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">UnicornWeed</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337455" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 13, 2017 at 12:15 AM">Jul 13, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337455" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337455/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-337565" class="message" data-author="Кatenn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Кatenn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Кatenn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Wow... Just see what happend on the thread and it&#039;s like &quot;John Wick thing&#039;s&quot; :
+                        &quot;Don&#039;t talk about you don&#039;t know&quot; xD<br />
+                        <br /> I really don&#039;t want make a mess in Oxide forum, appologies for that but I really don&#039;t know somes plugins are existing for money so !<br />
+                        <br /> Thank you for your answer UnicornWeed, going to try this one.<br />
+                        <br /> Hi Fuji ! We have long discussion long times ago like 2 years earlier, I hope u r ok <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1"
+                            alt=":)" title="Smile    :)" /><br />
+                        <br /> Anyway thank you again <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br /> Good day !<br />
+                        <br /> EDIT : I try the EasyFurnace but it&#039;s weird, all going in to the oven. Going to find dev of FurnaceSplitter and ask request ! We will see ! <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 13, 2017 at 11:56 AM">Jul 13, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-337565" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 13, 2017 at 11:39 AM">Jul 13, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-337565" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/337565/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-339147" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
+                            <aside>
+                                <div class="attribution type">Кatenn said: <a href="#post-337565" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Wow... Just see what happend on the thread and it&#039;s like &quot;John Wick thing&#039;s&quot; : &quot;Don&#039;t talk about you don&#039;t
+                                        know&quot; xD<br />
+                                        <br /> I really don&#039;t want make a mess in Oxide forum, appologies for that but I really don&#039;t know somes plugins are existing for money so !<br />
+                                        <br /> Thank you for your answer UnicornWeed, going to try this one.<br />
+                                        <br /> Hi Fuji ! We have long discussion long times ago like 2 years earlier, I hope u r ok <img src="styles/default/xenforo/clear.png"
+                                            class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br />
+                                        <br /> Anyway thank you again <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /><br /> Good day
+                                        !<br />
+                                        <br /> EDIT : I try the EasyFurnace but it&#039;s weird, all going in to the oven. Going to find dev of FurnaceSplitter and ask request ! We will see !</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Let me release a plugin for what you want xD<br /> Is in approval<br />
+                        <a href="http://oxidemod.org/plugins/itemsplitter.2566/" class="internalLink">http://oxidemod.org/plugins/itemsplitter.2566/</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Jul 21, 2017 at 11:35 PM">Jul 21, 2017</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-339147" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 21, 2017 at 11:02 PM">Jul 21, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-339147" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/339147/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-339270" class="message" data-author="Кatenn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Кatenn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Кatenn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="sami37">
+                            <aside>
+                                <div class="attribution type">sami37 said: <a href="#post-339147" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Let me release a plugin for what you want xD<br /> Is in approval<br />
+                                        <a href="http://oxidemod.org/plugins/itemsplitter.2566/" class="internalLink">http://oxidemod.org/plugins/itemsplitter.2566/</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Hey sami ! <br />
+                        <br /> I appreciate but I have this : &quot;You do not have permission to view this page or perform this action.&quot; <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-339270" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 22, 2017 at 3:28 PM">Jul 22, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-339270" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/339270/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-339272" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
+                            <aside>
+                                <div class="attribution type">Кatenn said: <a href="#post-339270" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hey sami !<br />
+                                        <br /> I appreciate but I have this : &quot;You do not have permission to view this page or perform this action.&quot;</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It hasn&#039;t been approved yet. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-339272" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 22, 2017 at 3:33 PM">Jul 22, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-339272" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/339272/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-339274" class="message" data-author="Кatenn">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Кatenn" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Кatenn</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-339272" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It hasn&#039;t been approved yet.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Hi Wolf ! Hope you&#039;r ok ! <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D" title="Big Grin    :D" />
+                        <br /> Thank you for you&#039;r answer ! <br /> Regards,<br /> Katenn <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Кatenn</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-339274" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 22, 2017 at 3:35 PM">Jul 22, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-339274" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/339274/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-339298" class="message" data-author="sami37">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="sami37" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">sami37</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Кatenn">
+                            <aside>
+                                <div class="attribution type">Кatenn said: <a href="#post-339274" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Hi Wolf ! Hope you&#039;r ok ! <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie8" alt=":D"
+                                            title="Big Grin    :D" /><br /> Thank you for you&#039;r answer !<br /> Regards,<br /> Katenn</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It&#039;s approved <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">sami37</a>,</span>
+                        <a href="/threads/item-stack-splitting-without-ui.26319/#post-339298" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Jul 22, 2017 at 5:23 PM">Jul 22, 2017</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/item-stack-splitting-without-ui.26319/#post-339298" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/339298/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548552082,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

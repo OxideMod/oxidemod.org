@@ -1,400 +1,383 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Bug (Maybe?) with getting explosions and hit entities | Oxide</title>
+    <base href="" />
+    <title>Oxide - Bug (Maybe?) with getting explosions and hit entities</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/" />
-    <meta name="description" content="Hello. I have been trying to make a plugin work, but I cant get part of it to work. When an explosive blows up and hits an entity, it will only..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/" />
-    <meta property="og:title" content="Bug (Maybe?) with getting explosions and hit entities" />
-    <meta property="og:description" content="Hello. I have been trying to make a plugin work, but I cant get part of it to work. When an explosive blows up and hits an entity, it will only..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Bug (Maybe?) with getting explosions and hit entities" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/">Bug (Maybe?) with getting explosions and hit entities</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">Me_Goes_RAWR</a>,
-                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/"><span class="DateTime" title="May 11, 2018 at 8:07 PM">May 11, 2018</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-400182" class="message   " data-author="Me_Goes_RAWR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Me_Goes_RAWR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hello. I have been trying to make a plugin work, but I cant get part of it to work. When
-                                                an explosive blows up and hits an entity, it will only register the owner of said entity (building blocks or deployables) in the entity is self but not
-                                                in the HitInfo bit.<br />
-                                                <br /> My current testing code:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        void OnEntityTakeDamage(BaseCombatEntity entity, HitInfo info)
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/">Bug (Maybe?) with getting explosions and hit entities</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">Me_Goes_RAWR</a>, <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/"><span class="DateTime"
+                title="May 11, 2018 at 8:07 PM">May 11, 2018</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-400182" class="message" data-author="Me_Goes_RAWR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Me_Goes_RAWR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hello. I have been trying to make a plugin work, but I cant get part of it to work. When an explosive blows up and
+                        hits an entity, it will only register the owner of said entity (building blocks or deployables) in the entity is self but not in the HitInfo bit.<br />
+                        <br /> My current testing code:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        void OnEntityTakeDamage(BaseCombatEntity entity, HitInfo info)
         {
             if(info.InitiatorPlayer != null){
                 PrintToChat(&quot;EntityOwnerId &quot; + entity.OwnerID.ToString());
                 PrintToChat(&quot;HitEntityOwnerId &quot; + info.HitEntity.OwnerID.ToString());
             }
 }</pre>
-                                                </div>Error:<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>Failed to call hook 'OnEntityTakeDamage' on plugin 'RustNotifications v0.1' (NullReferenceException: Object reference not set to an instance of an object)
+                        </div>Error:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>Failed to call hook 'OnEntityTakeDamage' on plugin 'RustNotifications v0.1' (NullReferenceException: Object reference not set to an instance of an object)
 at Oxide.Plugins.RustNotifications.OnEntityTakeDamage (.BaseCombatEntity entity, .HitInfo info) [0x00000] in &lt;filename unknown&gt;:0
 at Oxide.Plugins.RustNotifications.DirectCallHook (System.String name, System.Object&amp; ret, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
 at Oxide.Plugins.CSharpPlugin.InvokeMethod (Oxide.Core.Plugins.HookMethod method, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
 at Oxide.Core.Plugins.CSPlugin.OnCallHook (System.String name, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0
 at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0</pre>
-                                                </div>The InitiatorPlayer bit is so I dont get chat spammed with 0s.<br />
-                                                <br /> Screenshot with the code on my test server: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1383440195" target="_blank" class="externalLink  rel="
-                                                    nofollow">Steam Community :: Screenshot</a>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/" title="Permalink" class="datePermalink"><span class="DateTime" title="May 11, 2018 at 8:07 PM">May
-                                                        11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400182/permalink">#1</a>
-                                        </div>
-                                    </div>
+                        </div>The InitiatorPlayer bit is so I dont get chat spammed with 0s.<br />
+                        <br /> Screenshot with the code on my test server: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1383440195" target="_blank" class="externalLink  rel="
+                            nofollow">Steam Community :: Screenshot</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 11, 2018 at 8:07 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400182/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-400183" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">info.HitEntity may not always exist, same with OwnerID. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400183" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="May 11, 2018 at 8:12 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400183" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400183/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-400185" class="message" data-author="Me_Goes_RAWR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Me_Goes_RAWR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">I had it working fine like an hour or so ago, but then explosive bullets gave errors and now i lost the working
+                        file. :/ <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400185" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="May 11, 2018 at 8:15 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400185" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400185/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-400188" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Me_Goes_RAWR">
+                            <aside>
+                                <div class="attribution type">Me_Goes_RAWR said: <a href="#post-400185" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-400183" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I had it working fine like an hour or so ago, but then explosive bullets gave errors and now i lost the working file. :/</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Bullets wouldn&#039;t have an OwnerID. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400188" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="May 11, 2018 at 8:16 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400188" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400188/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-400191" class="message" data-author="Me_Goes_RAWR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Me_Goes_RAWR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">No, I mean when you hit the entity with the bullet, it does say the ownerid of the entity it hit. But with
+                        explosive bullets it doesnt work right. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400191" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="May 11, 2018 at 8:20 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400191" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400191/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-400192" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Me_Goes_RAWR">
+                            <aside>
+                                <div class="attribution type">Me_Goes_RAWR said: <a href="#post-400191" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> info.HitEntity may not always exist, same with OwnerID. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400183" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="May 11, 2018 at 8:12 PM">May 11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400183" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400183/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-400185" class="message   " data-author="Me_Goes_RAWR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Me_Goes_RAWR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I had it working fine like an hour or so ago, but then explosive bullets gave errors and
-                                                now i lost the working file. :/ <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400185" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="May 11, 2018 at 8:15 PM">May 11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400185" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400185/permalink">#3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-400188" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Me_Goes_RAWR">
-                                                    <aside>
-                                                        <div class="attribution type">Me_Goes_RAWR said: <a href="goto/post?id=400185#post-400185" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">I had it working fine like an hour or so ago, but then explosive bullets gave errors and now i lost the working file. :/</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Bullets wouldn&#039;t have an OwnerID. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400188" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="May 11, 2018 at 8:16 PM">May 11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400188" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400188/permalink">#4</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-400191" class="message   " data-author="Me_Goes_RAWR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Me_Goes_RAWR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> No, I mean when you hit the entity with the bullet, it does say the ownerid of the
-                                                entity it hit. But with explosive bullets it doesnt work right. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400191" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="May 11, 2018 at 8:20 PM">May 11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400191" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400191/permalink">#5</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-400192" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Me_Goes_RAWR">
-                                                    <aside>
-                                                        <div class="attribution type">Me_Goes_RAWR said: <a href="goto/post?id=400191#post-400191" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">No, I mean when you hit the entity with the bullet, it does say the ownerid of the entity it hit. But with explosive
-                                                                bullets it doesnt work right.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>The entity arg would be the target, the HitInfo would be the bullet. The way your example code is, there&#039;s lots of room for NREs there as
-                                                you&#039;re assuming both are players. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400192" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="May 11, 2018 at 8:21 PM">May 11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400192" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400192/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-400197" class="message   " data-author="Me_Goes_RAWR">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Me_Goes_RAWR</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>        void OnEntityTakeDamage(BaseCombatEntity entity, HitInfo info)
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">No, I mean when you hit the entity with the bullet, it does say the ownerid of the entity it hit. But with explosive bullets it doesnt work
+                                        right.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>The entity arg would be the target, the HitInfo would be the bullet. The way your example code is, there&#039;s lots of room for NREs there as you&#039;re assuming both
+                        are players. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400192" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="May 11, 2018 at 8:21 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400192" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400192/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-400197" class="message" data-author="Me_Goes_RAWR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Me_Goes_RAWR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Me_Goes_RAWR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>        void OnEntityTakeDamage(BaseCombatEntity entity, HitInfo info)
         {
             if (info == null || info.Initiator == null || info.Weapon == null || info.HitEntity == null)
             {
                 return;
-            }
-
-            BasePlayer player = (BasePlayer)info.Initiator;
+            }            BasePlayer player = (BasePlayer)info.Initiator;
             ulong hitEntityOwnerID = entity.OwnerID != 0 ? entity.OwnerID : info.HitEntity.OwnerID;
             if (hitEntityOwnerID == 0)
             {
                 return;
-            }
-
-            // if (hitEntityOwnerID == player.userID)
-            //     return;
-
-            if (entity.ShortPrefabName.Contains(&quot;target&quot;))
-                return;
-
-            if (IO())
+            }            // if (hitEntityOwnerID == player.userID)
+            //     return;            if (entity.ShortPrefabName.Contains(&quot;target&quot;))
+                return;            if (IO())
             {
-                string tag = Clans.Call&lt;string&gt;(&quot;GetClanOf&quot;, player.userID);
-
-                if (tag != null)
-                {
-
-                    var clan = GetOnlineClanMembers(tag);
+                string tag = Clans.Call&lt;string&gt;(&quot;GetClanOf&quot;, player.userID);                if (tag != null)
+                {                    var clan = GetOnlineClanMembers(tag);
                     if (clan.Contains(hitEntityOwnerID.ToString()))
-                        return;
-
-                }
+                        return;                }
             }
             string name = entity.ShortPrefabName.Replace(&quot;.entity&quot;, &quot;&quot;);
             
@@ -420,13 +403,9 @@ at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args)
                                                 .Replace(&quot;{Weapon}&quot;, info.Weapon.GetOwnerItemDefinition().displayName.english)
                                                 .Replace(&quot;{Position}&quot;, String.Format(&quot;X: {0}, Y: {1}, Z:{2}&quot;, Math.Round(entity.transform.position.x, 2), Math.Round(entity.transform.position.y, 2), Math.Round(entity.transform.position.z, 2)))
                                                 .Replace(&quot;{Structure}&quot;, name)
-                                                .Replace(&quot;{Damage}&quot;, Math.Round(info.damageTypes.Total(), 2).ToString());
-
-            //get structure's percentage health remaining for check against threshold
+                                                .Replace(&quot;{Damage}&quot;, Math.Round(info.damageTypes.Total(), 2).ToString());            //get structure's percentage health remaining for check against threshold
             int PercentHealthRemaining = (int)((entity.Health() / entity.MaxHealth()) * 100);
-            string rd = discordData.getID(hitEntityOwnerID);
-
-            if (IsPlayerActive(hitEntityOwnerID) &amp;&amp; IsPlayerNotificationCooledDown(hitEntityOwnerID, NotificationType.ServerNotification, Settings.ServerConfig.NotificationCooldownInSeconds))
+            string rd = discordData.getID(hitEntityOwnerID);            if (IsPlayerActive(hitEntityOwnerID) &amp;&amp; IsPlayerNotificationCooledDown(hitEntityOwnerID, NotificationType.ServerNotification, Settings.ServerConfig.NotificationCooldownInSeconds))
             {
                 if (PercentHealthRemaining &lt;= Settings.ServerConfig.ThresholdPercentageHealthRemaining)
                 {
@@ -445,14 +424,8 @@ at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args)
                         PrintToChat(p, MessageText);
                     if (IO())
                     {
-                        string tag = Clans.Call&lt;string&gt;(&quot;GetClanOf&quot;, hitEntityOwnerID);
-
-                        if (tag != null)
-                        {
-
-                            var clan = GetOnlineClanMembers(tag);
-
-                            foreach (String c in clan)
+                        string tag = Clans.Call&lt;string&gt;(&quot;GetClanOf&quot;, hitEntityOwnerID);                        if (tag != null)
+                        {                            var clan = GetOnlineClanMembers(tag);                            foreach (String c in clan)
                             {
                                 if (p.userID.ToString() != c)
                                 {
@@ -482,87 +455,82 @@ at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args)
                 }
             }
         }</pre>
-                                                </div>This is what it is in total. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
-                                                <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400197" title="Permalink" class="datePermalink"><span class="DateTime"
-                                                        title="May 11, 2018 at 8:34 PM">May 11, 2018</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400197" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/400197/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                        </div>This is what it is in total. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Me_Goes_RAWR</a>,</span>
+                        <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400197" title="Permalink" class="datePermalink"><span
+                                class="DateTime" title="May 11, 2018 at 8:34 PM">May 11, 2018</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/bug-maybe-with-getting-explosions-and-hit-entities.30552/#post-400197" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/400197/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -570,9 +538,9 @@ at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args)
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548553562,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -590,18 +558,17 @@ at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args)
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -627,8 +594,6 @@ at Oxide.Core.Plugins.Plugin.CallHook (System.String hook, System.Object[] args)
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

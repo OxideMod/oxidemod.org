@@ -1,889 +1,881 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>CanLockSign and CanUnlockSign not working | Oxide</title>
+    <base href="" />
+    <title>Oxide - CanLockSign and CanUnlockSign not working</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/canlocksign-and-canunlocksign-not-working.21763/" />
-    <meta name="description" content="Don't work hooks" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/canlocksign-and-canunlocksign-not-working.21763/" />
-    <meta property="og:title" content="CanLockSign and CanUnlockSign not working" />
-    <meta property="og:description" content="Don't work hooks" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - CanLockSign and CanUnlockSign not working" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <a href="https://oxidemod.org/threads/canlocksign-and-canunlocksign-not-working.21763/">CanLockSign and CanUnlockSign not working</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">miRror</a>, <a href="threads/canlocksign-and-canunlocksign-not-working.21763/"><span
-                                    class="DateTime" title="Nov 3, 2016 at 6:00 PM">Nov 3, 2016</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/">CanLockSign and CanUnlockSign not working</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">miRror</a>, <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/"><span class="DateTime" title="Nov 3, 2016 at 6:00 PM">Nov 3,
+                2016</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-264332" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Don&#039;t work hooks <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:00 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/264332/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264333" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">What exactly isn&#039;t working about them? How are you using them? Details are needed. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264333" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:02 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264333" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264333/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264336" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-264333" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">What exactly isn&#039;t working about them? How are you using them? Details are needed.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
                         </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-264332" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Don&#039;t work hooks <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:00 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264332/permalink">#1</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264333" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> What exactly isn&#039;t working about them? How are you using them? Details are needed.
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264333" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:02 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264333" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264333/permalink">#2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264336" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=264333#post-264333" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">What exactly isn&#039;t working about them? How are you using them? Details are needed.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>void CanUnlockSign(BasePlayer player, Signage sign)
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>void CanUnlockSign(BasePlayer player, Signage sign)
 {
     SendReply(player, &quot;CanUnlockSign works!&quot;);
-}
-
-void OnSignLocked(Signage sign, BasePlayer player)
+}void OnSignLocked(Signage sign, BasePlayer player)
 {
     SendReply(player, &quot;OnSignLocked works!&quot;);
 }</pre>
-                                                </div><br /> but hook CanUpdateSign now worked:<br />
-                                                <br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>void CanUpdateSign(BasePlayer player, Signage sign)
+                        </div><br /> but hook CanUpdateSign now worked:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>void CanUpdateSign(BasePlayer player, Signage sign)
 {
     SendReply(player, &quot;CanUpdateSign works!&quot;);
 }</pre>
-                                                </div>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264336" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:04 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264336" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264336/permalink">#3</a>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264336" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:04 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264336" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264336/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264337" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
+                            <aside>
+                                <div class="attribution type">miRror said: <a href="#post-264336" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-264337" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
-                                                    <aside>
-                                                        <div class="attribution type">miRror said: <a href="goto/post?id=264336#post-264336" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>void CanUnlockSign(BasePlayer player, Signage sign)
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>void CanUnlockSign(BasePlayer player, Signage sign)
 {
     SendReply(player, &quot;CanUnlockSign works!&quot;);
-}
-
-void OnSignLocked(Signage sign, BasePlayer player)
+}void OnSignLocked(Signage sign, BasePlayer player)
 {
     SendReply(player, &quot;OnSignLocked works!&quot;);
 }</pre>
-                                                                </div><br /> but hook CanUpdateSign now worked:<br />
-                                                                <br />
-                                                                <div class="bbCodeBlock bbCodeCode">
-                                                                    <div class="type">Code:</div>
-                                                                    <pre>void CanUpdateSign(BasePlayer player, Signage sign)
+                                        </div><br /> but hook CanUpdateSign now worked:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>void CanUpdateSign(BasePlayer player, Signage sign)
 {
     SendReply(player, &quot;CanUpdateSign works!&quot;);
 }</pre>
-                                                                </div>
-                                                            </div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>They haven&#039;t moved and are still called from what I can tell. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264337" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:05 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264337" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264337/permalink">#4</a>
                                         </div>
                                     </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>They haven&#039;t moved and are still called from what I can tell. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264337" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:05 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264337" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264337/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264338" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>, I already checked this hooks, but they not working. What I&#039;m doing wrong?
+                        Can you check by yourself? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264338" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:08 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264338" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264338/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264339" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
+                            <aside>
+                                <div class="attribution type">miRror said: <a href="#post-264338" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-264338" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>, I already checked this hooks, but they not
+                                        working. What I&#039;m doing wrong? Can you check by yourself?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Are you using an official build or did you patch on your own? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264339" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:14 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264339" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264339/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264340" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-264339" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>, I already checked this hooks, but they not working.
-                                                What I&#039;m doing wrong? Can you check by yourself? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264338" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:08 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264338" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264338/permalink">#5</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Are you using an official build or did you patch on your own?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Official build <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264340" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:15 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264340" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264340/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264344" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
+                            <aside>
+                                <div class="attribution type">miRror said: <a href="#post-264340" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-264339" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Official build</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Testing the hooks right now. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264344" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:19 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264344" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264344/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264345" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-264344" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
-                                                    <aside>
-                                                        <div class="attribution type">miRror said: <a href="goto/post?id=264338#post-264338" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote"><a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>, I already checked this
-                                                                hooks, but they not working. What I&#039;m doing wrong? Can you check by yourself?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Are you using an official build or did you patch on your own? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264339" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:14 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264339" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264339/permalink">#6</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Testing the hooks right now.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Thanks.<br /> [DOUBLEPOST=1478198357][/DOUBLEPOST]<a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>, So, do they works?
+                        Thanks for reply. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264345" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:21 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264345" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264345/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264356" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Not sure why, but that whole method in Rust isn&#039;t being called. You could use CanUpdateSign though,
+                        that&#039;s essentially the same thing. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264356" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:40 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264356" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264356/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264360" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-264356" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-264340" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Not sure why, but that whole method in Rust isn&#039;t being called. You could use CanUpdateSign though, that&#039;s essentially the same thing.
                                     </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Damn, that&#039;s bad. We really need this hooks, any way you can fix them? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264360" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:48 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264360" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264360/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264361" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
+                            <aside>
+                                <div class="attribution type">miRror said: <a href="#post-264360" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=264339#post-264339" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Are you using an official build or did you patch on your own?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Official build <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264340" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:15 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264340" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264340/permalink">#7</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Damn, that&#039;s bad. We really need this hooks, any way you can fix them?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>If Rust doesn&#039;t use it, it won&#039;t be called. CanUpdateSign is literally the same as CanLockSign/CanUnlockSign with the exception of checking if the door is
+                        locked or not, which you can do if you need. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264361" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 6:50 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264361" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264361/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264367" class="message" data-author="SannyOK">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="SannyOK" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">SannyOK</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">CanUpdateSign not match, because it sends when contain of the table refreshes. He needs to block ability to
+                        &quot;block action&quot; (close for changing) tables. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">SannyOK</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264367" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 7:05 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264367" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264367/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264368" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="SannyOK">
+                            <aside>
+                                <div class="attribution type">SannyOK said: <a href="#post-264367" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-264344" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">CanUpdateSign not match, because it sends when contain of the table refreshes. He needs to block ability to &quot;block action&quot; (close for
+                                        changing) tables.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You can block the action with CanUpdateSign, just return true. If Rust doesn&#039;t call the others, there isn&#039;t really anything that can be done. The CanUnlock and
+                        CanLock locations literally rely on CanUpdateSign and what it returns. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264368" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 7:08 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264368" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264368/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264379" class="message" data-author="miRror">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="miRror" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">miRror</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-264368" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
-                                                    <aside>
-                                                        <div class="attribution type">miRror said: <a href="goto/post?id=264340#post-264340" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Official build</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Testing the hooks right now. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264344" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:19 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264344" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264344/permalink">#8</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">You can block the action with CanUpdateSign, just return true. If Rust doesn&#039;t call the others, there isn&#039;t really anything that can be
+                                        done. The CanUnlock and CanLock locations literally rely on CanUpdateSign and what it returns.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div><a href="https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg" target="_blank" class="externalLink  rel="
+                            nofollow">https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264379" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 7:49 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264379" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264379/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-264383" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
+                            <aside>
+                                <div class="attribution type">miRror said: <a href="#post-264379" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-264345" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=264344#post-264344" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Testing the hooks right now.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Thanks.<br /> [DOUBLEPOST=1478198357][/DOUBLEPOST]<a href="https://oxidemod.org/members/1115/" class="username" data-user="1115, @Wulf">@Wulf</a>,
-                                                So, do they works? Thanks for reply. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264345" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:21 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264345" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264345/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264356" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Not sure why, but that whole method in Rust isn&#039;t being called. You could use
-                                                CanUpdateSign though, that&#039;s essentially the same thing. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264356" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:40 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264356" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264356/permalink">#10</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264360" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=264356#post-264356" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Not sure why, but that whole method in Rust isn&#039;t being called. You could use CanUpdateSign though, that&#039;s
-                                                                essentially the same thing.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Damn, that&#039;s bad. We really need this hooks, any way you can fix them? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264360" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:48 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264360" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264360/permalink">#11</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264361" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
-                                                    <aside>
-                                                        <div class="attribution type">miRror said: <a href="goto/post?id=264360#post-264360" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Damn, that&#039;s bad. We really need this hooks, any way you can fix them?</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>If Rust doesn&#039;t use it, it won&#039;t be called. CanUpdateSign is literally the same as CanLockSign/CanUnlockSign with the exception of
-                                                checking if the door is locked or not, which you can do if you need. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264361" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 6:50 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264361" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264361/permalink">#12</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264367" class="message   " data-author="SannyOK">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="SannyOK" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">SannyOK</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> CanUpdateSign not match, because it sends when contain of the table refreshes. He needs
-                                                to block ability to &quot;block action&quot; (close for changing) tables. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">SannyOK</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264367" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 7:05 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264367" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264367/permalink">#13</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264368" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="SannyOK">
-                                                    <aside>
-                                                        <div class="attribution type">SannyOK said: <a href="goto/post?id=264367#post-264367" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">CanUpdateSign not match, because it sends when contain of the table refreshes. He needs to block ability to &quot;block
-                                                                action&quot; (close for changing) tables.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You can block the action with CanUpdateSign, just return true. If Rust doesn&#039;t call the others, there isn&#039;t really anything that can be
-                                                done. The CanUnlock and CanLock locations literally rely on CanUpdateSign and what it returns. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264368" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 7:08 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264368" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264368/permalink">#14</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264379" class="message   " data-author="miRror">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="miRror" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">miRror</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=264368#post-264368" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">You can block the action with CanUpdateSign, just return true. If Rust doesn&#039;t call the others, there isn&#039;t
-                                                                really anything that can be done. The CanUnlock and CanLock locations literally rely on CanUpdateSign and what it returns.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div><a href="https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg" target="_blank" class="externalLink  rel=" nofollow">https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg</a>
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">miRror</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264379" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 7:49 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264379" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264379/permalink">#15</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-264383" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="miRror">
-                                                    <aside>
-                                                        <div class="attribution type">miRror said: <a href="goto/post?id=264379#post-264379" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote"><a href="https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg" target="_blank" class="externalLink">https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg</a></div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Yes, what about it? You can see from your screenshot that both locking hooks call CanUpdateSign. The other locations is where the hooks are that
-                                                are not working that you are complaining about, but the one for locking is never called. The best way to do it right now is with CanUpdateSign.<br />
-                                                <div class="bbCodeBlock bbCodeCode">
-                                                    <div class="type">Code:</div>
-                                                    <pre>bool CanUpdateSign(BasePlayer player, Signage sign)
+                                <blockquote class="quoteContainer">
+                                    <div class="quote"><a href="https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg" target="_blank"
+                                            class="externalLink">https://pp.vk.me/c637826/v637826897/1aa91/gEJ6SN0KVAA.jpg</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Yes, what about it? You can see from your screenshot that both locking hooks call CanUpdateSign. The other locations is where the hooks are that are not working that you
+                        are complaining about, but the one for locking is never called. The best way to do it right now is with CanUpdateSign.<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>bool CanUpdateSign(BasePlayer player, Signage sign)
 {
         if (Signage.IsLocked()) &amp;&amp; !player.IsAdmin()) return false;
 }</pre>
-                                                </div>^ Quick and easy example of checking if they can unlock if they are admin. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264383" title="Permalink" class="datePermalink"><span class="DateTime" title="Nov 3, 2016 at 7:55 PM">Nov
-                                                        3, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/canlocksign-and-canunlocksign-not-working.21763/#post-264383" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
-                                                data-href="posts/264383/permalink">#16</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                        </div>^ Quick and easy example of checking if they can unlock if they are admin. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264383" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Nov 3, 2016 at 7:55 PM">Nov 3, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/canlocksign-and-canunlocksign-not-working.21763/#post-264383" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/264383/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -891,7 +883,7 @@ void OnSignLocked(Signage sign, BasePlayer player)
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548538248,
+                now: 1548531785,
                 today: 1548460800,
                 todayDow: 6
             },
@@ -911,18 +903,17 @@ void OnSignLocked(Signage sign, BasePlayer player)
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -948,8 +939,6 @@ void OnSignLocked(Signage sign, BasePlayer player)
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

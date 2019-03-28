@@ -1,803 +1,806 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="https://oxidemod.org/" />
-    <script> var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-    <title>Rust - Custom text for banned players | Oxide</title>
+    <base href="" />
+    <title>Oxide - Rust - Custom text for banned players</title>
     <noscript>
-        <style>.JsOnly, .jsOnly { display: none !important; }</style>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
     </noscript>
-    <link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-    <script src="js/jquery/jquery-1.11.0.min.js"></script>
-    <script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-    <link rel="canonical" href="https://oxidemod.org/threads/custom-text-for-banned-players.11023/" />
-    <meta name="description" content="Is there a plugin that allows you to change the text when rejoining the server during the ban, rather than &quot;You have banned from this server&quot;, make..." />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
     <meta property="og:site_name" content="Oxide" />
-    <meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-    <meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://oxidemod.org/threads/custom-text-for-banned-players.11023/" />
-    <meta property="og:title" content="Rust - Custom text for banned players" />
-    <meta property="og:description" content="Is there a plugin that allows you to change the text when rejoining the server during the ban, rather than &quot;You have banned from this server&quot;, make..." />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Rust - Custom text for banned players" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node10 node1 node104 SelectQuotable">
+<body>
     <div id="headerMover">
         <div id="headerProxy"></div>
-        <div id="content" class="thread_view">
+        <div id="content" class="forum_list">
             <div class="pageWidth">
                 <div class="pageContent">
-                    <div class="breadBoxTop ">
-                        <nav>
-                            <fieldset class="breadcrumb">
-                                <div class="boardTitle"><strong>Oxide</strong></div>
-                                <span class="crumbs">
-                                    <span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                    <span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-                                        <a href="https://oxidemod.org/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Requests</span></a>
-                                        <span class="arrow"><span>&gt;</span></span>
-                                    </span>
-                                </span>
-                            </fieldset>
-                        </nav>
-                    </div>
-                    <!-- h1 title, description -->
-                    <div class="titleBar">
-                        <h1>
-                            <span class="prefix prefixRed">Rust</span> <a href="https://oxidemod.org/threads/custom-text-for-banned-players.11023/">Custom text for banned players</a>
-                        </h1>
-                        <p id="pageDescription" class="muted "> Discussion in '<a href="forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username" dir="auto">Хьюстон</a>, <a href="threads/custom-text-for-banned-players.11023/"><span
-                                    class="DateTime" title="Aug 11, 2015 at 5:11 PM">Aug 11, 2015</span></a>. </p>
-                    </div>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup SelectionCountContainer">
-                        </div>
-                    </div>
-                    <form action="inline-mod/post/switch" method="post" class="InlineModForm section" data-cookieName="posts" data-controls="#InlineModControls" data-imodOptions="#ModerationSelect option">
-                        <ol class="messageList" id="messageList">
-                            <li id="post-118956" class="message   " data-author="Хьюстон">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Хьюстон" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Хьюстон</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-requests.10/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Requests</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
+
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixRed">Rust</span> <a href="/threads/custom-text-for-banned-players.11023/">Custom text for banned players</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/plugin-requests.10/">Plugin Requests</a>' started by <a class="username"
+            dir="auto">Хьюстон</a>, <a href="/threads/custom-text-for-banned-players.11023/"><span class="DateTime" title="Aug 11, 2015 at 5:11 PM">Aug 11,
+                2015</span></a>.
+    </p>
+</div>
+<ol class="messageList" id="messageList">
+    <li id="post-118956" class="message" data-author="Хьюстон">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Хьюстон" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Хьюстон</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Is there a plugin that allows you to change the text when rejoining the server during the ban, rather than
+                        &quot;You have banned from this server&quot;, make your text, such as &quot;For unban apply to mysite.com&quot;? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Хьюстон</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 11, 2015 at 5:11 PM">Aug 11, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/118956/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119083" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Ill be doing a custom ban system. Hope it will be approved <a href="https://oxidemod.org/members/1115/"
+                            class="username" data-user="1115, @Wulf">@Wulf</a>, would it? <br /> There you will be able to do all that. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119083" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 11, 2015 at 10:01 PM">Aug 11, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119083" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119083/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119182" class="message" data-author="[X] Meep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="[X] Meep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">[X] Meep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">+1 Would like custom ban system. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">[X] Meep</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119182" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 7:37 AM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119182" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119182/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119185" class="message" data-author="Ruby">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ruby" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ruby</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-119083" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Is there a plugin that allows you to change the text when rejoining the server during
-                                                the ban, rather than &quot;You have banned from this server&quot;, make your text, such as &quot;For unban apply to mysite.com&quot;? <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Хьюстон</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 11, 2015 at 5:11 PM">Aug
-                                                        11, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/118956/permalink">#1</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Ill be doing a custom ban system. Hope it will be approved <a href="https://oxidemod.org/members/1115/" class="username"
+                                            data-user="1115, @Wulf">@Wulf</a>, would it?<br /> There you will be able to do all that.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It is desirable that it uses conventional bans.cfg Rust, and not as the Enhanced Ban System. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ruby</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119185" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 7:58 AM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119185" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119185/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119207" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Ruby">
+                            <aside>
+                                <div class="attribution type">Ruby said: <a href="#post-119185" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-119083" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It is desirable that it uses conventional bans.cfg Rust, and not as the Enhanced Ban System.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>well. I don&#039;t think that will be possible, as we are not able to use System.IO.File stuff, means I don&#039;t think we can manually read those files, we may be able
+                        to write to them tho. But I think we will need an extra file - sorry. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119207" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 10:54 AM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119207" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119207/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119208" class="message" data-author="Ruby">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Ruby" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Ruby</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-119207" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ill be doing a custom ban system. Hope it will be approved <a href="https://oxidemod.org/members/1115/"
-                                                    class="username" data-user="1115, @Wulf">@Wulf</a>, would it? <br /> There you will be able to do all that. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119083" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 11, 2015 at 10:01 PM">Aug
-                                                        11, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119083" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119083/permalink">#2</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">But I think we will need an extra file - sorry.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Sadness... <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Ruby</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119208" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 10:59 AM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119208" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119208/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119217" class="message" data-author="baton256">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="baton256" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">baton256</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Maybe I&#039;ll look into this later. First of all I want to get few things done in my airdrop plugin. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">baton256</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119217" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 11:52 AM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119217" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119217/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119232" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="baton256">
+                            <aside>
+                                <div class="attribution type">baton256 said: <a href="#post-119217" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-119182" class="message   " data-author="[X] Meep">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="[X] Meep" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">[X] Meep</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Maybe I&#039;ll look into this later. First of all I want to get few things done in my airdrop plugin.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You don&#039;t need to, I already got my Ban System working. Just need to do some stuff to make it 100% rdy. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119232" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 12:54 PM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119232" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119232/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119237" class="message" data-author="baton256">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="baton256" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">baton256</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-119232" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> +1 Would like custom ban system. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">[X] Meep</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119182" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 7:37 AM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119182" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119182/permalink">#3</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">You don&#039;t need to, I already got my Ban System working. Just need to do some stuff to make it 100% rdy.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Alright, nice catch. I was thinking about using bans.cfg <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">baton256</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119237" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 1:11 PM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119237" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119237/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119241" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="baton256">
+                            <aside>
+                                <div class="attribution type">baton256 said: <a href="#post-119237" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-119185" class="message   " data-author="Ruby">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ruby" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ruby</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Alright, nice catch. I was thinking about using bans.cfg</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>oh okay, yea sure you can make researches about that. Im just using the Data files. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119241" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 1:25 PM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119241" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119241/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119333" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-119241" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-                                                    <aside>
-                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=119083#post-119083" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Ill be doing a custom ban system. Hope it will be approved <a href="https://oxidemod.org/members/1115/" class="username"
-                                                                    data-user="1115, @Wulf">@Wulf</a>, would it?<br /> There you will be able to do all that.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>It is desirable that it uses conventional bans.cfg Rust, and not as the Enhanced Ban System. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ruby</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119185" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 7:58 AM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119185" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119185/permalink">#4</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">oh okay, yea sure you can make researches about that. Im just using the Data files.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>PS. You&#039;re going to confuse people running multiple ban systems, especially if you don&#039;t save to bans.cfg. <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119333" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 6:17 PM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119333" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119333/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119375" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-119333" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-119207" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">PS. You&#039;re going to confuse people running multiple ban systems, especially if you don&#039;t save to bans.cfg. <img
+                                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Maybe I gonna call it &quot;LaserHydra Ban-System&quot; <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119375" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 7:49 PM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119375" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119375/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-119388" class="message" data-author="baton256">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="baton256" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">baton256</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
+                            <aside>
+                                <div class="attribution type">LaserHydra said: <a href="#post-119375" class="AttributionLink">&uarr;</a>
                                 </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Ruby">
-                                                    <aside>
-                                                        <div class="attribution type">Ruby said: <a href="goto/post?id=119185#post-119185" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">It is desirable that it uses conventional bans.cfg Rust, and not as the Enhanced Ban System.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>well. I don&#039;t think that will be possible, as we are not able to use System.IO.File stuff, means I don&#039;t think we can manually read
-                                                those files, we may be able to write to them tho. But I think we will need an extra file - sorry. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119207" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 10:54 AM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119207" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119207/permalink">#5</a>
-                                        </div>
-                                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Maybe I gonna call it &quot;LaserHydra Ban-System&quot;</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>You&#039;ve forgotten to add &quot;Mk I&quot; to the name <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">baton256</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-119388" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Aug 12, 2015 at 8:44 PM">Aug 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-119388" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/119388/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-177756" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Hmm. I would still do that custom bansystem if wanted. Though I am not sure if it is actually needed, as there is
+                        Rusts default one &amp; EnhancedBanSystem already. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-177756" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 17, 2016 at 7:00 PM">Feb 17, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-177756" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/177756/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-177781" class="message" data-author="Resistance">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Resistance" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Resistance</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">Would we really need is a better working anti hack system that covers all types of hacks out there and does not
+                        give false readings <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-177781" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 17, 2016 at 9:09 PM">Feb 17, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-177781" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/177781/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-177788" class="message" data-author="LaserHydra">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="LaserHydra" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">LaserHydra</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Resistance">
+                            <aside>
+                                <div class="attribution type">Resistance said: <a href="#post-177781" class="AttributionLink">&uarr;</a>
                                 </div>
-                            </li>
-                            <li id="post-119208" class="message   " data-author="Ruby">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Ruby" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Ruby</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-                                                    <aside>
-                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=119207#post-119207" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">But I think we will need an extra file - sorry.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Sadness... <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie3" alt=":(" title="Frown    :(" />
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Ruby</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119208" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 10:59 AM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119208" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119208/permalink">#6</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119217" class="message   " data-author="baton256">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="baton256" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">baton256</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Maybe I&#039;ll look into this later. First of all I want to get few things done in my
-                                                airdrop plugin. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">baton256</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119217" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 11:52 AM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119217" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119217/permalink">#7</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119232" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="baton256">
-                                                    <aside>
-                                                        <div class="attribution type">baton256 said: <a href="goto/post?id=119217#post-119217" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Maybe I&#039;ll look into this later. First of all I want to get few things done in my airdrop plugin.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You don&#039;t need to, I already got my Ban System working. Just need to do some stuff to make it 100% rdy. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119232" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 12:54 PM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119232" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119232/permalink">#8</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119237" class="message   " data-author="baton256">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="baton256" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">baton256</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-                                                    <aside>
-                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=119232#post-119232" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">You don&#039;t need to, I already got my Ban System working. Just need to do some stuff to make it 100% rdy.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Alright, nice catch. I was thinking about using bans.cfg <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">baton256</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119237" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 1:11 PM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119237" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119237/permalink">#9</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119241" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="baton256">
-                                                    <aside>
-                                                        <div class="attribution type">baton256 said: <a href="goto/post?id=119237#post-119237" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Alright, nice catch. I was thinking about using bans.cfg</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>oh okay, yea sure you can make researches about that. Im just using the Data files. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119241" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 1:25 PM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119241" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119241/permalink">#10</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119333" class="message  staff " data-author="Wulf">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto" itemprop="name">Wulf</a>
-                                            <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-                                                    <aside>
-                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=119241#post-119241" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">oh okay, yea sure you can make researches about that. Im just using the Data files.</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>PS. You&#039;re going to confuse people running multiple ban systems, especially if you don&#039;t save to bans.cfg. <img src="styles/default/xenforo/clear.png"
-                                                    class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" />
-                                                <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119333" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 6:17 PM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119333" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119333/permalink">#11</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119375" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-                                                    <aside>
-                                                        <div class="attribution type">Wulf said: <a href="goto/post?id=119333#post-119333" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">PS. You&#039;re going to confuse people running multiple ban systems, especially if you don&#039;t save to bans.cfg.
-                                                                <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /></div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>Maybe I gonna call it &quot;LaserHydra Ban-System&quot; <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119375" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 7:49 PM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119375" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119375/permalink">#12</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-119388" class="message   " data-author="baton256">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="baton256" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">baton256</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="LaserHydra">
-                                                    <aside>
-                                                        <div class="attribution type">LaserHydra said: <a href="goto/post?id=119375#post-119375" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Maybe I gonna call it &quot;LaserHydra Ban-System&quot;</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>You&#039;ve forgotten to add &quot;Mk I&quot; to the name <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">baton256</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-119388" title="Permalink" class="datePermalink"><span class="DateTime" title="Aug 12, 2015 at 8:44 PM">Aug
-                                                        12, 2015</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-119388" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/119388/permalink">#13</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-177756" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hmm. I would still do that custom bansystem if wanted. Though I am not sure if it is
-                                                actually needed, as there is Rusts default one &amp; EnhancedBanSystem already. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-177756" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 17, 2016 at 7:00 PM">Feb
-                                                        17, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-177756" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/177756/permalink">#14</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-177781" class="message   " data-author="Resistance">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Resistance" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">Resistance</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Would we really need is a better working anti hack system that covers all types of hacks
-                                                out there and does not give false readings <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">Resistance</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-177781" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 17, 2016 at 9:09 PM">Feb
-                                                        17, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-177781" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/177781/permalink">#15</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="post-177788" class="message   " data-author="LaserHydra">
-                                <div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">
-                                    <div class="messageUserBlock ">
-                                        <div class="avatarHolder">
-                                            <span class="helper"></span>
-                                            <a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="LaserHydra" /></a>
-                                        </div>
-                                        <h3 class="userText">
-                                            <a class="username" dir="auto">LaserHydra</a>
-                                        </h3>
-                                        <span class="arrow"><span></span></span>
-                                    </div>
-                                </div>
-                                <div class="messageInfo primaryContent">
-                                    <div class="messageContent">
-                                        <article>
-                                            <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-                                                <div class="bbCodeBlock bbCodeQuote" data-author="Resistance">
-                                                    <aside>
-                                                        <div class="attribution type">Resistance said: <a href="goto/post?id=177781#post-177781" class="AttributionLink">&uarr;</a>
-                                                        </div>
-                                                        <blockquote class="quoteContainer">
-                                                            <div class="quote">Would we really need is a better working anti hack system that covers all types of hacks out there and does not give
-                                                                false readings</div>
-                                                            <div class="quoteExpand">Click to expand...</div>
-                                                        </blockquote>
-                                                    </aside>
-                                                </div>There will propably never be an anticheat system which is able to prevent all hacks and does not make false decisions. Real peoples sense can not
-                                                be replaced with a bot. <div class="messageTextEndMarker">&nbsp;</div>
-                                            </blockquote>
-                                        </article>
-                                    </div>
-                                    <div class="messageMeta ToggleTriggerAnchor">
-                                        <div class="privateControls">
-                                            <span class="item muted">
-                                                <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
-                                                <a href="threads/custom-text-for-banned-players.11023/#post-177788" title="Permalink" class="datePermalink"><span class="DateTime" title="Feb 17, 2016 at 9:19 PM">Feb
-                                                        17, 2016</span></a>
-                                            </span>
-                                        </div>
-                                        <div class="publicControls">
-                                            <a href="threads/custom-text-for-banned-players.11023/#post-177788" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/177788/permalink">#16</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </form>
-                    <div class="pageNavLinkGroup">
-                        <div class="linkGroup">
-                        </div>
-                        <div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-                    </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Would we really need is a better working anti hack system that covers all types of hacks out there and does not give false readings</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>There will propably never be an anticheat system which is able to prevent all hacks and does not make false decisions. Real peoples sense can not be replaced with a bot.
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">LaserHydra</a>,</span>
+                        <a href="/threads/custom-text-for-banned-players.11023/#post-177788" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Feb 17, 2016 at 9:19 PM">Feb 17, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/custom-text-for-banned-players.11023/#post-177788" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/177788/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+
+
                     <footer>
                         <div class="footer">
-                            <div class="pageContent">
-                            </div>
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
                             <span class="helper"></span>
                             <ul class="footerLinks">
-                                <li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
+                                <li><a href="/terms/">Terms and Rules</a></li>
                                 <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
                             </ul>
                             <span class="helper"></span>
                         </div>
+                    </footer>
                 </div>
-                </footer>
             </div>
         </div>
-    </div>
-    <header>
-        <div id="header">
-            <div class="headerWidth">
-                <div id="logoBlock">
-                    <div id="logo"><a href="https://oxidemod.org/">
-                            <span></span>
-                            <img src="styles/oxide/logo.png" alt="Oxide" />
-                        </a></div>
-                    <span class="helper"></span>
-                </div>
-                <div id="navigation" class="">
-                    <div class="pageContent">
-                        <nav>
-                            <div class="navTabs">
-                                <ul class="publicTabs">
-                                    <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-                                    </li>
-                                    <li class="navTab PopupClosed">
-                                        <a href="https://umod.org/documentation" class="navLink">Docs</a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-                                    </li>
-                                    <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-                                        <a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-                                    </li>
-                                    <li class="navTab selected">
-                                        <div class="tabLinks"></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <span class="helper"></span>
-                        </nav>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
     </div>
     <script>
         jQuery.extend(true, XenForo, {
@@ -805,9 +808,9 @@
                 user_id: 0
             },
             serverTimeInfo: {
-                now: 1548551136,
-                today: 1548547200,
-                todayDow: 0
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
             },
             _lightBoxUniversal: "0",
             _enableOverlays: "1",
@@ -825,18 +828,17 @@
             },
             _ignoredUsers: [],
             _loadedScripts: {
-                "thread_view": true,
-                "message": true,
-                "bb_code": true,
-                "message_user_info": true
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
             },
             _cookieConfig: {
                 path: "/",
                 domain: ".oxidemod.org",
-                prefix: "ih_xfid_"
+                prefix: "xfid_"
             },
-            _csrfToken: "",
-            _csrfRefreshUrl: "login/csrf-token-refresh",
             _jsVersion: "f33b43a2"
         });
         jQuery.extend(XenForo.phrases, {
@@ -862,8 +864,6 @@
             click_image_show_full_size_version: "Click this image to show the full-size version.",
             show_hidden_content_by_x: "Show hidden content by {names}"
         });
-
     </script>
 </body>
-
 </html>

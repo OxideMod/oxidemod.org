@@ -1,1465 +1,619 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Solved - Getting player&#039;s name in a message? (C#) | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548544754" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	
-	<link rel="canonical" href="https://oxidemod.org/threads/getting-players-name-in-a-message-c.18176/" />
-	<meta name="description" content="Hi!
-
-I would like to get the name of a player in OnPlayerInit(Baseplayer player) and pass it to {player.name} in a message in the lang file of my..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/getting-players-name-in-a-message-c.18176/" />
-	<meta property="og:title" content="Solved - Getting player&#039;s name in a message? (C#)" />
-	<meta property="og:description" content="Hi!
-
-I would like to get the name of a player in OnPlayerInit(Baseplayer player) and pass it to {player.name} in a message in the lang file of my..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Solved - Getting player&#039;s name in a message? (C#)</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Solved - Getting player&#039;s name in a message? (C#)" />
+    <meta property="og:description" content="" />
 </head>
-
-<body class="node4 node1 node104 node105 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/archive.104/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Archive</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/categories/plugin-development.105/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Plugin Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/rust-development.4/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Rust Development</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<span class="prefix prefixGreen">Solved</span> <a href="https://oxidemod.org/threads/getting-players-name-in-a-message-c.18176/">Getting player&#039;s name in a message? (C#)</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/rust-development.4/">Rust Development</a>' started by <a class="username" dir="auto">JoeSheep</a>, <a href="threads/getting-players-name-in-a-message-c.18176/"><span class="DateTime" title="May 20, 2016 at 12:23 PM">May 20, 2016</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-<div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/plugin-development.105/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Plugin Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/rust-development.4/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Rust Development</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
 </div>
 
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-207680" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
+<div class="titleBar">
+    <h1>
+        <span class="prefix prefixGreen">Solved</span> <a href="/threads/getting-players-name-in-a-message-c.18176/">Getting player&#039;s name in a message? (C#)</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/rust-development.4/">Rust Development</a>' started by <a class="username"
+            dir="auto">JoeSheep</a>, <a href="/threads/getting-players-name-in-a-message-c.18176/"><span class="DateTime" title="May 20, 2016 at 12:23 PM">May 20,
+                2016</span></a>.
+    </p>
 </div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Hi!<br />
-<br />
-I would like to get the name of a player in OnPlayerInit(Baseplayer player) and pass it to {player.name} in a message in the lang file of my plugin, which is then loaded when the message is displayed with the player&#039;s name.<br />
-<br />
-I am unsure of how to do this even after referencing a few plugins out there. Would some one mind suggesting how I could do this or point me in the right direction?<br />
-<br />
-<br />
-Cheers
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 12:23 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207680/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207686" class="message   " data-author="k1lly0u">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="k1lly0u" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">k1lly0u</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					There are multiple way&#039;s to do it, I use the first method because I am lazy and can&#039;t be bothered always writing replace <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+<ol class="messageList" id="messageList">
+    <li id="post-207680" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Hi!<br />
+                        <br /> I would like to get the name of a player in OnPlayerInit(Baseplayer player) and pass it to {player.name} in a message in the lang file of my plugin, which is then loaded
+                        when the message is displayed with the player&#039;s name.<br />
+                        <br /> I am unsure of how to do this even after referencing a few plugins out there. Would some one mind suggesting how I could do this or point me in the right
+                        direction?<br />
+                        <br />
+                        <br /> Cheers <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 12:23 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/207680/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207686" class="message" data-author="k1lly0u">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="k1lly0u" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">k1lly0u</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> There are multiple way&#039;s to do it, I use the first method because I am lazy and can&#039;t be bothered
+                        always writing replace <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>
             string testmessage = &quot;{0} has joined the server&quot;;
-            PrintToChat(string.Format(testmessage, player.displayName)); // string.Format replaces {0}, {1}, {2} etc with the supplied arguments. In this case I am supplying 1 arg which is the players name
-
-            string furthertestmessage = &quot;{0} {1} {2}&quot;;
-            PrintToChat(string.Format(furthertestmessage, arg1, arg2, arg3));
-
-            string othermessage = &quot;{playername} has joined the server&quot;;
-            PrintToChat(othermessage.Replace(&quot;{playername}&quot;, player.displayName)); // Using the replace function finds and replaces the 1st arg with the second.
-
-            string furtherexample = &quot;{attacker} has killed {victim}&quot;;
+            PrintToChat(string.Format(testmessage, player.displayName)); // string.Format replaces {0}, {1}, {2} etc with the supplied arguments. In this case I am supplying 1 arg which is the players name            string furthertestmessage = &quot;{0} {1} {2}&quot;;
+            PrintToChat(string.Format(furthertestmessage, arg1, arg2, arg3));            string othermessage = &quot;{playername} has joined the server&quot;;
+            PrintToChat(othermessage.Replace(&quot;{playername}&quot;, player.displayName)); // Using the replace function finds and replaces the 1st arg with the second.            string furtherexample = &quot;{attacker} has killed {victim}&quot;;
             PrintToChat(furtherexample.Replace(&quot;{attacker}&quot;, attacker.displayName).Replace(&quot;{victim}&quot;, victim.displayName)); // The replace function can be used multiple times on 1 string</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">k1lly0u</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207686" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 1:16 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207686" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207686/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207691" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Ah so simple! I have seen that being used before but didn&#039;t think to use it for this. Thank&#039;s <a href="https://oxidemod.org/members/36455/" class="username" data-user="36455, @k1lly0u">@k1lly0u</a><br />
-<br />
-I just found the string displayName in Assembly-CSharp.dll too.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="May 20, 2016 at 1:38 PM">May 20, 2016</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207691" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 1:29 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207691" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207691/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207732" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="k1lly0u">
-	<aside>
-		
-			<div class="attribution type">k1lly0u said:
-				
-					<a href="goto/post?id=207686#post-207686" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">There are multiple way&#039;s to do it, I use the first method because I am lazy and can&#039;t be bothered always writing replace <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">k1lly0u</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207686" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 1:16 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207686" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207686/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207691" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Ah so simple! I have seen that being used before but didn&#039;t think to use it for this. Thank&#039;s <a
+                            href="https://oxidemod.org/members/36455/" class="username" data-user="36455, @k1lly0u">@k1lly0u</a><br />
+                        <br /> I just found the string displayName in Assembly-CSharp.dll too. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="May 20, 2016 at 1:38 PM">May 20, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207691" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 1:29 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207691" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207691/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207732" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="k1lly0u">
+                            <aside>
+                                <div class="attribution type">k1lly0u said: <a href="#post-207686" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">There are multiple way&#039;s to do it, I use the first method because I am lazy and can&#039;t be bothered always writing replace <img
+                                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>
             string testmessage = &quot;{0} has joined the server&quot;;
-            PrintToChat(string.Format(testmessage, player.displayName)); // string.Format replaces {0}, {1}, {2} etc with the supplied arguments. In this case I am supplying 1 arg which is the players name
-
-            string furthertestmessage = &quot;{0} {1} {2}&quot;;
-            PrintToChat(string.Format(furthertestmessage, arg1, arg2, arg3));
-
-            string othermessage = &quot;{playername} has joined the server&quot;;
-            PrintToChat(othermessage.Replace(&quot;{playername}&quot;, player.displayName)); // Using the replace function finds and replaces the 1st arg with the second.
-
-            string furtherexample = &quot;{attacker} has killed {victim}&quot;;
+            PrintToChat(string.Format(testmessage, player.displayName)); // string.Format replaces {0}, {1}, {2} etc with the supplied arguments. In this case I am supplying 1 arg which is the players name            string furthertestmessage = &quot;{0} {1} {2}&quot;;
+            PrintToChat(string.Format(furthertestmessage, arg1, arg2, arg3));            string othermessage = &quot;{playername} has joined the server&quot;;
+            PrintToChat(othermessage.Replace(&quot;{playername}&quot;, player.displayName)); // Using the replace function finds and replaces the 1st arg with the second.            string furtherexample = &quot;{attacker} has killed {victim}&quot;;
             PrintToChat(furtherexample.Replace(&quot;{attacker}&quot;, attacker.displayName).Replace(&quot;{victim}&quot;, victim.displayName)); // The replace function can be used multiple times on 1 string</pre>
-</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Don&#039;t forgot string interpolation:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>PrintToChat($&quot;{player.displayName} has joined the server&quot;);</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207732" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 4:21 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207732" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207732/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207740" class="message   " data-author="k1lly0u">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="k1lly0u" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">k1lly0u</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=207732#post-207732" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Don&#039;t forgot string interpolation:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>PrintToChat($&quot;{player.displayName} has joined the server&quot;);</pre>
-</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>That is the preferred way but I didn&#039;t mention it because he was talking about strings via Lang API<img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">k1lly0u</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207740" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 4:28 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207740" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207740/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207749" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="k1lly0u">
-	<aside>
-		
-			<div class="attribution type">k1lly0u said:
-				
-					<a href="goto/post?id=207740#post-207740" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">That is the preferred way but I didn&#039;t mention it because he was talking about strings via Lang API<img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>In that case for multiple messages, this would help:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>string Lang(string key, string id = null, params object[] args) =&gt; string.Format(lang.GetMessage(key, this, id), args);
+                                        </div>
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Don&#039;t forgot string interpolation:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>PrintToChat($&quot;{player.displayName} has joined the server&quot;);</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207732" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 4:21 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207732" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207732/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207740" class="message" data-author="k1lly0u">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="k1lly0u" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">k1lly0u</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-207732" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Don&#039;t forgot string interpolation:<br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>PrintToChat($&quot;{player.displayName} has joined the server&quot;);</pre>
+                                        </div>
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>That is the preferred way but I didn&#039;t mention it because he was talking about strings via Lang API<img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">k1lly0u</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207740" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 4:28 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207740" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207740/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207749" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="k1lly0u">
+                            <aside>
+                                <div class="attribution type">k1lly0u said: <a href="#post-207740" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">That is the preferred way but I didn&#039;t mention it because he was talking about strings via Lang API<img
+                                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>In that case for multiple messages, this would help:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>string Lang(string key, string id = null, params object[] args) =&gt; string.Format(lang.GetMessage(key, this, id), args);
 ...
 PrintToChat(Lang(&quot;MyMessage&quot;, player.UserIDString, player.displayName));</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207749" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 4:36 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207749" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207749/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207819" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I basically just did:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>CreatePrivateMsgGUI(welcomeMessageText.Replace(&quot;{playername}&quot;, player.displayName), bannerTintColor, textColor, player);</pre>
-</div>Cheers guys.<br />
-<br />
-I now just need to figure out how to wait until the player&#039;s sleep ends after joining before I send the GUI to them, any ideas?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207819" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 7:30 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207819" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207819/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207821" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
-	<aside>
-		
-			<div class="attribution type">JoeSheep said:
-				
-					<a href="goto/post?id=207819#post-207819" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I basically just did:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>CreatePrivateMsgGUI(welcomeMessageText.Replace(&quot;{playername}&quot;, player.displayName), bannerTintColor, textColor, player);</pre>
-</div>Cheers guys.<br />
-<br />
-I now just need to figure out how to wait until the player&#039;s sleep ends after joining before I send the GUI to them, any ideas?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>OnPlayerInit maybe? I don&#039;t think we have a hook for OnPlayerSleep yet.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207821" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 7:31 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207821" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207821/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207825" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=207821#post-207821" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">OnPlayerInit maybe? I don&#039;t think we have a hook for OnPlayerSleep yet.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>OnPlayerInit is what I am using at the moment, and was wandering if there would be a way to wait until the player wakes up rather than delaying the GUI creation 10 seconds (If it is created instantly it is too early and you won&#039;t see it). I know there is void OnPlayerSleepEnded but that will end up sending a welcome GUI message every time they wake up rather than after joining the server (obviously).<br />
-<br />
-Maybe I could do something with OnPlayerInit setting bool joined = true and OnPlayerSleepEnded checking if joined = true then proceeding with creating the welcome GUI message after which setting joined = false?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207825" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 7:37 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207825" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207825/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207831" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
-	<aside>
-		
-			<div class="attribution type">JoeSheep said:
-				
-					<a href="goto/post?id=207825#post-207825" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">OnPlayerInit is what I am using at the moment, and was wandering if there would be a way to wait until the player wakes up rather than delaying the GUI creation 10 seconds (If it is created instantly it is too early and you won&#039;t see it). I know there is void OnPlayerSleepEnded but that will end up sending a welcome GUI message every time they wake up rather than after joining the server (obviously).<br />
-<br />
-Maybe I could do something with OnPlayerInit setting bool joined = true and OnPlayerSleepEnded checking if joined = true then proceeding with creating the welcome GUI message after which setting joined = false?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Adding a timer would usually cover most cases.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207831" title="Permalink" class="datePermalink"><span class="DateTime" title="May 20, 2016 at 7:42 PM">May 20, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207831" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207831/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-207834" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=207831#post-207831" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Adding a timer would usually cover most cases.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>While it does I know some players will join then leave themselves sleeping for a while at which point the timer for destroying the GUI message will have already ran. I might see what I can do with what I mentioned. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
-[DOUBLEPOST=1463772382][/DOUBLEPOST]Hmm with the bool true until the player wakes up, it will create issues when multiple players are joining. I don&#039;t think it is possible to sort of &quot;append&quot; a variable to a player.<br />
-[DOUBLEPOST=1463951871,1463769810][/DOUBLEPOST]
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>if (player.HasPlayerFlag(BasePlayer.PlayerFlags.ReceivingSnapshot))
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207749" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 4:36 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207749" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207749/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207819" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I basically just did:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>CreatePrivateMsgGUI(welcomeMessageText.Replace(&quot;{playername}&quot;, player.displayName), bannerTintColor, textColor, player);</pre>
+                        </div>Cheers guys.<br />
+                        <br /> I now just need to figure out how to wait until the player&#039;s sleep ends after joining before I send the GUI to them, any ideas? <div class="messageTextEndMarker">
+                            &nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207819" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 7:30 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207819" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207819/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207821" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
+                            <aside>
+                                <div class="attribution type">JoeSheep said: <a href="#post-207819" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I basically just did:<br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>CreatePrivateMsgGUI(welcomeMessageText.Replace(&quot;{playername}&quot;, player.displayName), bannerTintColor, textColor, player);</pre>
+                                        </div>Cheers guys.<br />
+                                        <br /> I now just need to figure out how to wait until the player&#039;s sleep ends after joining before I send the GUI to them, any ideas?
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>OnPlayerInit maybe? I don&#039;t think we have a hook for OnPlayerSleep yet. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207821" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 7:31 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207821" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207821/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207825" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-207821" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">OnPlayerInit maybe? I don&#039;t think we have a hook for OnPlayerSleep yet.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>OnPlayerInit is what I am using at the moment, and was wandering if there would be a way to wait until the player wakes up rather than delaying the GUI creation 10
+                        seconds (If it is created instantly it is too early and you won&#039;t see it). I know there is void OnPlayerSleepEnded but that will end up sending a welcome GUI message every
+                        time they wake up rather than after joining the server (obviously).<br />
+                        <br /> Maybe I could do something with OnPlayerInit setting bool joined = true and OnPlayerSleepEnded checking if joined = true then proceeding with creating the welcome GUI
+                        message after which setting joined = false? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207825" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 7:37 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207825" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207825/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207831" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
+                            <aside>
+                                <div class="attribution type">JoeSheep said: <a href="#post-207825" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">OnPlayerInit is what I am using at the moment, and was wandering if there would be a way to wait until the player wakes up rather than delaying
+                                        the GUI creation 10 seconds (If it is created instantly it is too early and you won&#039;t see it). I know there is void OnPlayerSleepEnded but that will end up
+                                        sending a welcome GUI message every time they wake up rather than after joining the server (obviously).<br />
+                                        <br /> Maybe I could do something with OnPlayerInit setting bool joined = true and OnPlayerSleepEnded checking if joined = true then proceeding with creating
+                                        the welcome GUI message after which setting joined = false?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Adding a timer would usually cover most cases. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207831" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 20, 2016 at 7:42 PM">May 20, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207831" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207831/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-207834" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-207831" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Adding a timer would usually cover most cases.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>While it does I know some players will join then leave themselves sleeping for a while at which point the timer for destroying the GUI message will have already ran. I
+                        might see what I can do with what I mentioned. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
+                        [DOUBLEPOST=1463772382][/DOUBLEPOST]Hmm with the bool true until the player wakes up, it will create issues when multiple players are joining. I don&#039;t think it is possible
+                        to sort of &quot;append&quot; a variable to a player.<br /> [DOUBLEPOST=1463951871,1463769810][/DOUBLEPOST] <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>if (player.HasPlayerFlag(BasePlayer.PlayerFlags.ReceivingSnapshot))
                 {
                     timer.Once(2, () =&gt; OnPlayerInit(player));
                     return;
                 }</pre>
-</div>This works like a charm, I have debugging &quot;Puts&quot; messages to tell me at what part in the code it is on, and it circles on the &quot;Player Connected&quot; message just before the above code, after I finished receiving data it wen&#039;t through all the other &quot;Puts&quot; messages through the whole GUI creation process and I saw the GUI as soon as I woke up.<br />
-<br />
-<br />
-EDIT:<br />
-This does everything I wanted to have done.<br />
-<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>void OnPlayerInit(BasePlayer player)
+                        </div>This works like a charm, I have debugging &quot;Puts&quot; messages to tell me at what part in the code it is on, and it circles on the &quot;Player Connected&quot;
+                        message just before the above code, after I finished receiving data it wen&#039;t through all the other &quot;Puts&quot; messages through the whole GUI creation process and I
+                        saw the GUI as soon as I woke up.<br />
+                        <br />
+                        <br /> EDIT:<br /> This does everything I wanted to have done.<br />
+                        <br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>void OnPlayerInit(BasePlayer player)
         {
             if(welcomeAnnouncement)
             {
@@ -1484,143 +638,71 @@ void WelcomeAnnouncement(BasePlayer player)
             string textColor = textWhite;
             CreatePrivateMsgGUI(welcomeAnnouncementText.Replace(&quot;{playername}&quot;, player.displayName), bannerTintColor, textColor, player);
         }</pre>
-</div>Checks if the player is still at receiving data before checking if they are sleeping. Then as soon as they wake up it is created. Perfect.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="May 22, 2016 at 11:00 PM">May 22, 2016</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-207834" title="Permalink" class="datePermalink"><span class="DateTime" title="May 22, 2016 at 10:17 PM">May 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-207834" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207834/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-208824" class="message   " data-author="DylanSMR">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DylanSMR</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
-	<aside>
-		
-			<div class="attribution type">JoeSheep said:
-				
-					<a href="goto/post?id=207834#post-207834" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">While it does I know some players will join then leave themselves sleeping for a while at which point the timer for destroying the GUI message will have already ran. I might see what I can do with what I mentioned. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /><br />
-[DOUBLEPOST=1463772382][/DOUBLEPOST]Hmm with the bool true until the player wakes up, it will create issues when multiple players are joining. I don&#039;t think it is possible to sort of &quot;append&quot; a variable to a player.<br />
-[DOUBLEPOST=1463951871,1463769810][/DOUBLEPOST]
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>if (player.HasPlayerFlag(BasePlayer.PlayerFlags.ReceivingSnapshot))
+                        </div>Checks if the player is still at receiving data before checking if they are sleeping. Then as soon as they wake up it is created. Perfect. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="May 22, 2016 at 11:00 PM">May 22, 2016</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207834" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 22, 2016 at 10:17 PM">May 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-207834" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/207834/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-208824" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
+                            <aside>
+                                <div class="attribution type">JoeSheep said: <a href="#post-207834" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">While it does I know some players will join then leave themselves sleeping for a while at which point the timer for destroying the GUI message
+                                        will have already ran. I might see what I can do with what I mentioned. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                                            title="Stick Out Tongue    :p" /><br /> [DOUBLEPOST=1463772382][/DOUBLEPOST]Hmm with the bool true until the player wakes up, it will create issues when
+                                        multiple players are joining. I don&#039;t think it is possible to sort of &quot;append&quot; a variable to a player.<br />
+                                        [DOUBLEPOST=1463951871,1463769810][/DOUBLEPOST] <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>if (player.HasPlayerFlag(BasePlayer.PlayerFlags.ReceivingSnapshot))
                 {
                     timer.Once(2, () =&gt; OnPlayerInit(player));
                     return;
                 }</pre>
-</div>This works like a charm, I have debugging &quot;Puts&quot; messages to tell me at what part in the code it is on, and it circles on the &quot;Player Connected&quot; message just before the above code, after I finished receiving data it wen&#039;t through all the other &quot;Puts&quot; messages through the whole GUI creation process and I saw the GUI as soon as I woke up.<br />
-<br />
-<br />
-EDIT:<br />
-This does everything I wanted to have done.<br />
-<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>void OnPlayerInit(BasePlayer player)
+                                        </div>This works like a charm, I have debugging &quot;Puts&quot; messages to tell me at what part in the code it is on, and it circles on the &quot;Player
+                                        Connected&quot; message just before the above code, after I finished receiving data it wen&#039;t through all the other &quot;Puts&quot; messages through the
+                                        whole GUI creation process and I saw the GUI as soon as I woke up.<br />
+                                        <br />
+                                        <br /> EDIT:<br /> This does everything I wanted to have done.<br />
+                                        <br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>void OnPlayerInit(BasePlayer player)
         {
             if(welcomeAnnouncement)
             {
@@ -1645,768 +727,357 @@ void WelcomeAnnouncement(BasePlayer player)
             string textColor = textWhite;
             CreatePrivateMsgGUI(welcomeAnnouncementText.Replace(&quot;{playername}&quot;, player.displayName), bannerTintColor, textColor, player);
         }</pre>
-</div>Checks if the player is still at receiving data before checking if they are sleeping. Then as soon as they wake up it is created. Perfect.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Just a suggestion for what I would have done: I would have made a list, and when a player joins he gets added to that list. Using the hook OnPlayerSleepEnded it will check if he is the list. If so then do stuff, otherwise do nothing.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-208824" title="Permalink" class="datePermalink"><span class="DateTime" title="May 22, 2016 at 11:48 PM">May 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-208824" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208824/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-208828" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
-	<aside>
-		
-			<div class="attribution type">DylanSMR said:
-				
-					<a href="goto/post?id=208824#post-208824" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Just a suggestion for what I would have done: I would have made a list, and when a player joins he gets added to that list. Using the hook OnPlayerSleepEnded it will check if he is the list. If so then do stuff, otherwise do nothing.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I can&#039;t believe I missed that... I was thinking he wanted to detect when they were sleeping. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-208828" title="Permalink" class="datePermalink"><span class="DateTime" title="May 22, 2016 at 11:54 PM">May 22, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-208828" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208828/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-208835" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
-	<aside>
-		
-			<div class="attribution type">DylanSMR said:
-				
-					<a href="goto/post?id=208824#post-208824" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Just a suggestion for what I would have done: I would have made a list, and when a player joins he gets added to that list. Using the hook OnPlayerSleepEnded it will check if he is the list. If so then do stuff, otherwise do nothing.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>That would probably result in the plugin processing a little less. Thanks <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-208835" title="Permalink" class="datePermalink"><span class="DateTime" title="May 23, 2016 at 12:02 AM">May 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-208835" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208835/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-208860" class="message   " data-author="DylanSMR">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DylanSMR" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DylanSMR</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=208828#post-208828" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I can&#039;t believe I missed that... I was thinking he wanted to detect when they were sleeping. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Yeah lol. I was not gonna comment but when I saw the code he posted(last portion) I realized it was what I used to do and that always used way too much processing power. Plus that code is much more effective!<br />
-<br />
-
-
-
-<div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
-	<aside>
-		
-			<div class="attribution type">JoeSheep said:
-				
-					<a href="goto/post?id=208835#post-208835" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">That would probably result in the plugin processing a little less. Thanks <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>No problem bud <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-208860" title="Permalink" class="datePermalink"><span class="DateTime" title="May 23, 2016 at 2:26 AM">May 23, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-208860" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208860/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-209737" class="message   " data-author="JoeSheep">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="JoeSheep" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">JoeSheep</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
-	<aside>
-		
-			<div class="attribution type">DylanSMR said:
-				
-					<a href="goto/post?id=208860#post-208860" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Yeah lol. I was not gonna comment but when I saw the code he posted(last portion) I realized it was what I used to do and that always used way too much processing power. Plus that code is much more effective!<br />
-<br />
-<br />
-No problem bud <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I got your suggestion set up and working wonderfully <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /> Cheers.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
-					<a href="threads/getting-players-name-in-a-message-c.18176/#post-209737" title="Permalink" class="datePermalink"><span class="DateTime" title="May 25, 2016 at 7:44 PM">May 25, 2016</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/getting-players-name-in-a-message-c.18176/#post-209737" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/209737/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                                        </div>Checks if the player is still at receiving data before checking if they are sleeping. Then as soon as they wake up it is created. Perfect.
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Just a suggestion for what I would have done: I would have made a list, and when a player joins he gets added to that list. Using the hook OnPlayerSleepEnded it will
+                        check if he is the list. If so then do stuff, otherwise do nothing. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
-</div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208824" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 22, 2016 at 11:48 PM">May 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208824" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208824/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-208828" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                            <aside>
+                                <div class="attribution type">DylanSMR said: <a href="#post-208824" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Just a suggestion for what I would have done: I would have made a list, and when a player joins he gets added to that list. Using the hook
+                                        OnPlayerSleepEnded it will check if he is the list. If so then do stuff, otherwise do nothing.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I can&#039;t believe I missed that... I was thinking he wanted to detect when they were sleeping. <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208828" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 22, 2016 at 11:54 PM">May 22, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208828" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208828/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-208835" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                            <aside>
+                                <div class="attribution type">DylanSMR said: <a href="#post-208824" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Just a suggestion for what I would have done: I would have made a list, and when a player joins he gets added to that list. Using the hook
+                                        OnPlayerSleepEnded it will check if he is the list. If so then do stuff, otherwise do nothing.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>That would probably result in the plugin processing a little less. Thanks <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie7" alt=":p"
+                            title="Stick Out Tongue    :p" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208835" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 23, 2016 at 12:02 AM">May 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208835" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208835/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-208860" class="message" data-author="DylanSMR">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DylanSMR" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DylanSMR</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-208828" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I can&#039;t believe I missed that... I was thinking he wanted to detect when they were sleeping. <img src="styles/default/xenforo/clear.png"
+                                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Yeah lol. I was not gonna comment but when I saw the code he posted(last portion) I realized it was what I used to do and that always used way too much processing power.
+                        Plus that code is much more effective!<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeQuote" data-author="JoeSheep">
+                            <aside>
+                                <div class="attribution type">JoeSheep said: <a href="#post-208835" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">That would probably result in the plugin processing a little less. Thanks <img src="styles/default/xenforo/clear.png"
+                                            class="mceSmilieSprite mceSmilie7" alt=":p" title="Stick Out Tongue    :p" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>No problem bud <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DylanSMR</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208860" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 23, 2016 at 2:26 AM">May 23, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-208860" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/208860/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-209737" class="message" data-author="JoeSheep">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="JoeSheep" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">JoeSheep</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DylanSMR">
+                            <aside>
+                                <div class="attribution type">DylanSMR said: <a href="#post-208860" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Yeah lol. I was not gonna comment but when I saw the code he posted(last portion) I realized it was what I used to do and that always used way
+                                        too much processing power. Plus that code is much more effective!<br />
+                                        <br />
+                                        <br /> No problem bud <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" /></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I got your suggestion set up and working wonderfully <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        Cheers. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">JoeSheep</a>,</span>
+                        <a href="/threads/getting-players-name-in-a-message-c.18176/#post-209737" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="May 25, 2016 at 7:44 PM">May 25, 2016</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/getting-players-name-in-a-message-c.18176/#post-209737" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/209737/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548554389,
-		today: 1548547200,
-		todayDow: 0
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>

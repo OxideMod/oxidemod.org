@@ -1,2916 +1,1246 @@
 <!DOCTYPE html>
-<html id="XenForo" lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar  Responsive" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html lang="en-US" dir="LTR" class="Public NoJs LoggedOut NoSidebar Responsive">
 <head>
-
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	
-		<base href="https://oxidemod.org/" />
-		<script>
-			var _b = document.getElementsByTagName('base')[0], _bH = "https://oxidemod.org/";
-			if (_b && _b.href != _bH) _b.href = _bH;
-		</script>
-	
-
-	<title>Setting up a Hurtworld Server on Wine | Oxide</title>
-	
-	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
-	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-	<link rel="stylesheet" href="css.php?css=bb_code,message,message_user_info,thread_view&amp;style=5&amp;dir=LTR&amp;d=1548526345" />
-	
-	
-
-	
-		<script src="js/jquery/jquery-1.11.0.min.js"></script>	
-		
-	<script src="js/xenforo/xenforo.js?_v=f33b43a2"></script>
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<meta name="mobile-web-app-capable" content="yes" />
-<link rel="icon" sizes="196x196" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-<link rel="apple-touch-icon" href="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<link rel="alternate" type="application/rss+xml" title="RSS feed for Oxide" href="forums/-/index.rss" />
-		
-	<link rel="next" href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" />
-	<link rel="canonical" href="https://oxidemod.org/threads/setting-up-a-hurtworld-server-on-wine.13229/" />
-	<meta name="description" content="Starting with a fresh Ubuntu 14.04 x86_64 installation:
-
-sudo apt-get update &amp;&amp; sudo apt-get upgrade
-sudo apt-get -y install software-properties-common..." />	<meta property="og:site_name" content="Oxide" />
-	<meta property="og:image" content="https://oxidemod.org/styles/default/xenforo/avatars/avatar_m.png" />
-	<meta property="og:image" content="https://oxidemod.org/styles/oxide/logo.og.png" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://oxidemod.org/threads/setting-up-a-hurtworld-server-on-wine.13229/" />
-	<meta property="og:title" content="Setting up a Hurtworld Server on Wine" />
-	<meta property="og:description" content="Starting with a fresh Ubuntu 14.04 x86_64 installation:
-
-sudo apt-get update &amp;&amp; sudo apt-get upgrade
-sudo apt-get -y install software-properties-common..." />
-	
-	
-	
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="" />
+    <title>Oxide - Setting up a Hurtworld Server on Wine</title>
+    <noscript>
+        <style>
+            .JsOnly,
+            .jsOnly {
+                display: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="/assets/js/jquery/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/xenforo/xenforo.js?_v=f33b43a2"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="/assets/default.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <link rel="icon" sizes="196x196" href="/assets/styles/oxide/logo.og.png" />
+    <link rel="apple-touch-icon" href="/assets/styles/oxide/logo.og.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Oxide is an abstracted, modular, and extensible mod and plugin framework for any game that uses .NET" />
+    <meta property="og:site_name" content="Oxide" />
+    <meta property="og:image" content="/assets/styles/oxide/logo.og.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Oxide - Setting up a Hurtworld Server on Wine" />
+    <meta property="og:description" content="" />
 </head>
+<body>
+    <div id="headerMover">
+        <div id="headerProxy"></div>
+        <div id="content" class="forum_list">
+            <div class="pageWidth">
+                <div class="pageContent">
+                    <div class="breadBoxTop">
+    <nav>
+        <fieldset class="breadcrumb">
+            <div class="boardTitle"><strong>Oxide</strong></div>
+            <span class="crumbs">
+                <span class="crust">
+                    <a href="/" class="crumb" rel="up" itemprop="url">
+                        <span itemprop="title">Forums</span>
+                    </a>
+                    <span class="arrow"></span>
+                </span>
+                
+                    
+                    <span class="crust">
+                        <a href="/forums/guides-and-tips.103/" class="crumb" rel="up" itemprop="url">
+                            <span itemprop="title">Guides and Tips</span>
+                        </a>
+                        <span class="arrow"></span>
+                    </span>
+                    
+                
+            </span>
+        </fieldset>
+    </nav>
+</div>
 
-<body class="node103 node1 SelectQuotable">
-
-
-
-
-<div id="headerMover">
-	<div id="headerProxy"></div>
-
-<div id="content" class="thread_view">
-	<div class="pageWidth">
-		<div class="pageContent">
-			
-			
-			
-
-			
-
-			
-			
-				<div class="breadBoxTop ">
-					
-					
-
-<nav>
-	
-		
-			
-				
-			
-		
-			
-				
-			
-		
-	
-
-	<fieldset class="breadcrumb">			
-		<div class="boardTitle"><strong>Oxide</strong></div>
-		
-		<span class="crumbs">
-			
-				
-
-					
-						<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-							<a href="https://oxidemod.org/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Forums</span></a>
-							<span class="arrow"><span>&gt;</span></span>
-						</span>
-					
-
-					
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/#oxide-project.1" class="crumb" rel="up" itemprop="url"><span itemprop="title">Oxide Project</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-							<span class="crust" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-								<a href="https://oxidemod.org/forums/guides-and-tips.103/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Guides and Tips</span></a>
-								<span class="arrow"><span>&gt;</span></span>
-							</span>
-						
-					
-				
-			
-		</span>
-	</fieldset>
-</nav>
-				</div>
-			
-			
-	
-			
-
-
-
-			
-				
-
-						
-			
-			
-			
-						
-						
-													
-								<!-- h1 title, description -->
-								<div class="titleBar">
-									
-									<h1>
-										
-											
-												<a href="https://oxidemod.org/threads/setting-up-a-hurtworld-server-on-wine.13229/">Setting up a Hurtworld Server on Wine</a>
-											
-										
-									</h1>
-
-									<p id="pageDescription" class="muted ">
-	Discussion in '<a href="forums/guides-and-tips.103/">Guides and Tips</a>' started by <a class="username" dir="auto">Pretermit</a>, <a href="threads/setting-up-a-hurtworld-server-on-wine.13229/"><span class="DateTime" title="Dec 10, 2015 at 7:49 PM">Dec 10, 2015</span></a>.
-</p>
-								</div>
-							
-						
-						
-						
-						
-
-						
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
+<div class="titleBar">
+    <h1>
+        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/">Setting up a Hurtworld Server on Wine</a>
+    </h1>
+    <p id="pageDescription" class="muted">Discussion in '<a href="/forums/guides-and-tips.103/">Guides and Tips</a>' started by <a class="username"
+            dir="auto">Pretermit</a>, <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/"><span class="DateTime" title="Dec 10, 2015 at 7:49 PM">Dec 10,
+                2015</span></a>.
+    </p>
+</div>
 <div class="pageNavLinkGroup">
-	<div class="linkGroup SelectionCountContainer">
-		
-		
-	</div>
-
-	
-
-
-<div class="PageNav"
-	data-page="1"
-	data-range="2"
-	data-start="2"
-	data-end="3"
-	data-last="4"
-	data-sentinel="{{sentinel}}"
-	data-baseurl="threads/setting-up-a-hurtworld-server-on-wine.13229/page-{{sentinel}}">
-	
-	
-	<nav>
-		
-		
-		<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/" class="currentPage " rel="start">1</a>
-		
-		
-		
-		
-			<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="">2</a>
-		
-			<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-3" class="">3</a>
-		
-		
-		
-		
-		<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-4" class="">4</a>
-		
-		
-			<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="text">Next &gt;</a>
-			
-		
-	</nav>	
-	
-	
+    <div class="linkGroup SelectionCountContainer">
+    </div>
+    <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="3" data-last="4" data-sentinel=""
+        data-baseurl="threads/setting-up-a-hurtworld-server-on-wine.13229/page-">
+        <nav>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/" class="currentPage " rel="start">1</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="">2</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-3" class="">3</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-4" class="">4</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="text">Next &gt;</a>
+        </nav>
+    </div>
 </div>
-
-</div>
-
-
-
-
-
-
-<form action="inline-mod/post/switch" method="post"
-	class="InlineModForm section"
-	data-cookieName="posts"
-	data-controls="#InlineModControls"
-	data-imodOptions="#ModerationSelect option">
-
-	<ol class="messageList" id="messageList">
-		
-			
-				
-
-
-<li id="post-149551" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Starting with a fresh Ubuntu 14.04 x86_64 installation:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get update &amp;&amp; sudo apt-get upgrade</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get -y install software-properties-common lib32gcc1 screen libc6-amd64 </pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo add-apt-repository -y ppa:ubuntu-wine/ppa &amp;&amp; sudo apt-get update</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get -y install wine1.7 winetricks xvfb</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo useradd -m steam</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo usermod -aG sudo steam</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo passwd steam</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo su - steam</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>mkdir ~/steamcmd</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>cd ~/steamcmd</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>tar -xvzf steamcmd_linux.tar.gz</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>/home/steam/steamcmd/steamcmd.sh +\@sSteamCmdForcePlatformType windows +login anonymous +force_install_dir /home/steam/hurtworld +app_update 405100 validate +quit</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>cd /home/steam/hurtworld</pre>
-</div>*** IGNORE THIS PART IF YOU DO NOT WANT TO INSTALL OXIDE ***<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>wget -O Oxide.zip https://github.com/OxideMod/Snapshots/blob/master/Oxide-Hurtworld.zip?raw=true</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>unzip -o Oxide.zip</pre>
-</div>*** END OF OXIDE PART ***<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>rm -rf ~/.wine64</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>wineboot --update</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>vi start.sh</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>WINEARCH=win64 WINEPREFIX=~/.wine64 /usr/bin/xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' /usr/bin/wine Hurtworld.exe  -batchmode -nographics -exec &quot;host 12871;queryport 12881;servername Pretermit;addadmin 76561198131650131;maxplayers 50&quot; -logfile &quot;gamelog.txt&quot;</pre>
-</div>*COPY PASTE THE ABOVE INTO start.sh , EDIT THE NECESSARY (name, admin steamid64)*<br />
-*PRESS INSERT ON YOUR KEYBOARD BEFORE PASTING IN VI!!*<br />
-*ONCE PASTED, PRESS [ESC], THEN TYPE<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>:wq</pre>
-</div> This will write/quit the file.<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>chmod +x start.sh</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>screen -S hurtworldserver</pre>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>./start.sh</pre>
-</div>*** FOR THOSE WITH stream failed ERROR: ****<br />
-Stop server (CTRL+C) then add ports to iptable:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>iptables -A INPUT -p tcp --dport 12881 -j ACCEPT
+<ol class="messageList" id="messageList">
+    <li id="post-149551" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Starting with a fresh Ubuntu 14.04 x86_64 installation:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo apt-get update &amp;&amp; sudo apt-get upgrade</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo apt-get -y install software-properties-common lib32gcc1 screen libc6-amd64 </pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo add-apt-repository -y ppa:ubuntu-wine/ppa &amp;&amp; sudo apt-get update</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo apt-get -y install wine1.7 winetricks xvfb</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo useradd -m steam</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo usermod -aG sudo steam</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo passwd steam</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo su - steam</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>mkdir ~/steamcmd</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>cd ~/steamcmd</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>tar -xvzf steamcmd_linux.tar.gz</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>/home/steam/steamcmd/steamcmd.sh +\@sSteamCmdForcePlatformType windows +login anonymous +force_install_dir /home/steam/hurtworld +app_update 405100 validate +quit</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>cd /home/steam/hurtworld</pre>
+                        </div>*** IGNORE THIS PART IF YOU DO NOT WANT TO INSTALL OXIDE ***<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>wget -O Oxide.zip https://github.com/OxideMod/Snapshots/blob/master/Oxide-Hurtworld.zip?raw=true</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>unzip -o Oxide.zip</pre>
+                        </div>*** END OF OXIDE PART ***<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>rm -rf ~/.wine64</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>wineboot --update</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>vi start.sh</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>WINEARCH=win64 WINEPREFIX=~/.wine64 /usr/bin/xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' /usr/bin/wine Hurtworld.exe  -batchmode -nographics -exec &quot;host 12871;queryport 12881;servername Pretermit;addadmin 76561198131650131;maxplayers 50&quot; -logfile &quot;gamelog.txt&quot;</pre>
+                        </div>*COPY PASTE THE ABOVE INTO start.sh , EDIT THE NECESSARY (name, admin steamid64)*<br /> *PRESS INSERT ON YOUR KEYBOARD BEFORE PASTING IN VI!!*<br /> *ONCE PASTED, PRESS
+                        [ESC], THEN TYPE<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>:wq</pre>
+                        </div> This will write/quit the file.<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>chmod +x start.sh</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>screen -S hurtworldserver</pre>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>./start.sh</pre>
+                        </div>*** FOR THOSE WITH stream failed ERROR: ****<br /> Stop server (CTRL+C) then add ports to iptable:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>iptables -A INPUT -p tcp --dport 12881 -j ACCEPT
 iptables -A INPUT -p udp --dport 12881 -j ACCEPT
 iptables -A INPUT -p tcp --dport 12871 -j ACCEPT
 iptables -A INPUT -p udp --dport 12871 -j ACCEPT</pre>
-</div>Now relaunch server (./start.sh)<br />
-************************************************<br />
-<br />
-*PRESS [CTRL]+[A]* (together)<br />
-*PRESS [D]* (after letting go of Ctrl+a)<br />
-This returns you to main screen.<br />
-<br />
-To return to the server just type:<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>screen -r hurtworldserver</pre>
-</div>*END*<br />
-<br />
-<br />
-To kill the server while in screen just do CTRL+C, or when detached from screen just do<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>screen -X -S hurtworldserver kill</pre>
-</div><br />
-<br />
-<br />
-<b>Credits go to <span style="text-decoration: underline">scavenger2 </span>as well as <span style="text-decoration: underline">nogrod</span> for the most foolproof method of doing this.</b>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Dec 10, 2015 at 10:03 PM">Dec 10, 2015</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 7:49 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149551/permalink">#1</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149552" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Please... use code tags and condense your script a bit.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149552" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 7:50 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149552" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149552/permalink">#2</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149557" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=149552#post-149552" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Please... use code tags and condense your script a bit.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I was not finished, as for condensing this is meant to be a retard-proof guide a robot could follow. You could condense it but then you&#039;d get the inevitable &#039;how do I do this, what does this mean&#039; and other questions. Feel free to do so if you want, but I will not be answering questions that arise.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149557" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 7:59 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149557" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149557/permalink">#3</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149558" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
-	<aside>
-		
-			<div class="attribution type">Pretermit said:
-				
-					<a href="goto/post?id=149557#post-149557" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I was not finished, as for condensing this is meant to be a retard-proof guide a robot could follow. You could condense it but then you&#039;d get the inevitable &#039;how do I do this, what does this mean&#039; and other questions. Feel free to do so if you want, but I will not be answering questions that arise.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>I didn&#039;t mean to strip it back when I said condense, just to clean it up a bit so it a full book. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /><br />
-<br />
-All of the apt-get steps can be combined into a single command/line for instance. If the target as you suggest, then they&#039;ll most likely be copy/pasting too, so the less steps the less confusion.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149558" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 8:01 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149558" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149558/permalink">#4</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149560" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=149558#post-149558" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I didn&#039;t mean to strip it back when I said condense, just to clean it up a bit so it a full book. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /><br />
-<br />
-All of the apt-get steps can be combined into a single command/line for instance. If the target as you suggest, then they&#039;ll most likely be copy/pasting too.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get install package package2 package3 package4 </pre>
-</div>Because if that&#039;s what you want, it will stop at the first package that doesn&#039;t install perfectly...unless you do<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get --ignore-missing install $list_of_packages</pre>
-</div>Which I doubt is too advisable for anyone new to linux..
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149560" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 8:09 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149560" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149560/permalink">#5</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149561" class="message  staff " data-author="Wulf">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="{{ '/assets/styles/oxide/logo.og.png' | prepend: site.baseurl }}" width="96" height="96" alt="Wulf" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto" itemprop="name">Wulf</a>
-			<em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
-	<aside>
-		
-			<div class="attribution type">Pretermit said:
-				
-					<a href="goto/post?id=149560#post-149560" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get install package package2 package3 package4 </pre>
-</div>Because if that&#039;s what you want, it will stop at the first package that doesn&#039;t install perfectly...unless you do<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>sudo apt-get --ignore-missing install $list_of_packages</pre>
-</div>Which I doubt is too advisable for anyone new to linux..</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>It shouldn&#039;t, as it should install them in that order. It shouldn&#039;t be any different than using them individually.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149561" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 8:09 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149561" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149561/permalink">#6</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149562" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
-	<aside>
-		
-			<div class="attribution type">Wulf said:
-				
-					<a href="goto/post?id=149561#post-149561" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">It shouldn&#039;t, as it should install them in that order. It shouldn&#039;t be any different than using them individually.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>True, done.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149562" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 8:14 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149562" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149562/permalink">#7</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149585" class="message   " data-author="HetLord">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="HetLord" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">HetLord</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					How u 
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>cd /home/steam/hurtworld</pre>
-</div> if u do not did new folder ?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149585" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 8:51 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149585" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149585/permalink">#8</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149594" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
-	<aside>
-		
-			<div class="attribution type">HetLord said:
-				
-					<a href="goto/post?id=149585#post-149585" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">How u 
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>cd /home/steam/hurtworld</pre>
-</div> if u do not did new folder ?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Steamcmd makes this folder when installing the server files in the step above.
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149594" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 8:59 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149594" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149594/permalink">#9</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149595" class="message   " data-author="HetLord">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="HetLord" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">HetLord</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					Have this error help. <a href="http://prntscr.com/9cogyc" target="_blank" class="externalLink  rel="nofollow">Screenshot</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149595" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:02 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149595" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149595/permalink">#10</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149597" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					For the error /dev/pts/0, just do:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>script /dev/null</pre>
-</div>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149597" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:04 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149597" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149597/permalink">#11</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149599" class="message   " data-author="HetLord">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="HetLord" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">HetLord</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
-	<aside>
-		
-			<div class="attribution type">Pretermit said:
-				
-					<a href="goto/post?id=149597#post-149597" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">For the error /dev/pts/0, just do:<br />
-<br />
-
-
-<div class="bbCodeBlock bbCodeCode">
-	<div class="type">Code:</div>
-	<pre>script /dev/null</pre>
-</div></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>ty but new error %( <a href="http://prntscr.com/9coim2" target="_blank" class="externalLink  rel="nofollow">Screenshot</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149599" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:05 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149599" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149599/permalink">#12</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149600" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
-	<aside>
-		
-			<div class="attribution type">HetLord said:
-				
-					<a href="goto/post?id=149599#post-149599" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">ty but new error %( <a href="http://prntscr.com/9coim2" target="_blank" class="externalLink  rel="nofollow">Screenshot</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>That&#039;s normal, the server is running and you can ignore the errors. At this point just check if your server is in the server list.<br />
-<br />
-Just make sure the ports are forwarded then try again!
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-			<div class="editDate">
-			
-				Last edited by a moderator: <span class="DateTime" title="Dec 10, 2015 at 10:09 PM">Dec 10, 2015</span>
-			
-			</div>
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149600" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:07 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149600" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149600/permalink">#13</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149602" class="message   " data-author="HetLord">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="HetLord" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">HetLord</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
-	<aside>
-		
-			<div class="attribution type">Pretermit said:
-				
-					<a href="goto/post?id=149600#post-149600" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">That&#039;s normal, the server is running and you can ignore the errors. At this point just check if your server is in the server list.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>not connected, i cant ....<br />
-[DOUBLEPOST=1449781848][/DOUBLEPOST]
-
-
-<div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
-	<aside>
-		
-			<div class="attribution type">Pretermit said:
-				
-					<a href="goto/post?id=149600#post-149600" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">That&#039;s normal, the server is running and you can ignore the errors. At this point just check if your server is in the server list.</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>in console it     <a href="http://prntscr.com/9col93" target="_blank" class="externalLink  rel="nofollow">Screenshot</a>
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149602" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:08 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149602" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149602/permalink">#14</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149605" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
-	<aside>
-		
-			<div class="attribution type">HetLord said:
-				
-					<a href="goto/post?id=149602#post-149602" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">not connected, i cant ....<br />
-[DOUBLEPOST=1449781848][/DOUBLEPOST]<br />
-in console it     <a href="http://prntscr.com/9col93" target="_blank" class="externalLink  rel="nofollow">Screenshot</a></div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Did you start from a fresh install? That just shows wine cannot find Hurtworld.exe
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149605" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:11 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149605" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149605/permalink">#15</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149608" class="message   " data-author="HetLord">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="HetLord" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">HetLord</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
-	<aside>
-		
-			<div class="attribution type">Pretermit said:
-				
-					<a href="goto/post?id=149605#post-149605" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">Did you start from a fresh install?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>yep, if u can install its for me, i already in your steam friend list, if u want i can give 1 $ via PayPal
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149608" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 9:14 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149608" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149608/permalink">#16</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149643" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
-	<aside>
-		
-			<div class="attribution type">HetLord said:
-				
-					<a href="goto/post?id=149608#post-149608" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">yep, if u can install its for me, i already in your steam friend list, if u want i can give 1 $ via PayPal</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>Issue resolved, added port opening into the tutorial. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149643" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 10, 2015 at 10:11 PM">Dec 10, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149643" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149643/permalink">#17</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149716" class="message   " data-author="DerRene">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="DerRene" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">DerRene</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					I am running Debian 8 64 and i cant get it running. Any help?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">DerRene</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149716" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 11, 2015 at 12:06 AM">Dec 11, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149716" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149716/permalink">#18</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-149824" class="message   " data-author="Pretermit">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="Pretermit" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">Pretermit</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					<div class="bbCodeBlock bbCodeQuote" data-author="DerRene">
-	<aside>
-		
-			<div class="attribution type">DerRene said:
-				
-					<a href="goto/post?id=149716#post-149716" class="AttributionLink">&uarr;</a>
-				
-			</div>
-		
-		<blockquote class="quoteContainer"><div class="quote">I am running Debian 8 64 and i cant get it running. Any help?</div><div class="quoteExpand">Click to expand...</div></blockquote>
-	</aside>
-</div>What are the issues that arise?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149824" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 11, 2015 at 6:11 AM">Dec 11, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149824" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149824/permalink">#19</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-			
-				
-
-
-<li id="post-150134" class="message   " data-author="lool">
-
-	
-
-<div class="messageUserInfo" itemscope="itemscope" itemtype="http://data-vocabulary.org/Person">	
-<div class="messageUserBlock ">
-	
-		<div class="avatarHolder">
-			<span class="helper"></span>
-			<a class="avatar Avm" data-avatarhtml="true"><img src="styles/default/xenforo/avatars/avatar_m.png" width="96" height="96" alt="lool" /></a>
-			
-			
-		</div>
-	
-
-
-	
-		<h3 class="userText">
-			<a class="username" dir="auto">lool</a>
-			
-			
-		</h3>
-	
-		
-	
-		
-
-
-	<span class="arrow"><span></span></span>
-</div>
-</div>
-
-	<div class="messageInfo primaryContent">
-		
-		
-		
-		
-		
-		<div class="messageContent">		
-			<article>
-				<blockquote class="messageText SelectQuoteContainer ugc baseHtml">
-					
-					How to open oxide console?
-					<div class="messageTextEndMarker">&nbsp;</div>
-				</blockquote>
-			</article>
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
-				
-		<div class="messageMeta ToggleTriggerAnchor">
-			
-			<div class="privateControls">
-				
-				<span class="item muted">
-					<span class="authorEnd"><a class="username author" dir="auto">lool</a>,</span>
-					<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-150134" title="Permalink" class="datePermalink"><span class="DateTime" title="Dec 12, 2015 at 12:49 AM">Dec 12, 2015</span></a>
-				</span>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			<div class="publicControls">
-				<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/#post-150134" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/150134/permalink">#20</a>
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
-
-	
-	
-	
-	
-</li>
-			
-		
-		
-	</ol>
-
-	
-
-	
-
-</form>
-
-
-	<div class="pageNavLinkGroup">
-		
-			
-				<div class="linkGroup">
-					
-				</div>
-			
-			<div class="linkGroup" style="display: none"><a href="javascript:" class="muted JsOnly DisplayIgnoredContent Tooltip" title="Show hidden content by ">Show Ignored Content</a></div>
-
-			
-
-
-<div class="PageNav"
-	data-page="1"
-	data-range="2"
-	data-start="2"
-	data-end="3"
-	data-last="4"
-	data-sentinel="{{sentinel}}"
-	data-baseurl="threads/setting-up-a-hurtworld-server-on-wine.13229/page-{{sentinel}}">
-	
-	
-	<nav>
-		
-		
-		<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/" class="currentPage " rel="start">1</a>
-		
-		
-		
-		
-			<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="">2</a>
-		
-			<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-3" class="">3</a>
-		
-		
-		
-		
-		<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-4" class="">4</a>
-		
-		
-			<a href="threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="text">Next &gt;</a>
-			
-		
-	</nav>	
-	
-	
-</div>
-
-		
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-												
-												
-					
-			
-						
-			
-						
-			
-
-
-			<footer>
-				
-
-
-<div class="footer">
-		<div class="pageContent">
-			
-            
-            
+                        </div>Now relaunch server (./start.sh)<br /> ************************************************<br />
+                        <br /> *PRESS [CTRL]+[A]* (together)<br /> *PRESS [D]* (after letting go of Ctrl+a)<br /> This returns you to main screen.<br />
+                        <br /> To return to the server just type:<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>screen -r hurtworldserver</pre>
+                        </div>*END*<br />
+                        <br />
+                        <br /> To kill the server while in screen just do CTRL+C, or when detached from screen just do<br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>screen -X -S hurtworldserver kill</pre>
+                        </div><br />
+                        <br />
+                        <br />
+                        <b>Credits go to <span style="text-decoration: underline">scavenger2 </span>as well as <span style="text-decoration: underline">nogrod</span> for the most foolproof method of
+                            doing this.</b>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
             </div>
-			
-		
-			
-			
-			<span class="helper"></span>
-			<ul class="footerLinks">
-			
-				
-				<li><a href="https://oxidemod.org/terms/">Terms and Rules</a></li>
-				
-				
-				<li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
-			
-			</ul>
-			
-			<span class="helper"></span>
-		</div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Dec 10, 2015 at 10:03 PM">Dec 10, 2015</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 7:49 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/" title="Permalink" class="item muted postNumber hashPermalink OverlayTrigger"
+                        data-href="posts/149551/permalink">#1</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149552" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Please... use code tags and condense your script a bit. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149552" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 7:50 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149552" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149552/permalink">#2</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149557" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-149552" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Please... use code tags and condense your script a bit.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I was not finished, as for condensing this is meant to be a retard-proof guide a robot could follow. You could condense it but then you&#039;d get the inevitable
+                        &#039;how do I do this, what does this mean&#039; and other questions. Feel free to do so if you want, but I will not be answering questions that arise. <div
+                            class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149557" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 7:59 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149557" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149557/permalink">#3</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149558" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
+                            <aside>
+                                <div class="attribution type">Pretermit said: <a href="#post-149557" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I was not finished, as for condensing this is meant to be a retard-proof guide a robot could follow. You could condense it but then you&#039;d
+                                        get the inevitable &#039;how do I do this, what does this mean&#039; and other questions. Feel free to do so if you want, but I will not be answering questions
+                                        that arise.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>I didn&#039;t mean to strip it back when I said condense, just to clean it up a bit so it a full book. <img src="styles/default/xenforo/clear.png"
+                            class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /><br />
+                        <br /> All of the apt-get steps can be combined into a single command/line for instance. If the target as you suggest, then they&#039;ll most likely be copy/pasting too, so the
+                        less steps the less confusion. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149558" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 8:01 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149558" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149558/permalink">#4</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149560" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-149558" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I didn&#039;t mean to strip it back when I said condense, just to clean it up a bit so it a full book. <img
+                                            src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie2" alt=";)" title="Wink    ;)" /><br />
+                                        <br /> All of the apt-get steps can be combined into a single command/line for instance. If the target as you suggest, then they&#039;ll most likely be
+                                        copy/pasting too.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo apt-get install package package2 package3 package4 </pre>
+                        </div>Because if that&#039;s what you want, it will stop at the first package that doesn&#039;t install perfectly...unless you do<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>sudo apt-get --ignore-missing install $list_of_packages</pre>
+                        </div>Which I doubt is too advisable for anyone new to linux.. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149560" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 8:09 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149560" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149560/permalink">#5</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149561" class="message staff" data-author="Wulf">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Wulf" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto" itemprop="name">Wulf</a>
+                    <em class="userBanner bannerRed wrapped" itemprop="title"><span class="before"></span><strong>Community Admin</strong><span class="after"></span></em>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
+                            <aside>
+                                <div class="attribution type">Pretermit said: <a href="#post-149560" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>sudo apt-get install package package2 package3 package4 </pre>
+                                        </div>Because if that&#039;s what you want, it will stop at the first package that doesn&#039;t install perfectly...unless you do<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>sudo apt-get --ignore-missing install $list_of_packages</pre>
+                                        </div>Which I doubt is too advisable for anyone new to linux..
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>It shouldn&#039;t, as it should install them in that order. It shouldn&#039;t be any different than using them individually. <div class="messageTextEndMarker">&nbsp;
+                        </div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Wulf</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149561" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 8:09 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149561" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149561/permalink">#6</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149562" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Wulf">
+                            <aside>
+                                <div class="attribution type">Wulf said: <a href="#post-149561" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">It shouldn&#039;t, as it should install them in that order. It shouldn&#039;t be any different than using them individually.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>True, done. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149562" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 8:14 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149562" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149562/permalink">#7</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149585" class="message" data-author="HetLord">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="HetLord" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">HetLord</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> How u <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>cd /home/steam/hurtworld</pre>
+                        </div> if u do not did new folder ? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149585" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 8:51 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149585" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149585/permalink">#8</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149594" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
+                            <aside>
+                                <div class="attribution type">HetLord said: <a href="#post-149585" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">How u <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>cd /home/steam/hurtworld</pre>
+                                        </div> if u do not did new folder ?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Steamcmd makes this folder when installing the server files in the step above. <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149594" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 8:59 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149594" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149594/permalink">#9</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149595" class="message" data-author="HetLord">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="HetLord" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">HetLord</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> Have this error help. <a href="http://prntscr.com/9cogyc" target="_blank" class="externalLink  rel="
+                            nofollow">Screenshot</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149595" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:02 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149595" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149595/permalink">#10</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149597" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> For the error /dev/pts/0, just do:<br />
+                        <br />
+                        <div class="bbCodeBlock bbCodeCode">
+                            <div class="type">Code:</div>
+                            <pre>script /dev/null</pre>
+                        </div>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149597" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:04 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149597" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149597/permalink">#11</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149599" class="message" data-author="HetLord">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="HetLord" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">HetLord</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
+                            <aside>
+                                <div class="attribution type">Pretermit said: <a href="#post-149597" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">For the error /dev/pts/0, just do:<br />
+                                        <br />
+                                        <div class="bbCodeBlock bbCodeCode">
+                                            <div class="type">Code:</div>
+                                            <pre>script /dev/null</pre>
+                                        </div>
+                                    </div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>ty but new error %( <a href="http://prntscr.com/9coim2" target="_blank" class="externalLink  rel=" nofollow">Screenshot</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149599" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:05 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149599" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149599/permalink">#12</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149600" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
+                            <aside>
+                                <div class="attribution type">HetLord said: <a href="#post-149599" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">ty but new error %( <a href="http://prntscr.com/9coim2" target="_blank" class="externalLink  rel=" nofollow">Screenshot</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>That&#039;s normal, the server is running and you can ignore the errors. At this point just check if your server is in the server list.<br />
+                        <br /> Just make sure the ports are forwarded then try again! <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="editDate"> Last edited by a moderator: <span class="DateTime" title="Dec 10, 2015 at 10:09 PM">Dec 10, 2015</span>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149600" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:07 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149600" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149600/permalink">#13</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149602" class="message" data-author="HetLord">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="HetLord" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">HetLord</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
+                            <aside>
+                                <div class="attribution type">Pretermit said: <a href="#post-149600" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">That&#039;s normal, the server is running and you can ignore the errors. At this point just check if your server is in the server list.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>not connected, i cant ....<br /> [DOUBLEPOST=1449781848][/DOUBLEPOST] <div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
+                            <aside>
+                                <div class="attribution type">Pretermit said: <a href="#post-149600" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">That&#039;s normal, the server is running and you can ignore the errors. At this point just check if your server is in the server list.</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>in console it <a href="http://prntscr.com/9col93" target="_blank" class="externalLink  rel=" nofollow">Screenshot</a>
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149602" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:08 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149602" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149602/permalink">#14</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149605" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
+                            <aside>
+                                <div class="attribution type">HetLord said: <a href="#post-149602" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">not connected, i cant ....<br /> [DOUBLEPOST=1449781848][/DOUBLEPOST]<br /> in console it <a href="http://prntscr.com/9col93" target="_blank"
+                                            class="externalLink  rel=" nofollow">Screenshot</a></div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Did you start from a fresh install? That just shows wine cannot find Hurtworld.exe <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149605" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:11 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149605" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149605/permalink">#15</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149608" class="message" data-author="HetLord">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="HetLord" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">HetLord</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="Pretermit">
+                            <aside>
+                                <div class="attribution type">Pretermit said: <a href="#post-149605" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">Did you start from a fresh install?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>yep, if u can install its for me, i already in your steam friend list, if u want i can give 1 $ via PayPal <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">HetLord</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149608" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 9:14 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149608" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149608/permalink">#16</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149643" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="HetLord">
+                            <aside>
+                                <div class="attribution type">HetLord said: <a href="#post-149608" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">yep, if u can install its for me, i already in your steam friend list, if u want i can give 1 $ via PayPal</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>Issue resolved, added port opening into the tutorial. <img src="styles/default/xenforo/clear.png" class="mceSmilieSprite mceSmilie1" alt=":)" title="Smile    :)" />
+                        <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149643" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 10, 2015 at 10:11 PM">Dec 10, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149643" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149643/permalink">#17</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149716" class="message" data-author="DerRene">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="DerRene" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">DerRene</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> I am running Debian 8 64 and i cant get it running. Any help? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">DerRene</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149716" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 11, 2015 at 12:06 AM">Dec 11, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149716" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149716/permalink">#18</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-149824" class="message" data-author="Pretermit">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="Pretermit" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">Pretermit</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml">
+                        <div class="bbCodeBlock bbCodeQuote" data-author="DerRene">
+                            <aside>
+                                <div class="attribution type">DerRene said: <a href="#post-149716" class="AttributionLink">&uarr;</a>
+                                </div>
+                                <blockquote class="quoteContainer">
+                                    <div class="quote">I am running Debian 8 64 and i cant get it running. Any help?</div>
+                                    <div class="quoteExpand">Click to expand...</div>
+                                </blockquote>
+                            </aside>
+                        </div>What are the issues that arise? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">Pretermit</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149824" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 11, 2015 at 6:11 AM">Dec 11, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-149824" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/149824/permalink">#19</a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li id="post-150134" class="message" data-author="lool">
+        <div class="messageUserInfo">
+            <div class="messageUserBlock">
+                <div class="avatarHolder">
+                    <span class="helper"></span>
+                    <a class="avatar Avm" data-avatarhtml="true"><img src="/assets/styles/oxide/logo.og.png" width="96" height="96" alt="lool" /></a>
+                </div>
+                <h3 class="userText">
+                    <a class="username" dir="auto">lool</a>
+                </h3>
+                <span class="arrow"></span>
+            </div>
+        </div>
+        <div class="messageInfo primaryContent">
+            <div class="messageContent">
+                <article>
+                    <blockquote class="messageText SelectQuoteContainer ugc baseHtml"> How to open oxide console? <div class="messageTextEndMarker">&nbsp;</div>
+                    </blockquote>
+                </article>
+            </div>
+            <div class="messageMeta ToggleTriggerAnchor">
+                <div class="privateControls">
+                    <span class="item muted">
+                        <span class="authorEnd"><a class="username author" dir="auto">lool</a>,</span>
+                        <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-150134" title="Permalink" class="datePermalink"><span class="DateTime"
+                                title="Dec 12, 2015 at 12:49 AM">Dec 12, 2015</span></a>
+                    </span>
+                </div>
+                <div class="publicControls">
+                    <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/#post-150134" title="Permalink"
+                        class="item muted postNumber hashPermalink OverlayTrigger" data-href="posts/150134/permalink">#20</a>
+                </div>
+            </div>
+        </div>
+    </li>
+</ol>
+<div class="pageNavLinkGroup">
+    <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="3" data-last="4" data-sentinel=""
+        data-baseurl="threads/setting-up-a-hurtworld-server-on-wine.13229/page-">
+        <nav>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/" class="currentPage " rel="start">1</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="">2</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-3" class="">3</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-4" class="">4</a>
+            <a href="/threads/setting-up-a-hurtworld-server-on-wine.13229/page-2" class="text">Next &gt;</a>
+        </nav>
+    </div>
 </div>
 
-			</footer>
-		</div>
-	</div>
-</div>
 
-<header>
-	
-
-
-<div id="header">
-	<div class="headerWidth">
-		<div id="logoBlock">
-			
-			
-			<div id="logo"><a href="https://oxidemod.org/">
-				<span></span>
-				<img src="styles/oxide/logo.png" alt="Oxide" />
-			</a></div>
-			
-			
-			<span class="helper"></span>
-
-</div>
-		
-
-
-<div id="navigation" class="">
-	<div class="pageContent">
-		<nav>
-			<div class="navTabs">
-				<ul class="publicTabs">
-
-					
-					
-
-					
-					
-
-					
-					
-						<li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
-							<a href="https://oxidemod.org/" class="navLink" rel="Menu">Forums</a>
-
-							
-						</li>
-					
-
-					<li class="navTab PopupClosed">
-	<a href="https://umod.org/documentation" class="navLink">Docs</a>
-</li>
-
-
-					
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/downloads/" class="navLink" rel="Menu"> Downloads </a>
-
-							
-						</li>
-						
-					
-						
-							<li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
-
-							<a href="https://oxidemod.org/plugins/" class="navLink" rel="Menu"> Plugins </a>
-
-							
-						</li>
-						
-					
-					
-
-					
-					
-
-					
-					
-
-					
-					<li class="navTab selected"><div class="tabLinks"></div></li>
-				</ul>
-
-				
-				
-			</div>
-
-			<span class="helper"></span>
-		</nav>
-	</div>
-</div>
-	</div>
-</div>
-
-	
-	
-</header>
-
-</div>
-
-<script>
-
-
-jQuery.extend(true, XenForo,
-{
-	visitor: { user_id: 0 },
-	serverTimeInfo:
-	{
-		now: 1548531843,
-		today: 1548460800,
-		todayDow: 6
-	},
-	_lightBoxUniversal: "0",
-	_enableOverlays: "1",
-	_animationSpeedMultiplier: "1",
-	_overlayConfig:
-	{
-		top: "10%",
-		speed: 200,
-		closeSpeed: 100,
-		mask:
-		{
-			color: "rgb(255, 255, 255)",
-			opacity: "0.6",
-			loadSpeed: 200,
-			closeSpeed: 100
-		}
-	},
-	_ignoredUsers: [],
-	_loadedScripts: {"thread_view":true,"message":true,"bb_code":true,"message_user_info":true},
-	_cookieConfig: { path: "/", domain: ".oxidemod.org", prefix: "ih_xfid_"},
-	_csrfToken: "",
-	_csrfRefreshUrl: "login/csrf-token-refresh",
-	_jsVersion: "f33b43a2"
-});
-jQuery.extend(XenForo.phrases,
-{
-	cancel: "Cancel",
-
-	a_moment_ago:    "A moment ago",
-	one_minute_ago:  "1 minute ago",
-	x_minutes_ago:   "%minutes% minutes ago",
-	today_at_x:      "Today at %time%",
-	yesterday_at_x:  "Yesterday at %time%",
-	day_x_at_time_y: "%day% at %time%",
-
-	day0: "Sunday",
-	day1: "Monday",
-	day2: "Tuesday",
-	day3: "Wednesday",
-	day4: "Thursday",
-	day5: "Friday",
-	day6: "Saturday",
-
-	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
-	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-
-	following_error_occurred: "The following error occurred",
-	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
-	logging_in: "Logging in",
-	click_image_show_full_size_version: "Click this image to show the full-size version.",
-	show_hidden_content_by_x: "Show hidden content by {names}"
-});
-
-
-
-
-</script>
-
-
-
-
+                    <footer>
+                        <div class="footer">
+                            <div class="pageContent"></div>
+                            <div id="copyright"><span class="concealed">Built: Wed, 27 Mar 2019 21:25:21 -0400</span></div>
+                            <span class="helper"></span>
+                            <ul class="footerLinks">
+                                <li><a href="/terms/">Terms and Rules</a></li>
+                                <li><a href="https://umod.org/community" target="_blank">Contact Us</a></li>
+                            </ul>
+                            <span class="helper"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id="header">
+                <div class="headerWidth">
+                    <div id="logoBlock">
+                        <div id="logo"><a href="/">
+                                <span></span>
+                                <img src="/assets/styles/oxide/logo.png" alt="Oxide" />
+                            </a></div>
+                        <span class="helper"></span>
+                    </div>
+                    <div id="navigation" class="">
+                        <div class="pageContent">
+                            <nav>
+                                <div class="navTabs">
+                                    <ul class="publicTabs">
+                                        <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/" class="navLink" rel="Menu">Forums</a>
+                                        </li>
+                                        <li class="navTab PopupClosed">
+                                            <a href="https://umod.org/documentation" class="navLink">Docs</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/downloads/" class="navLink" rel="Menu">Downloads</a>
+                                        </li>
+                                        <li class="navTab Popup PopupControl PopupClosed PopupContainerControl">
+                                            <a href="/plugins/" class="navLink" rel="Menu">Plugins</a>
+                                        </li>
+                                        <li class="navTab selected">
+                                            <div class="tabLinks"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <span class="helper"></span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+        jQuery.extend(true, XenForo, {
+            visitor: {
+                user_id: 0
+            },
+            serverTimeInfo: {
+                now: 1548531785,
+                today: 1548460800,
+                todayDow: 6
+            },
+            _lightBoxUniversal: "0",
+            _enableOverlays: "1",
+            _animationSpeedMultiplier: "1",
+            _overlayConfig: {
+                top: "10%",
+                speed: 200,
+                closeSpeed: 100,
+                mask: {
+                    color: "rgb(255, 255, 255)",
+                    opacity: "0.6",
+                    loadSpeed: 200,
+                    closeSpeed: 100
+                }
+            },
+            _ignoredUsers: [],
+            _loadedScripts: {
+                "node_list": true,
+                "node_category": true,
+                "node_forum": true,
+                "discussion_list": true,
+                "wf_default": true
+            },
+            _cookieConfig: {
+                path: "/",
+                domain: ".oxidemod.org",
+                prefix: "xfid_"
+            },
+            _jsVersion: "f33b43a2"
+        });
+        jQuery.extend(XenForo.phrases, {
+            cancel: "Cancel",
+            a_moment_ago: "A moment ago",
+            one_minute_ago: "1 minute ago",
+            x_minutes_ago: "%minutes% minutes ago",
+            today_at_x: "Today at %time%",
+            yesterday_at_x: "Yesterday at %time%",
+            day_x_at_time_y: "%day% at %time%",
+            day0: "Sunday",
+            day1: "Monday",
+            day2: "Tuesday",
+            day3: "Wednesday",
+            day4: "Thursday",
+            day5: "Friday",
+            day6: "Saturday",
+            _months: "January,February,March,April,May,June,July,August,September,October,November,December",
+            _daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+            following_error_occurred: "The following error occurred",
+            server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+            logging_in: "Logging in",
+            click_image_show_full_size_version: "Click this image to show the full-size version.",
+            show_hidden_content_by_x: "Show hidden content by {names}"
+        });
+    </script>
 </body>
 </html>
